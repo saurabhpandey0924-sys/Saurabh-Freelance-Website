@@ -1,0 +1,204 @@
+/* ==========================================================================
+   SAURABH FREELANCE PLATFORM - RESPONSIVE & MOBILE STYLES
+   ========================================================================== */
+
+/* Tablet & Smaller Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-social-proof {
+    justify-content: center;
+  }
+
+  .hero-visual-wrapper {
+    margin-top: 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .pricing-card.popular {
+    transform: none;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-wrapper {
+    grid-template-columns: 1fr;
+    padding: 32px;
+    gap: 36px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* Mobile & Small Tablets (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 68px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 28px;
+    gap: 24px;
+    transform: translateX(100%);
+    transition: transform var(--transition-smooth);
+    border-top: 1px solid var(--border-subtle);
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-image-card {
+    max-width: 320px;
+  }
+
+  .floating-badge.badge-top-left {
+    left: -10px;
+    top: -10px;
+  }
+
+  .floating-badge.badge-bottom-right {
+    right: -10px;
+    bottom: -10px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-types-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-card, .contact-form-card {
+    padding: 28px 20px;
+  }
+
+  .modal-body {
+    padding: 24px 18px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+/* Extra Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-wrapper {
+    padding: 20px 16px;
+  }
+
+  .calc-summary-panel {
+    padding: 24px 18px;
+  }
+
+  .calc-estimate-price {
+    font-size: 2.4rem;
+  }
+}
