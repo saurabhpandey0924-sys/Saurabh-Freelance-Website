@@ -6,9 +6,9 @@
 const PORTFOLIO_DATA = {
   profile: {
     name: "Saurabh",
-    title: "Senior Full-Stack Developer & AI Systems Architect",
-    tagline: "I engineer high-converting web applications, scalable SaaS platforms, and intelligent AI workflows that turn visitors into paying customers.",
-    availability: "Available for Q3/Q4 Projects",
+    title: "Web Developer & Team Lead",
+    tagline: "We build high-converting websites, scalable web applications, and modern digital platforms that turn visitors into paying clients.",
+    availability: "Available for New Projects",
     experienceYears: "5+",
     projectsCompleted: "45+",
     clientSatisfaction: "99.4%",
@@ -23,9 +23,9 @@ const PORTFOLIO_DATA = {
   },
 
   about: {
-    badge: "The Engineer Behind Your Vision",
-    headline: "Engineering High-Yield Software With Founder-Level Ownership",
-    bio: "I'm Saurabh — a Senior Full-Stack Engineer and Freelance Technical Partner. Over the past 5+ years, I’ve collaborated with fast-moving startups, funded founders, and agencies across the US, UK, and Asia to build software that scales effortlessly. Unlike large slow-moving agencies or junior developers, I work as an agile extension of your team with direct communication, battle-tested architecture, and extreme focus on conversion and speed.",
+    badge: "The Team Behind Your Product",
+    headline: "High-Impact Web Development With Dedicated Team Execution",
+    bio: "I'm Saurabh — Web Developer. Together with my trusted team of specialized UI/UX designers and web developers, we help startups, businesses, and agency partners build responsive, high-performing websites and web applications. We handle everything from concept wireframes to clean code, responsive testing, and production deployment — giving you full team capabilities with direct communication and rapid sprint execution.",
     quote: "True engineering excellence is not measured in lines of code, but in how quickly and reliably it turns your product vision into paying users.",
     principles: [
       {
@@ -53,10 +53,10 @@ const PORTFOLIO_DATA = {
       { label: "Completed Projects", value: "45+" },
       { label: "Client Satisfaction", value: "99.4%" },
       { label: "On-Time Sprint Delivery", value: "100%" },
-      { label: "Average MVP Launch Time", value: "14 Days" }
+      { label: "Average Launch Time", value: "14 Days" }
     ],
     trustHighlights: [
-      "No outsourcing — 100% written and maintained by Saurabh",
+      "Specialized web development team led directly by Saurabh",
       "NDA & Intellectual Property protection guaranteed",
       "Post-launch warranty & free bug-fix coverage included",
       "Daily asynchronous progress reports & weekly live demos"

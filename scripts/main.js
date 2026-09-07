@@ -274,14 +274,14 @@ function renderAbout(about) {
     <div class="about-grid">
       <!-- Profile Column -->
       <div class="about-profile-card reveal">
-        <div class="about-avatar-wrapper">
-          <img src="assets/images/avatar.jpg" alt="Saurabh - Senior Full-Stack Engineer" class="about-avatar-img">
-          <div class="about-verified-badge" title="Verified Senior Full-Stack Engineer">
+        <div class="about-avatar-wrapper" style="display: flex; align-items: center; justify-content: center; background: var(--gradient-primary); font-size: 2.8rem; color: #FFF;">
+          <span>💻</span>
+          <div class="about-verified-badge" title="Verified Web Development Team">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
         </div>
-        <h3 class="about-profile-name">Saurabh</h3>
-        <p class="about-profile-title">Senior Full-Stack Engineer & Technical Partner</p>
+        <h3 class="about-profile-name">Saurabh & Team</h3>
+        <p class="about-profile-title">Web Developer & Specialized Dev Team</p>
         
         <div class="about-stats-grid">
           ${about.stats.map(s => `
@@ -339,9 +339,11 @@ function renderAbout(about) {
 
 function initNavigation() {
   const navbar = document.getElementById('navbar');
-  const mobileBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.getElementById('nav-links');
-  const links = document.querySelectorAll('.nav-link');
+  const menuBtn = document.getElementById('menu-toggle-btn');
+  const drawer = document.getElementById('nav-drawer');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const closeBtn = document.getElementById('drawer-close-btn');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
 
   // Sticky Navbar on scroll
   window.addEventListener('scroll', () => {
@@ -361,7 +363,7 @@ function initNavigation() {
       }
     });
 
-    links.forEach(link => {
+    drawerLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === `#${current}`) {
         link.classList.add('active');
@@ -369,41 +371,56 @@ function initNavigation() {
     });
   });
 
-  // Mobile menu toggle
-  if (mobileBtn && navLinks) {
-    const toggleMenu = () => {
-      const isOpen = navLinks.classList.toggle('open');
-      mobileBtn.innerHTML = isOpen ? '✕' : '☰';
-      mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    };
+  // Drawer functions
+  const openDrawer = () => {
+    if (!drawer) return;
+    drawer.classList.add('open');
+    if (backdrop) backdrop.classList.add('active');
+    if (menuBtn) {
+      menuBtn.classList.add('open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    }
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
 
-    const closeMenu = () => {
-      navLinks.classList.remove('open');
-      mobileBtn.innerHTML = '☰';
-      mobileBtn.setAttribute('aria-expanded', 'false');
-    };
+  const closeDrawer = () => {
+    if (!drawer) return;
+    drawer.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('active');
+    if (menuBtn) {
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
 
-    mobileBtn.addEventListener('click', (e) => {
+  if (menuBtn && drawer) {
+    menuBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      toggleMenu();
-    });
-
-    // Close mobile menu when clicking a link
-    links.forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    // Close when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target) && navLinks.classList.contains('open')) {
-        closeMenu();
+      if (drawer.classList.contains('open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
       }
     });
 
-    // Close on Escape key
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeDrawer);
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', closeDrawer);
+    }
+
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
-        closeMenu();
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeDrawer();
       }
     });
   }

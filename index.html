@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>Saurabh | Senior Full-Stack Developer & AI Systems Architect</title>
-  <meta name="description" content="Hire Saurabh — Senior Full-Stack Freelance Developer & AI Systems Architect. Specializing in high-converting web apps, custom SaaS platforms, and intelligent AI workflows.">
-  <meta name="keywords" content="Freelance Web Developer, Full Stack Developer, React Developer, Next.js, Node.js, SaaS MVP, AI Workflow, Saurabh Freelance, Hire Developer">
+  <title>Saurabh | Web Developer & Digital Solutions</title>
+  <meta name="description" content="Hire Saurabh & Team — Web Developers specializing in high-converting websites, web apps, and custom SaaS platforms.">
+  <meta name="keywords" content="Web Developer, Frontend Developer, React Developer, Next.js, Node.js, Web Applications, Saurabh Web Developer, Hire Developer">
   <meta name="author" content="Saurabh">
   
   <!-- OpenGraph / Social Sharing -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Saurabh | Senior Full-Stack Developer & AI Systems Architect">
-  <meta property="og:description" content="Engineering high-converting web applications, scalable SaaS platforms, and intelligent AI workflows.">
+  <meta property="og:title" content="Saurabh | Web Developer & Digital Solutions">
+  <meta property="og:description" content="Building high-converting websites, scalable web applications, and digital products.">
   <meta property="og:image" content="assets/images/project-saas.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -21,6 +21,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/main.css">
@@ -34,7 +37,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Saurabh",
-    "jobTitle": "Senior Full-Stack Developer & AI Solutions Architect",
+    "jobTitle": "Web Developer",
     "url": "https://saurabh-freelance.dev",
     "sameAs": [
       "https://github.com",
@@ -47,8 +50,8 @@
       "Next.js",
       "Node.js",
       "TypeScript",
-      "Artificial Intelligence",
-      "SaaS Engineering"
+      "UI/UX Design",
+      "Full-Stack Web Applications"
     ]
   }
   </script>
@@ -63,42 +66,76 @@
         <span>Saurabh<span class="gradient-text">.dev</span></span>
       </a>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#projects" class="nav-link">Case Studies</a></li>
-        <li><a href="#process" class="nav-link">Process</a></li>
-        <li><a href="#calculator" class="nav-link">Estimator</a></li>
-        <li><a href="#pricing" class="nav-link">Pricing</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#reviews" class="nav-link">Reviews</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-
+      <!-- Header Actions -->
       <div class="nav-actions">
         <!-- Theme Switcher Button -->
         <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/></svg>
         </button>
-        
-        <!-- WhatsApp Quick Link -->
-        <a href="https://wa.me/919876543210?text=Hi%20Saurabh,%20I'm%20interested%20in%20discussing%20a%20project!" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;" title="Chat directly on WhatsApp">
-          <span style="color: #10B981;">●</span>
-          <span>WhatsApp</span>
-        </a>
 
         <!-- Header CTA -->
         <a href="#contact" class="btn btn-primary btn-sm">
-          <span>Hire Me</span>
+          <span>Hire Us</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
 
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
-          ☰
+        <!-- Classic 3-Line Hamburger Menu Button -->
+        <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
       </div>
     </div>
   </nav>
+
+  <!-- Classic Slide-Out Navigation Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="nav-drawer" id="nav-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <span class="brand-badge">S</span>
+        <span>Navigation Menu</span>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close menu">&times;</button>
+    </div>
+
+    <nav class="drawer-nav">
+      <ul class="drawer-links">
+        <li><a href="#services" class="drawer-link"><span class="link-num">01</span><span>Services & Solutions</span></a></li>
+        <li><a href="#projects" class="drawer-link"><span class="link-num">02</span><span>Case Studies & Work</span></a></li>
+        <li><a href="#process" class="drawer-link"><span class="link-num">03</span><span>Working Process</span></a></li>
+        <li><a href="#calculator" class="drawer-link"><span class="link-num">04</span><span>Project Cost Estimator</span></a></li>
+        <li><a href="#pricing" class="drawer-link"><span class="link-num">05</span><span>Fixed-Price Packages</span></a></li>
+        <li><a href="#about" class="drawer-link"><span class="link-num">06</span><span>About Saurabh & Team</span></a></li>
+        <li><a href="#reviews" class="drawer-link"><span class="link-num">07</span><span>Client Reviews</span></a></li>
+        <li><a href="#faq" class="drawer-link"><span class="link-num">08</span><span>Frequently Asked Questions</span></a></li>
+        <li><a href="#contact" class="drawer-link"><span class="link-num">09</span><span>Contact & Inquiry</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="drawer-footer">
+      <a href="https://wa.me/919876543210?text=Hi%20Saurabh,%20I'm%20interested%20in%20discussing%20a%20web%20development%20project!" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%; justify-content: center; gap: 8px;">
+        <span style="color: #25D366; font-size: 1.1rem;">●</span>
+        <span>WhatsApp Quick Chat</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Floating WhatsApp Widget -->
+  <a href="https://wa.me/919876543210?text=Hi%20Saurabh,%20I'm%20interested%20in%20discussing%20a%20web%20development%20project!" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp-btn" 
+     id="floating-whatsapp" 
+     aria-label="Chat with us on WhatsApp"
+     title="Chat with us on WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <svg viewBox="0 0 24 24" width="34" height="34" fill="#FFFFFF">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+  </a>
 
   <!-- 1. HERO SECTION -->
   <section class="hero-section" id="home">
@@ -106,13 +143,13 @@
       <div class="hero-content reveal">
         <div class="hero-tag">
           <span class="badge-dot"></span>
-          <span>Available for New Projects (Q3/Q4)</span>
+          <span>Available for New Projects</span>
         </div>
         <h1 class="hero-title">
-          Engineering High-Impact <span class="gradient-text">Web Apps & AI Systems</span> That Scale.
+          Building High-Impact <span class="gradient-text">Websites & Web Apps</span> That Scale.
         </h1>
         <p class="hero-subtitle">
-          Hi, I’m <strong>Saurabh</strong> — a Senior Full-Stack Engineer and Freelance Specialist. I turn complex ideas into lightning-fast, high-converting digital products that delight users and drive real revenue.
+          Hi, I’m <strong>Saurabh</strong> — Web Developer. Together with my dedicated development team, we build lightning-fast, high-converting digital products and modern web applications that drive real business results.
         </p>
         <div class="hero-cta-group">
           <a href="#calculator" class="btn btn-primary btn-lg btn-glow">
@@ -137,24 +174,50 @@
       </div>
 
       <div class="hero-visual-wrapper reveal">
-        <div class="hero-image-card">
-          <img src="assets/images/avatar.jpg" alt="Saurabh - Senior Full-Stack Developer">
-        </div>
-
-        <!-- Floating Glass Badges -->
-        <div class="floating-badge badge-top-left">
-          <div class="floating-badge-icon">⚡</div>
-          <div>
-            <div class="floating-badge-title">Speed Score</div>
-            <div class="floating-badge-val">99/100 Lighthouse</div>
+        <!-- Interactive Team Tech & Code Showcase Window -->
+        <div class="hero-tech-window">
+          <div class="tech-window-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="window-tab">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+              <span>ProjectWorkspace.tsx</span>
+            </div>
+            <div class="window-badge">Live Build</div>
           </div>
-        </div>
+          <div class="tech-window-body">
+            <pre class="code-block"><code><span class="code-comment">// Saurabh & Development Team</span>
+<span class="code-keyword">const</span> <span class="code-var">ClientProject</span> = {
+  <span class="code-prop">teamLead</span>: <span class="code-string">"Saurabh (Web Developer)"</span>,
+  <span class="code-prop">specialists</span>: [
+    <span class="code-string">"UI/UX Design"</span>, 
+    <span class="code-string">"Frontend Dev"</span>, 
+    <span class="code-string">"Backend & API"</span>
+  ],
+  <span class="code-prop">deliverables</span>: <span class="code-string">"Fast, High-Converting Web Apps"</span>,
+  <span class="code-prop">performance</span>: <span class="code-string">"99/100 Mobile & Desktop"</span>,
+  <span class="code-prop">status</span>: <span class="code-string">"Ready to Launch Your Project 🚀"</span>
+};
 
-        <div class="floating-badge badge-bottom-right">
-          <div class="floating-badge-icon">⭐</div>
-          <div>
-            <div class="floating-badge-title">Client Rating</div>
-            <div class="floating-badge-val">5.0 / 5.0 (Verified)</div>
+<span class="code-comment">// Guaranteed Client Outcomes</span>
+<span class="code-keyword">export default</span> <span class="code-func">launchWebsite</span>(<span class="code-var">ClientProject</span>);</code></pre>
+          </div>
+          <div class="tech-window-footer">
+            <div class="tech-feature-pill">
+              <span class="pill-dot green"></span>
+              <span>100% Responsive</span>
+            </div>
+            <div class="tech-feature-pill">
+              <span class="pill-dot blue"></span>
+              <span>Clean Scalable Code</span>
+            </div>
+            <div class="tech-feature-pill">
+              <span class="pill-dot purple"></span>
+              <span>Full Team Support</span>
+            </div>
           </div>
         </div>
       </div>

@@ -89,52 +89,27 @@
     padding: 70px 0;
   }
 
-  .nav-links {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    height: calc(100vh - var(--header-height));
-    background: var(--bg-primary);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 36px 28px;
-    gap: 24px;
-    transform: translateX(100%);
-    transition: transform var(--transition-smooth);
-    border-top: 1px solid var(--border-subtle);
-    z-index: 999;
+  .nav-drawer {
+    width: min(340px, 88vw);
   }
 
-  .nav-links.open {
-    transform: translateX(0);
+  .floating-whatsapp-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
   }
 
-  .nav-link {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-
-  .mobile-menu-btn {
-    display: block;
+  .whatsapp-tooltip {
+    display: none;
   }
 
   .hero-title {
-    font-size: 2.4rem;
+    font-size: clamp(2rem, 6vw, 2.6rem);
   }
 
-  .hero-image-card {
-    max-width: 320px;
-  }
-
-  .floating-badge.badge-top-left {
-    left: -10px;
-    top: -10px;
-  }
-
-  .floating-badge.badge-bottom-right {
-    right: -10px;
-    bottom: -10px;
+  .hero-tech-window {
+    max-width: 100%;
   }
 
   .metrics-grid {
