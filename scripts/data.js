@@ -22,6 +22,47 @@ const PORTFOLIO_DATA = {
     twitter: "https://x.com"
   },
 
+  about: {
+    badge: "The Engineer Behind Your Vision",
+    headline: "Engineering High-Yield Software With Founder-Level Ownership",
+    bio: "I'm Saurabh — a Senior Full-Stack Engineer and Freelance Technical Partner. Over the past 5+ years, I’ve collaborated with fast-moving startups, funded founders, and agencies across the US, UK, and Asia to build software that scales effortlessly. Unlike large slow-moving agencies or junior developers, I work as an agile extension of your team with direct communication, battle-tested architecture, and extreme focus on conversion and speed.",
+    quote: "True engineering excellence is not measured in lines of code, but in how quickly and reliably it turns your product vision into paying users.",
+    principles: [
+      {
+        icon: "⚡",
+        title: "Async-First & 24h Response Guarantee",
+        desc: "You never wonder what's happening. You get daily Loom video walk-throughs, transparent progress tracking, and guaranteed responses within hours."
+      },
+      {
+        icon: "🛡️",
+        title: "Zero Technical Debt Architecture",
+        desc: "Modern, clean, modular code with strict typing. Future-proof and ready for your in-house engineering team to inherit seamlessly without expensive rewrites."
+      },
+      {
+        icon: "🎯",
+        title: "Business Outcomes Over Vanity Tech",
+        desc: "Every feature is evaluated through a commercial lens: Does this accelerate time-to-market? Does it reduce user drop-off? Does it increase conversions?"
+      },
+      {
+        icon: "🔑",
+        title: "100% IP & Full Code Ownership",
+        desc: "From the very first commit, you hold full intellectual property rights, GitHub repository ownership, Docker containers, and complete deployment access."
+      }
+    ],
+    stats: [
+      { label: "Completed Projects", value: "45+" },
+      { label: "Client Satisfaction", value: "99.4%" },
+      { label: "On-Time Sprint Delivery", value: "100%" },
+      { label: "Average MVP Launch Time", value: "14 Days" }
+    ],
+    trustHighlights: [
+      "No outsourcing — 100% written and maintained by Saurabh",
+      "NDA & Intellectual Property protection guaranteed",
+      "Post-launch warranty & free bug-fix coverage included",
+      "Daily asynchronous progress reports & weekly live demos"
+    ]
+  },
+
   services: [
     {
       id: "fullstack",

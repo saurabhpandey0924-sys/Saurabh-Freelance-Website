@@ -22,13 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Render Pricing
   renderPricing(data.pricingTiers);
 
-  // 6. Render Testimonials
+  // 6. Render About & Working Philosophy
+  renderAbout(data.about);
+
+  // 7. Render Testimonials
   renderTestimonials(data.testimonials);
 
-  // 7. Render FAQs
+  // 8. Render FAQs
   renderFAQs(data.faqs);
 
-  // 8. Navigation & Scroll Observers
+  // 9. Navigation & Scroll Observers
   initNavigation();
   initScrollAnimations();
 });
@@ -263,6 +266,73 @@ function renderFAQs(faqs) {
   });
 }
 
+function renderAbout(about) {
+  const container = document.getElementById('about-container');
+  if (!container || !about) return;
+
+  container.innerHTML = `
+    <div class="about-grid">
+      <!-- Profile Column -->
+      <div class="about-profile-card reveal">
+        <div class="about-avatar-wrapper">
+          <img src="assets/images/avatar.jpg" alt="Saurabh - Senior Full-Stack Engineer" class="about-avatar-img">
+          <div class="about-verified-badge" title="Verified Senior Full-Stack Engineer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+        <h3 class="about-profile-name">Saurabh</h3>
+        <p class="about-profile-title">Senior Full-Stack Engineer & Technical Partner</p>
+        
+        <div class="about-stats-grid">
+          ${about.stats.map(s => `
+            <div class="about-stat-item">
+              <div class="about-stat-val">${s.value}</div>
+              <div class="about-stat-label">${s.label}</div>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="about-trust-badges">
+          ${about.trustHighlights.map(t => `
+            <div class="about-trust-item">
+              <span class="about-trust-icon">✓</span>
+              <span>${t}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- Philosophy & Guarantees Column -->
+      <div class="about-content-col reveal">
+        <div class="about-quote-box">
+          <p class="about-quote-text">"${about.quote}"</p>
+        </div>
+
+        <div class="about-bio-card glass-card" style="padding: 28px; border-radius: var(--radius-md);">
+          <h4 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--text-primary); font-family: var(--font-heading);">${about.headline}</h4>
+          <p style="font-size: 0.98rem; color: var(--text-secondary); line-height: 1.75;">${about.bio}</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1.25rem; margin-bottom: 18px; color: var(--text-primary); font-family: var(--font-heading); display:flex; align-items:center; gap: 10px; flex-wrap: wrap;">
+            <span>Core Working Guarantees</span>
+            <span style="font-size: 0.8rem; padding: 3px 10px; border-radius: 9999px; background: rgba(16, 185, 129, 0.15); color: var(--accent-success); border: 1px solid rgba(16, 185, 129, 0.3); font-weight:600;">Client Peace of Mind</span>
+          </h4>
+          <div class="principles-grid">
+            ${about.principles.map(p => `
+              <div class="principle-card">
+                <div class="principle-icon-wrapper">${p.icon}</div>
+                <h5 class="principle-title">${p.title}</h5>
+                <p class="principle-desc">${p.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 /* --------------------------------------------------------------------------
    NAVIGATION & SCROLL
 -------------------------------------------------------------------------- */
@@ -301,17 +371,40 @@ function initNavigation() {
 
   // Mobile menu toggle
   if (mobileBtn && navLinks) {
-    mobileBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      mobileBtn.innerHTML = navLinks.classList.contains('open') ? '✕' : '☰';
+    const toggleMenu = () => {
+      const isOpen = navLinks.classList.toggle('open');
+      mobileBtn.innerHTML = isOpen ? '✕' : '☰';
+      mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+
+    const closeMenu = () => {
+      navLinks.classList.remove('open');
+      mobileBtn.innerHTML = '☰';
+      mobileBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
 
     // Close mobile menu when clicking a link
     links.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        if (mobileBtn) mobileBtn.innerHTML = '☰';
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target) && navLinks.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        closeMenu();
+      }
     });
   }
 }

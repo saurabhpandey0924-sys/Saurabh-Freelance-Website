@@ -65,6 +65,18 @@
     grid-template-columns: 1fr;
     gap: 36px;
   }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-profile-card {
+    position: static;
+    max-width: 560px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 /* Mobile & Small Tablets (<= 768px) */
@@ -142,6 +154,10 @@
     grid-template-columns: 1fr;
   }
 
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
   .calc-types-grid {
     grid-template-columns: 1fr;
   }
@@ -188,6 +204,11 @@
 
   .metrics-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .calculator-wrapper {

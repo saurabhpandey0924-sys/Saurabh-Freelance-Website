@@ -156,6 +156,8 @@
         const contactSection = document.getElementById('contact');
         const messageInput = document.getElementById('contact-message');
         const subjectSelect = document.getElementById('contact-service-type');
+        const budgetSelect = document.getElementById('contact-budget');
+        const nameInput = document.getElementById('contact-name');
 
         if (window.CURRENT_ESTIMATE && messageInput) {
           messageInput.value = `Hi Saurabh, I configured a custom project estimate via your calculator:\n\n` +
@@ -165,10 +167,43 @@
             `• Estimated Budget: ${window.CURRENT_ESTIMATE.price}\n` +
             `• Preferred Timeline: ${window.CURRENT_ESTIMATE.timeline}\n\n` +
             `Let's schedule a kickoff call to discuss next steps!`;
+
+          // Sync service select
+          if (subjectSelect) {
+            if (window.CURRENT_ESTIMATE.type.includes('SaaS')) {
+              subjectSelect.value = 'Custom SaaS / MVP';
+            } else if (window.CURRENT_ESTIMATE.type.includes('AI')) {
+              subjectSelect.value = 'AI Integration';
+            } else if (window.CURRENT_ESTIMATE.type.includes('E-Commerce')) {
+              subjectSelect.value = 'Headless E-Commerce';
+            } else {
+              subjectSelect.value = 'Full-Stack Web App';
+            }
+          }
+
+          // Sync budget select
+          if (budgetSelect) {
+            const rawPrice = parseInt(window.CURRENT_ESTIMATE.price.replace(/[^0-9]/g, ''), 10);
+            if (rawPrice < 2500) {
+              budgetSelect.value = '$1,000 - $2,500';
+            } else if (rawPrice < 5000) {
+              budgetSelect.value = '$2,500 - $5,000';
+            } else if (rawPrice < 10000) {
+              budgetSelect.value = '$5,000 - $10,000';
+            } else {
+              budgetSelect.value = '$10,000+';
+            }
+          }
         }
 
         if (contactSection) {
           contactSection.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => {
+            if (nameInput) nameInput.focus();
+            if (window.showToast) {
+              window.showToast('🎯 Scope & estimated quote transferred! Fill in your contact info.', 'success');
+            }
+          }, 600);
         }
       });
     }
