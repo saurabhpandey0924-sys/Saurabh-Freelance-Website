@@ -397,8 +397,8 @@
   gap: 10px;
   padding: 8px 18px;
   border-radius: var(--radius-full);
-  background: rgba(81, 226, 245, 0.12);
-  border: 1px solid rgba(81, 226, 245, 0.3);
+  background: rgba(255, 51, 75, 0.12);
+  border: 1px solid rgba(255, 51, 75, 0.3);
   font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 600;
@@ -608,30 +608,30 @@
 }
 
 .code-keyword {
-  color: #ffa8b6;
+  color: #FF6B4A;
   font-weight: 600;
 }
 
 .code-var {
-  color: #51e2f5;
+  color: #FF334B;
 }
 
 .code-prop {
-  color: #9df9ef;
+  color: #FDA4AF;
 }
 
 .code-string {
-  color: #edf756;
+  color: #FBBF24;
 }
 
 .code-func {
-  color: #51e2f5;
+  color: #FF576C;
   font-weight: 600;
 }
 
 /* User Custom Palette Light Syntax Highlighting */
 [data-theme="light"] .code-comment {
-  color: #8E7179;
+  color: #64748B;
 }
 
 [data-theme="light"] .code-keyword {
@@ -762,7 +762,7 @@
 .service-card:hover {
   border-color: var(--accent-primary);
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(81, 226, 245, 0.2);
+  box-shadow: 0 16px 36px rgba(255, 51, 75, 0.22);
 }
 
 .service-top {
@@ -776,8 +776,8 @@
   width: 54px;
   height: 54px;
   border-radius: var(--radius-md);
-  background: rgba(81, 226, 245, 0.14);
-  border: 1px solid rgba(81, 226, 245, 0.28);
+  background: rgba(255, 51, 75, 0.12);
+  border: 1px solid rgba(255, 51, 75, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -905,7 +905,7 @@
 .project-card:hover {
   border-color: var(--border-glow);
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg), 0 0 25px rgba(81, 226, 245, 0.25);
+  box-shadow: var(--shadow-lg), 0 0 25px rgba(255, 51, 75, 0.28);
 }
 
 .project-thumb-wrap {
@@ -1137,7 +1137,7 @@
 
 .pricing-card.popular {
   border-color: var(--accent-primary);
-  box-shadow: 0 16px 40px rgba(81, 226, 245, 0.25);
+  box-shadow: 0 16px 40px rgba(255, 51, 75, 0.28);
   transform: scale(1.03);
 }
 
@@ -1147,14 +1147,14 @@
   left: 50%;
   transform: translateX(-50%);
   background: var(--gradient-primary);
-  color: #07151D;
+  color: #FFFFFF;
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: 4px 16px;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 14px rgba(81, 226, 245, 0.4);
+  box-shadow: 0 4px 14px rgba(255, 51, 75, 0.45);
 }
 
 .pricing-name {
@@ -1371,7 +1371,7 @@
 }
 
 .contact-channel-item:hover {
-  background: rgba(81, 226, 245, 0.12);
+  background: rgba(255, 51, 75, 0.12);
   border-color: var(--accent-primary);
   transform: translateX(4px);
 }
@@ -1568,9 +1568,9 @@
 
 .social-icon-btn:hover {
   background: var(--gradient-primary);
-  color: #07151D;
+  color: #FFFFFF;
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(81, 226, 245, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 51, 75, 0.45);
 }
 
 .footer-bottom {
@@ -1774,3 +1774,31 @@
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
+/* ==========================================================================
+   FUTURISTIC FX: CYBER GRID & 3D TILT SHEEN
+   ========================================================================== */
+
+/* Cyber Matrix Background Canvas */
+#cyber-grid-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+/* 3D Holographic Card Sheen Overlay */
+.hologram-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
