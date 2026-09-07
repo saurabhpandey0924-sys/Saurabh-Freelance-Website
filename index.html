@@ -89,38 +89,59 @@
     </div>
   </nav>
 
-  <!-- Classic Slide-Out Navigation Drawer -->
-  <div class="drawer-backdrop" id="drawer-backdrop"></div>
-  <aside class="nav-drawer" id="nav-drawer" aria-hidden="true">
-    <div class="drawer-header">
-      <div class="drawer-brand">
-        <span class="brand-badge">S</span>
-        <span>Navigation Menu</span>
+  <!-- Centered Floating Navigation Modal (Option A) -->
+  <div class="nav-modal-backdrop" id="nav-modal-backdrop"></div>
+  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="nav-modal-header">
+      <div class="nav-modal-title">
+        <span class="nav-modal-indicator"></span>
+        <span>Navigation</span>
       </div>
-      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close menu">&times;</button>
+      <button class="nav-modal-close" id="nav-modal-close" aria-label="Close navigation">&times;</button>
     </div>
 
-    <nav class="drawer-nav">
-      <ul class="drawer-links">
-        <li><a href="#services" class="drawer-link"><span class="link-num">01</span><span>Services & Solutions</span></a></li>
-        <li><a href="#projects" class="drawer-link"><span class="link-num">02</span><span>Case Studies & Work</span></a></li>
-        <li><a href="#process" class="drawer-link"><span class="link-num">03</span><span>Working Process</span></a></li>
-        <li><a href="#calculator" class="drawer-link"><span class="link-num">04</span><span>Project Cost Estimator</span></a></li>
-        <li><a href="#pricing" class="drawer-link"><span class="link-num">05</span><span>Fixed-Price Packages</span></a></li>
-        <li><a href="#about" class="drawer-link"><span class="link-num">06</span><span>About Saurabh & Team</span></a></li>
-        <li><a href="#reviews" class="drawer-link"><span class="link-num">07</span><span>Client Reviews</span></a></li>
-        <li><a href="#faq" class="drawer-link"><span class="link-num">08</span><span>Frequently Asked Questions</span></a></li>
-        <li><a href="#contact" class="drawer-link"><span class="link-num">09</span><span>Contact & Inquiry</span></a></li>
+    <nav class="nav-modal-body">
+      <ul class="nav-modal-list">
+        <li>
+          <a href="#services" class="nav-modal-link">
+            <span>Services & Solutions</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="nav-modal-link">
+            <span>Case Studies & Work</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="#calculator" class="nav-modal-link">
+            <span>Project Estimator & Pricing</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="nav-modal-link">
+            <span>About Saurabh & Team</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-modal-link highlight">
+            <span>Start a Project / Contact</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
       </ul>
     </nav>
 
-    <div class="drawer-footer">
-      <a href="https://wa.me/919876543210?text=Hi%20Saurabh,%20I'm%20interested%20in%20discussing%20a%20web%20development%20project!" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%; justify-content: center; gap: 8px;">
-        <span style="color: #25D366; font-size: 1.1rem;">●</span>
-        <span>WhatsApp Quick Chat</span>
+    <div class="nav-modal-footer">
+      <a href="https://wa.me/919876543210?text=Hi%20Saurabh,%20I'm%20interested%20in%20discussing%20a%20web%20development%20project!" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-modal">
+        <span class="whatsapp-modal-dot"></span>
+        <span>Chat Directly on WhatsApp</span>
       </a>
     </div>
-  </aside>
+  </div>
 
   <!-- Floating WhatsApp Widget -->
   <a href="https://wa.me/919876543210?text=Hi%20Saurabh,%20I'm%20interested%20in%20discussing%20a%20web%20development%20project!" 

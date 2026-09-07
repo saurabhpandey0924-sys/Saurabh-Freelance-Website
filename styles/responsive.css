@@ -89,8 +89,8 @@
     padding: 70px 0;
   }
 
-  .nav-drawer {
-    width: min(340px, 88vw);
+  .nav-modal {
+    width: min(94vw, 420px);
   }
 
   .floating-whatsapp-btn {
