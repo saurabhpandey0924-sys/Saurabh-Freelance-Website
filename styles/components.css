@@ -172,46 +172,23 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-.nav-modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--border-subtle);
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.nav-modal-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.nav-modal-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent-primary);
-  box-shadow: 0 0 10px var(--accent-primary);
-}
-
 .nav-modal-close {
-  width: 34px;
-  height: 34px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition-fast);
+  z-index: 10;
 }
 
 .nav-modal-close:hover {
@@ -221,7 +198,7 @@
 }
 
 .nav-modal-body {
-  padding: 16px 20px;
+  padding: 42px 16px 16px 16px;
 }
 
 .nav-modal-list {
@@ -266,47 +243,6 @@
 .nav-modal-link.highlight {
   background: rgba(99, 102, 241, 0.08);
   color: var(--text-primary);
-}
-
-.nav-modal-footer {
-  padding: 18px 20px 22px;
-  border-top: 1px solid var(--border-subtle);
-  background: rgba(0, 0, 0, 0.15);
-}
-
-.btn-whatsapp-modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 12px 18px;
-  border-radius: var(--radius-md);
-  background: rgba(37, 211, 102, 0.12);
-  border: 1px solid rgba(37, 211, 102, 0.3);
-  color: #25D366;
-  font-weight: 700;
-  font-size: 0.95rem;
-  transition: all var(--transition-fast);
-  text-decoration: none;
-}
-
-.btn-whatsapp-modal:hover {
-  background: #25D366;
-  color: #FFFFFF;
-  border-color: #25D366;
-  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
-}
-
-.whatsapp-modal-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #25D366;
-}
-
-.btn-whatsapp-modal:hover .whatsapp-modal-dot {
-  background: #FFFFFF;
 }
 
 /* Floating WhatsApp Button */
