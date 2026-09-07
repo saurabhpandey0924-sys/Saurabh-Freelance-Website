@@ -3,47 +3,55 @@
    ========================================================================== */
 
 :root {
-  /* Option 4: Cyber Violet & Sunset Neon Orange (Raycast Creative Agency Dark) */
-  --bg-primary: #0A0815;
-  --bg-secondary: #141026;
-  --bg-tertiary: #1D1735;
-  --bg-card: #141026;
-  --bg-card-hover: #1E1738;
-  --bg-glass: rgba(10, 8, 21, 0.88);
+  /* User Custom Palette:
+     Bright blue: #51e2f5
+     Blue Green: #9df9ef
+     Dusty White: #edf756
+     Pink Sand: #ffa8b6
+     Dark Sand: #a28089
+  */
+  --bg-primary: #0D1017;
+  --bg-secondary: #151A24;
+  --bg-tertiary: #1E2535;
+  --bg-card: #151A24;
+  --bg-card-hover: #1C2331;
+  --bg-glass: rgba(13, 16, 23, 0.88);
   
   /* Text & Foreground */
-  --text-primary: #F5F3FF;
-  --text-secondary: #A79EC2;
-  --text-muted: #71678F;
-  --text-invert: #0A0815;
+  --text-primary: #F0F6FC;
+  --text-secondary: #C4B9BE;
+  --text-muted: #a28089;         /* Dark Sand */
+  --text-invert: #0D1017;
   
-  /* Accents & Cyber Violet / Sunset Orange */
-  --accent-primary: #8B5CF6;     /* Vivid Cyber Violet */
-  --accent-primary-hover: #A78BFA;
-  --accent-secondary: #F97316;   /* Neon Sunset Orange */
-  --accent-secondary-hover: #FB923C;
-  --accent-tertiary: #EC4899;    /* Electric Pink / Fuchsia */
-  --accent-success: #10B981;     /* Vibrant Emerald */
-  --accent-success-btn: #8B5CF6; /* Primary Button Accent */
-  --accent-warning: #F59E0B;     /* Amber */
-  --accent-danger: #EF4444;      /* Coral Red */
+  /* Accents & User Palette */
+  --accent-primary: #51e2f5;     /* Bright Blue */
+  --accent-primary-hover: #7aeaf8;
+  --accent-secondary: #9df9ef;   /* Blue Green */
+  --accent-secondary-hover: #bdfcf5;
+  --accent-tertiary: #ffa8b6;    /* Pink Sand */
+  --accent-highlight: #edf756;   /* Dusty White / Lime */
+  --accent-neutral: #a28089;     /* Dark Sand */
+  --accent-success: #9df9ef;     /* Blue Green */
+  --accent-success-btn: #51e2f5; /* Bright Blue */
+  --accent-warning: #edf756;     /* Dusty White */
+  --accent-danger: #ffa8b6;      /* Pink Sand */
   
-  --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #F97316 100%);
-  --gradient-accent: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
-  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.16) 0%, rgba(249, 115, 22, 0.06) 50%, transparent 80%);
-  --gradient-card-border: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(249, 115, 22, 0.1) 100%);
-  --gradient-card-border-active: linear-gradient(135deg, #8B5CF6 0%, #F97316 100%);
+  --gradient-primary: linear-gradient(135deg, #51e2f5 0%, #9df9ef 50%, #ffa8b6 100%);
+  --gradient-accent: linear-gradient(135deg, #ffa8b6 0%, #edf756 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(81, 226, 245, 0.16) 0%, rgba(157, 249, 239, 0.08) 50%, transparent 80%);
+  --gradient-card-border: linear-gradient(135deg, rgba(81, 226, 245, 0.3) 0%, rgba(255, 168, 182, 0.15) 100%);
+  --gradient-card-border-active: linear-gradient(135deg, #51e2f5 0%, #ffa8b6 100%);
 
-  /* Borders & Shadows */
-  --border-subtle: #241C3E;
-  --border-medium: #382C5D;
-  --border-glow: rgba(139, 92, 246, 0.45);
+  /* Borders & Shadows (Accented with Dark Sand #a28089) */
+  --border-subtle: rgba(162, 128, 137, 0.22);
+  --border-medium: rgba(162, 128, 137, 0.4);
+  --border-glow: rgba(81, 226, 245, 0.45);
   
-  --shadow-sm: 0 1px 3px rgba(5, 3, 12, 0.5);
-  --shadow-md: 0 4px 16px rgba(5, 3, 12, 0.6);
-  --shadow-lg: 0 12px 32px rgba(5, 3, 12, 0.75);
-  --shadow-glow: 0 0 28px rgba(139, 92, 246, 0.35);
-  --shadow-cyan-glow: 0 0 28px rgba(249, 115, 22, 0.28);
+  --shadow-sm: 0 1px 3px rgba(5, 8, 14, 0.5);
+  --shadow-md: 0 4px 16px rgba(5, 8, 14, 0.6);
+  --shadow-lg: 0 12px 32px rgba(5, 8, 14, 0.75);
+  --shadow-glow: 0 0 28px rgba(81, 226, 245, 0.35);
+  --shadow-cyan-glow: 0 0 28px rgba(157, 249, 239, 0.3);
 
   /* Typography */
   --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
@@ -64,44 +72,46 @@
   --transition-spring: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Option 4: Cyber Violet & Sunset Orange (Light Mode) */
+/* User Custom Palette (Light Mode) */
 [data-theme="light"] {
-  --bg-primary: #FAF7FD;
+  --bg-primary: #F5F9FA;
   --bg-secondary: #FFFFFF;
-  --bg-tertiary: #F1EAFA;
+  --bg-tertiary: #EDF4F6;
   --bg-card: #FFFFFF;
-  --bg-card-hover: #FAF5FF;
+  --bg-card-hover: #F0F7F9;
   --bg-glass: rgba(255, 255, 255, 0.92);
   
-  --text-primary: #1E1633;
-  --text-secondary: #5B4F73;
-  --text-muted: #887C9E;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #8E7179;
   --text-invert: #FFFFFF;
   
-  --accent-primary: #7C3AED;     /* Deep Vivid Purple */
-  --accent-primary-hover: #6D28D9;
-  --accent-secondary: #EA580C;   /* Rich Sunset Orange */
-  --accent-tertiary: #DB2777;    /* Fuchsia */
-  --accent-success: #059669;     /* Green */
-  --accent-success-btn: #7C3AED; /* Purple Button */
-  --accent-warning: #D97706;     /* Amber */
-  --accent-danger: #DC2626;      /* Red */
+  --accent-primary: #0284C7;     /* Bright Blue WCAG AA */
+  --accent-primary-hover: #0369A1;
+  --accent-secondary: #0D9488;   /* Blue Green WCAG AA */
+  --accent-tertiary: #DB2777;    /* Pink Sand */
+  --accent-highlight: #CA8A04;   /* Dusty White / Lemon */
+  --accent-neutral: #8E7179;     /* Dark Sand */
+  --accent-success: #059669;
+  --accent-success-btn: #0284C7;
+  --accent-warning: #D97706;
+  --accent-danger: #E11D48;
 
-  --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #EA580C 100%);
-  --gradient-accent: linear-gradient(135deg, #DB2777 0%, #7C3AED 100%);
-  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.1) 0%, rgba(234, 88, 12, 0.04) 50%, transparent 80%);
-  --gradient-card-border: linear-gradient(135deg, rgba(124, 58, 237, 0.25) 0%, rgba(234, 88, 12, 0.1) 100%);
-  --gradient-card-border-active: linear-gradient(135deg, #7C3AED 0%, #EA580C 100%);
+  --gradient-primary: linear-gradient(135deg, #0284C7 0%, #0D9488 50%, #DB2777 100%);
+  --gradient-accent: linear-gradient(135deg, #DB2777 0%, #EAB308 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.1) 0%, rgba(13, 148, 136, 0.04) 50%, transparent 80%);
+  --gradient-card-border: linear-gradient(135deg, rgba(2, 132, 199, 0.25) 0%, rgba(219, 39, 119, 0.1) 100%);
+  --gradient-card-border-active: linear-gradient(135deg, #0284C7 0%, #DB2777 100%);
   
-  --border-subtle: #E9DEFA;
-  --border-medium: #D5C4F3;
-  --border-glow: rgba(124, 58, 237, 0.3);
+  --border-subtle: rgba(162, 128, 137, 0.22);
+  --border-medium: rgba(162, 128, 137, 0.4);
+  --border-glow: rgba(2, 132, 199, 0.35);
   
-  --shadow-sm: 0 1px 3px rgba(30, 22, 51, 0.08);
-  --shadow-md: 0 4px 16px rgba(30, 22, 51, 0.08);
-  --shadow-lg: 0 12px 32px rgba(30, 22, 51, 0.12);
-  --shadow-glow: 0 0 24px rgba(124, 58, 237, 0.18);
-  --shadow-cyan-glow: 0 0 24px rgba(234, 88, 12, 0.15);
+  --shadow-sm: 0 1px 3px rgba(17, 24, 39, 0.08);
+  --shadow-md: 0 4px 16px rgba(17, 24, 39, 0.08);
+  --shadow-lg: 0 12px 32px rgba(17, 24, 39, 0.12);
+  --shadow-glow: 0 0 24px rgba(2, 132, 199, 0.18);
+  --shadow-cyan-glow: 0 0 24px rgba(13, 148, 136, 0.15);
 }
 
 /* Reset & Box Sizing */
@@ -285,56 +295,58 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 45%, #F97316 100%);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 4px 18px rgba(139, 92, 246, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #51e2f5 0%, #38BDF8 50%, #9df9ef 100%);
+  color: #07151D;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(81, 226, 245, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #9D74FF 0%, #8B5CF6 45%, #FB923C 100%);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #7aeaf8 0%, #51e2f5 50%, #bdfcf5 100%);
+  border-color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(249, 115, 22, 0.45);
+  box-shadow: 0 6px 26px rgba(157, 249, 239, 0.55);
+  color: #040F15;
 }
 
 [data-theme="light"] .btn-primary {
-  background: linear-gradient(135deg, #7C3AED 0%, #EA580C 100%);
+  background: linear-gradient(135deg, #0284C7 0%, #0D9488 100%);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 [data-theme="light"] .btn-primary:hover {
-  background: linear-gradient(135deg, #6D28D9 0%, #C2410C 100%);
-  box-shadow: 0 6px 22px rgba(234, 88, 12, 0.4);
+  background: linear-gradient(135deg, #0369A1 0%, #0F766E 100%);
+  box-shadow: 0 6px 22px rgba(13, 148, 136, 0.4);
 }
 
 .btn-secondary {
   background: var(--bg-tertiary);
   color: var(--text-primary);
   border: 1px solid var(--border-medium);
-  box-shadow: 0 1px 3px rgba(5, 3, 12, 0.3);
+  box-shadow: 0 1px 3px rgba(5, 8, 14, 0.3);
 }
 
 .btn-secondary:hover {
   background: var(--border-medium);
   border-color: var(--accent-primary);
-  color: var(--text-primary);
+  color: var(--accent-primary);
   transform: translateY(-2px);
 }
 
 [data-theme="light"] .btn-secondary {
-  background: #F1EAFA;
-  border-color: #D5C4F3;
-  color: #1E1633;
-  box-shadow: 0 1px 2px rgba(30, 22, 51, 0.04);
+  background: #EDF4F6;
+  border-color: rgba(162, 128, 137, 0.35);
+  color: #111827;
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04);
 }
 
 [data-theme="light"] .btn-secondary:hover {
-  background: #E9DEFA;
-  border-color: #7C3AED;
-  color: #7C3AED;
+  background: #E1ECEF;
+  border-color: #0284C7;
+  color: #0284C7;
 }
 
 .btn-sm {
@@ -354,8 +366,8 @@ button {
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 2px 14px rgba(139, 92, 246, 0.4); }
-  100% { box-shadow: 0 4px 24px rgba(249, 115, 22, 0.5); }
+  0% { box-shadow: 0 2px 14px rgba(81, 226, 245, 0.4); }
+  100% { box-shadow: 0 4px 24px rgba(157, 249, 239, 0.55); }
 }
 
 /* Badges */
