@@ -3,48 +3,49 @@
    ========================================================================== */
 
 :root {
-  /* GitHub Dark Theme (Primer Dark Default) */
-  --bg-primary: #0D1117;
-  --bg-secondary: #161B22;
-  --bg-tertiary: #21262D;
-  --bg-card: #161B22;
-  --bg-card-hover: #1F242C;
-  --bg-glass: rgba(13, 17, 23, 0.88);
+  /* Option 4: Cyber Violet & Sunset Neon Orange (Raycast Creative Agency Dark) */
+  --bg-primary: #0A0815;
+  --bg-secondary: #141026;
+  --bg-tertiary: #1D1735;
+  --bg-card: #141026;
+  --bg-card-hover: #1E1738;
+  --bg-glass: rgba(10, 8, 21, 0.88);
   
   /* Text & Foreground */
-  --text-primary: #F0F6FC;
-  --text-secondary: #8B949E;
-  --text-muted: #6E7681;
-  --text-invert: #0D1117;
+  --text-primary: #F5F3FF;
+  --text-secondary: #A79EC2;
+  --text-muted: #71678F;
+  --text-invert: #0A0815;
   
-  /* Accents & GitHub Primer Colors */
-  --accent-primary: #2F81F7;     /* GitHub Blue */
-  --accent-primary-hover: #388BFD;
-  --accent-secondary: #58A6FF;   /* GitHub Sky Blue */
-  --accent-tertiary: #A371F7;    /* GitHub Purple */
-  --accent-success: #3FB950;     /* GitHub Green (Active / Merged) */
-  --accent-success-btn: #238636; /* GitHub Iconic Green Button */
-  --accent-warning: #D29922;     /* GitHub Yellow / Attention */
-  --accent-danger: #F85149;      /* GitHub Red */
+  /* Accents & Cyber Violet / Sunset Orange */
+  --accent-primary: #8B5CF6;     /* Vivid Cyber Violet */
+  --accent-primary-hover: #A78BFA;
+  --accent-secondary: #F97316;   /* Neon Sunset Orange */
+  --accent-secondary-hover: #FB923C;
+  --accent-tertiary: #EC4899;    /* Electric Pink / Fuchsia */
+  --accent-success: #10B981;     /* Vibrant Emerald */
+  --accent-success-btn: #8B5CF6; /* Primary Button Accent */
+  --accent-warning: #F59E0B;     /* Amber */
+  --accent-danger: #EF4444;      /* Coral Red */
   
-  --gradient-primary: linear-gradient(135deg, #2F81F7 0%, #58A6FF 100%);
-  --gradient-accent: linear-gradient(135deg, #A371F7 0%, #2F81F7 100%);
-  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(47, 129, 247, 0.12) 0%, rgba(88, 166, 255, 0.03) 50%, transparent 80%);
-  --gradient-card-border: linear-gradient(135deg, rgba(240, 246, 252, 0.12) 0%, rgba(240, 246, 252, 0.02) 100%);
-  --gradient-card-border-active: linear-gradient(135deg, rgba(47, 129, 247, 0.6) 0%, rgba(88, 166, 255, 0.4) 100%);
+  --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #F97316 100%);
+  --gradient-accent: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.16) 0%, rgba(249, 115, 22, 0.06) 50%, transparent 80%);
+  --gradient-card-border: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(249, 115, 22, 0.1) 100%);
+  --gradient-card-border-active: linear-gradient(135deg, #8B5CF6 0%, #F97316 100%);
 
   /* Borders & Shadows */
-  --border-subtle: #21262D;
-  --border-medium: #30363D;
-  --border-glow: rgba(47, 129, 247, 0.35);
+  --border-subtle: #241C3E;
+  --border-medium: #382C5D;
+  --border-glow: rgba(139, 92, 246, 0.45);
   
-  --shadow-sm: 0 1px 3px rgba(1, 4, 9, 0.5);
-  --shadow-md: 0 4px 12px rgba(1, 4, 9, 0.6);
-  --shadow-lg: 0 12px 28px rgba(1, 4, 9, 0.75);
-  --shadow-glow: 0 0 24px rgba(47, 129, 247, 0.2);
-  --shadow-cyan-glow: 0 0 24px rgba(88, 166, 255, 0.18);
+  --shadow-sm: 0 1px 3px rgba(5, 3, 12, 0.5);
+  --shadow-md: 0 4px 16px rgba(5, 3, 12, 0.6);
+  --shadow-lg: 0 12px 32px rgba(5, 3, 12, 0.75);
+  --shadow-glow: 0 0 28px rgba(139, 92, 246, 0.35);
+  --shadow-cyan-glow: 0 0 28px rgba(249, 115, 22, 0.28);
 
-  /* Typography (GitHub Primer System Font Stack) */
+  /* Typography */
   --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
@@ -63,44 +64,44 @@
   --transition-spring: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* GitHub Light Theme (Primer Light Default) */
+/* Option 4: Cyber Violet & Sunset Orange (Light Mode) */
 [data-theme="light"] {
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F6F8FA;
-  --bg-tertiary: #EAEEF2;
+  --bg-primary: #FAF7FD;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F1EAFA;
   --bg-card: #FFFFFF;
-  --bg-card-hover: #F6F8FA;
+  --bg-card-hover: #FAF5FF;
   --bg-glass: rgba(255, 255, 255, 0.92);
   
-  --text-primary: #1F2328;
-  --text-secondary: #656D76;
-  --text-muted: #8C959F;
+  --text-primary: #1E1633;
+  --text-secondary: #5B4F73;
+  --text-muted: #887C9E;
   --text-invert: #FFFFFF;
   
-  --accent-primary: #0969DA;     /* GitHub Light Blue */
-  --accent-primary-hover: #0550AE;
-  --accent-secondary: #218BFF;   /* GitHub Light Sky Blue */
-  --accent-tertiary: #8250DF;    /* GitHub Light Purple */
-  --accent-success: #1A7F37;     /* GitHub Light Green */
-  --accent-success-btn: #1F883D; /* GitHub Light Green Button */
-  --accent-warning: #9A6700;     /* GitHub Light Yellow */
-  --accent-danger: #CF222E;      /* GitHub Light Red */
+  --accent-primary: #7C3AED;     /* Deep Vivid Purple */
+  --accent-primary-hover: #6D28D9;
+  --accent-secondary: #EA580C;   /* Rich Sunset Orange */
+  --accent-tertiary: #DB2777;    /* Fuchsia */
+  --accent-success: #059669;     /* Green */
+  --accent-success-btn: #7C3AED; /* Purple Button */
+  --accent-warning: #D97706;     /* Amber */
+  --accent-danger: #DC2626;      /* Red */
 
-  --gradient-primary: linear-gradient(135deg, #0969DA 0%, #218BFF 100%);
-  --gradient-accent: linear-gradient(135deg, #8250DF 0%, #0969DA 100%);
-  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(9, 105, 218, 0.08) 0%, rgba(33, 139, 255, 0.02) 50%, transparent 80%);
-  --gradient-card-border: linear-gradient(135deg, rgba(31, 35, 40, 0.12) 0%, rgba(31, 35, 40, 0.02) 100%);
-  --gradient-card-border-active: linear-gradient(135deg, rgba(9, 105, 218, 0.6) 0%, rgba(33, 139, 255, 0.4) 100%);
+  --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #EA580C 100%);
+  --gradient-accent: linear-gradient(135deg, #DB2777 0%, #7C3AED 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.1) 0%, rgba(234, 88, 12, 0.04) 50%, transparent 80%);
+  --gradient-card-border: linear-gradient(135deg, rgba(124, 58, 237, 0.25) 0%, rgba(234, 88, 12, 0.1) 100%);
+  --gradient-card-border-active: linear-gradient(135deg, #7C3AED 0%, #EA580C 100%);
   
-  --border-subtle: #D0D7DE;
-  --border-medium: #AFB8C1;
-  --border-glow: rgba(9, 105, 218, 0.25);
+  --border-subtle: #E9DEFA;
+  --border-medium: #D5C4F3;
+  --border-glow: rgba(124, 58, 237, 0.3);
   
-  --shadow-sm: 0 1px 3px rgba(31, 35, 40, 0.12);
-  --shadow-md: 0 4px 12px rgba(31, 35, 40, 0.08);
-  --shadow-lg: 0 12px 28px rgba(31, 35, 40, 0.12);
-  --shadow-glow: 0 0 24px rgba(9, 105, 218, 0.12);
-  --shadow-cyan-glow: 0 0 24px rgba(33, 139, 255, 0.12);
+  --shadow-sm: 0 1px 3px rgba(30, 22, 51, 0.08);
+  --shadow-md: 0 4px 16px rgba(30, 22, 51, 0.08);
+  --shadow-lg: 0 12px 32px rgba(30, 22, 51, 0.12);
+  --shadow-glow: 0 0 24px rgba(124, 58, 237, 0.18);
+  --shadow-cyan-glow: 0 0 24px rgba(234, 88, 12, 0.15);
 }
 
 /* Reset & Box Sizing */
@@ -284,55 +285,56 @@ button {
 }
 
 .btn-primary {
-  background: var(--accent-success-btn);
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 45%, #F97316 100%);
   color: #FFFFFF;
-  border: 1px solid rgba(240, 246, 252, 0.15);
-  box-shadow: 0 1px 2px rgba(1, 4, 9, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 18px rgba(139, 92, 246, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .btn-primary:hover {
-  background: #2EA043;
-  border-color: rgba(240, 246, 252, 0.2);
+  background: linear-gradient(135deg, #9D74FF 0%, #8B5CF6 45%, #FB923C 100%);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(35, 134, 54, 0.4);
+  box-shadow: 0 6px 24px rgba(249, 115, 22, 0.45);
 }
 
 [data-theme="light"] .btn-primary {
-  background: var(--accent-success-btn);
-  border: 1px solid rgba(31, 35, 40, 0.15);
-  box-shadow: 0 1px 2px rgba(31, 35, 40, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #7C3AED 0%, #EA580C 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 [data-theme="light"] .btn-primary:hover {
-  background: #1A7F37;
-  box-shadow: 0 4px 16px rgba(31, 136, 61, 0.35);
+  background: linear-gradient(135deg, #6D28D9 0%, #C2410C 100%);
+  box-shadow: 0 6px 22px rgba(234, 88, 12, 0.4);
 }
 
 .btn-secondary {
   background: var(--bg-tertiary);
   color: var(--text-primary);
   border: 1px solid var(--border-medium);
-  box-shadow: 0 1px 2px rgba(1, 4, 9, 0.15);
+  box-shadow: 0 1px 3px rgba(5, 3, 12, 0.3);
 }
 
 .btn-secondary:hover {
   background: var(--border-medium);
-  border-color: var(--accent-secondary);
-  color: var(--accent-secondary);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
   transform: translateY(-2px);
 }
 
 [data-theme="light"] .btn-secondary {
-  background: #F6F8FA;
-  border-color: #D0D7DE;
-  color: #24292F;
-  box-shadow: 0 1px 2px rgba(31, 35, 40, 0.04);
+  background: #F1EAFA;
+  border-color: #D5C4F3;
+  color: #1E1633;
+  box-shadow: 0 1px 2px rgba(30, 22, 51, 0.04);
 }
 
 [data-theme="light"] .btn-secondary:hover {
-  background: #EAEEF2;
-  border-color: #0969DA;
-  color: #0969DA;
+  background: #E9DEFA;
+  border-color: #7C3AED;
+  color: #7C3AED;
 }
 
 .btn-sm {
@@ -352,8 +354,8 @@ button {
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 2px 14px rgba(47, 129, 247, 0.35); }
-  100% { box-shadow: 0 4px 24px rgba(88, 166, 255, 0.55); }
+  0% { box-shadow: 0 2px 14px rgba(139, 92, 246, 0.4); }
+  100% { box-shadow: 0 4px 24px rgba(249, 115, 22, 0.5); }
 }
 
 /* Badges */
