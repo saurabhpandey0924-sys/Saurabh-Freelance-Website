@@ -40,12 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
    RENDER FUNCTIONS
 -------------------------------------------------------------------------- */
 
+let currentOpenServiceId = null;
+
 function renderServices(services) {
   const container = document.getElementById('services-container');
   if (!container) return;
 
   container.innerHTML = services.map(s => `
-    <div class="glass-card service-card reveal">
+    <div class="glass-card service-card reveal" onclick="window.openServiceSlide('${s.id}')" tabindex="0" role="button" aria-label="Open detailed slide for ${s.title}">
       <div class="service-top">
         <div class="service-icon-wrap">
           ${s.icon}
@@ -57,9 +59,252 @@ function renderServices(services) {
       <div class="service-tags">
         ${s.tags.map(t => `<span class="service-tag">${t}</span>`).join('')}
       </div>
+      <div class="service-card-action">
+        <span>Explore Service Slide</span>
+        <span class="action-arrow">&rarr;</span>
+      </div>
     </div>
   `).join('');
+
+  // Check URL hash on init
+  checkServiceSlideHash();
 }
+
+window.openServiceSlide = function(serviceId) {
+  const data = window.PORTFOLIO_DATA;
+  if (!data || !data.services) return;
+
+  const services = data.services;
+  const currIdx = services.findIndex(s => s.id === serviceId);
+  if (currIdx === -1) return;
+
+  const service = services[currIdx];
+  currentOpenServiceId = serviceId;
+
+  const prevIdx = (currIdx - 1 + services.length) % services.length;
+  const nextIdx = (currIdx + 1) % services.length;
+  const prevService = services[prevIdx];
+  const nextService = services[nextIdx];
+
+  const gridContainer = document.getElementById('services-container');
+  const slideWrapper = document.getElementById('service-slide-wrapper');
+  if (!slideWrapper) return;
+
+  const encodedWhatsAppMsg = encodeURIComponent(
+    `Hi Saurabh, I'm interested in discussing your "${service.title}" service for my project!`
+  );
+  const whatsappUrl = `https://wa.me/919876543210?text=${encodedWhatsAppMsg}`;
+
+  slideWrapper.innerHTML = `
+    <div class="service-slide-card">
+      <!-- Top Slide Action Bar -->
+      <div class="slide-nav-bar">
+        <button class="btn-back-to-services" onclick="window.closeServiceSlide()" aria-label="Back to all services">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          <span>All Services</span>
+        </button>
+
+        <div class="slide-pager-wrap">
+          <span class="slide-pager-counter">Service ${currIdx + 1} of ${services.length}</span>
+          <button class="slide-pager-btn" onclick="window.openServiceSlide('${prevService.id}')" title="Previous: ${prevService.title}" aria-label="Previous service">
+            &larr; Prev
+          </button>
+          <button class="slide-pager-btn" onclick="window.openServiceSlide('${nextService.id}')" title="Next: ${nextService.title}" aria-label="Next service">
+            Next &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- Slide Hero -->
+      <div class="slide-hero">
+        <div class="slide-hero-left">
+          <div class="slide-badge-row">
+            <span class="slide-category-badge">${service.badge}</span>
+            <span class="slide-timeline-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Typical Delivery: ${service.timeline}</span>
+            </span>
+          </div>
+          <h2 class="slide-title">${service.title}</h2>
+          <p class="slide-overview">${service.detailedOverview}</p>
+
+          <div class="slide-action-row">
+            <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+              <span>Book ${service.title}</span>
+            </a>
+            <a href="#calculator" class="btn btn-secondary">
+              <span>Calculate Project Cost &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-icon-wrap" style="width:72px; height:72px; font-size:1.8rem; border-radius:var(--radius-lg); flex-shrink:0;">
+          ${service.icon}
+        </div>
+      </div>
+
+      <!-- Main Content 2-Column Grid -->
+      <div class="service-slide-grid">
+        <!-- Left: Deliverables & Milestones -->
+        <div class="service-slide-main-col">
+          <div class="slide-deliverables-card">
+            <h3 class="slide-section-heading">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent-primary);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>What You Receive (Core Deliverables)</span>
+            </h3>
+            <ul class="slide-deliverables-list">
+              ${service.deliverables.map(d => `
+                <li class="deliverable-item">
+                  <div class="deliverable-check-icon">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <span>${d}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+
+          <div class="slide-milestones-card">
+            <h3 class="slide-section-heading">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent-primary);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              <span>Sprint Roadmap & Milestones</span>
+            </h3>
+            <div class="milestones-step-list">
+              ${service.milestones.map(m => `
+                <div class="milestone-step-item">
+                  <span class="milestone-badge">${m.phase}</span>
+                  <div class="milestone-content">
+                    <h4>${m.title}</h4>
+                    <p>${m.desc}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Technologies Employed -->
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:20px;">
+            <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em;">
+              Core Tech Stack:
+            </span>
+            ${service.tags.map(t => `<span class="service-tag" style="font-size:0.85rem; padding:6px 12px;">${t}</span>`).join('')}
+          </div>
+        </div>
+
+        <!-- Right: Blueprint Card -->
+        <div class="slide-spec-blueprint">
+          <div class="spec-row">
+            <div class="spec-label">Ideal For</div>
+            <div class="spec-value">${service.bestFor}</div>
+          </div>
+
+          <div class="spec-row">
+            <div class="spec-label">Estimated Delivery</div>
+            <div class="spec-value" style="color:var(--accent-secondary); font-family:var(--font-mono);">${service.timeline}</div>
+          </div>
+
+          <div class="spec-row">
+            <div class="spec-label">Execution Team</div>
+            <div class="spec-value">Saurabh (Lead) + Dedicated Dev Team</div>
+          </div>
+
+          <div>
+            <div class="spec-label">Included Client Guarantees</div>
+            <ul class="spec-guarantees-list">
+              ${service.includedGuarantees.map(g => `
+                <li class="spec-guarantee-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>${g}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+
+          <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:14px;">
+            <span>Discuss This Service</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  if (gridContainer) gridContainer.style.display = 'none';
+  slideWrapper.style.display = 'block';
+
+  // Smooth scroll to services section
+  const servicesSec = document.getElementById('services');
+  if (servicesSec) {
+    const yOffset = -80;
+    const y = servicesSec.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  // Update hash
+  if (history.pushState) {
+    history.pushState(null, null, `#service-${serviceId}`);
+  } else {
+    location.hash = `#service-${serviceId}`;
+  }
+};
+
+window.closeServiceSlide = function() {
+  const gridContainer = document.getElementById('services-container');
+  const slideWrapper = document.getElementById('service-slide-wrapper');
+  currentOpenServiceId = null;
+
+  if (slideWrapper) slideWrapper.style.display = 'none';
+  if (gridContainer) gridContainer.style.display = 'grid';
+
+  // Restore hash
+  if (history.pushState) {
+    history.pushState(null, null, '#services');
+  } else {
+    location.hash = '#services';
+  }
+
+  const servicesSec = document.getElementById('services');
+  if (servicesSec) {
+    const yOffset = -80;
+    const y = servicesSec.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+};
+
+function checkServiceSlideHash() {
+  const hash = window.location.hash;
+  if (hash && hash.startsWith('#service-')) {
+    const serviceId = hash.replace('#service-', '');
+    setTimeout(() => {
+      window.openServiceSlide(serviceId);
+    }, 100);
+  }
+}
+
+window.addEventListener('hashchange', checkServiceSlideHash);
+
+// Keyboard shortcuts for service slide
+document.addEventListener('keydown', (e) => {
+  const slideWrapper = document.getElementById('service-slide-wrapper');
+  if (!slideWrapper || slideWrapper.style.display === 'none' || !currentOpenServiceId) return;
+
+  const data = window.PORTFOLIO_DATA;
+  if (!data || !data.services) return;
+  const services = data.services;
+  const currIdx = services.findIndex(s => s.id === currentOpenServiceId);
+  if (currIdx === -1) return;
+
+  if (e.key === 'Escape') {
+    window.closeServiceSlide();
+  } else if (e.key === 'ArrowRight') {
+    const nextIdx = (currIdx + 1) % services.length;
+    window.openServiceSlide(services[nextIdx].id);
+  } else if (e.key === 'ArrowLeft') {
+    const prevIdx = (currIdx - 1 + services.length) % services.length;
+    window.openServiceSlide(services[prevIdx].id);
+  }
+});
 
 function renderProjects(projects, filter = 'all') {
   const container = document.getElementById('projects-container');

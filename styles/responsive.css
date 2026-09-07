@@ -121,6 +121,19 @@
     grid-template-columns: 1fr;
   }
 
+  .service-slide-card {
+    padding: 24px 18px;
+  }
+
+  .service-slide-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .slide-spec-blueprint {
+    position: static;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
