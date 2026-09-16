@@ -413,7 +413,7 @@ const PORTFOLIO_DATA = {
     {
       id: "starter",
       name: "Starter MVP / Landing Page",
-      price: "$999",
+      price: "₹24,999",
       period: "Fixed Scope",
       delivery: "5 - 7 Days",
       popular: false,
@@ -431,7 +431,7 @@ const PORTFOLIO_DATA = {
     {
       id: "growth",
       name: "Full-Stack Custom Web App / SaaS",
-      price: "$2,499",
+      price: "₹59,999",
       period: "Most Popular",
       delivery: "2 - 3 Weeks",
       popular: true,
@@ -440,7 +440,7 @@ const PORTFOLIO_DATA = {
         "Full-Stack Architecture (React/Next.js + Node)",
         "Database Design & Relational Schema (Postgres)",
         "Authentication & Role-Based Access Control",
-        "Stripe / Razorpay Payment & Subscription Gateway",
+        "UPI / Razorpay / Stripe Payment & Subscription Gateway",
         "Interactive Admin Dashboard & Analytics",
         "30 Days Dedicated Post-Launch Support"
       ],
@@ -449,7 +449,7 @@ const PORTFOLIO_DATA = {
     {
       id: "enterprise",
       name: "Custom Enterprise & AI Solution",
-      price: "$4,999+",
+      price: "₹99,999+",
       period: "Tailored Plan",
       delivery: "3 - 5 Weeks",
       popular: false,

@@ -1,23 +1,27 @@
 /**
- * Saurabh's Freelance Platform - Real-Time Project Cost Calculator
+ * Saurabh's Freelance Platform - Real-Time Project Cost Calculator (INR / ₹)
  */
 
 (function () {
   const BASE_PRICES = {
-    'landing': { price: 999, name: 'Starter MVP / Landing Page', days: '5 - 7 Days' },
-    'saas': { price: 2499, name: 'Full-Stack Custom SaaS Web App', days: '2 - 3 Weeks' },
-    'ecommerce': { price: 1899, name: 'Headless E-Commerce Store', days: '10 - 14 Days' },
-    'ai': { price: 3499, name: 'Custom AI Agent & Automation', days: '3 - 4 Weeks' }
+    'landing': { price: 24999, name: 'Starter MVP / Landing Page', days: '5 - 7 Days' },
+    'saas': { price: 59999, name: 'Full-Stack Custom SaaS Web App', days: '2 - 3 Weeks' },
+    'ecommerce': { price: 44999, name: 'Headless E-Commerce Store', days: '10 - 14 Days' },
+    'ai': { price: 79999, name: 'Custom AI Agent & Automation', days: '3 - 4 Weeks' }
   };
 
   const FEATURE_PRICES = {
-    'auth': { price: 300, name: 'Authentication & Roles (RBAC)' },
-    'payments': { price: 400, name: 'Stripe / Payment Gateway' },
-    'ai-feature': { price: 600, name: 'LLM / AI Model Integration' },
-    'analytics': { price: 450, name: 'Real-time Analytics Dashboard' },
-    'seo-perf': { price: 250, name: '95+ Lighthouse Speed & SEO' },
-    'multilang': { price: 350, name: 'Multi-language (i18n)' }
+    'auth': { price: 7500, name: 'Authentication & Roles (RBAC)' },
+    'payments': { price: 10000, name: 'Payment Gateway (UPI / Cards)' },
+    'ai-feature': { price: 15000, name: 'LLM / AI Model Integration' },
+    'analytics': { price: 12000, name: 'Real-time Analytics Dashboard' },
+    'seo-perf': { price: 6000, name: '95+ Lighthouse Speed & SEO' },
+    'multilang': { price: 8500, name: 'Multi-language (i18n)' }
   };
+
+  function formatINR(amount) {
+    return '₹' + amount.toLocaleString('en-IN');
+  }
 
   function initCalculator() {
     const calcWrapper = document.getElementById('project-cost-calculator');
@@ -44,7 +48,7 @@
       
       let screenExtra = 0;
       if (screens > 5) {
-        screenExtra = (screens - 5) * 120;
+        screenExtra = (screens - 5) * 3000;
         totalPrice += screenExtra;
       }
 
@@ -74,7 +78,7 @@
       const breakdownContainer = document.getElementById('calc-output-breakdown');
 
       if (priceOutput) {
-        priceOutput.textContent = `$${totalPrice.toLocaleString()}`;
+        priceOutput.textContent = formatINR(totalPrice);
       }
 
       if (timelineOutput) {
@@ -88,7 +92,7 @@
         let breakdownHtml = `
           <li class="calc-breakdown-item">
             <span>Base (${baseInfo.name})</span>
-            <span>$${baseInfo.price.toLocaleString()}</span>
+            <span>${formatINR(baseInfo.price)}</span>
           </li>
         `;
 
@@ -96,7 +100,7 @@
           breakdownHtml += `
             <li class="calc-breakdown-item">
               <span>Extra Scope (${screens} screens)</span>
-              <span>+$${screenExtra.toLocaleString()}</span>
+              <span>+${formatINR(screenExtra)}</span>
             </li>
           `;
         }
@@ -105,7 +109,7 @@
           breakdownHtml += `
             <li class="calc-breakdown-item">
               <span>Selected Add-ons (${selectedFeaturesList.length})</span>
-              <span>+$${featuresTotal.toLocaleString()}</span>
+              <span>+${formatINR(featuresTotal)}</span>
             </li>
           `;
         }
@@ -122,7 +126,7 @@
         breakdownHtml += `
           <li class="calc-breakdown-item total">
             <span>Estimated Investment</span>
-            <span class="gradient-text">$${totalPrice.toLocaleString()}</span>
+            <span class="gradient-text">${formatINR(totalPrice)}</span>
           </li>
         `;
 
@@ -134,7 +138,7 @@
         type: baseInfo.name,
         screens: screens,
         features: selectedFeaturesList,
-        price: `$${totalPrice.toLocaleString()}`,
+        price: formatINR(totalPrice),
         timeline: speedTimeline
       };
     }
@@ -184,14 +188,14 @@
           // Sync budget select
           if (budgetSelect) {
             const rawPrice = parseInt(window.CURRENT_ESTIMATE.price.replace(/[^0-9]/g, ''), 10);
-            if (rawPrice < 2500) {
-              budgetSelect.value = '$1,000 - $2,500';
-            } else if (rawPrice < 5000) {
-              budgetSelect.value = '$2,500 - $5,000';
-            } else if (rawPrice < 10000) {
-              budgetSelect.value = '$5,000 - $10,000';
+            if (rawPrice < 50000) {
+              budgetSelect.value = '₹20,000 - ₹50,000';
+            } else if (rawPrice < 100000) {
+              budgetSelect.value = '₹50,000 - ₹1,00,000';
+            } else if (rawPrice < 250000) {
+              budgetSelect.value = '₹1,00,000 - ₹2,50,000';
             } else {
-              budgetSelect.value = '$10,000+';
+              budgetSelect.value = '₹2,50,000+';
             }
           }
         }
