@@ -1,0 +1,23 @@
+{
+  "name": "saurabh-freelance-website",
+  "version": "1.0.0",
+  "description": "Saurabh's Freelance Web Development & Digital Solutions Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js",
+    "dev:vite": "vite",
+    "build:vite": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "freelance",
+    "portfolio",
+    "web-development",
+    "frontend",
+    "fullstack"
+  ],
+  "author": "Saurabh",
+  "license": "MIT"
+}

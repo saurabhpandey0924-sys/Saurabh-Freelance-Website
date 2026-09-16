@@ -2,17 +2,20 @@
    SAURABH FREELANCE PLATFORM - RESPONSIVE & MOBILE STYLES
    ========================================================================== */
 
-/* Tablet & Smaller Laptops (<= 1024px) */
+/* --------------------------------------------------------------------------
+   1. TABLET & SMALL LAPTOPS (<= 1024px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 44px;
     text-align: center;
   }
 
   .hero-subtitle {
     margin-left: auto;
     margin-right: auto;
+    max-width: 620px;
   }
 
   .hero-cta-group {
@@ -25,14 +28,19 @@
 
   .hero-visual-wrapper {
     margin-top: 20px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .pricing-grid {
@@ -47,18 +55,25 @@
 
   .testimonials-grid {
     grid-template-columns: 1fr;
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
   }
 
   .skills-wrapper {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .calculator-wrapper {
     grid-template-columns: 1fr;
-    padding: 32px;
+    padding: 36px 28px;
     gap: 36px;
+  }
+
+  .calc-summary-panel {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .contact-grid {
@@ -68,7 +83,7 @@
 
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
   }
 
   .about-profile-card {
@@ -79,93 +94,272 @@
   }
 }
 
-/* Mobile & Small Tablets (<= 768px) */
+/* --------------------------------------------------------------------------
+   2. MOBILE & SMALL TABLETS (<= 768px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   :root {
-    --header-height: 68px;
+    --header-height: 64px;
   }
 
   .section {
-    padding: 70px 0;
+    padding: 60px 0;
   }
 
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: clamp(1.85rem, 5.5vw, 2.35rem);
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    font-size: 0.98rem;
+  }
+
+  /* Nav Modal */
   .nav-modal {
     width: min(94vw, 420px);
+    max-height: 88vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
+  .nav-modal-body {
+    padding: 44px 16px 20px 16px;
+  }
+
+  /* Floating WhatsApp Button */
   .floating-whatsapp-btn {
-    bottom: 20px;
-    right: 20px;
-    width: 54px;
-    height: 54px;
+    bottom: max(18px, calc(12px + env(safe-area-inset-bottom, 0px)));
+    right: max(18px, calc(12px + env(safe-area-inset-right, 0px)));
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-whatsapp-btn svg {
+    width: 28px;
+    height: 28px;
   }
 
   .whatsapp-tooltip {
-    display: none;
+    display: none !important;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding-top: calc(var(--header-height) + 24px);
+    padding-bottom: 40px;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 6vw, 2.6rem);
+    font-size: clamp(1.85rem, 5.5vw, 2.4rem);
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
   }
 
   .hero-tech-window {
     max-width: 100%;
+    margin: 0 auto;
   }
 
+  .tech-window-header {
+    padding: 10px 14px;
+  }
+
+  .tech-window-body {
+    padding: 14px 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .code-block {
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  .tech-window-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 14px;
+  }
+
+  /* Metrics / Stats */
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .metric-card {
+    padding: 20px 14px;
+  }
+
+  .metric-number {
+    font-size: 2rem;
+  }
+
+  .metric-label {
+    font-size: 0.82rem;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .service-card {
+    padding: 24px 20px;
   }
 
-  .service-slide-card {
-    padding: 24px 18px;
+  /* Portfolio & Filter Tabs */
+  .projects-filter-bar {
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
-  .service-slide-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .projects-filter-bar::-webkit-scrollbar {
+    display: none;
   }
 
-  .slide-spec-blueprint {
-    position: static;
+  .filter-btn {
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    min-height: 42px;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
+  .project-card {
+    border-radius: var(--radius-md);
+  }
+
+  .project-card-image {
+    height: 200px;
+  }
+
+  .project-card-content {
+    padding: 20px 18px;
+  }
+
+  /* Working Process */
   .process-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
+  .process-card {
+    padding: 24px 20px;
+  }
+
+  /* Principles Grid */
   .principles-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Calculator */
+  .calculator-wrapper {
+    padding: 24px 18px;
+    gap: 28px;
+    border-radius: var(--radius-md);
   }
 
   .calc-types-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .calc-type-card {
+    min-height: 48px;
+    padding: 14px;
   }
 
   .calc-features-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
-  .contact-info-card, .contact-form-card {
-    padding: 28px 20px;
+  .calc-feature-card {
+    min-height: 48px;
+    padding: 12px 14px;
   }
 
-  .modal-body {
+  .calc-summary-panel {
     padding: 24px 18px;
   }
 
+  .calc-estimate-price {
+    font-size: 2.6rem;
+  }
+
+  /* FAQ Accordion */
+  .faq-question {
+    padding: 18px 16px;
+    font-size: 0.98rem;
+    min-height: 52px;
+  }
+
+  .faq-answer {
+    padding: 0 16px 18px;
+    font-size: 0.92rem;
+  }
+
+  /* Contact & Form */
+  .contact-info-card, .contact-form-card {
+    padding: 24px 18px;
+  }
+
+  .form-group input, .form-group textarea, .form-group select {
+    min-height: 48px;
+    font-size: 16px; /* Prevents auto-zoom on iOS Safari */
+  }
+
+  .contact-channel-item {
+    padding: 12px 14px;
+  }
+
+  /* Case Study Modal */
+  .modal-backdrop {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .modal-dialog {
+    max-height: 88vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .modal-body {
+    padding: 24px 16px;
+  }
+
+  /* Footer */
   .footer-top {
     flex-direction: column;
     text-align: center;
-    gap: 20px;
+    gap: 24px;
   }
 
   .footer-bottom {
@@ -175,39 +369,148 @@
   }
 }
 
-/* Extra Small Mobile (<= 480px) */
+/* --------------------------------------------------------------------------
+   3. EXTRA SMALL MOBILE (<= 480px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
+  /* Header adjustments for narrow screens */
+  .nav-cta-btn {
+    display: none;
+  }
+
+  .nav-brand {
+    font-size: 1.15rem;
+    gap: 8px;
+  }
+
+  .brand-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .theme-toggle-btn, .menu-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Hero Section */
+  .hero-tag {
+    font-size: 0.78rem;
+    padding: 4px 12px;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.92rem;
   }
 
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
   }
 
   .hero-cta-group .btn {
     width: 100%;
+    min-height: 48px;
   }
 
+  .hero-social-proof {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .social-proof-text {
+    font-size: 0.85rem;
+  }
+
+  /* Code Showcase Window */
+  .window-tab span {
+    font-size: 0.75rem;
+  }
+
+  .window-badge {
+    display: none;
+  }
+
+  .code-block {
+    font-size: 0.74rem;
+    line-height: 1.48;
+  }
+
+  .tech-feature-pill {
+    font-size: 0.72rem;
+    padding: 4px 8px;
+  }
+
+  /* Metrics */
   .metrics-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
+  /* About section */
   .about-stats-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .calculator-wrapper {
-    padding: 20px 16px;
+    padding: 18px 12px;
   }
 
   .calc-summary-panel {
-    padding: 24px 18px;
+    padding: 20px 14px;
   }
 
   .calc-estimate-price {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
+  }
+
+  .calc-breakdown-list {
+    padding: 14px 0;
+    margin: 14px 0;
+  }
+
+  .btn-lg {
+    padding: 12px 20px;
+    font-size: 0.98rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. ULTRA SMALL SCREENS (<= 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero-title {
+    font-size: 1.65rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .calc-estimate-price {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
   }
 }

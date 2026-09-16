@@ -114,6 +114,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -121,6 +122,8 @@ html {
   scroll-padding-top: calc(var(--header-height) + 20px);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -131,6 +134,7 @@ body {
   overflow-x: hidden;
   transition: background-color var(--transition-smooth), color var(--transition-smooth);
   position: relative;
+  touch-action: pan-y pinch-zoom;
 }
 
 /* Background Ambient Lighting Effect */

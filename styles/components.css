@@ -213,15 +213,15 @@
 
 .nav-modal-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 32px;
-  height: 32px;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
   background: var(--bg-tertiary);
   border: 1px solid var(--border-medium);
   color: var(--text-secondary);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,7 +242,7 @@
 }
 
 .nav-modal-body {
-  padding: 42px 16px 16px 16px;
+  padding: 44px 16px 16px 16px;
 }
 
 .nav-modal-list {
@@ -257,6 +257,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 13px 18px;
+  min-height: 46px;
   border-radius: var(--radius-sm);
   color: var(--text-secondary);
   font-size: 1.02rem;
@@ -302,11 +303,17 @@
   color: var(--accent-primary);
 }
 
+.nav-modal-cta {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
 /* Floating WhatsApp Button */
 .floating-whatsapp-btn {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
+  bottom: max(24px, calc(16px + env(safe-area-inset-bottom, 0px)));
+  right: max(24px, calc(16px + env(safe-area-inset-right, 0px)));
   width: 60px;
   height: 60px;
   border-radius: 50%;

@@ -659,7 +659,7 @@ function initNavigation() {
       backdrop.addEventListener('click', closeModal);
     }
 
-    modalLinks.forEach(link => {
+    modal.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeModal);
     });
 
