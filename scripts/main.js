@@ -6,32 +6,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const data = window.PORTFOLIO_DATA;
   if (!data) return;
 
-  // 1. Render Services
+  // 1. Render Technologies We Power (Marquee + Filter Grid)
+  if (data.technologies) {
+    renderTechnologies(data.technologies);
+  }
+
+  // 2. Render Services
   renderServices(data.services);
 
-  // 2. Render Projects & Filter Logic
+  // 3. Render Industries We Empower
+  if (data.industries) {
+    renderIndustries(data.industries);
+  }
+
+  // 4. Render Projects & Filter Logic
   renderProjects(data.projects);
   initProjectFilters(data.projects);
 
-  // 3. Render Skills Matrix
+  // 5. Render Skills Matrix
   renderSkills(data.skills);
 
-  // 4. Render Work Process
+  // 6. Render Work Process
   renderProcess(data.process);
 
-  // 5. Render Pricing
+  // 7. Render Pricing
   renderPricing(data.pricingTiers);
 
-  // 6. Render About & Working Philosophy
+  // 8. Render About & Working Philosophy
   renderAbout(data.about);
 
-  // 7. Render Testimonials
+  // 9. Render Testimonials
   renderTestimonials(data.testimonials);
 
-  // 8. Render FAQs
+  // 10. Render FAQs
   renderFAQs(data.faqs);
 
-  // 9. Navigation & Scroll Observers
+  // 11. Navigation & Scroll Observers
   initNavigation();
   initScrollAnimations();
 });
@@ -39,6 +49,108 @@ document.addEventListener('DOMContentLoaded', () => {
 /* --------------------------------------------------------------------------
    RENDER FUNCTIONS
 -------------------------------------------------------------------------- */
+
+/* 1. TECHNOLOGIES WE POWER & MARQUEE */
+function renderTechnologies(technologies) {
+  const track1 = document.getElementById('tech-marquee-1');
+  const track2 = document.getElementById('tech-marquee-2');
+  const gridView = document.getElementById('tech-grid-view');
+  const marqueeWrapper = document.getElementById('tech-marquee-container');
+  const pillButtons = document.querySelectorAll('.tech-pill');
+
+  if (!track1 || !track2) return;
+
+  // Split into two balanced sets for top and bottom marquee
+  const mid = Math.ceil(technologies.length / 2);
+  const set1 = technologies.slice(0, mid);
+  const set2 = technologies.slice(mid);
+
+  const createTechCard = (t) => `
+    <div class="tech-item-card" data-category="${t.category}">
+      <div class="tech-item-icon">${t.icon}</div>
+      <div class="tech-item-info">
+        <span class="tech-item-name">${t.name}</span>
+        <span class="tech-item-tag">${t.tag}</span>
+      </div>
+    </div>
+  `;
+
+  // Repeat items for seamless CSS infinite scroll loop
+  track1.innerHTML = [...set1, ...set1, ...set1, ...set1].map(createTechCard).join('');
+  track2.innerHTML = [...set2, ...set2, ...set2, ...set2].map(createTechCard).join('');
+
+  // Category filter handlers
+  pillButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pillButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cat = btn.getAttribute('data-tech-cat');
+
+      if (cat === 'all') {
+        if (marqueeWrapper) marqueeWrapper.style.display = 'flex';
+        if (gridView) gridView.style.display = 'none';
+      } else {
+        if (marqueeWrapper) marqueeWrapper.style.display = 'none';
+        if (gridView) {
+          const filtered = technologies.filter(t => t.category === cat);
+          gridView.innerHTML = filtered.map(t => `
+            <div class="tech-grid-card reveal active">
+              <div class="tech-grid-icon">${t.icon}</div>
+              <div class="tech-grid-info">
+                <span class="tech-grid-name">${t.name}</span>
+                <span class="tech-grid-tag">${t.tag}</span>
+              </div>
+              <span class="tech-grid-badge">${t.category}</span>
+            </div>
+          `).join('');
+          gridView.style.display = 'grid';
+        }
+      }
+    });
+  });
+}
+
+/* 2. INDUSTRIES WE EMPOWER */
+function renderIndustries(industries) {
+  const container = document.getElementById('industries-container');
+  if (!container) return;
+
+  container.innerHTML = industries.map(ind => `
+    <div class="glass-card industry-card reveal">
+      <div class="industry-card-header">
+        <div class="industry-icon-wrap">
+          ${ind.icon}
+        </div>
+        <span class="industry-badge">${ind.badge}</span>
+      </div>
+      <h3 class="industry-title">${ind.title}</h3>
+      <p class="industry-desc">${ind.desc}</p>
+      
+      <div class="industry-solutions">
+        <div class="industry-solutions-label">Key Capabilities:</div>
+        <ul class="industry-solutions-list">
+          ${ind.solutions.map(sol => `
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>${sol}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+
+      <div class="industry-card-footer">
+        <div class="industry-outcome-pill">
+          <span class="outcome-dot"></span>
+          <span>${ind.outcome}</span>
+        </div>
+        <a href="#contact" class="industry-inquire-link">
+          <span>Consult &rarr;</span>
+        </a>
+      </div>
+    </div>
+  `).join('');
+}
 
 let currentOpenServiceId = null;
 

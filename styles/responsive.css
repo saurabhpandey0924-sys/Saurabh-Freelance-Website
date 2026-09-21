@@ -514,3 +514,92 @@
     font-size: 0.9rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE FOR NEW ENTERPRISE SECTIONS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-trust-bar {
+    justify-content: center;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-trust-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .trust-badge-item {
+    justify-content: center;
+  }
+
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-card {
+    padding: 24px 20px;
+  }
+
+  .tech-marquee-wrapper {
+    gap: 14px;
+  }
+
+  .tech-item-card {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .tech-category-pills {
+    gap: 8px;
+  }
+
+  .tech-pill {
+    padding: 6px 14px;
+    font-size: 0.82rem;
+  }
+
+  .cta-banner-card {
+    padding: 40px 24px;
+  }
+
+  .cta-banner-title {
+    font-size: 1.65rem;
+  }
+
+  .cta-banner-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .cta-banner-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-banner-actions .btn {
+    width: 100%;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 14px 16px;
+    font-size: 0.85rem;
+  }
+
+  .roi-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .roi-savings-price {
+    font-size: 2.2rem;
+  }
+}
+

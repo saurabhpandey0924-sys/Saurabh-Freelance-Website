@@ -143,14 +143,97 @@
       };
     }
 
-    // Attach listeners
+    // Attach listeners for Project Cost Estimator
     typeInputs.forEach(i => i.addEventListener('change', calculate));
     if (screenSlider) screenSlider.addEventListener('input', calculate);
     featureCheckboxes.forEach(c => c.addEventListener('change', calculate));
     if (speedSelect) speedSelect.addEventListener('change', calculate);
 
-    // Initial calculation
+    // Initial cost calculation
     calculate();
+
+    // =========================================================================
+    // DUAL-MODE SWITCHER (Cost Estimator vs Business ROI Calculator)
+    // =========================================================================
+    const btnCost = document.getElementById('mode-btn-cost');
+    const btnRoi = document.getElementById('mode-btn-roi');
+    const costPanel = document.getElementById('project-cost-calculator');
+    const roiPanel = document.getElementById('project-roi-calculator');
+
+    if (btnCost && btnRoi && costPanel && roiPanel) {
+      btnCost.addEventListener('click', () => {
+        btnCost.classList.add('active');
+        btnRoi.classList.remove('active');
+        costPanel.style.display = 'grid';
+        roiPanel.style.display = 'none';
+      });
+
+      btnRoi.addEventListener('click', () => {
+        btnRoi.classList.add('active');
+        btnCost.classList.remove('active');
+        costPanel.style.display = 'none';
+        roiPanel.style.display = 'grid';
+        calculateRoi();
+      });
+    }
+
+    // =========================================================================
+    // BUSINESS ROI & TIME SAVINGS CALCULATOR LOGIC (KrGo Beat Feature)
+    // =========================================================================
+    const roiTeamSlider = document.getElementById('roi-team-slider');
+    const roiHoursSlider = document.getElementById('roi-hours-slider');
+    const roiRateSlider = document.getElementById('roi-rate-slider');
+
+    const roiTeamDisplay = document.getElementById('roi-team-val');
+    const roiHoursDisplay = document.getElementById('roi-hours-val');
+    const roiRateDisplay = document.getElementById('roi-rate-val');
+
+    const roiOutputSavings = document.getElementById('roi-output-savings');
+    const roiOutputHours = document.getElementById('roi-output-hours');
+    const roiOutputEfficiency = document.getElementById('roi-output-efficiency');
+
+    function calculateRoi() {
+      if (!roiTeamSlider || !roiHoursSlider || !roiRateSlider) return;
+
+      const team = parseInt(roiTeamSlider.value, 10);
+      const hours = parseInt(roiHoursSlider.value, 10);
+      const rate = parseInt(roiRateSlider.value, 10);
+
+      if (roiTeamDisplay) roiTeamDisplay.textContent = `${team} ${team === 1 ? 'Member' : 'Members'}`;
+      if (roiHoursDisplay) roiHoursDisplay.textContent = `${hours} Hours / Week`;
+      if (roiRateDisplay) roiRateDisplay.textContent = `₹${rate.toLocaleString('en-IN')} / Hour`;
+
+      // 75% average reduction in manual repetitive tasks via custom web apps & automation
+      const monthlyHoursSaved = Math.round(team * hours * 4.33 * 0.75);
+      const annualFinancialSavings = Math.round(monthlyHoursSaved * 12 * rate);
+      const efficiencyGain = Math.min(85, Math.max(60, Math.round(hours * 3.8)));
+
+      if (roiOutputSavings) {
+        roiOutputSavings.textContent = formatINR(annualFinancialSavings);
+      }
+      if (roiOutputHours) {
+        roiOutputHours.textContent = `${monthlyHoursSaved.toLocaleString('en-IN')} hrs`;
+      }
+      if (roiOutputEfficiency) {
+        roiOutputEfficiency.textContent = `+${efficiencyGain}%`;
+      }
+
+      window.CURRENT_ROI_ESTIMATE = {
+        team: team,
+        hours: hours,
+        rate: rate,
+        hoursSaved: monthlyHoursSaved,
+        annualSavings: formatINR(annualFinancialSavings),
+        efficiency: `+${efficiencyGain}%`
+      };
+    }
+
+    if (roiTeamSlider) roiTeamSlider.addEventListener('input', calculateRoi);
+    if (roiHoursSlider) roiHoursSlider.addEventListener('input', calculateRoi);
+    if (roiRateSlider) roiRateSlider.addEventListener('input', calculateRoi);
+
+    // Initial ROI calculation
+    calculateRoi();
 
     // "Book This Scope" CTA autofill handler
     const bookBtn = document.getElementById('calc-book-btn');
@@ -206,6 +289,42 @@
             if (nameInput) nameInput.focus();
             if (window.showToast) {
               window.showToast('🎯 Scope & estimated quote transferred! Fill in your contact info.', 'success');
+            }
+          }, 600);
+        }
+      });
+    }
+
+    // "Automate These Workflows" ROI CTA handler
+    const roiBookBtn = document.getElementById('roi-book-btn');
+    if (roiBookBtn) {
+      roiBookBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact');
+        const messageInput = document.getElementById('contact-message');
+        const subjectSelect = document.getElementById('contact-service-type');
+        const nameInput = document.getElementById('contact-name');
+
+        if (window.CURRENT_ROI_ESTIMATE && messageInput) {
+          messageInput.value = `Hi Saurabh, I calculated our team's potential savings via your Business ROI Calculator:\n\n` +
+            `• Team Size: ${window.CURRENT_ROI_ESTIMATE.team} staff members\n` +
+            `• Repetitive Manual Work: ${window.CURRENT_ROI_ESTIMATE.hours} hrs/week/person\n` +
+            `• Projected Time Saved: ${window.CURRENT_ROI_ESTIMATE.hoursSaved} hrs/month\n` +
+            `• Projected Annual Cost Savings: ${window.CURRENT_ROI_ESTIMATE.annualSavings}\n` +
+            `• Expected Efficiency Uplift: ${window.CURRENT_ROI_ESTIMATE.efficiency}\n\n` +
+            `I'd like to explore how custom web software and workflow automation can achieve these results for our company.`;
+
+          if (subjectSelect) {
+            subjectSelect.value = 'Enterprise ERP & Portal';
+          }
+        }
+
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => {
+            if (nameInput) nameInput.focus();
+            if (window.showToast) {
+              window.showToast('📈 Business ROI calculation transferred! Send your inquiry.', 'success');
             }
           }, 600);
         }
