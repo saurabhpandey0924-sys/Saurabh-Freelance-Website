@@ -50,65 +50,122 @@ document.addEventListener('DOMContentLoaded', () => {
    RENDER FUNCTIONS
 -------------------------------------------------------------------------- */
 
-/* 1. TECHNOLOGIES WE POWER & MARQUEE */
+/* 1. TECHNOLOGIES WE POWER (3D Interactive Tech Sphere) */
 function renderTechnologies(technologies) {
-  const track1 = document.getElementById('tech-marquee-1');
-  const track2 = document.getElementById('tech-marquee-2');
-  const gridView = document.getElementById('tech-grid-view');
-  const marqueeWrapper = document.getElementById('tech-marquee-container');
-  const pillButtons = document.querySelectorAll('.tech-pill');
+  const scene = document.getElementById('sphere-scene');
+  const stage = document.getElementById('sphere-stage');
+  if (!scene || !stage || !technologies || !technologies.length) return;
 
-  if (!track1 || !track2) return;
+  scene.innerHTML = '';
 
-  // Split into two balanced sets for top and bottom marquee
-  const mid = Math.ceil(technologies.length / 2);
-  const set1 = technologies.slice(0, mid);
-  const set2 = technologies.slice(mid);
+  const isMobile = window.innerWidth <= 768;
+  const radius = isMobile ? 180 : 250;
 
-  const createTechCard = (t) => `
-    <div class="tech-item-card" data-category="${t.category}">
-      <div class="tech-item-icon">${t.icon}</div>
-      <div class="tech-item-info">
-        <span class="tech-item-name">${t.name}</span>
-        <span class="tech-item-tag">${t.tag}</span>
-      </div>
-    </div>
-  `;
+  const items = technologies.map((t, idx) => {
+    const phi = Math.acos(-1 + (2 * idx) / technologies.length);
+    const theta = Math.sqrt(technologies.length * Math.PI) * phi;
+    const x = radius * Math.cos(theta) * Math.sin(phi);
+    const y = radius * Math.sin(theta) * Math.sin(phi);
+    const z = radius * Math.cos(phi);
 
-  // Repeat items for seamless CSS infinite scroll loop
-  track1.innerHTML = [...set1, ...set1, ...set1, ...set1].map(createTechCard).join('');
-  track2.innerHTML = [...set2, ...set2, ...set2, ...set2].map(createTechCard).join('');
+    const el = document.createElement('a');
+    el.href = t.url || '#';
+    el.target = '_blank';
+    el.rel = 'noopener noreferrer';
+    el.className = 'sphere-item';
+    el.title = `${t.name} — ${t.tag || 'Official Website'}`;
+    el.setAttribute('aria-label', `${t.name} (Opens official website in new tab)`);
+    el.innerHTML = `
+      <div class="sphere-item-icon">${t.icon}</div>
+      <div class="sphere-item-label">${t.name}</div>
+    `;
+    scene.appendChild(el);
 
-  // Category filter handlers
-  pillButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      pillButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const cat = btn.getAttribute('data-tech-cat');
-
-      if (cat === 'all') {
-        if (marqueeWrapper) marqueeWrapper.style.display = 'flex';
-        if (gridView) gridView.style.display = 'none';
-      } else {
-        if (marqueeWrapper) marqueeWrapper.style.display = 'none';
-        if (gridView) {
-          const filtered = technologies.filter(t => t.category === cat);
-          gridView.innerHTML = filtered.map(t => `
-            <div class="tech-grid-card reveal active">
-              <div class="tech-grid-icon">${t.icon}</div>
-              <div class="tech-grid-info">
-                <span class="tech-grid-name">${t.name}</span>
-                <span class="tech-grid-tag">${t.tag}</span>
-              </div>
-              <span class="tech-grid-badge">${t.category}</span>
-            </div>
-          `).join('');
-          gridView.style.display = 'grid';
-        }
-      }
-    });
+    return { el, x, y, z };
   });
+
+  let rotX = 0, rotY = 0;
+  let targetRotX = 0, targetRotY = 0;
+  let isDragging = false;
+  let lastMouseX = 0, lastMouseY = 0;
+
+  stage.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+  });
+
+  window.addEventListener('mouseup', () => { isDragging = false; });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - lastMouseX;
+    const dy = e.clientY - lastMouseY;
+    targetRotY += dx * 0.4;
+    targetRotX -= dy * 0.4;
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+  });
+
+  // Touch drag support for mobile devices
+  stage.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      isDragging = true;
+      lastMouseX = e.touches[0].clientX;
+      lastMouseY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => { isDragging = false; });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging || e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - lastMouseX;
+    const dy = e.touches[0].clientY - lastMouseY;
+    targetRotY += dx * 0.4;
+    targetRotX -= dy * 0.4;
+    lastMouseX = e.touches[0].clientX;
+    lastMouseY = e.touches[0].clientY;
+  }, { passive: true });
+
+  function animate() {
+    if (!isDragging) {
+      targetRotY += 0.35; // continuous smooth auto-rotation
+    }
+
+    // Smooth damping
+    rotX += (targetRotX - rotX) * 0.08;
+    rotY += (targetRotY - rotY) * 0.08;
+
+    const radX = (rotX * Math.PI) / 180;
+    const radY = (rotY * Math.PI) / 180;
+
+    items.forEach(item => {
+      // Rotate around Y
+      const cosY = Math.cos(radY);
+      const sinY = Math.sin(radY);
+      const x1 = item.x * cosY - item.z * sinY;
+      const z1 = item.z * cosY + item.x * sinY;
+
+      // Rotate around X
+      const cosX = Math.cos(radX);
+      const sinX = Math.sin(radX);
+      const y2 = item.y * cosX - z1 * sinX;
+      const z2 = z1 * cosX + item.y * sinX;
+
+      // Scale and opacity by depth (z2)
+      const scale = 0.72 + (z2 + radius) / (2 * radius) * 0.52;
+      const opacity = 0.32 + (z2 + radius) / (2 * radius) * 0.68;
+      const zIndex = Math.round(z2 + radius);
+
+      item.el.style.transform = `translate3d(${x1}px, ${y2}px, ${z2}px) scale(${scale})`;
+      item.el.style.opacity = opacity;
+      item.el.style.zIndex = zIndex;
+    });
+
+    requestAnimationFrame(animate);
+  }
+  animate();
 }
 
 /* 2. INDUSTRIES WE EMPOWER */
@@ -701,6 +758,40 @@ function initNavigation() {
   const backdrop = document.getElementById('nav-modal-backdrop');
   const closeBtn = document.getElementById('nav-modal-close');
   const modalLinks = document.querySelectorAll('.nav-modal-link');
+  const desktopLinks = document.querySelectorAll('.nav-menu .nav-link[href^="#"]');
+  const dropdownToggle = document.getElementById('features-dropdown-btn');
+  const dropdownWrapper = document.getElementById('features-dropdown');
+  const dropdownLinks = document.querySelectorAll('.dropdown-item');
+
+  const currentPath = window.location.pathname.toLowerCase();
+  const isHomePage = currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '';
+
+  // Highlight active link based on current page
+  const highlightPageLink = () => {
+    const allNavLinks = [...desktopLinks, ...modalLinks];
+    allNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const cleanHref = href.toLowerCase();
+
+      if (!isHomePage) {
+        if (
+          (currentPath.includes('services') && cleanHref.includes('services')) ||
+          (currentPath.includes('portfolio') && cleanHref.includes('portfolio')) ||
+          (currentPath.includes('industries') && cleanHref.includes('industries')) ||
+          (currentPath.includes('calculator') && cleanHref.includes('calculator')) ||
+          (currentPath.includes('about') && cleanHref.includes('about')) ||
+          (currentPath.includes('contact') && cleanHref.includes('contact'))
+        ) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      }
+    });
+  };
+
+  highlightPageLink();
 
   // Sticky Navbar on scroll
   window.addEventListener('scroll', () => {
@@ -710,23 +801,57 @@ function initNavigation() {
       navbar.classList.remove('scrolled');
     }
 
-    // Scrollspy active link
-    let current = '';
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
+    if (isHomePage) {
+      // Scrollspy active link on home page
+      let current = '';
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      desktopLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === `#${current}` || (current === 'projects' && href === '#projects')) {
+          link.classList.add('active');
+        }
+      });
+
+      modalLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === `#${current}` || (current === 'projects' && href === '#projects')) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+
+  // Dropdown toggle on click & outside click
+  if (dropdownToggle && dropdownWrapper) {
+    dropdownToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdownWrapper.classList.toggle('open');
+      dropdownToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdownWrapper.contains(e.target)) {
+        dropdownWrapper.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
       }
     });
 
-    modalLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
+    dropdownLinks.forEach(item => {
+      item.addEventListener('click', () => {
+        dropdownWrapper.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      });
     });
-  });
+  }
 
   // Modal functions
   const openModal = () => {

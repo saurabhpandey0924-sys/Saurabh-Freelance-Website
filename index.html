@@ -27,9 +27,9 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/components.css?v=6">
   <link rel="stylesheet" href="styles/calculator.css">
-  <link rel="stylesheet" href="styles/responsive.css">
+  <link rel="stylesheet" href="styles/responsive.css?v=6">
 
   <!-- JSON-LD Structured Data Schema -->
   <script type="application/ld+json">
@@ -68,6 +68,81 @@
         <span>Saurabh<span class="gradient-text">.dev</span></span>
       </a>
 
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="services.html" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+          <a href="portfolio.html" class="nav-link">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a href="industries.html" class="nav-link">Industries</a>
+        </li>
+        <li class="nav-item">
+          <a href="calculator.html" class="nav-link">
+            <span>Calculator</span>
+            <span class="nav-badge-pill">ROI</span>
+          </a>
+        </li>
+        <li class="nav-item nav-dropdown" id="features-dropdown">
+          <button class="nav-link nav-dropdown-toggle" id="features-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Features</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="dropdown-menu" id="features-dropdown-menu" role="menu">
+            <a href="index.html#technologies" class="dropdown-item" role="menuitem">
+              <span class="dropdown-icon">⚡</span>
+              <div class="dropdown-info">
+                <span class="dropdown-title">Technologies</span>
+                <span class="dropdown-desc">Modern tech ecosystem & stacks</span>
+              </div>
+            </a>
+            <a href="index.html#process" class="dropdown-item" role="menuitem">
+              <span class="dropdown-icon">🔄</span>
+              <div class="dropdown-info">
+                <span class="dropdown-title">4-Step Workflow</span>
+                <span class="dropdown-desc">Transparent agile delivery process</span>
+              </div>
+            </a>
+            <a href="index.html#pricing" class="dropdown-item" role="menuitem">
+              <span class="dropdown-icon">🏷️</span>
+              <div class="dropdown-info">
+                <span class="dropdown-title">Pricing Packages</span>
+                <span class="dropdown-desc">Fixed-price sprint packages</span>
+              </div>
+            </a>
+            <a href="index.html#why-choose-us" class="dropdown-item" role="menuitem">
+              <span class="dropdown-icon">⚖️</span>
+              <div class="dropdown-info">
+                <span class="dropdown-title">Why Choose Us</span>
+                <span class="dropdown-desc">Comparison matrix with agencies</span>
+              </div>
+            </a>
+            <a href="index.html#reviews" class="dropdown-item" role="menuitem">
+              <span class="dropdown-icon">⭐</span>
+              <div class="dropdown-info">
+                <span class="dropdown-title">Client Reviews</span>
+                <span class="dropdown-desc">Endorsements from founders & CTOs</span>
+              </div>
+            </a>
+            <a href="index.html#faq" class="dropdown-item" role="menuitem">
+              <span class="dropdown-icon">❓</span>
+              <div class="dropdown-info">
+                <span class="dropdown-title">FAQ</span>
+                <span class="dropdown-desc">Answers to common questions</span>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
       <!-- Header Actions -->
       <div class="nav-actions">
         <!-- Theme Switcher Button -->
@@ -77,12 +152,12 @@
 
 
         <!-- Header CTA -->
-        <a href="#contact" class="btn btn-primary btn-sm nav-cta-btn">
+        <a href="contact.html" class="btn btn-primary btn-sm nav-cta-btn">
           <span>Hire Us</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
 
-        <!-- Classic 3-Line Hamburger Menu Button -->
+        <!-- Classic 3-Line Hamburger Menu Button (Mobile / Tablet) -->
         <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -92,7 +167,7 @@
     </div>
   </nav>
 
-  <!-- Centered Floating Navigation Modal -->
+  <!-- Centered Floating Navigation Modal (Mobile / Tablet) -->
   <div class="nav-modal-backdrop" id="nav-modal-backdrop"></div>
   <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-hidden="true">
     <button class="nav-modal-close" id="nav-modal-close" aria-label="Close navigation">&times;</button>
@@ -100,49 +175,73 @@
     <nav class="nav-modal-body">
       <ul class="nav-modal-list">
         <li>
-          <a href="#technologies" class="nav-modal-link">
-            <span>Technologies We Power</span>
-            <span class="link-arrow">&rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="#services" class="nav-modal-link">
+          <a href="services.html" class="nav-modal-link">
             <span>Services & Solutions</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="#industries" class="nav-modal-link">
+          <a href="portfolio.html" class="nav-modal-link">
+            <span>Portfolio & Case Studies</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="industries.html" class="nav-modal-link">
             <span>Industries We Empower</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="#why-choose-us" class="nav-modal-link">
-            <span>Why Choose Us (Comparison)</span>
-            <span class="link-arrow">&rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="#projects" class="nav-modal-link">
-            <span>Case Studies & Work</span>
-            <span class="link-arrow">&rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="#calculator" class="nav-modal-link">
+          <a href="calculator.html" class="nav-modal-link">
             <span>Cost & ROI Calculator</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="#about" class="nav-modal-link">
+          <a href="index.html#technologies" class="nav-modal-link">
+            <span>Technologies We Power</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#process" class="nav-modal-link">
+            <span>4-Step Workflow</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#pricing" class="nav-modal-link">
+            <span>Sprint Pricing Packages</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#why-choose-us" class="nav-modal-link">
+            <span>Why Choose Us (Comparison)</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#reviews" class="nav-modal-link">
+            <span>Client Reviews</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#faq" class="nav-modal-link">
+            <span>Frequently Asked Questions</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="about.html" class="nav-modal-link">
             <span>About Saurabh & Team</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="#contact" class="nav-modal-link highlight">
+          <a href="contact.html" class="nav-modal-link highlight">
             <span>Start a Project / Contact</span>
             <span class="link-arrow">&rarr;</span>
           </a>
@@ -292,7 +391,7 @@
     </div>
   </section>
 
-  <!-- 3. TECHNOLOGIES WE POWER (Modernized Tech Ecosystem) -->
+  <!-- 3. TECHNOLOGIES WE POWER (Modernized Tech Ecosystem - 3D Interactive Sphere) -->
   <section class="section tech-ecosystem-section" id="technologies">
     <div class="container">
       <div class="section-header reveal">
@@ -303,28 +402,11 @@
         </p>
       </div>
 
-      <!-- Interactive Category Filter -->
-      <div class="tech-category-pills reveal" id="tech-category-pills">
-        <button class="tech-pill active" data-tech-cat="all">All Technologies</button>
-        <button class="tech-pill" data-tech-cat="frontend">Frontend & Mobile</button>
-        <button class="tech-pill" data-tech-cat="backend">Backend & APIs</button>
-        <button class="tech-pill" data-tech-cat="database">Databases & DevOps</button>
-        <button class="tech-pill" data-tech-cat="enterprise">Enterprise & AI</button>
-      </div>
-
-      <!-- Dual-Track Animated Infinite Marquee -->
-      <div class="tech-marquee-wrapper reveal" id="tech-marquee-container">
-        <div class="tech-marquee-track track-left" id="tech-marquee-1">
-          <!-- Injected dynamically by main.js -->
+      <!-- 3D Interactive Sphere Container -->
+      <div class="sphere-stage reveal" id="sphere-stage">
+        <div class="sphere-3d-scene" id="sphere-scene">
+          <!-- Injected dynamically by main.js renderTechnologies() -->
         </div>
-        <div class="tech-marquee-track track-right" id="tech-marquee-2">
-          <!-- Injected dynamically in reverse by main.js -->
-        </div>
-      </div>
-
-      <!-- Interactive Filter Grid View (Toggled when category clicked) -->
-      <div class="tech-grid-view" id="tech-grid-view" style="display: none;">
-        <!-- Injected dynamically by main.js -->
       </div>
     </div>
   </section>
@@ -369,7 +451,8 @@
     </div>
   </section>
 
-  <!-- 4. FEATURED PROJECTS & CASE STUDIES -->
+  <!-- 4. FEATURED PROJECTS & CASE STUDIES (PORTFOLIO) -->
+  <div id="portfolio" style="position: relative; top: -80px; visibility: hidden;"></div>
   <section class="section" id="projects" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header reveal">
@@ -1003,13 +1086,13 @@
   </div>
 
   <!-- Scripts -->
-  <script src="scripts/data.js"></script>
+  <script src="scripts/data.js?v=6"></script>
   <script src="scripts/theme.js"></script>
   <script src="scripts/cyber-grid.js"></script>
   <script src="scripts/tilt.js"></script>
   <script src="scripts/modal.js"></script>
   <script src="scripts/calculator.js"></script>
   <script src="scripts/contact.js"></script>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/main.js?v=6"></script>
 </body>
 </html>

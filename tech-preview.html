@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technologies Animation Preview (27 Tech Stacks) | Saurabh.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css?v=2">
+  <style>
+    body {
+      background: #080c14;
+      color: #f3f4f6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .preview-header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .preview-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .preview-subtitle {
+      color: #94a3b8;
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+
+    /* Tabs Navigation */
+    .animation-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      padding: 0 15px;
+    }
+
+    .anim-tab-btn {
+      padding: 12px 28px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .anim-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .anim-tab-btn.active {
+      background: linear-gradient(135deg, #ff334b, #6366f1);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 6px 24px rgba(255, 51, 75, 0.4);
+    }
+
+    .preview-stage {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .anim-panel {
+      display: none;
+      width: 100%;
+      opacity: 0;
+      transform: scale(0.98);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .anim-panel.active {
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .panel-info {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .panel-badge {
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #818cf8;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .panel-desc {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+    /* ============================================================
+       OPTION 1: 3D INTERACTIVE TECH SPHERE (27 LOGOS)
+       ============================================================ */
+    .sphere-stage {
+      position: relative;
+      width: 100%;
+      height: 660px;
+      background: radial-gradient(circle at center, rgba(6, 182, 212, 0.09) 0%, rgba(11, 15, 23, 0) 70%);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      perspective: 1100px;
+      cursor: grab;
+    }
+
+    .sphere-stage:active {
+      cursor: grabbing;
+    }
+
+    .sphere-3d-scene {
+      width: 0;
+      height: 0;
+      position: relative;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .sphere-item {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      margin-left: -30px;
+      margin-top: -30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+      transform-style: preserve-3d;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .sphere-item:hover {
+      border-color: #00D8FF;
+      box-shadow: 0 0 28px rgba(0, 216, 255, 0.7);
+      z-index: 1000 !important;
+    }
+
+    .sphere-item-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .sphere-item-icon svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .sphere-item-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-top: 3px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .sphere-hint {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.88rem;
+      color: #94a3b8;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* ============================================================
+       OPTION 2: 3D DIAGONAL ISOMETRIC FLOW (27 LOGOS)
+       ============================================================ */
+    .iso-stage {
+      position: relative;
+      width: 100%;
+      height: 660px;
+      background: #080c14;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+    }
+
+    .iso-container {
+      transform: rotateX(20deg) rotateZ(-14deg) skewX(-8deg) scale(1.12);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 150%;
+      position: relative;
+    }
+
+    .iso-row {
+      display: flex;
+      gap: 32px;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .iso-row-1 {
+      animation: iso-scroll-left 28s linear infinite;
+    }
+
+    .iso-row-2 {
+      animation: iso-scroll-right 30s linear infinite;
+    }
+
+    .iso-row-3 {
+      animation: iso-scroll-left 32s linear infinite;
+    }
+
+    @keyframes iso-scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes iso-scroll-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    .iso-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 22px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 18px;
+      backdrop-filter: blur(12px);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .iso-item:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: #6366f1;
+      transform: translateY(-6px) scale(1.1);
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
+    }
+
+    .iso-item-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .iso-item-icon svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .iso-vignette {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at center, transparent 35%, #080c14 94%);
+    }
+
+    /* Back Button */
+    .back-btn-container {
+      margin-top: 35px;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ff334b;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="preview-header">
+    <div class="panel-badge">Interactive Tech Showcase (27 Technologies)</div>
+    <h1 class="preview-title">Technologies Section: 2 Selected Concepts</h1>
+    <p class="preview-subtitle">
+      Compare the <strong>3D Interactive Sphere</strong> and <strong>3D Diagonal Isometric Flow</strong> featuring all 27 requested technologies.
+    </p>
+
+    <div class="animation-tabs">
+      <button class="anim-tab-btn active" data-tab="sphere">
+        <span>🌐 1. 3D Interactive Sphere</span>
+      </button>
+      <button class="anim-tab-btn" data-tab="isometric">
+        <span>📐 2. 3D Diagonal Isometric Flow</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="preview-stage">
+
+    <!-- ==========================================
+         PANEL 1: 3D INTERACTIVE SPHERE (27 TECH)
+         ========================================== -->
+    <div class="anim-panel active" id="panel-sphere">
+      <div class="panel-info">
+        <div class="panel-badge">Stripe & GitHub 3D Globe Style</div>
+        <p class="panel-desc">All 27 technologies orbiting in a smooth 3D globe. Move your mouse or drag to rotate the sphere in 3D space!</p>
+      </div>
+      <div class="sphere-stage" id="sphere-stage">
+        <div class="sphere-3d-scene" id="sphere-scene"></div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 2: 3D DIAGONAL ISOMETRIC FLOW (27 TECH)
+         ========================================== -->
+    <div class="anim-panel" id="panel-isometric">
+      <div class="panel-info">
+        <div class="panel-badge">Vercel & Raycast Isometric Look</div>
+        <p class="panel-desc">3 parallel angled streams tilted in 3D space with high-contrast glowing pills across all 27 technologies.</p>
+      </div>
+      <div class="iso-stage">
+        <div class="iso-container">
+          <div class="iso-row iso-row-1" id="iso-row-1"></div>
+          <div class="iso-row iso-row-2" id="iso-row-2"></div>
+          <div class="iso-row iso-row-3" id="iso-row-3"></div>
+        </div>
+        <div class="iso-vignette"></div>
+      </div>
+    </div>
+
+    <div class="back-btn-container">
+      <a href="index.html#technologies" class="back-btn">&larr; Return to Main Portfolio</a>
+    </div>
+
+  </main>
+
+  <script src="scripts/data.js?v=5"></script>
+  <script>
+    const techData = PORTFOLIO_DATA.technologies;
+
+    // Tab switching logic
+    const tabs = document.querySelectorAll('.anim-tab-btn');
+    const panels = document.querySelectorAll('.anim-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const target = document.getElementById(`panel-${tab.dataset.tab}`);
+        if (target) {
+          target.classList.add('active');
+          if (tab.dataset.tab === 'sphere') initSphere();
+          if (tab.dataset.tab === 'isometric') initIsometric();
+        }
+      });
+    });
+
+    /* ============================================================
+       1. INIT 3D TECH SPHERE (27 TECHNOLOGIES)
+       ============================================================ */
+    let sphereInitialized = false;
+    function initSphere() {
+      if (sphereInitialized) return;
+      sphereInitialized = true;
+
+      const scene = document.getElementById('sphere-scene');
+      const stage = document.getElementById('sphere-stage');
+      const radius = 250; // Sized for 27 items
+
+      const items = techData.map((t, idx) => {
+        const phi = Math.acos(-1 + (2 * idx) / techData.length);
+        const theta = Math.sqrt(techData.length * Math.PI) * phi;
+        const x = radius * Math.cos(theta) * Math.sin(phi);
+        const y = radius * Math.sin(theta) * Math.sin(phi);
+        const z = radius * Math.cos(phi);
+
+        const el = document.createElement('a');
+        el.href = t.url;
+        el.target = '_blank';
+        el.className = 'sphere-item';
+        el.title = `${t.name} — ${t.tag} (Click to visit)`;
+        el.innerHTML = `
+          <div class="sphere-item-icon">${t.icon}</div>
+          <div class="sphere-item-label">${t.name}</div>
+        `;
+        scene.appendChild(el);
+
+        return { el, x, y, z };
+      });
+
+      let rotX = 0;
+      let rotY = 0;
+      let targetRotX = 0;
+      let targetRotY = 0;
+      let isDragging = false;
+      let startX, startY;
+
+      stage.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+      });
+
+      window.addEventListener('mouseup', () => isDragging = false);
+
+      stage.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          const dx = e.clientX - startX;
+          const dy = e.clientY - startY;
+          targetRotY += dx * 0.4;
+          targetRotX -= dy * 0.4;
+          startX = e.clientX;
+          startY = e.clientY;
+        } else {
+          const rect = stage.getBoundingClientRect();
+          const mx = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+          const my = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+          targetRotY += mx * 0.55;
+          targetRotX -= my * 0.55;
+        }
+      });
+
+      function animate() {
+        if (!isDragging) {
+          targetRotY += 0.35; // continuous auto-rotation
+        }
+
+        // Smooth damping
+        rotX += (targetRotX - rotX) * 0.08;
+        rotY += (targetRotY - rotY) * 0.08;
+
+        const radX = (rotX * Math.PI) / 180;
+        const radY = (rotY * Math.PI) / 180;
+
+        items.forEach(item => {
+          // Rotate around Y
+          const cosY = Math.cos(radY);
+          const sinY = Math.sin(radY);
+          const x1 = item.x * cosY - item.z * sinY;
+          const z1 = item.z * cosY + item.x * sinY;
+
+          // Rotate around X
+          const cosX = Math.cos(radX);
+          const sinX = Math.sin(radX);
+          const y2 = item.y * cosX - z1 * sinX;
+          const z2 = z1 * cosX + item.y * sinX;
+
+          // Scale and opacity by depth (z2)
+          const scale = 0.72 + (z2 + radius) / (2 * radius) * 0.52;
+          const opacity = 0.32 + (z2 + radius) / (2 * radius) * 0.68;
+          const zIndex = Math.round(z2 + radius);
+
+          item.el.style.transform = `translate3d(${x1}px, ${y2}px, ${z2}px) scale(${scale})`;
+          item.el.style.opacity = opacity;
+          item.el.style.zIndex = zIndex;
+        });
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+    initSphere();
+
+    /* ============================================================
+       2. INIT ISOMETRIC FLOW (27 TECHNOLOGIES)
+       ============================================================ */
+    let isoInitialized = false;
+    function initIsometric() {
+      if (isoInitialized) return;
+      isoInitialized = true;
+
+      const row1 = document.getElementById('iso-row-1');
+      const row2 = document.getElementById('iso-row-2');
+      const row3 = document.getElementById('iso-row-3');
+
+      const createPill = (t) => `
+        <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="iso-item" title="${t.name} — ${t.tag}">
+          <div class="iso-item-icon">${t.icon}</div>
+          <span>${t.name}</span>
+        </a>
+      `;
+
+      // Split 27 items into 3 balanced rows of 9 items each
+      const set1 = techData.slice(0, 9);
+      const set2 = techData.slice(9, 18);
+      const set3 = techData.slice(18, 27);
+
+      // Duplicate each set 3 times for continuous scroll
+      row1.innerHTML = [...set1, ...set1, ...set1].map(createPill).join('');
+      row2.innerHTML = [...set2, ...set2, ...set2].map(createPill).join('');
+      row3.innerHTML = [...set3, ...set3, ...set3].map(createPill).join('');
+    }
+    initIsometric();
+  </script>
+</body>
+</html>

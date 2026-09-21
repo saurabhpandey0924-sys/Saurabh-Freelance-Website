@@ -50,6 +50,13 @@ function createServer(port) {
 
     fs.stat(filePath, (err, stats) => {
       if (err || !stats.isFile()) {
+        // Try appending .html for clean URLs (e.g. /services -> /services.html)
+        const htmlFilePath = filePath + '.html';
+        if (fs.existsSync(htmlFilePath) && fs.statSync(htmlFilePath).isFile()) {
+          serveFile(htmlFilePath, res);
+          return;
+        }
+
         // If directory requested without trailing slash, try index.html inside it
         if (stats && stats.isDirectory()) {
           const indexFilePath = path.join(filePath, 'index.html');

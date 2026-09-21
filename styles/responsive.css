@@ -552,17 +552,41 @@
   }
 
   .tech-item-card {
-    padding: 10px 16px;
-    gap: 10px;
+    width: 62px;
+    height: 62px;
+    padding: 12px;
   }
 
-  .tech-category-pills {
-    gap: 8px;
+  .tech-item-icon {
+    width: 34px;
+    height: 34px;
   }
 
-  .tech-pill {
+  .sphere-stage {
+    height: 520px;
+  }
+
+  .sphere-item {
+    width: 52px;
+    height: 52px;
+    margin-left: -26px;
+    margin-top: -26px;
+  }
+
+  .sphere-item-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .sphere-item-label {
+    font-size: 0.58rem;
+  }
+
+  .sphere-hint {
+    font-size: 0.75rem;
     padding: 6px 14px;
-    font-size: 0.82rem;
+    bottom: 12px;
+    width: 90%;
   }
 
   .cta-banner-card {
