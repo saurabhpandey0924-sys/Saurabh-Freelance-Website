@@ -36,7 +36,7 @@
     
     // 2. Inject CSS
     const style = document.createElement('style');
-    style.textContent = \`
+    style.textContent = `
       #parallax-bg-container {
         position: fixed;
         top: 0;
@@ -73,7 +73,7 @@
         0% { transform: translateY(-15px) rotate(-3deg); }
         100% { transform: translateY(15px) rotate(3deg); }
       }
-    \`;
+    `;
     document.head.appendChild(style);
 
     // 3. Generate Items
@@ -90,28 +90,28 @@
       el.dataset.speed = item.speed;
       el.dataset.starty = startPixelY;
       
-      el.style.left = \`\${item.startX}%\`;
-      el.style.width = \`\${item.size}px\`;
-      el.style.height = \`\${item.size}px\`;
+      el.style.left = `${item.startX}%`;
+      el.style.width = `${item.size}px`;
+      el.style.height = `${item.size}px`;
       el.style.color = item.color;
       el.style.opacity = item.opacity;
       
       // Different animation delays so they don't bob together
       const inner = document.createElement('div');
       inner.className = 'parallax-inner';
-      inner.style.animationDelay = \`-\${index * 1.5}s\`;
-      inner.style.animationDuration = \`\${5 + Math.random() * 3}s\`;
+      inner.style.animationDelay = `-${index * 1.5}s`;
+      inner.style.animationDuration = `${5 + Math.random() * 3}s`;
       
       if (item.type === 'svg') {
         inner.innerHTML = item.content;
       } else {
         inner.innerHTML = item.content;
-        inner.style.fontSize = \`\${item.size}px\`;
+        inner.style.fontSize = `${item.size}px`;
         inner.style.lineHeight = '1';
       }
       
       // Add subtle glow
-      inner.style.filter = \`drop-shadow(0 0 20px \${item.color})\`;
+      inner.style.filter = `drop-shadow(0 0 20px ${item.color})`;
       
       el.appendChild(inner);
       container.appendChild(el);
@@ -141,7 +141,7 @@
         // We offset it by -250px so it wraps cleanly off-screen.
         const finalY = y - 250;
         
-        el.style.transform = \`translateY(\${finalY}px)\`;
+        el.style.transform = `translateY(${finalY}px)`;
       });
     }
 
