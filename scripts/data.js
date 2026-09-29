@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Saurabh's Freelance Platform - Data Store
  * Easily extensible for new projects, testimonials, and services.
  */
@@ -156,11 +156,11 @@ const PORTFOLIO_DATA = {
       desc: "Sub-50ms trading terminals, multi-currency ledger reconciliation, PCI-DSS compliant checkout flows, and algorithmic fraud protection.",
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop",
       metricsList: [
-        { value: ₹85Cr+", label: "Monthly Volume" },
+        { value: "₹85Cr+", label: "Monthly Volume" },
         { value: "<50ms", label: "Execution Latency" },
         { value: "99.999%", label: "System SLA" }
       ],
-      metric: { value: ₹85Cr+", label: "Processed Monthly" }
+      metric: { value: "₹85Cr+", label: "Processed Monthly" }
     },
     {
       id: "startups",
