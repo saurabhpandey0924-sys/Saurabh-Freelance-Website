@@ -188,7 +188,7 @@ const PORTFOLIO_DATA = {
       glowColor: "rgba(242, 140, 0, 0.35)",
       title: "Sub-Second Headless Commerce & Flash Sales",
       desc: "Ultra-fast headless architectures that skyrocket conversion rates, sync multi-warehouse inventory across marketplaces, and handle viral flash sales.",
-      image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1200&auto=format&fit=crop",
       metricsList: [
         { value: "3.4x", label: "Average GMV Lift" },
         { value: "0.8s", label: "Load Speed" },
