@@ -3116,7 +3116,7 @@
 .workspace-body-flex {
   display: flex;
   height: 300px;
-  background: #FAFAFA;
+  background: var(--bg-tertiary);
 }
 
 .workspace-sidebar {
@@ -3296,36 +3296,36 @@
 .ws-col-3 { width: 15%; height: 12px; border-radius: 4px; }
 /* Service Cards & Icons Update */
 .service-icon-wrap {
-  background: #FFF0C7 !important;
-  color: #F28C00 !important;
+  background: rgba(242, 140, 0, 0.1) !important;
+  color: var(--accent-primary) !important;
   border: none !important;
 }
 .service-icon-wrap svg {
-  stroke: #F28C00 !important;
+  stroke: var(--accent-primary) !important;
 }
 
 .service-card {
-  background: #FFFFFF !important;
-  border: 1px solid #F3D99A !important;
-  box-shadow: 0 2px 8px rgba(59, 24, 56, 0.05) !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-medium) !important;
+  box-shadow: var(--shadow-md) !important;
   transition: all var(--transition-smooth);
 }
 .service-card:hover {
-  box-shadow: 0 8px 24px rgba(242, 140, 0, 0.15) !important;
-  border-color: #F28C00 !important;
+  box-shadow: var(--shadow-glow) !important;
+  border-color: var(--accent-primary) !important;
 }
 
 /* Badge Updates */
 .badge-tangerine, .badge-popular {
   background: rgba(242, 140, 0, 0.1) !important;
-  color: #F28C00 !important;
-  border: 1px solid rgba(242, 140, 0, 0.2) !important;
+  color: var(--accent-primary) !important;
+  border: 1px solid rgba(242, 140, 0, 0.3) !important;
 }
 
 .badge-plum, .badge-premium {
-  background: rgba(59, 24, 56, 0.1) !important;
-  color: #3B1838 !important;
-  border: 1px solid rgba(59, 24, 56, 0.2) !important;
+  background: rgba(255, 209, 102, 0.1) !important;
+  color: var(--accent-tertiary) !important;
+  border: 1px solid rgba(255, 209, 102, 0.3) !important;
 }
 
 .badge-lime, .badge-special {
