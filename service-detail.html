@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   
   <!-- SEO Meta Tags -->
-  <title>Portfolio & Case Studies | Saurabh.dev</title>
-  <meta name="description" content="Explore real-world software solutions, full-stack SaaS apps, e-commerce platforms, and AI workflows engineered by Saurabh & team.">
-  <meta name="keywords" content="Portfolio, Web Development Projects, Full-Stack SaaS Case Studies, React Projects, Next.js Showcase, Saurabh">
+  <title>Service Details & Specifications | Saurabh.dev</title>
+  <meta name="description" content="Detailed engineering specifications, deliverables, architecture roadmap, and guarantees for Saurabh.dev services.">
+  <meta name="keywords" content="Web Development, Custom SaaS, AI Automation, Next.js, React, Node.js, Saurabh">
   <meta name="author" content="Saurabh">
   
   <!-- OpenGraph / Social Sharing -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Portfolio & Case Studies | Saurabh.dev">
-  <meta property="og:description" content="Explore real-world software solutions engineered to solve complex business challenges.">
+  <meta property="og:title" content="Service Details & Specifications | Saurabh.dev">
+  <meta property="og:description" content="Explore custom web apps, AI integrations, MVP development, and cloud-native solutions.">
   <meta property="og:image" content="assets/images/project-saas.jpg">
 
   <!-- Google Fonts -->
@@ -44,10 +44,10 @@
       <!-- Desktop Navigation Menu -->
       <ul class="nav-menu" id="nav-menu">
         <li class="nav-item">
-          <a href="services.html" class="nav-link">Services</a>
+          <a href="services.html" class="nav-link active">Services</a>
         </li>
         <li class="nav-item">
-          <a href="portfolio.html" class="nav-link active">Portfolio</a>
+          <a href="portfolio.html" class="nav-link">Portfolio</a>
         </li>
         <li class="nav-item">
           <a href="industries.html" class="nav-link">Industries</a>
@@ -149,13 +149,13 @@
     <nav class="nav-modal-body">
       <ul class="nav-modal-list">
         <li>
-          <a href="services.html" class="nav-modal-link">
+          <a href="services.html" class="nav-modal-link active">
             <span>Services & Solutions</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="portfolio.html" class="nav-modal-link active">
+          <a href="portfolio.html" class="nav-modal-link">
             <span>Portfolio & Case Studies</span>
             <span class="link-arrow">&rarr;</span>
           </a>
@@ -235,83 +235,35 @@
     <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
   </a>
 
-  <!-- PAGE HEADER / HERO -->
-  <section class="section" style="padding-top: 140px; padding-bottom: 40px;">
-    <div class="container text-center">
-      <div class="section-header reveal">
-        <span class="section-badge">Proven Results</span>
-        <h1 class="section-title">Case Studies & <span class="gradient-text">Featured Work</span></h1>
-        <p class="section-subtitle">
-          Real-world applications engineered to solve complex operational challenges, boost conversion rates, and handle massive scale.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO SECTION -->
-  <section class="section" id="projects" style="padding-top: 0;">
+  <!-- MAIN DEDICATED SERVICE CONTENT -->
+  <main class="section" style="padding-top: 130px; padding-bottom: 60px;">
     <div class="container">
-      <!-- Category Filter Tabs -->
-      <div class="portfolio-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="fullstack">Full-Stack SaaS</button>
-        <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-        <button class="filter-btn" data-filter="ai">AI & Automation</button>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="projects-grid" id="projects-container">
-        <!-- Rendered dynamically by main.js -->
+      <!-- Container populated dynamically by scripts/main.js -->
+      <div id="service-detail-container" class="service-slide-wrapper">
+        <!-- Rendered dynamically -->
       </div>
     </div>
-  </section>
-
-  <!-- CLIENT TESTIMONIALS -->
-  <section class="section" id="reviews" style="background: var(--bg-secondary);">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-badge">Client Testimonials</span>
-        <h2 class="section-title">Endorsed by <span class="gradient-text">Founders & CTOs</span></h2>
-        <p class="section-subtitle">
-          What founders, venture-backed leaders, and engineering executives say about our delivery speed and code quality.
-        </p>
-      </div>
-
-      <div class="testimonials-grid" id="testimonials-container">
-        <!-- Rendered dynamically by main.js -->
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- READY TO LAUNCH BANNER -->
-  <section class="section cta-banner-section">
+  <section class="section cta-banner-section" style="padding-top: 0;">
     <div class="container">
       <div class="cta-banner-card reveal">
         <div class="cta-banner-content">
           <span class="badge badge-live" style="margin-bottom: 14px;">Instant 24h Response</span>
-          <h2 class="cta-banner-title">Have a Project Similar to These Case Studies?</h2>
+          <h2 class="cta-banner-title">Ready to Kick Off Your Project Sprint?</h2>
           <p class="cta-banner-subtitle">
-            Let's review your product specifications, examine feasibility, and map out a fixed-price sprint timeline.
+            Book a complimentary 20-minute architecture discovery call. We'll evaluate your requirements, review technical feasibility, and prepare an actionable sprint roadmap.
           </p>
           <div class="cta-banner-actions">
             <a href="contact.html" class="btn btn-primary btn-lg btn-glow">
-              <span>Start Your Project Inquiry &rarr;</span>
+              <span>Start Project Inquiry &rarr;</span>
             </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- CASE STUDY DETAIL MODAL -->
-  <div class="modal-backdrop" id="project-modal">
-    <div class="modal-dialog">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
-      <div class="modal-body" id="modal-content-container">
-        <!-- Content injected dynamically by modal.js -->
-      </div>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -338,7 +290,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 Saurabh. Built with precision, performance & care. All rights reserved.</div>
         <div>
-          <a href="index.html" style="color: var(--accent-primary); font-weight: 600;">Home &rarr;</a>
+          <a href="services.html" style="color: var(--accent-primary); font-weight: 600;">&larr; Back to Services</a>
         </div>
       </div>
     </div>

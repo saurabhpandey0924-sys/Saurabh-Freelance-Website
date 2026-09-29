@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features Dropdown Variations | Saurabh.dev</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <style>
+    body {
+      background: #080B11;
+      color: #E2E8F0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .preview-header {
+      padding: 40px 20px 20px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(242, 140, 0, 0.12), transparent 70%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .preview-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 0 0 10px;
+    }
+
+    .preview-title span {
+      background: linear-gradient(135deg, #F28C00, #FF6B4A, #00D8FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .preview-subtitle {
+      color: #94A3B8;
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto 24px;
+    }
+
+    /* Tabs Bar */
+    .tabs-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .tab-btn {
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #CBD5E1;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFF;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(242, 140, 0, 0.25), rgba(0, 216, 255, 0.25));
+      border-color: #00D8FF;
+      color: #FFF;
+      box-shadow: 0 0 20px rgba(0, 216, 255, 0.35);
+    }
+
+    /* Showcase Canvas */
+    .showcase-area {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .sample-card {
+      display: none;
+      background: #0B0F19;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .sample-card.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sample-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .sample-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sample-badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0, 216, 255, 0.15);
+      color: #00D8FF;
+      border: 1px solid rgba(0, 216, 255, 0.3);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .sample-desc {
+      color: #94A3B8;
+      font-size: 0.92rem;
+      margin: 4px 0 0;
+    }
+
+    /* Mock Navbar Stage */
+    .mock-navbar-stage {
+      background: rgba(13, 18, 30, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 14px 24px 60px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      position: relative;
+      min-height: 560px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      overflow: visible;
+    }
+
+    .mock-brand {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mock-brand-badge {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #F28C00, #FF6B4A);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
+
+    .mock-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      left: 50%;
+      top: 18px;
+      transform: translateX(-50%);
+    }
+
+    .mock-nav-item {
+      position: relative;
+    }
+
+    .mock-nav-link {
+      color: #94A3B8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mock-nav-link:hover, .mock-nav-link.active {
+      color: #FFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .mock-chevron {
+      transition: transform 0.25s ease;
+    }
+
+    /* -------------------------------------------------------------
+       VARIATION 1: DUAL-COLUMN GLASS MEGA MENU (STRIPE / VERCEL STYLE)
+    ---------------------------------------------------------------- */
+    #sample-1 .mock-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(0);
+      width: 560px;
+      background: rgba(10, 15, 28, 0.88);
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(255, 255, 255, 0.1) inset;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      animation: var1_drop 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transform-origin: top center;
+      z-index: 100;
+    }
+
+    @keyframes var1_drop {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.94) translateY(-12px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1) translateY(0);
+      }
+    }
+
+    .v1-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background: transparent;
+      border: 1px solid transparent;
+      position: relative;
+    }
+
+    .v1-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .v1-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #FFF;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .v1-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #F8FAFC;
+      margin: 0 0 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .v1-desc {
+      font-size: 0.78rem;
+      color: #94A3B8;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .v1-bottom-banner {
+      grid-column: 1 / -1;
+      margin-top: 6px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, rgba(242, 140, 0, 0.12), rgba(0, 216, 255, 0.12));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #CBD5E1;
+    }
+
+    .v1-bottom-banner a {
+      color: #00D8FF;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* -------------------------------------------------------------
+       VARIATION 2: DARK LUXURY OBSIDIAN BENTO (LINEAR / APPLE STYLE)
+    ---------------------------------------------------------------- */
+    #sample-2 .mock-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(0);
+      width: 520px;
+      background: #070A12;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 22px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.06);
+      padding: 16px;
+      animation: var2_3dunfold 0.35s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+      transform-origin: top center;
+      perspective: 1000px;
+      z-index: 100;
+    }
+
+    @keyframes var2_3dunfold {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) rotateX(-14deg) translateY(-14px) scale(0.96);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) rotateX(0deg) translateY(0) scale(1);
+      }
+    }
+
+    .v2-bento-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 10px;
+    }
+
+    .v2-featured-card {
+      background: linear-gradient(145deg, rgba(20, 27, 45, 0.9), rgba(12, 17, 28, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 16px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .v2-featured-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #F28C00, #00D8FF);
+    }
+
+    .v2-featured-card:hover {
+      border-color: #00D8FF;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 216, 255, 0.2);
+    }
+
+    .v2-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #00D8FF;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .v2-pills {
+      display: flex;
+      gap: 6px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .v2-pill {
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #E2E8F0;
+      font-weight: 600;
+    }
+
+    .v2-side-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .v2-sub-card {
+      background: rgba(15, 22, 36, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 10px 12px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .v2-sub-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateX(3px);
+    }
+
+    .v2-sub-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .v2-bottom-bar {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: #94A3B8;
+    }
+
+    .v2-bottom-bar a {
+      color: #F28C00;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* -------------------------------------------------------------
+       VARIATION 3: MAGNETIC SPOTLIGHT LIST (RAYCAST / ARC MINIMALIST)
+    ---------------------------------------------------------------- */
+    #sample-3 .mock-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(0);
+      width: 360px;
+      background: #090C15;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.85);
+      padding: 10px;
+      animation: var3_elastic 0.36s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      transform-origin: top center;
+      z-index: 100;
+    }
+
+    @keyframes var3_elastic {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.9) translateY(-16px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1) translateY(0);
+      }
+    }
+
+    .v3-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #E2E8F0;
+      transition: all 0.18s ease;
+      position: relative;
+    }
+
+    .v3-item:hover {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      color: #FFF;
+      transform: translateX(4px);
+    }
+
+    .v3-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .v3-icon-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .v3-item:hover .v3-icon-badge {
+      background: #00D8FF;
+      color: #000;
+      border-color: #00D8FF;
+      box-shadow: 0 0 14px rgba(0, 216, 255, 0.6);
+    }
+
+    .v3-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    .v3-desc {
+      font-size: 0.74rem;
+      color: #94A3B8;
+      margin: 2px 0 0;
+    }
+
+    .v3-key-badge {
+      font-family: monospace;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #64748B;
+    }
+
+    .v3-item:hover .v3-key-badge {
+      color: #00D8FF;
+      border-color: rgba(0, 216, 255, 0.3);
+    }
+
+    /* -------------------------------------------------------------
+       VARIATION 4: CYBER MATRIX HOLOGRAPHIC HUD (FUTURISTIC / NEON)
+    ---------------------------------------------------------------- */
+    #sample-4 .mock-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(0);
+      width: 440px;
+      background: rgba(8, 12, 22, 0.95);
+      border: 1px solid rgba(0, 216, 255, 0.4);
+      border-radius: 14px;
+      box-shadow: 0 0 40px rgba(0, 216, 255, 0.2), inset 0 0 20px rgba(0, 216, 255, 0.05);
+      padding: 18px;
+      animation: var4_hologram 0.34s ease-out forwards;
+      transform-origin: top center;
+      position: relative;
+      z-index: 100;
+    }
+
+    @keyframes var4_hologram {
+      0% {
+        opacity: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transform: translateX(-50%) translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    /* Tech HUD Brackets */
+    .v4-bracket-tl, .v4-bracket-br {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #F28C00;
+      pointer-events: none;
+    }
+    .v4-bracket-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+    .v4-bracket-br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+    .v4-hud-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      font-family: monospace;
+      color: #00D8FF;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed rgba(0, 216, 255, 0.25);
+    }
+
+    .v4-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .v4-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #F1F5F9;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.2s;
+    }
+
+    .v4-item:hover {
+      background: rgba(0, 216, 255, 0.12);
+      border-color: #00D8FF;
+      transform: translateX(4px);
+      box-shadow: 0 0 16px rgba(0, 216, 255, 0.25);
+    }
+
+    .v4-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .v4-desc {
+      font-size: 0.74rem;
+      color: #94A3B8;
+    }
+
+    .v4-arrow {
+      color: #00D8FF;
+      font-weight: 700;
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: all 0.2s;
+    }
+
+    .v4-item:hover .v4-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Comparison Table */
+    .comparison-section {
+      margin-top: 50px;
+      background: #0B0F19;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .comp-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      margin: 0 0 16px;
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .comp-table th, .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .comp-table th {
+      color: #94A3B8;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    .comp-table tr:hover td {
+      background: rgba(255, 255, 255, 0.03);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="preview-header">
+    <h1 class="preview-title">Features Dropdown <span>Animations & Body Designs</span></h1>
+    <p class="preview-subtitle">
+      Aapke navbar dropdown ke liye 4 premium samples taiyaar kiye gaye hain. Har option me unique <strong>Animation</strong> aur <strong>Body Layout</strong> hai.
+    </p>
+
+    <!-- Tab Buttons -->
+    <div class="tabs-bar">
+      <button class="tab-btn active" data-target="sample-1">
+        <span>✨ 1. Dual-Column Glass Mega-Menu</span>
+      </button>
+      <button class="tab-btn" data-target="sample-2">
+        <span>💎 2. Dark Luxury Obsidian Bento</span>
+      </button>
+      <button class="tab-btn" data-target="sample-3">
+        <span>🎯 3. Magnetic Spotlight Pill List</span>
+      </button>
+      <button class="tab-btn" data-target="sample-4">
+        <span>🚀 4. Cyber Matrix Holographic HUD</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Showcase Area -->
+  <main class="showcase-area">
+
+    <!-- SAMPLE 1: DUAL-COLUMN GLASS MEGA MENU -->
+    <div class="sample-card active" id="sample-1">
+      <div class="sample-meta">
+        <div>
+          <div class="sample-name">
+            <span>Variation 1: Dual-Column Glass Mega-Menu</span>
+            <span class="sample-badge">Stripe & Vercel Style</span>
+          </div>
+          <p class="sample-desc">
+            <strong>Body:</strong> Wide 2-column frosted glass layout with gradient icon badges, micro-descriptions, and a bottom highlight SLA banner.<br>
+            <strong>Animation:</strong> <em>"Spring Cascade Drop"</em> —
+          </p>
+        </div>
+      </div>
+
+      <div class="mock-navbar-stage">
+        <div class="mock-brand">
+          <div class="mock-brand-badge">S</div>
+          <span>Saurabh<span style="color:#F28C00">.dev</span></span>
+        </div>
+
+        <ul class="mock-nav-links">
+          <li><span class="mock-nav-link">Services</span></li>
+          <li><span class="mock-nav-link">Portfolio</span></li>
+          <li><span class="mock-nav-link">Industries</span></li>
+          <li class="mock-nav-item">
+            <span class="mock-nav-link active">
+              <span>Features</span>
+              <svg class="mock-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: rotate(180deg);"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+
+            <!-- DROPDOWN BODY -->
+            <div class="mock-dropdown-menu">
+              <!-- Item 1 -->
+              <a href="#" class="v1-item">
+                <div class="v1-icon" style="background: linear-gradient(135deg, #3B82F6, #00D8FF);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                </div>
+                <div>
+                  <h4 class="v1-title">Technologies</h4>
+                  <p class="v1-desc">27+ battle-tested frameworks & scalable stacks</p>
+                </div>
+              </a>
+
+              <!-- Item 2 -->
+              <a href="#" class="v1-item">
+                <div class="v1-icon" style="background: linear-gradient(135deg, #10B981, #059669);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+                </div>
+                <div>
+                  <h4 class="v1-title">4-Step Workflow</h4>
+                  <p class="v1-desc">Agile milestone delivery with zero surprises</p>
+                </div>
+              </a>
+
+              <!-- Item 3 -->
+              <a href="#" class="v1-item">
+                <div class="v1-icon" style="background: linear-gradient(135deg, #8B5CF6, #6366F1);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+                </div>
+                <div>
+                  <h4 class="v1-title">Why Choose Us</h4>
+                  <p class="v1-desc">Direct engineer access vs slow agency overhead</p>
+                </div>
+              </a>
+
+              <!-- Item 4 -->
+              <a href="#" class="v1-item">
+                <div class="v1-icon" style="background: linear-gradient(135deg, #F28C00, #D96B00);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div>
+                  <h4 class="v1-title">Client Reviews</h4>
+                  <p class="v1-desc">Verified testimonials from venture-backed CTOs</p>
+                </div>
+              </a>
+
+              <!-- Item 5 -->
+              <a href="#" class="v1-item">
+                <div class="v1-icon" style="background: linear-gradient(135deg, #EC4899, #F28C00);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <div>
+                  <h4 class="v1-title">FAQ Knowledge</h4>
+                  <p class="v1-desc">Pricing, IP handover, NDA & support answers</p>
+                </div>
+              </a>
+
+              <!-- Bottom Banner -->
+              <div class="v1-bottom-banner">
+                <span>⚡ Need an urgent MVP in 2 weeks?</span>
+                <a href="#">Book Discovery Call &rarr;</a>
+              </div>
+            </div>
+          </li>
+          <li><span class="mock-nav-link">About</span></li>
+          <li><span class="mock-nav-link">Contact</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SAMPLE 2: DARK LUXURY OBSIDIAN BENTO -->
+    <div class="sample-card" id="sample-2">
+      <div class="sample-meta">
+        <div>
+          <div class="sample-name">
+            <span>Variation 2: Dark Luxury Obsidian Bento</span>
+            <span class="sample-badge">Linear & Apple Style</span>
+          </div>
+          <p class="sample-desc">
+            <strong>Body:</strong> Premium asymmetrical Bento-grid card with featured spotlight on Tech Stacks and clean secondary pills.<br>
+            <strong>Animation:</strong> <em>"3D Perspective Fold-Down"</em> —
+          </p>
+        </div>
+      </div>
+
+      <div class="mock-navbar-stage">
+        <div class="mock-brand">
+          <div class="mock-brand-badge">S</div>
+          <span>Saurabh<span style="color:#F28C00">.dev</span></span>
+        </div>
+
+        <ul class="mock-nav-links">
+          <li><span class="mock-nav-link">Services</span></li>
+          <li><span class="mock-nav-link">Portfolio</span></li>
+          <li><span class="mock-nav-link">Industries</span></li>
+          <li class="mock-nav-item">
+            <span class="mock-nav-link active">
+              <span>Features</span>
+              <svg class="mock-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: rotate(180deg);"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+
+            <!-- DROPDOWN BODY -->
+            <div class="mock-dropdown-menu">
+              <div class="v2-bento-grid">
+                <!-- Big Featured Card -->
+                <a href="#" class="v2-featured-card">
+                  <div>
+                    <span class="v2-badge">✨ Core Ecosystem</span>
+                    <h3 style="font-family:'Outfit'; font-size:1.1rem; margin:0 0 4px; color:#FFF;">Technologies & Architecture</h3>
+                    <p style="font-size:0.78rem; color:#94A3B8; margin:0; line-height:1.4;">27+ Production frameworks across Full-Stack, AI agents, cloud devops, and high-frequency APIs.</p>
+                  </div>
+                  <div class="v2-pills">
+                    <span class="v2-pill">React 19</span>
+                    <span class="v2-pill">Next.js 15</span>
+                    <span class="v2-pill">Python AI</span>
+                    <span class="v2-pill">Postgres</span>
+                  </div>
+                </a>
+
+                <!-- Side Column -->
+                <div class="v2-side-list">
+                  <a href="#" class="v2-sub-card">
+                    <div class="v2-sub-icon">⚡</div>
+                    <div>
+                      <div style="font-weight:700; font-size:0.86rem; color:#FFF;">4-Step Workflow</div>
+                      <div style="font-size:0.72rem; color:#94A3B8;">Agile sprints</div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="v2-sub-card">
+                    <div class="v2-sub-icon">⚡</div>
+                    <div>
+                      <div style="font-weight:700; font-size:0.86rem; color:#FFF;">Why Choose Us</div>
+                      <div style="font-size:0.72rem; color:#94A3B8;">Direct senior dev</div>
+                    </div>
+                  </a>
+
+                  <a href="#" class="v2-sub-card">
+                    <div class="v2-sub-icon">⚡</div>
+                    <div>
+                      <div style="font-weight:700; font-size:0.86rem; color:#FFF;">Client Reviews</div>
+                      <div style="font-size:0.72rem; color:#94A3B8;">100% 5-Star rated</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Bottom Bar -->
+              <div class="v2-bottom-bar">
+                <span>Frequently asked questions & pricing guarantees</span>
+                <a href="#">Explore FAQ &rarr;</a>
+              </div>
+            </div>
+          </li>
+          <li><span class="mock-nav-link">About</span></li>
+          <li><span class="mock-nav-link">Contact</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SAMPLE 3: MAGNETIC SPOTLIGHT LIST -->
+    <div class="sample-card" id="sample-3">
+      <div class="sample-meta">
+        <div>
+          <div class="sample-name">
+            <span>Variation 3: Magnetic Spotlight Pill List</span>
+            <span class="sample-badge">Raycast & Arc Style</span>
+          </div>
+          <p class="sample-desc">
+            <strong>Body:</strong> Compact, laser-focused vertical pill list with keyboard navigation badges and high-contrast typography.<br>
+            <strong>Animation:</strong> <em>"Elastic Pill Spring"</em> —
+          </p>
+        </div>
+      </div>
+
+      <div class="mock-navbar-stage">
+        <div class="mock-brand">
+          <div class="mock-brand-badge">S</div>
+          <span>Saurabh<span style="color:#F28C00">.dev</span></span>
+        </div>
+
+        <ul class="mock-nav-links">
+          <li><span class="mock-nav-link">Services</span></li>
+          <li><span class="mock-nav-link">Portfolio</span></li>
+          <li><span class="mock-nav-link">Industries</span></li>
+          <li class="mock-nav-item">
+            <span class="mock-nav-link active">
+              <span>Features</span>
+              <svg class="mock-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: rotate(180deg);"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+
+            <!-- DROPDOWN BODY -->
+            <div class="mock-dropdown-menu">
+              <a href="#" class="v3-item">
+                <div class="v3-left">
+                  <div class="v3-icon-badge">⚡</div>
+                  <div>
+                    <div class="v3-title">Technologies</div>
+                    <div class="v3-desc">Modern tech ecosystem & stacks</div>
+                  </div>
+                </div>
+                <span class="v3-key-badge">TECH</span>
+              </a>
+
+              <a href="#" class="v3-item">
+                <div class="v3-left">
+                  <div class="v3-icon-badge">⚡</div>
+                  <div>
+                    <div class="v3-title">4-Step Workflow</div>
+                    <div class="v3-desc">Transparent agile delivery process</div>
+                  </div>
+                </div>
+                <span class="v3-key-badge">FLOW</span>
+              </a>
+
+              <a href="#" class="v3-item">
+                <div class="v3-left">
+                  <div class="v3-icon-badge">⚡</div>
+                  <div>
+                    <div class="v3-title">Why Choose Us</div>
+                    <div class="v3-desc">Comparison matrix with agencies</div>
+                  </div>
+                </div>
+                <span class="v3-key-badge">WHY</span>
+              </a>
+
+              <a href="#" class="v3-item">
+                <div class="v3-left">
+                  <div class="v3-icon-badge">⚡</div>
+                  <div>
+                    <div class="v3-title">Client Reviews</div>
+                    <div class="v3-desc">Endorsements from founders & CTOs</div>
+                  </div>
+                </div>
+                <span class="v3-key-badge">TRUST</span>
+              </a>
+
+              <a href="#" class="v3-item">
+                <div class="v3-left">
+                  <div class="v3-icon-badge">⚡</div>
+                  <div>
+                    <div class="v3-title">FAQ Knowledge</div>
+                    <div class="v3-desc">Answers to common questions</div>
+                  </div>
+                </div>
+                <span class="v3-key-badge">HELP</span>
+              </a>
+            </div>
+          </li>
+          <li><span class="mock-nav-link">About</span></li>
+          <li><span class="mock-nav-link">Contact</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SAMPLE 4: CYBER MATRIX HOLOGRAPHIC HUD -->
+    <div class="sample-card" id="sample-4">
+      <div class="sample-meta">
+        <div>
+          <div class="sample-name">
+            <span>Variation 4: Cyber Matrix Holographic HUD</span>
+            <span class="sample-badge">Futuristic Cyberpunk Style</span>
+          </div>
+          <p class="sample-desc">
+            <strong>Body:</strong> High-tech HUD card with neon cyan border, cyber corner tech brackets, and futuristic monospace header.<br>
+            <strong>Animation:</strong> <em>"Hologram Laser Curtain Scan"</em> —
+          </p>
+        </div>
+      </div>
+
+      <div class="mock-navbar-stage">
+        <div class="mock-brand">
+          <div class="mock-brand-badge">S</div>
+          <span>Saurabh<span style="color:#F28C00">.dev</span></span>
+        </div>
+
+        <ul class="mock-nav-links">
+          <li><span class="mock-nav-link">Services</span></li>
+          <li><span class="mock-nav-link">Portfolio</span></li>
+          <li><span class="mock-nav-link">Industries</span></li>
+          <li class="mock-nav-item">
+            <span class="mock-nav-link active">
+              <span>Features</span>
+              <svg class="mock-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: rotate(180deg);"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+
+            <!-- DROPDOWN BODY -->
+            <div class="mock-dropdown-menu">
+              <div class="v4-bracket-tl"></div>
+              <div class="v4-bracket-br"></div>
+
+              <div class="v4-hud-header">
+                <span>SYSTEM // DIRECTORY</span>
+                <span>STATUS: ONLINE</span>
+              </div>
+
+              <div class="v4-list">
+                <a href="#" class="v4-item">
+                  <div>
+                    <div class="v4-title">⚡ Technologies</div>
+                    <div class="v4-desc">Modern tech ecosystem & stacks</div>
+                  </div>
+                  <span class="v4-arrow">&rarr;</span>
+                </a>
+
+                <a href="#" class="v4-item">
+                  <div>
+                    <div class="v4-title">⚙️ 4-Step Workflow</div>
+                    <div class="v4-desc">Transparent agile delivery process</div>
+                  </div>
+                  <span class="v4-arrow">&rarr;</span>
+                </a>
+
+                <a href="#" class="v4-item">
+                  <div>
+                    <div class="v4-title">🛡️ Why Choose Us</div>
+                    <div class="v4-desc">Comparison matrix with agencies</div>
+                  </div>
+                  <span class="v4-arrow">&rarr;</span>
+                </a>
+
+                <a href="#" class="v4-item">
+                  <div>
+                    <div class="v4-title">💬 Client Reviews</div>
+                    <div class="v4-desc">Endorsements from founders & CTOs</div>
+                  </div>
+                  <span class="v4-arrow">&rarr;</span>
+                </a>
+
+                <a href="#" class="v4-item">
+                  <div>
+                    <div class="v4-title">❓ FAQ Directory</div>
+                    <div class="v4-desc">Answers to common questions</div>
+                  </div>
+                  <span class="v4-arrow">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><span class="mock-nav-link">About</span></li>
+          <li><span class="mock-nav-link">Contact</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Quick Comparison Table -->
+    <div class="comparison-section">
+      <h3 class="comp-title">Comparison Overview</h3>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Body Style</th>
+            <th>Entrance Animation</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Option 1</strong></td>
+            <td>Dual-Column Frosted Glass Mega-Menu (Wider layout + SLA Banner)</td>
+            <td>Spring Cascade Drop (Elastic cubic-bezier snap + item cascade)</td>
+            <td>Modern SaaS, Vercel/Stripe high-end look</td>
+          </tr>
+          <tr>
+            <td><strong>Option 2</strong></td>
+            <td>Dark Luxury Bento Grid (Large featured tech card + side cards)</td>
+            <td>3D Perspective Fold-Down (Smooth depth tilt + top shine)</td>
+            <td>High-ticket clients, Linear/Apple minimalist luxury</td>
+          </tr>
+          <tr>
+            <td><strong>Option 3</strong></td>
+            <td>Magnetic Spotlight Pill List (Compact, sleek single column)</td>
+            <td>Elastic Pill Spring (Bouncy pop + keyboard tags)</td>
+            <td>Speed, efficiency, Raycast/Arc aesthetic</td>
+          </tr>
+          <tr>
+            <td><strong>Option 4</strong></td>
+            <td>Cyber Matrix Holographic HUD (Neon cyan glow + tech brackets)</td>
+            <td>Hologram Laser Curtain Scan (Futuristic wipe + arrow glide)</td>
+            <td>Cutting-edge developer / Web3 / AI vibe</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <script>
+    // Tab Switching Logic
+    const tabs = document.querySelectorAll('.tab-btn');
+    const cards = document.querySelectorAll('.sample-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        cards.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        const targetId = tab.getAttribute('data-target');
+        const targetCard = document.getElementById(targetId);
+        if (targetCard) {
+          targetCard.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

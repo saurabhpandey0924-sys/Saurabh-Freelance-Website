@@ -7,15 +7,36 @@
     const form = document.getElementById('contact-form');
     if (!form) return;
 
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const serviceSelect = document.getElementById('contact-service-type');
+    const budgetSelect = document.getElementById('contact-budget');
+    const messageInput = document.getElementById('contact-message');
+    const submitBtn = document.getElementById('contact-submit-btn');
+
+    // Check URL parameters for industry prefill on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    const industryParam = urlParams.get('industry');
+    if (industryParam && messageInput) {
+      const industryNames = {
+        fintech: 'FinTech & Banking',
+        healthcare: 'Healthcare & MedTech',
+        ecommerce: 'E-Commerce & D2C',
+        proptech: 'PropTech & Real Estate',
+        logistics: 'Logistics & Supply Chain',
+        edtech: 'EdTech & Learning'
+      };
+      const indName = industryNames[industryParam] || industryParam;
+      if (!messageInput.value) {
+        messageInput.value = `Hi Saurabh, I'm interested in discussing a custom software architecture & development sprint for the ${indName} vertical.`;
+      }
+      if (serviceSelect) {
+        serviceSelect.value = 'saas';
+      }
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-
-      const nameInput = document.getElementById('contact-name');
-      const emailInput = document.getElementById('contact-email');
-      const serviceSelect = document.getElementById('contact-service-type');
-      const budgetSelect = document.getElementById('contact-budget');
-      const messageInput = document.getElementById('contact-message');
-      const submitBtn = document.getElementById('contact-submit-btn');
 
       // Simple validation
       if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {

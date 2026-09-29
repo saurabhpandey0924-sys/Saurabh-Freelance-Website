@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Saurabh's Freelance Platform - Data Store
  * Easily extensible for new projects, testimonials, and services.
  */
@@ -24,7 +24,7 @@ const PORTFOLIO_DATA = {
     headline: "High-Impact Web Development With Dedicated Sprint Execution",
     bio: "I'm Saurabh — Web Developer & Solutions Architect. Together with my specialized development team, we engineer robust web applications, enterprise platforms, and digital products for founders, growing businesses, and agency partners. We manage the entire lifecycle — from technical architecture and clean UI/UX to scalable backend development, rigorous security testing, and production cloud deployment.",
     quote: "True engineering excellence is delivering clean, scalable systems that solve complex business problems and drive tangible commercial growth.",
-    principles: [
+        principles: [
       {
         icon: "⚡",
         title: "Sub-Second Speed & 95+ Core Web Vitals",
@@ -36,7 +36,7 @@ const PORTFOLIO_DATA = {
         desc: "Strict typing, modular components, and comprehensive documentation ensure your codebase is future-proof and effortless to maintain or scale."
       },
       {
-        icon: "🔑",
+        icon: "🔥",
         title: "100% Intellectual Property & Code Ownership",
         desc: "You retain total ownership of all source code, design assets, databases, and deployment repositories from day one with zero vendor lock-in."
       },
@@ -58,6 +58,145 @@ const PORTFOLIO_DATA = {
       "Daily asynchronous progress updates & live sprint demos"
     ]
   },
+
+  industries: [
+    {
+      id: "retail",
+      num: "01",
+      badge: "Retail & Omnichannel",
+      category: "retail",
+      accentColor: "#00F0FF",
+      glowColor: "rgba(0, 240, 255, 0.35)",
+      title: "Omnichannel Retail & Cloud POS Ecosystems",
+      desc: "Unified cloud POS, live multi-store inventory synchronization, customer loyalty programs, and automated barcode checkout.",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+      metricsList: [
+        { value: "4.2x", label: "Inventory Velocity" },
+        { value: "99.99%", label: "Sync Accuracy" },
+        { value: "0.4s", label: "Barcode Scan" }
+      ],
+      metric: { value: "4.2x", label: "Inventory Velocity" }
+    },
+    {
+      id: "healthcare",
+      num: "02",
+      badge: "Health & MedTech",
+      category: "healthcare",
+      accentColor: "#10B981",
+      glowColor: "rgba(16, 185, 129, 0.35)",
+      title: "HIP⚡ Telehealth & Encrypted Medical Portals",
+      desc: "End-to-end encrypted telemedicine platforms, automated doctor scheduling, WebRTC live video consultations, and HL7/FHIR health sync.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
+      metricsList: [
+        { value: "250K+", label: "Consultations" },
+        { value: "100%", label: "HIP⚡ Compliant" },
+        { value: "0 Leak", label: "Security Record" }
+      ],
+      metric: { value: "250K+", label: "Patient Consults" }
+    },
+    {
+      id: "education",
+      num: "03",
+      badge: "Education & EdTech",
+      category: "education",
+      accentColor: "#3B82F6",
+      glowColor: "rgba(59, 130, 246, 0.35)",
+      title: "Interactive Classrooms & Scalable LMS Platforms",
+      desc: "Scalable video streaming architectures, interactive browser code playgrounds, proctored examinations, and automated verifiable certs.",
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
+      metricsList: [
+        { value: "180K+", label: "Active Students" },
+        { value: "98.4%", label: "Completion Rate" },
+        { value: "DRM-Safe", label: "Video Streaming" }
+      ],
+      metric: { value: "180K+", label: "Active Students" }
+    },
+    {
+      id: "restaurants",
+      num: "04",
+      badge: "Restaurants & FoodTech",
+      category: "restaurants",
+      accentColor: "#F28C00",
+      glowColor: "rgba(242, 140, 0, 0.35)",
+      title: "Smart Kitchen KDS & Digital Tabletop Ordering",
+      desc: "QR-based digital tabletop ordering, real-time Kitchen Display Systems (KDS), automated aggregator sync (Zomato/Swiggy), and table reservation engines.",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
+      metricsList: [
+        { value: "-35%", label: "Table Wait Time" },
+        { value: "100%", label: "Kitchen Sync" },
+        { value: "2.8x", label: "Order Volume" }
+      ],
+      metric: { value: "2.8x", label: "Order Volume" }
+    },
+    {
+      id: "manufacturing",
+      num: "05",
+      badge: "Industrial & Manufacturing",
+      category: "manufacturing",
+      accentColor: "#6366F1",
+      glowColor: "rgba(99, 102, 241, 0.35)",
+      title: "Smart Factory ERP & Supply Chain Telemetry",
+      desc: "IoT machine telemetry monitoring, predictive equipment maintenance, automated bill-of-materials (BOM), and raw material inventory forecasting.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
+      metricsList: [
+        { value: "99.8%", label: "Machine Uptime" },
+        { value: "-28%", label: "Production Waste" },
+        { value: "Real-Time", label: "IoT Telemetry" }
+      ],
+      metric: { value: "99.8%", label: "Machine Uptime" }
+    },
+    {
+      id: "finance",
+      num: "06",
+      badge: "Finance & FinTech",
+      category: "finance",
+      accentColor: "#00F0FF",
+      glowColor: "rgba(0, 240, 255, 0.35)",
+      title: "High-Frequency Trading & Payment Gateways",
+      desc: "Sub-50ms trading terminals, multi-currency ledger reconciliation, PCI-DSS compliant checkout flows, and algorithmic fraud protection.",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop",
+      metricsList: [
+        { value: ₹85Cr+", label: "Monthly Volume" },
+        { value: "<50ms", label: "Execution Latency" },
+        { value: "99.999%", label: "System SLA" }
+      ],
+      metric: { value: ₹85Cr+", label: "Processed Monthly" }
+    },
+    {
+      id: "startups",
+      num: "07",
+      badge: "Startups & SaaS",
+      category: "startups",
+      accentColor: "#8B5CF6",
+      glowColor: "rgba(139, 92, 246, 0.35)",
+      title: "Rapid MVP & Scalable Multi-Tenant Platforms",
+      desc: "Production-ready web apps shipped in 2-3 weeks with multi-tenant databases, Stripe subscription billing, and investor-grade analytics.",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1200&auto=format&fit=crop",
+      metricsList: [
+        { value: "2-3 Wks", label: "MVP Speed" },
+        { value: "$25M+", label: "Client Funding" },
+        { value: "0 Tech Debt", label: "Scalable Architecture" }
+      ],
+      metric: { value: "2-3 Wks", label: "MVP Speed" }
+    },
+    {
+      id: "ecommerce",
+      num: "08",
+      badge: "E-Commerce & D2C",
+      category: "ecommerce",
+      accentColor: "#F28C00",
+      glowColor: "rgba(242, 140, 0, 0.35)",
+      title: "Sub-Second Headless Commerce & Flash Sales",
+      desc: "Ultra-fast headless architectures that skyrocket conversion rates, sync multi-warehouse inventory across marketplaces, and handle viral flash sales.",
+      image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1200&auto=format&fit=crop",
+      metricsList: [
+        { value: "3.4x", label: "Average GMV Lift" },
+        { value: "0.8s", label: "Load Speed" },
+        { value: "+40%", label: "Checkout Rate" }
+      ],
+      metric: { value: "3.4x", label: "Average GMV Lift" }
+    }
+  ],
 
   technologies: [
     {
@@ -278,130 +417,97 @@ const PORTFOLIO_DATA = {
     }
   ],
 
-  industries: [
-    {
-      id: "saas",
-      title: "SaaS & Tech Startups",
-      badge: "High Growth",
-      icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>`,
-      desc: "Turn product vision into investor-ready software with multi-tenant databases, Stripe billing, and automated onboarding.",
-      solutions: [
-        "Rapid MVP Development in 2-3 Weeks",
-        "Subscription & Metered Billing Portals",
-        "Role-Based Access (RBAC) & OAuth",
-        "Real-Time Metrics & Churn Analytics"
-      ],
-      outcome: "Accelerated Time-to-Market"
-    },
-    {
-      id: "ecommerce",
-      title: "E-Commerce & D2C Brands",
-      badge: "Conversion Engine",
-      icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>`,
-      desc: "Headless e-commerce storefronts that load in under 1 second, eliminate cart friction, and maximize checkout conversion rates.",
-      solutions: [
-        "Headless Shopify & Next.js Storefronts",
-        "1-Click Slide-Out Checkout Funnels",
-        "Real-Time Inventory & ERP Sync",
-        "Dynamic Product Recommendations"
-      ],
-      outcome: "Sub-Second Load Times"
-    },
-    {
-      id: "edtech",
-      title: "Education & EdTech",
-      badge: "Campus & LMS",
-      icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 3 6 3 6 3s6 0 6-3v-5"/></svg>`,
-      desc: "Institutional ERPs, student & faculty portals, online fees management, and automated exam & grading systems.",
-      solutions: [
-        "College & School Management ERPs",
-        "Student & Faculty Portal Dashboards",
-        "Automated Fee Collection & Receipts",
-        "Digital Attendance & Gradebooks"
-      ],
-      outcome: "Zero Manual Paperwork"
-    },
-    {
-      id: "healthcare",
-      title: "Healthcare & Clinics",
-      badge: "Secure & Compliant",
-      icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`,
-      desc: "Modern digital health solutions with secure patient records, interactive appointment scheduling, and telemedicine interfaces.",
-      solutions: [
-        "Online Patient Appointment Booking",
-        "Diagnostic & Lab Report Viewers",
-        "Doctor Rostering & Clinic Billing",
-        "HIPAA-Conscious Data Handling"
-      ],
-      outcome: "Seamless Patient Care"
-    },
-    {
-      id: "logistics",
-      title: "Logistics & Operations",
-      badge: "Enterprise Scale",
-      icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="13" x="4" y="5" rx="2"/><path d="M16 2v3M8 2v3M4 11h16M9 16h6"/></svg>`,
-      desc: "Custom business ERPs, fleet tracking dashboards, dispatch automation, and real-time inventory management.",
-      solutions: [
-        "Warehouse & Inventory Management",
-        "Live Fleet Tracking & Dispatch",
-        "Automated Invoicing & GST Reporting",
-        "Supplier & Vendor Portals"
-      ],
-      outcome: "3x Operational Velocity"
-    }
-  ],
-
   services: [
     {
-      id: "fullstack",
-      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>`,
-      title: "Full-Stack Web Development",
-      description: "Modern, responsive, blazing-fast web applications built with clean architecture, high security, and seamless UI/UX.",
-      tags: ["React / Next.js", "Node.js / Express", "TypeScript", "Tailwind CSS"],
+      id: "software-web",
+      icon: `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/><polyline points="7 8 10 10 7 12"/><line x1="13" x2="17" y1="12" x2="17" y2="12"/></svg>`,
+      title: "Software & Website Development",
+      subtitle: "We develop scalable websites, business applications, ERP systems, CRM solutions, mobile apps, and custom software tailored to your business needs.",
+      description: "We develop scalable websites, business applications, ERP systems, CRM solutions, mobile apps, and custom software tailored to your business needs.",
+      tags: ["React / Next.js", "Node.js", "E-Commerce", "ERP & CRM", "TypeScript", "Tailwind CSS"],
       badge: "Popular",
-      timeline: "2 - 3 Weeks",
-      bestFor: "Startups, Businesses & Agencies needing a complete, scalable digital product.",
-      detailedOverview: "We architect and build complete end-to-end web applications designed to load instantly, convert visitors into paying clients, and scale reliably as your user base grows. From responsive frontend design systems to resilient backend APIs and relational databases, our team delivers production-ready software without technical debt.",
+      timeline: "2 - 4 Weeks",
+      bestFor: "Businesses, Startups & Enterprises needing reliable, secure, and scalable web solutions.",
+      overview: "Our software development services encompass everything from business websites to complex ERP systems. We build reliable, secure, and scalable solutions.",
+      detailedOverview: "Our software development services encompass everything from business websites to complex ERP systems. We build reliable, secure, and scalable solutions.",
+      capabilities: [
+        {
+          title: "Custom Web Applications & Portals",
+          desc: "Modern, responsive, blazing-fast web apps built with Next.js 14, React, and Node.js with zero technical debt.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`
+        },
+        {
+          title: "Enterprise ERP & CRM Systems",
+          desc: "Centralized institutional software with role-based access, attendance tracking, automated workflows, and billing.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`
+        },
+        {
+          title: "Headless E-Commerce Storefronts",
+          desc: "Ultra-fast headless commerce with instant product browsing, 1-click checkouts, and inventory synchronization.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`
+        }
+      ],
       deliverables: [
         "Modern responsive UI/UX built with Next.js 14 / React & TypeScript",
-        "High-performance RESTful or GraphQL API backend with authentication",
+        "Enterprise ERP/CRM business logic or Headless E-Commerce storefront",
+        "High-performance RESTful or GraphQL API backend with secure authentication",
         "Relational database modeling with PostgreSQL, Prisma ORM & Redis caching",
         "Automated CI/CD pipeline & zero-downtime deployment (Vercel, AWS, or Docker)",
         "Comprehensive cross-device testing & 95+ Google Lighthouse speed optimization"
       ],
       milestones: [
-        { phase: "Week 1", title: "Architecture & Interactive Prototypes", desc: "User flows, database schemas, and approved component wireframes." },
-        { phase: "Week 2", title: "Core Full-Stack Sprint", desc: "API integrations, database queries, responsive views, and state management." },
-        { phase: "Week 3", title: "Security, QA & Live Deployment", desc: "Lighthouse audits, cross-browser validation, and seamless production launch." }
+        { phase: "Week 1", title: "Discovery, Wireframes & System Architecture", desc: "User flows, database schemas, and approved component wireframes." },
+        { phase: "Week 2-3", title: "Full-Stack Sprint & Workflow Integration", desc: "Core feature engineering, business logic, payment gateway & API integrations." },
+        { phase: "Week 4", title: "Security QA, Lighthouse 95+ & Live Launch", desc: "Rigorous testing, performance tuning, and zero-downtime production launch." }
       ],
       includedGuarantees: [
         "100% Intellectual Property & Code Ownership",
         "30-Day Post-Launch Bugfix Warranty",
         "95+ Google Lighthouse Performance Score",
-        "Daily Async Loom Progress Updates"
+        "Daily Async Loom / WhatsApp Progress Updates"
       ]
     },
     {
-      id: "saas",
-      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>`,
-      title: "Custom SaaS & MVP Engineering",
-      description: "Transform your startup vision into an investor-ready, revenue-generating SaaS product in weeks, not months.",
-      tags: ["Auth & Roles", "Stripe Billing", "Multi-Tenancy", "PostgreSQL / Prisma"],
+      id: "saas-cloud",
+      icon: `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><polyline points="12 12 12 16 14 14"/></svg>`,
+      title: "Custom SaaS & Cloud Architecture",
+      subtitle: "Transform your startup vision into an investor-ready SaaS product powered by resilient cloud microservices and scalable APIs.",
+      description: "Turn your software concept into a fully operational, subscription-billing SaaS business powered by resilient cloud microservices.",
+      tags: ["SaaS & MVP", "Stripe / Razorpay", "Multi-Tenancy", "GraphQL / REST", "Docker & AWS"],
       badge: "High ROI",
       timeline: "3 - 5 Weeks",
-      bestFor: "Founders, Bootstrappers & Enterprises launching a software-as-a-service venture.",
-      detailedOverview: "Turn your software concept into a fully operational, subscription-billing SaaS business. We specialize in building fast, secure Minimum Viable Products (MVPs) engineered for high user retention, self-serve onboarding, and automated revenue collection.",
+      bestFor: "Founders, Bootstrappers & Enterprises launching a software-as-a-service venture or scaling backend infrastructure.",
+      overview: "We engineer complete SaaS platforms with multi-tenancy, subscription billing, resilient microservices, and secure cloud infrastructure designed to scale reliably.",
+      detailedOverview: "We engineer complete SaaS platforms with multi-tenancy, subscription billing, resilient microservices, and secure cloud infrastructure designed to scale reliably.",
+      capabilities: [
+        {
+          title: "Multi-Tenant SaaS & MVP Engineering",
+          desc: "Complete SaaS engine with strict tenant isolation, self-serve onboarding, and investor-ready architecture.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>`
+        },
+        {
+          title: "Automated Subscription Billing",
+          desc: "Stripe & Razorpay recurring billing, customer billing portals, coupon management, and webhook event handling.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/><path d="M7 15h.01"/><path d="M11 15h2"/></svg>`
+        },
+        {
+          title: "API Architecture & Microservices",
+          desc: "High-concurrency REST & GraphQL APIs, Redis caching, Docker containerization, and AWS/Vercel CI/CD.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>`
+        }
+      ],
       deliverables: [
         "Multi-tenant database architecture with strict tenant data isolation",
-        "Secure User Authentication, Session Management, OAuth & Role-Based Access (RBAC)",
+        "Secure User Auth, OAuth, Session Management & Role-Based Access Control (RBAC)",
         "Automated recurring subscription billing via Stripe or Razorpay with customer portal",
-        "Interactive analytics dashboards with charts, usage tracking, and data export",
-        "Transactional email notifications (Resend / Postmark) and webhook event pipelines"
+        "Containerized microservices with Docker & automated cloud deployment pipelines",
+        "High-concurrency RESTful or GraphQL APIs with Swagger / OpenAPI documentation",
+        "Interactive analytics dashboards with charts, usage tracking, and data export"
       ],
       milestones: [
-        { phase: "Week 1-2", title: "MVP Scope & Database Foundations", desc: "Auth architecture, billing schemas, and dashboard layouts." },
-        { phase: "Week 3-4", title: "Core SaaS Engine & Payment Workflows", desc: "Feature development, subscription webhooks, and self-serve onboarding." },
-        { phase: "Week 5", title: "Testing, Beta Launch & Handover", desc: "End-to-end user testing, error monitoring (Sentry), and live launch." }
+        { phase: "Week 1-2", title: "MVP Scope & Cloud Infrastructure", desc: "Auth architecture, multi-tenant database schemas, and API contracts." },
+        { phase: "Week 3-4", title: "Core SaaS Engine & Subscription Workflows", desc: "Feature development, subscription webhooks, and self-serve onboarding." },
+        { phase: "Week 5", title: "Load Testing, Beta Launch & Handover", desc: "Stress testing, Sentry error monitoring, and production deployment." }
       ],
       includedGuarantees: [
         "Stripe-verified subscription billing integration",
@@ -411,119 +517,51 @@ const PORTFOLIO_DATA = {
       ]
     },
     {
-      id: "ai",
-      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
-      title: "AI Automation & LLM Integration",
-      description: "Embed intelligent AI agents, RAG document search, workflow automation, and predictive algorithms directly into your product.",
-      tags: ["Gemini / OpenAI API", "LangChain / LangGraph", "Vector DBs", "Workflow Nodes"],
+      id: "ai-performance",
+      icon: `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 22v-4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/><circle cx="12" cy="12" r="4"/></svg>`,
+      title: "AI Automation & Performance Engineering",
+      subtitle: "Embed intelligent AI agents, RAG document search, and slash page load times to sub-second speeds with 95+ Core Web Vitals.",
+      description: "Embed intelligent AI agents, RAG document search, and elevate page speed to sub-second load times with 95+ Google Lighthouse scores.",
+      tags: ["Gemini / OpenAI", "LangChain / RAG", "Vector DBs", "95+ Web Vitals", "Speed Audit"],
       badge: "Trending",
       timeline: "2 - 4 Weeks",
-      bestFor: "Companies looking to automate repetitive operations or integrate generative AI features.",
-      detailedOverview: "Harness modern Large Language Models and AI agent architectures to make your software significantly smarter. We build production-ready retrieval-augmented generation (RAG) pipelines, autonomous task agents, and custom workflow automations that save hundreds of human labor hours.",
+      bestFor: "Companies looking to automate operations with AI or fix slow, sluggish websites for higher conversions.",
+      overview: "Harness modern Large Language Models and optimize your existing digital platforms to operate with maximum speed, zero technical debt, and automated operations.",
+      detailedOverview: "Harness modern Large Language Models and optimize your existing digital platforms to operate with maximum speed, zero technical debt, and automated operations.",
+      capabilities: [
+        {
+          title: "AI Agents & LLM Integration",
+          desc: "Production AI features using Gemini API, OpenAI, LangChain, conversational copilots, and token-streaming UI.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>`
+        },
+        {
+          title: "RAG Vector Document Search",
+          desc: "Intelligent document retrieval pipelines using Pinecone / pgvector / Qdrant with custom knowledge bases.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/><circle cx="16" cy="16" r="3"/><path d="m19 19 2 2"/></svg>`
+        },
+        {
+          title: "Speed Audit & 95+ Core Web Vitals",
+          desc: "Slash load times to sub-second speeds, optimize LCP/CLS, eliminate technical debt, and boost Google rankings.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`
+        }
+      ],
       deliverables: [
-        "Production AI integrations using Gemini, OpenAI, or Anthropic APIs with fallback routing",
-        "RAG document search with Vector Embeddings (Pinecone / pgvector / Qdrant)",
-        "Autonomous multi-step AI agents and conversational copilots with memory",
-        "Automated scraping, document parsing, and unstructured data extraction pipelines",
-        "Cost-controlled token streaming, prompt optimization, and rate-limiting guardrails"
+        "Production AI integrations using Gemini, OpenAI, or Anthropic with fallback routing",
+        "RAG document search with Vector Embeddings & custom knowledge indexing",
+        "Sub-second page speed optimization with guaranteed 90+ Google Lighthouse score",
+        "JavaScript bundle splitting, edge caching (Cloudflare/Fastly), and critical asset optimization",
+        "Automated workflow nodes, scraping pipelines, and structured data extraction"
       ],
       milestones: [
-        { phase: "Week 1", title: "AI Prompt Engineering & Vector Setup", desc: "Model benchmarking, context window optimization, and embedding pipeline." },
-        { phase: "Week 2-3", title: "Agent Integration & UI Streaming", desc: "Real-time token streaming, memory stores, and API connecting logic." },
-        { phase: "Week 4", title: "Safety Guardrails & Latency Optimization", desc: "Hallucination testing, caching layers, and production deployment." }
-      ],
-      includedGuarantees: [
-        "Optimized prompt architecture to minimize API token costs",
-        "Strict data privacy & zero third-party data leakage",
-        "Sub-second streaming latency optimization",
-        "30-Day post-launch prompt maintenance"
-      ]
-    },
-    {
-      id: "ecommerce",
-      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>`,
-      title: "High-Performance E-Commerce",
-      description: "Custom headless storefronts, frictionless 1-click checkouts, inventory syncing, and conversion-optimized sales funnels.",
-      tags: ["Shopify Headless", "Next.js Commerce", "Razorpay / Stripe", "Speed Optimization"],
-      badge: "High Conversion",
-      timeline: "2 - 3 Weeks",
-      bestFor: "D2C brands and retailers seeking maximum checkout conversion rates and sub-second load times.",
-      detailedOverview: "Traditional e-commerce platforms are slow and hurt conversions. We build custom headless e-commerce storefronts that load instantly, provide app-like smooth product browsing, and minimize cart abandonment with frictionless payment flows.",
-      deliverables: [
-        "Ultra-fast headless storefront built with Next.js Commerce & Tailwind CSS",
-        "Seamless integration with Shopify, WooCommerce, or custom inventory backends",
-        "High-converting 1-click checkout with Razorpay, Stripe, and Apple/Google Pay",
-        "Smart product filters, real-time variant selectors, and predictive search",
-        "Abandoned cart recovery hooks and Google Analytics / Meta Pixel conversion tracking"
-      ],
-      milestones: [
-        { phase: "Week 1", title: "Catalog Architecture & Checkout UX", desc: "Product schema, mobile-first purchase flow, and UI prototype." },
-        { phase: "Week 2", title: "Storefront Build & Gateway Integration", desc: "Payment gateways, cart synchronization, and inventory webhooks." },
-        { phase: "Week 3", title: "Conversion Optimization & Launch", desc: "Core Web Vitals tuning, checkout test transactions, and live switch." }
-      ],
-      includedGuarantees: [
-        "Sub-1 second page transitions & instant cart updates",
-        "Zero payment gateway failure tolerance",
-        "Mobile-first responsive optimization across 20+ screen sizes",
-        "30-Day post-launch conversion audit"
-      ]
-    },
-    {
-      id: "api",
-      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>`,
-      title: "API Architecture & Microservices",
-      description: "Robust REST & GraphQL APIs, microservices clustering, third-party software integrations, and resilient databases.",
-      tags: ["FastAPI / Node", "GraphQL", "Redis Caching", "Docker & CI/CD"],
-      badge: "Scalable",
-      timeline: "1 - 3 Weeks",
-      bestFor: "Companies needing bulletproof backend services to power mobile apps, web apps, or internal tools.",
-      detailedOverview: "Reliable applications need strong backends. We architect high-concurrency, well-documented REST and GraphQL APIs capable of handling millions of requests with low latency, robust data validation, and automated scaling.",
-      deliverables: [
-        "Well-architected RESTful or GraphQL API endpoints with strict input validation",
-        "Containerized deployment using Docker & Docker Compose",
-        "High-speed caching with Redis and database query optimization",
-        "JWT and API Key authentication with fine-grained rate limiting",
-        "Interactive Swagger / OpenAPI documentation for seamless team integration"
-      ],
-      milestones: [
-        { phase: "Phase 1", title: "API Contract & Schema Design", desc: "Endpoint specifications, entity relationship diagrams, and auth strategy." },
-        { phase: "Phase 2", title: "Implementation & Database Indexing", desc: "High-throughput endpoint coding, caching layers, and unit tests." },
-        { phase: "Phase 3", title: "Load Testing & Container Deployment", desc: "Stress testing, Dockerizing, and setting up CI/CD pipelines." }
-      ],
-      includedGuarantees: [
-        "Under 50ms average internal response times",
-        "Comprehensive Swagger / Postman API documentation",
-        "Automated integration test suites",
-        "30-Day backend support coverage"
-      ]
-    },
-    {
-      id: "optimization",
-      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
-      title: "Speed Audit & Code Refactoring",
-      description: "Slash page load times to sub-second speeds, elevate Google Lighthouse scores to 95+, and eliminate technical debt.",
-      tags: ["Web Vitals (LCP/CLS)", "SEO Architecture", "Database Query Tuning", "Security Audit"],
-      badge: "99+ Score",
-      timeline: "5 - 7 Days",
-      bestFor: "Websites and web apps suffering from slow load speeds, poor Google ranking, or messy legacy code.",
-      detailedOverview: "Every 1-second delay in page load time reduces conversions by up to 7%. We deep-dive into your codebase, identify bottlenecks, optimize asset bundles, tune slow database queries, and elevate your website to top-tier Google Core Web Vitals rankings.",
-      deliverables: [
-        "Comprehensive audit report diagnosing LCP, CLS, FID, and server response delays",
-        "JavaScript bundle splitting, tree-shaking, and lazy loading implementation",
-        "Next-gen image formatting (WebP/AVIF), font subsetting, and responsive loading",
-        "Server-side edge caching (Cloudflare / Fastly / Redis) and compression (Brotli)",
-        "Database index optimization and slow query refactoring"
-      ],
-      milestones: [
-        { phase: "Day 1-2", title: "Performance Diagnostics & Bottleneck Mapping", desc: "Network traces, bundle analysis, and memory leak profiling." },
-        { phase: "Day 3-5", title: "Code Refactoring & Asset Optimization", desc: "Bundle trimming, image optimization, edge caching, and critical CSS." },
-        { phase: "Day 6-7", title: "Validation Audit & Lighthouse Verification", desc: "Final verification runs on mobile and desktop with before/after benchmarks." }
+        { phase: "Week 1", title: "AI Prompt Engineering & Performance Audit", desc: "Model benchmarking, context window design, and network bottleneck mapping." },
+        { phase: "Week 2-3", title: "Agent Integration & Code Refactoring", desc: "Token streaming, memory stores, bundle trimming, and database query tuning." },
+        { phase: "Week 4", title: "Guardrails, Verification & Live Launch", desc: "Hallucination testing, Lighthouse verification runs, and production deployment." }
       ],
       includedGuarantees: [
         "Guaranteed 90+ Google Lighthouse Score on Mobile & Desktop",
-        "Measurable reduction in Largest Contentful Paint (LCP < 1.8s)",
-        "Full before-and-after performance analytics report",
-        "Zero visual regression or broken functionality guarantee"
+        "Cost-controlled prompt architecture to minimize API token costs",
+        "Strict data privacy & zero third-party data leakage",
+        "30-Day post-launch AI & speed maintenance warranty"
       ]
     }
   ],
@@ -676,12 +714,12 @@ const PORTFOLIO_DATA = {
     }
   ],
 
-  skills: {
+    skills: {
     frontend: [
       { name: "React / Next.js", level: 96, icon: "⚛️" },
-      { name: "TypeScript / JavaScript ES6+", level: 95, icon: "📘" },
+      { name: "TypeScript / JavaScript ES6+", level: 95, icon: "⚡" },
       { name: "Tailwind CSS / Vanilla CSS", level: 98, icon: "🎨" },
-      { name: "HTML5 / Semantic SEO / WCAG", level: 99, icon: "🌐" },
+      { name: "HTML5 / Semantic SEO / WCAG", level: 99, icon: "💎" },
       { name: "Framer Motion & GSAP Animations", level: 90, icon: "✨" },
       { name: "State Management (Redux, Zustand)", level: 94, icon: "📦" }
     ],
@@ -691,7 +729,7 @@ const PORTFOLIO_DATA = {
       { name: "RESTful & GraphQL APIs", level: 96, icon: "🔌" },
       { name: "PostgreSQL, MySQL & MongoDB", level: 92, icon: "🗄️" },
       { name: "Redis Caching & Pub/Sub", level: 88, icon: "⚡" },
-      { name: "Auth (JWT, OAuth2, NextAuth, Clerk)", level: 95, icon: "🔒" }
+      { name: "Auth (JWT, OAuth2, NextAuth, Clerk)", level: 95, icon: "🔐" }
     ],
     aiAndDevops: [
       { name: "AI/LLM Integration (Gemini, OpenAI)", level: 92, icon: "🤖" },
@@ -726,62 +764,6 @@ const PORTFOLIO_DATA = {
     }
   ],
 
-  pricingTiers: [
-    {
-      id: "starter",
-      name: "Starter MVP / Landing Page",
-      price: "₹24,999",
-      period: "Fixed Scope",
-      delivery: "5 - 7 Days",
-      popular: false,
-      desc: "Ideal for early-stage startups and businesses needing a world-class landing page or single-feature MVP.",
-      features: [
-        "High-Converting Responsive Design",
-        "5 Custom Designed Sections / Pages",
-        "Sub-second Load Speeds (95+ Lighthouse)",
-        "SEO Meta Tags & Social Sharing Preview",
-        "Contact & Lead Capture Form Integration",
-        "14 Days Post-Launch Support"
-      ],
-      ctaText: "Choose Starter"
-    },
-    {
-      id: "growth",
-      name: "Full-Stack Custom Web App / SaaS",
-      price: "₹59,999",
-      period: "Most Popular",
-      delivery: "2 - 3 Weeks",
-      popular: true,
-      desc: "Complete end-to-end custom web application, SaaS platform, or client portal built for scale.",
-      features: [
-        "Full-Stack Architecture (React/Next.js + Node)",
-        "Database Design & Relational Schema (Postgres)",
-        "Authentication & Role-Based Access Control",
-        "UPI / Razorpay / Stripe Payment & Subscription Gateway",
-        "Interactive Admin Dashboard & Analytics",
-        "30 Days Dedicated Post-Launch Support"
-      ],
-      ctaText: "Launch Your App"
-    },
-    {
-      id: "enterprise",
-      name: "Custom Enterprise & AI Solution",
-      price: "₹99,999+",
-      period: "Tailored Plan",
-      delivery: "3 - 5 Weeks",
-      popular: false,
-      desc: "Bespoke software architecture, AI agent integration, high-frequency APIs, and dedicated engineering sprints.",
-      features: [
-        "Custom AI / LLM Agent Workflows & RAG Search",
-        "Complex Real-Time Data (WebSockets / Streaming)",
-        "Microservices, Docker & Cloud Infrastructure",
-        "Automated CI/CD Deployment Pipelines",
-        "Priority 24/7 Slack / WhatsApp Communication",
-        "60 Days Extended Warranty & Maintenance"
-      ],
-      ctaText: "Discuss Enterprise"
-    }
-  ],
 
   testimonials: [
     {
@@ -842,3 +824,7 @@ const PORTFOLIO_DATA = {
 
 // Export to window for vanilla JS modularity
 window.PORTFOLIO_DATA = PORTFOLIO_DATA;
+
+
+
+

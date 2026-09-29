@@ -52,7 +52,7 @@ flowchart LR
 - **Non-Functional Requirements (NFR)**:
   - **Performance**: 95+ Google Lighthouse score, < 1.2s First Contentful Paint.
   - **Aesthetics & UX**: Sleek modern tech dark aesthetic with subtle neon/indigo gradients, smooth micro-interactions, responsive typography.
-  - **Accessibility**: WCAG 2.1 AA compliant contrast ratios and keyboard navigation.
+  - **Accessibility**: WCAG 2.1 ⚡ compliant contrast ratios and keyboard navigation.
   - **SEO & Meta Optimization**: OpenGraph metadata, JSON-LD Schema (Person & WebSite), semantic HTML5 tags.
 
 ---

@@ -9,7 +9,7 @@
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
   padding: 48px;
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(255, 51, 75, 0.18);
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(242, 140, 0, 0.18);
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: 48px;
@@ -86,8 +86,8 @@
 
 .calc-type-option input:checked + .calc-type-card {
   border-color: var(--accent-primary);
-  background: rgba(255, 51, 75, 0.15);
-  box-shadow: 0 0 16px rgba(255, 51, 75, 0.35);
+  background: rgba(242, 140, 0, 0.15);
+  box-shadow: 0 0 16px rgba(242, 140, 0, 0.35);
 }
 
 .calc-type-card:hover {
@@ -191,7 +191,7 @@
   border-radius: 50%;
   background: var(--gradient-primary);
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(255, 51, 75, 0.8);
+  box-shadow: 0 0 10px rgba(242, 140, 0, 0.8);
 }
 
 /* Calculator Summary Box */

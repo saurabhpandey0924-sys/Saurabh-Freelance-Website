@@ -567,19 +567,23 @@
   }
 
   .sphere-item {
-    width: 52px;
-    height: 52px;
-    margin-left: -26px;
-    margin-top: -26px;
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    margin-top: -22px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
 
   .sphere-item-icon {
-    width: 26px;
-    height: 26px;
+    width: 36px;
+    height: 36px;
   }
 
   .sphere-item-label {
-    font-size: 0.58rem;
+    font-size: 0.62rem;
+    bottom: -20px;
   }
 
   .sphere-hint {

@@ -10,11 +10,10 @@
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
   const tiltSelectors = [
+    '.industry-card',
     '.service-card',
     '.project-card',
     '.metric-card',
-    '.pricing-card',
-    '.calc-type-card',
     '.about-guarantee-card'
   ];
 
@@ -51,7 +50,7 @@
       // Dynamic sheen reflection
       const sheenX = (x / rect.width) * 100;
       const sheenY = (y / rect.height) * 100;
-      sheen.style.background = `radial-gradient(circle at ${sheenX}% ${sheenY}%, rgba(255, 51, 75, 0.2) 0%, rgba(255, 107, 74, 0.08) 40%, transparent 70%)`;
+      sheen.style.background = `radial-gradient(circle at ${sheenX}% ${sheenY}%, rgba(242, 140, 0, 0.2) 0%, rgba(255, 107, 74, 0.08) 40%, transparent 70%)`;
       sheen.style.opacity = '1';
     });
 

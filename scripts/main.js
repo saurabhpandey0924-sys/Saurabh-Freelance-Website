@@ -24,15 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectFilters(data.projects);
 
   // 5. Render Skills Matrix
-  renderSkills(data.skills);
+  // renderSkills(data.skills);
 
   // 6. Render Work Process
   renderProcess(data.process);
 
-  // 7. Render Pricing
-  renderPricing(data.pricingTiers);
-
-  // 8. Render About & Working Philosophy
+  // 7. Render About & Working Philosophy
   renderAbout(data.about);
 
   // 9. Render Testimonials
@@ -41,9 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // 10. Render FAQs
   renderFAQs(data.faqs);
 
-  // 11. Navigation & Scroll Observers
+  // 11. Dedicated Service Detail Page (if on service-detail.html)
+  initServiceDetailPage();
+
+  // 12. Navigation & Scroll Observers
   initNavigation();
   initScrollAnimations();
+  
+  // 13. Welcome Popup
+  initWelcomePopup();
 });
 
 /* --------------------------------------------------------------------------
@@ -168,45 +171,98 @@ function renderTechnologies(technologies) {
   animate();
 }
 
-/* 2. INDUSTRIES WE EMPOWER */
+/* 2. INDUSTRIES WE EMPOWER (VARIATION 1B: DARK LUXURY EXPANDING ACCORDION) */
 function renderIndustries(industries) {
   const container = document.getElementById('industries-container');
   if (!container) return;
 
-  container.innerHTML = industries.map(ind => `
-    <div class="glass-card industry-card reveal">
-      <div class="industry-card-header">
-        <div class="industry-icon-wrap">
-          ${ind.icon}
-        </div>
-        <span class="industry-badge">${ind.badge}</span>
-      </div>
-      <h3 class="industry-title">${ind.title}</h3>
-      <p class="industry-desc">${ind.desc}</p>
-      
-      <div class="industry-solutions">
-        <div class="industry-solutions-label">Key Capabilities:</div>
-        <ul class="industry-solutions-list">
-          ${ind.solutions.map(sol => `
-            <li>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>${sol}</span>
-            </li>
-          `).join('')}
-        </ul>
-      </div>
+  const validIndustries = (industries || []).filter(ind => ind && ind.title);
+  if (!validIndustries.length) return;
 
-      <div class="industry-card-footer">
-        <div class="industry-outcome-pill">
-          <span class="outcome-dot"></span>
-          <span>${ind.outcome}</span>
+  container.innerHTML = `
+    <div class="luxury-accordion-stage" id="luxury-accordion">
+      ${validIndustries.map((ind, idx) => `
+        <div class="luxury-panel ${idx === 0 ? 'active' : ''}" data-industry="${ind.category || ind.id || 'all'}" style="--l-accent: ${ind.accentColor || '#FFFFFF'};">
+          <div class="luxury-panel-bg" style="background-image: url('${ind.image || 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop'}');"></div>
+          <div class="luxury-collapsed-title">${ind.num || '0' + (idx + 1)} / ${ind.badge ? ind.badge.split('&')[0].trim().toUpperCase() : 'INDUSTRY'}</div>
+          <div class="luxury-content">
+            <span class="luxury-badge">${ind.badge || 'Enterprise'}</span>
+            <h2 class="luxury-title">${ind.title || ''}</h2>
+            <p class="luxury-desc">${ind.desc || ''}</p>
+            <a href="contact.html?industry=${ind.id || ''}" class="luxury-cta">
+              <span>Initiate Consultation</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
-        <a href="#contact" class="industry-inquire-link">
-          <span>Consult &rarr;</span>
-        </a>
-      </div>
+      `).join('')}
     </div>
-  `).join('');
+  `;
+
+  // 1. Accordion Auto-Loop & Hover/Click Interaction
+  const stage = container.querySelector('.luxury-accordion-stage');
+  const panels = container.querySelectorAll('.luxury-panel');
+  if (!panels.length) return;
+
+  let currentActiveIndex = 0;
+  let autoLoopTimer = null;
+  let isUserPausing = false;
+  let resumeTimer = null;
+
+  function advanceLoop() {
+    if (isUserPausing) return;
+    currentActiveIndex = (currentActiveIndex + 1) % panels.length;
+    panels.forEach((p, idx) => {
+      p.classList.toggle('active', idx === currentActiveIndex);
+    });
+  }
+
+  function startAutoLoop() {
+    stopAutoLoop();
+    autoLoopTimer = setInterval(advanceLoop, 3200); // Smooth 3.2s interval
+  }
+
+  function stopAutoLoop() {
+    if (autoLoopTimer) {
+      clearInterval(autoLoopTimer);
+      autoLoopTimer = null;
+    }
+  }
+
+  // Hover or Click on a panel activates it and pauses auto-loop
+  panels.forEach((panel, idx) => {
+    panel.addEventListener('mouseenter', () => {
+      isUserPausing = true;
+      stopAutoLoop();
+      if (resumeTimer) clearTimeout(resumeTimer);
+      currentActiveIndex = idx;
+      panels.forEach(p => p.classList.remove('active'));
+      panel.classList.add('active');
+    });
+
+    panel.addEventListener('click', () => {
+      isUserPausing = true;
+      stopAutoLoop();
+      if (resumeTimer) clearTimeout(resumeTimer);
+      currentActiveIndex = idx;
+      panels.forEach(p => p.classList.remove('active'));
+      panel.classList.add('active');
+    });
+  });
+
+  // When mouse leaves the accordion stage, resume loop after 4 seconds of idle time
+  if (stage) {
+    stage.addEventListener('mouseleave', () => {
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => {
+        isUserPausing = false;
+        startAutoLoop();
+      }, 4000);
+    });
+  }
+
+  // Start initial auto-loop
+  startAutoLoop();
 }
 
 let currentOpenServiceId = null;
@@ -216,22 +272,22 @@ function renderServices(services) {
   if (!container) return;
 
   container.innerHTML = services.map(s => `
-    <div class="glass-card service-card reveal" onclick="window.openServiceSlide('${s.id}')" tabindex="0" role="button" aria-label="Open detailed slide for ${s.title}">
+    <div class="glass-card service-card reveal" onclick="window.location.href='service-detail.html?id=${s.id}'" tabindex="0" role="button" aria-label="Explore ${s.title}">
       <div class="service-top">
         <div class="service-icon-wrap">
           ${s.icon}
         </div>
-        <span class="service-badge">${s.badge}</span>
+        <span class="service-badge ${s.badge === 'Popular' ? 'badge-tangerine' : (s.badge === 'Trending' ? 'badge-lime' : 'badge-plum')}">${s.badge}</span>
       </div>
       <h3 class="service-title">${s.title}</h3>
       <p class="service-desc">${s.description}</p>
       <div class="service-tags">
         ${s.tags.map(t => `<span class="service-tag">${t}</span>`).join('')}
       </div>
-      <div class="service-card-action">
-        <span>Explore Service Slide</span>
+      <a href="service-detail.html?id=${s.id}" class="service-card-action">
+        <span>Explore Service Details</span>
         <span class="action-arrow">&rarr;</span>
-      </div>
+      </a>
     </div>
   `).join('');
 
@@ -265,134 +321,115 @@ window.openServiceSlide = function(serviceId) {
   const whatsappUrl = `https://wa.me/919876543210?text=${encodedWhatsAppMsg}`;
 
   slideWrapper.innerHTML = `
-    <div class="service-slide-card">
-      <!-- Top Slide Action Bar -->
-      <div class="slide-nav-bar">
-        <button class="btn-back-to-services" onclick="window.closeServiceSlide()" aria-label="Back to all services">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          <span>All Services</span>
+    <!-- Top Action Nav -->
+    <div class="slide-top-nav">
+      <button class="btn-back-to-services" onclick="window.closeServiceSlide()" aria-label="Back to all services">
+        <span>&larr;</span>
+        <span>BACK TO SERVICES</span>
+      </button>
+
+      <div class="slide-pager-nav">
+        <span class="slide-pager-counter">Service ${currIdx + 1} of ${services.length}</span>
+        <button class="slide-pager-btn" onclick="window.openServiceSlide('${prevService.id}')" title="Previous: ${prevService.title}" aria-label="Previous service">
+          &larr; Prev
         </button>
+        <button class="slide-pager-btn" onclick="window.openServiceSlide('${nextService.id}')" title="Next: ${nextService.title}" aria-label="Next service">
+          Next &rarr;
+        </button>
+      </div>
+    </div>
 
-        <div class="slide-pager-wrap">
-          <span class="slide-pager-counter">Service ${currIdx + 1} of ${services.length}</span>
-          <button class="slide-pager-btn" onclick="window.openServiceSlide('${prevService.id}')" title="Previous: ${prevService.title}" aria-label="Previous service">
-            &larr; Prev
-          </button>
-          <button class="slide-pager-btn" onclick="window.openServiceSlide('${nextService.id}')" title="Next: ${nextService.title}" aria-label="Next service">
-            Next &rarr;
-          </button>
-        </div>
+    <!-- Main Slide Card (Matching User Attachment) -->
+    <div class="service-slide-card">
+      <!-- Dark Hero Banner -->
+      <div class="slide-header-banner">
+        <h1 class="slide-header-title">${service.title}</h1>
+        <p class="slide-header-subtitle">${service.subtitle || service.description}</p>
       </div>
 
-      <!-- Slide Hero -->
-      <div class="slide-hero">
-        <div class="slide-hero-left">
-          <div class="slide-badge-row">
-            <span class="slide-category-badge">${service.badge}</span>
-            <span class="slide-timeline-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Typical Delivery: ${service.timeline}</span>
-            </span>
-          </div>
-          <h2 class="slide-title">${service.title}</h2>
-          <p class="slide-overview">${service.detailedOverview}</p>
+      <!-- Theme-Matching Card Body -->
+      <div class="slide-body-content">
+        <!-- Overview Section -->
+        <div class="slide-section-block">
+          <h2 class="slide-section-title">Overview</h2>
+          <p class="slide-overview-text">${service.overview}</p>
+        </div>
 
-          <div class="slide-action-row">
-            <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
-              <span>Book ${service.title}</span>
-            </a>
-            <a href="#calculator" class="btn btn-secondary">
-              <span>Calculate Project Cost &rarr;</span>
-            </a>
+        <!-- Key Capabilities Grid (Consolidating the 6 Core Offerings with Custom Icons) -->
+        <div class="slide-section-block">
+          <h3 class="slide-section-title" style="font-size: 1.25rem;">Key Capabilities & Solutions</h3>
+          <div class="slide-solutions-grid">
+            ${(service.capabilities || []).map(cap => `
+              <div class="slide-solution-card">
+                <div class="slide-solution-icon">
+                  ${cap.icon}
+                </div>
+                <h4 class="slide-solution-title">${cap.title}</h4>
+                <p class="slide-solution-desc">${cap.desc}</p>
+              </div>
+            `).join('')}
           </div>
         </div>
 
-        <div class="service-icon-wrap" style="width:72px; height:72px; font-size:1.8rem; border-radius:var(--radius-lg); flex-shrink:0;">
-          ${service.icon}
-        </div>
-      </div>
-
-      <!-- Main Content 2-Column Grid -->
-      <div class="service-slide-grid">
-        <!-- Left: Deliverables & Milestones -->
-        <div class="service-slide-main-col">
-          <div class="slide-deliverables-card">
-            <h3 class="slide-section-heading">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent-primary);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span>What You Receive (Core Deliverables)</span>
+        <!-- 2-Column Split: Deliverables & Specifications -->
+        <div class="slide-columns-split">
+          <!-- Left: Deliverables -->
+          <div class="slide-deliverables-box">
+            <h3 class="slide-box-heading">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-primary);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>What You Receive (Deliverables)</span>
             </h3>
-            <ul class="slide-deliverables-list">
+            <ul class="slide-items-list">
               ${service.deliverables.map(d => `
-                <li class="deliverable-item">
-                  <div class="deliverable-check-icon">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
+                <li class="slide-item-row">
+                  <span class="slide-item-bullet">&bull;</span>
                   <span>${d}</span>
                 </li>
               `).join('')}
             </ul>
           </div>
 
-          <div class="slide-milestones-card">
-            <h3 class="slide-section-heading">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent-primary);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-              <span>Sprint Roadmap & Milestones</span>
-            </h3>
-            <div class="milestones-step-list">
-              ${service.milestones.map(m => `
-                <div class="milestone-step-item">
-                  <span class="milestone-badge">${m.phase}</span>
-                  <div class="milestone-content">
-                    <h4>${m.title}</h4>
-                    <p>${m.desc}</p>
-                  </div>
-                </div>
-              `).join('')}
+          <!-- Right: Blueprint & Guarantees -->
+          <div class="slide-spec-panel">
+            <div>
+              <div class="slide-spec-row">
+                <span class="slide-spec-key">Typical Delivery:</span>
+                <span class="slide-spec-val" style="color: var(--accent-secondary); font-family: var(--font-mono);">${service.timeline}</span>
+              </div>
+              <div class="slide-spec-row">
+                <span class="slide-spec-key">Execution Team:</span>
+                <span class="slide-spec-val">Saurabh (Lead) + Senior Devs</span>
+              </div>
+              <div class="slide-spec-row" style="border-bottom: none; padding-bottom: 0;">
+                <span class="slide-spec-key">Core Technologies:</span>
+              </div>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin: 8px 0 16px 0;">
+                ${service.tags.map(t => `<span class="service-tag">${t}</span>`).join('')}
+              </div>
             </div>
-          </div>
 
-          <!-- Technologies Employed -->
-          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:20px;">
-            <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em;">
-              Core Tech Stack:
-            </span>
-            ${service.tags.map(t => `<span class="service-tag" style="font-size:0.85rem; padding:6px 12px;">${t}</span>`).join('')}
+            <div>
+              <span class="slide-spec-key" style="display:block; margin-bottom:8px;">Included Guarantees:</span>
+              <ul class="slide-guarantees-sublist">
+                ${service.includedGuarantees.map(g => `
+                  <li class="slide-guarantee-row">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>${g}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
           </div>
         </div>
 
-        <!-- Right: Blueprint Card -->
-        <div class="slide-spec-blueprint">
-          <div class="spec-row">
-            <div class="spec-label">Ideal For</div>
-            <div class="spec-value">${service.bestFor}</div>
-          </div>
-
-          <div class="spec-row">
-            <div class="spec-label">Estimated Delivery</div>
-            <div class="spec-value" style="color:var(--accent-secondary); font-family:var(--font-mono);">${service.timeline}</div>
-          </div>
-
-          <div class="spec-row">
-            <div class="spec-label">Execution Team</div>
-            <div class="spec-value">Saurabh (Lead) + Dedicated Dev Team</div>
-          </div>
-
-          <div>
-            <div class="spec-label">Included Client Guarantees</div>
-            <ul class="spec-guarantees-list">
-              ${service.includedGuarantees.map(g => `
-                <li class="spec-guarantee-item">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>${g}</span>
-                </li>
-              `).join('')}
-            </ul>
-          </div>
-
-          <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:14px;">
-            <span>Discuss This Service</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <!-- Action Buttons Footer -->
+        <div class="slide-action-footer">
+          <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+            <span>Discuss on WhatsApp</span>
+          </a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">
+            <span>Book Discovery Call &rarr;</span>
           </a>
         </div>
       </div>
@@ -452,6 +489,155 @@ function checkServiceSlideHash() {
 }
 
 window.addEventListener('hashchange', checkServiceSlideHash);
+
+// Dedicated Service Detail Page Engine
+function initServiceDetailPage() {
+  const detailContainer = document.getElementById('service-detail-container');
+  if (!detailContainer) return;
+
+  const data = window.PORTFOLIO_DATA;
+  if (!data || !data.services) return;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  let serviceId = urlParams.get('id') || 'software-web';
+
+  const services = data.services;
+  let currIdx = services.findIndex(s => s.id === serviceId);
+  if (currIdx === -1) {
+    currIdx = 0;
+    serviceId = services[0].id;
+  }
+
+  const service = services[currIdx];
+  const prevIdx = (currIdx - 1 + services.length) % services.length;
+  const nextIdx = (currIdx + 1) % services.length;
+  const prevService = services[prevIdx];
+  const nextService = services[nextIdx];
+
+  document.title = `${service.title} | Saurabh.dev`;
+
+  const encodedWhatsAppMsg = encodeURIComponent(
+    `Hi Saurabh, I'm interested in discussing your "${service.title}" service for my project!`
+  );
+  const whatsappUrl = `https://wa.me/919876543210?text=${encodedWhatsAppMsg}`;
+
+  detailContainer.innerHTML = `
+    <!-- Top Action Nav -->
+    <div class="slide-top-nav">
+      <a href="services.html" class="btn-back-to-services" aria-label="Back to all services">
+        <span>&larr;</span>
+        <span>BACK TO SERVICES</span>
+      </a>
+
+      <div class="slide-pager-nav">
+        <span class="slide-pager-counter">Service ${currIdx + 1} of ${services.length}</span>
+        <a href="service-detail.html?id=${prevService.id}" class="slide-pager-btn" title="Previous: ${prevService.title}" aria-label="Previous service">
+          &larr; Prev
+        </a>
+        <a href="service-detail.html?id=${nextService.id}" class="slide-pager-btn" title="Next: ${nextService.title}" aria-label="Next service">
+          Next &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Slide Card (Matching User Attachment with Cyber/Obsidian Theme) -->
+    <div class="service-slide-card">
+      <!-- Dark Hero Banner -->
+      <div class="slide-header-banner">
+        <span class="slide-header-badge ${service.badge === 'Popular' ? 'badge-tangerine' : (service.badge === 'Trending' ? 'badge-lime' : 'badge-plum')}">${service.badge}</span>
+        <h1 class="slide-header-title">${service.title}</h1>
+        <p class="slide-header-subtitle">${service.subtitle || service.description}</p>
+      </div>
+
+      <!-- Theme-Matching Card Body -->
+      <div class="slide-body-content">
+        <!-- Overview Section -->
+        <div class="slide-section-block">
+          <h2 class="slide-section-title">Overview</h2>
+          <p class="slide-overview-text">${service.overview}</p>
+        </div>
+
+        <!-- Key Capabilities Grid (Consolidating the 6 Core Offerings with Custom Icons) -->
+        <div class="slide-section-block">
+          <h3 class="slide-section-title" style="font-size: 1.25rem;">Key Capabilities & Solutions</h3>
+          <div class="slide-solutions-grid">
+            ${(service.capabilities || []).map(cap => `
+              <div class="slide-solution-card">
+                <div class="slide-solution-icon">
+                  ${cap.icon}
+                </div>
+                <h4 class="slide-solution-title">${cap.title}</h4>
+                <p class="slide-solution-desc">${cap.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- 2-Column Split: Deliverables & Specifications -->
+        <div class="slide-columns-split">
+          <!-- Left: Deliverables -->
+          <div class="slide-deliverables-box">
+            <h3 class="slide-box-heading">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-primary);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>What You Receive (Deliverables)</span>
+            </h3>
+            <ul class="slide-items-list">
+              ${service.deliverables.map(d => `
+                <li class="slide-item-row">
+                  <span class="slide-item-bullet">&bull;</span>
+                  <span>${d}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+
+          <!-- Right: Blueprint & Guarantees -->
+          <div class="slide-spec-panel">
+            <div>
+              <div class="slide-spec-row">
+                <span class="slide-spec-key">Typical Delivery:</span>
+                <span class="slide-spec-val" style="color: var(--accent-secondary); font-family: var(--font-mono);">${service.timeline}</span>
+              </div>
+              <div class="slide-spec-row">
+                <span class="slide-spec-key">Execution Team:</span>
+                <span class="slide-spec-val">Saurabh (Lead) + Senior Devs</span>
+              </div>
+              <div class="slide-spec-row" style="border-bottom: none; padding-bottom: 0;">
+                <span class="slide-spec-key">Core Technologies:</span>
+              </div>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin: 8px 0 16px 0;">
+                ${service.tags.map(t => `<span class="service-tag">${t}</span>`).join('')}
+              </div>
+            </div>
+
+            <div>
+              <span class="slide-spec-key" style="display:block; margin-bottom:8px;">Included Guarantees:</span>
+              <ul class="slide-guarantees-sublist">
+                ${service.includedGuarantees.map(g => `
+                  <li class="slide-guarantee-row">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>${g}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons Footer -->
+        <div class="slide-action-footer">
+          <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+            <span>Discuss on WhatsApp</span>
+          </a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">
+            <span>Book Discovery Call &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+}
 
 // Keyboard shortcuts for service slide
 document.addEventListener('keydown', (e) => {
@@ -589,39 +775,7 @@ function renderProcess(process) {
   `).join('');
 }
 
-function renderPricing(tiers) {
-  const container = document.getElementById('pricing-container');
-  if (!container) return;
 
-  container.innerHTML = tiers.map(t => `
-    <div class="glass-card pricing-card ${t.popular ? 'popular' : ''} reveal">
-      ${t.popular ? '<div class="popular-badge">⚡ Most Popular</div>' : ''}
-      <h3 class="pricing-name">${t.name}</h3>
-      <div class="pricing-price-wrap">
-        <span class="pricing-price">${t.price}</span>
-        <span class="pricing-period">/ ${t.period}</span>
-      </div>
-      <div class="pricing-delivery">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span>Delivery: ${t.delivery}</span>
-      </div>
-      <p class="pricing-desc">${t.desc}</p>
-      
-      <ul class="pricing-features-list">
-        ${t.features.map(f => `
-          <li class="pricing-feature-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>${f}</span>
-          </li>
-        `).join('')}
-      </ul>
-
-      <a href="#contact" class="btn ${t.popular ? 'btn-primary' : 'btn-secondary'} btn-lg" style="width: 100%;">
-        ${t.ctaText}
-      </a>
-    </div>
-  `).join('');
-}
 
 function renderTestimonials(testimonials) {
   const container = document.getElementById('testimonials-container');
@@ -779,7 +933,6 @@ function initNavigation() {
           (currentPath.includes('services') && cleanHref.includes('services')) ||
           (currentPath.includes('portfolio') && cleanHref.includes('portfolio')) ||
           (currentPath.includes('industries') && cleanHref.includes('industries')) ||
-          (currentPath.includes('calculator') && cleanHref.includes('calculator')) ||
           (currentPath.includes('about') && cleanHref.includes('about')) ||
           (currentPath.includes('contact') && cleanHref.includes('contact'))
         ) {
@@ -934,4 +1087,36 @@ function initScrollAnimations() {
   
   // Also observe skill columns directly
   document.querySelectorAll('.skills-column').forEach(el => observer.observe(el));
+}
+
+/* --------------------------------------------------------------------------
+   13. WELCOME POPUP
+-------------------------------------------------------------------------- */
+function initWelcomePopup() {
+  const welcomeModal = document.getElementById('welcome-modal');
+  const closeBtn = document.getElementById('welcome-modal-close');
+  
+  if (!welcomeModal || !closeBtn) return;
+  
+  // Show popup after 1.5 seconds if not already shown in this session
+  if (!sessionStorage.getItem('welcomePopupShown')) {
+    setTimeout(() => {
+      welcomeModal.classList.add('active');
+      sessionStorage.setItem('welcomePopupShown', 'true');
+    }, 1500);
+  }
+  
+  const closeModal = () => welcomeModal.classList.remove('active');
+  
+  closeBtn.addEventListener('click', closeModal);
+  
+  welcomeModal.addEventListener('click', (e) => {
+    if (e.target === welcomeModal) closeModal();
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && welcomeModal.classList.contains('active')) {
+      closeModal();
+    }
+  });
 }

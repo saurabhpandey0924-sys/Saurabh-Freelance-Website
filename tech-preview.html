@@ -73,10 +73,10 @@
     }
 
     .anim-tab-btn.active {
-      background: linear-gradient(135deg, #ff334b, #6366f1);
+      background: linear-gradient(135deg, #F28C00, #6366f1);
       color: #fff;
       border-color: transparent;
-      box-shadow: 0 6px 24px rgba(255, 51, 75, 0.4);
+      box-shadow: 0 6px 24px rgba(242, 140, 0, 0.4);
     }
 
     .preview-stage {
@@ -161,53 +161,78 @@
 
     .sphere-item {
       position: absolute;
-      width: 60px;
-      height: 60px;
-      margin-left: -30px;
-      margin-top: -30px;
+      width: 52px;
+      height: 52px;
+      margin-left: -26px;
+      margin-top: -26px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      background: transparent;
+      border: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      box-shadow: none;
       transform-style: preserve-3d;
-      transition: border-color 0.2s, box-shadow 0.2s;
       text-decoration: none;
       color: inherit;
+      cursor: pointer;
     }
 
     .sphere-item:hover {
-      border-color: #00D8FF;
-      box-shadow: 0 0 28px rgba(0, 216, 255, 0.7);
+      border-color: transparent;
+      box-shadow: none;
       z-index: 1000 !important;
     }
 
     .sphere-item-icon {
-      width: 32px;
-      height: 32px;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
       pointer-events: none;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.25s ease;
     }
 
     .sphere-item-icon svg {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.55));
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .sphere-item:hover .sphere-item-icon {
+      transform: scale(1.28);
+      filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.85));
     }
 
     .sphere-item-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: #cbd5e1;
-      margin-top: 3px;
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10, 15, 25, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 600;
       white-space: nowrap;
       pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.7);
+      z-index: 1001;
+    }
+
+    .sphere-item:hover .sphere-item-label {
+      opacity: 1;
+      transform: translateX(-50%) translateY(2px);
     }
 
     .sphere-hint {
@@ -346,7 +371,7 @@
 
     .back-btn:hover {
       background: rgba(255, 255, 255, 0.1);
-      border-color: #ff334b;
+      border-color: #F28C00;
       transform: translateY(-2px);
     }
   </style>
@@ -362,10 +387,10 @@
 
     <div class="animation-tabs">
       <button class="anim-tab-btn active" data-tab="sphere">
-        <span>🌐 1. 3D Interactive Sphere</span>
+        <span>✨ 1. 3D Interactive Sphere</span>
       </button>
       <button class="anim-tab-btn" data-tab="isometric">
-        <span>📐 2. 3D Diagonal Isometric Flow</span>
+        <span>💎 2. 3D Diagonal Isometric Flow</span>
       </button>
     </div>
   </header>

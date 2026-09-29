@@ -1,6 +1,6 @@
 /**
  * SAURABH FREELANCE PLATFORM - CYBER MATRIX GRID CANVAS
- * Interactive geometric background with cursor spotlight aura in Cyber Crimson (#FF334B) & Ember (#FF6B4A).
+ * Interactive geometric background with cursor spotlight aura in Cyber Crimson (#F28C00) & Ember (#FF6B4A).
  */
 
 (function () {
@@ -31,13 +31,13 @@
 
   // Colors matching Cyber Crimson & Obsidian Stealth palette
   const colors = {
-    gridDark: 'rgba(255, 51, 75, 0.07)',        // Subtle Crimson grid lines
-    gridLight: 'rgba(220, 38, 38, 0.05)',
-    dotDark: 'rgba(255, 51, 75, 0.22)',         // Crimson nodes
-    dotLight: 'rgba(220, 38, 38, 0.15)',
-    spotlightInner: 'rgba(255, 51, 75, 0.2)',   // Cyber Crimson Red
+    gridDark: 'rgba(242, 140, 0, 0.07)',        // Subtle Crimson grid lines
+    gridLight: 'rgba(242, 140, 0, 0.05)',
+    dotDark: 'rgba(242, 140, 0, 0.22)',         // Crimson nodes
+    dotLight: 'rgba(242, 140, 0, 0.15)',
+    spotlightInner: 'rgba(242, 140, 0, 0.2)',   // Cyber Crimson Red
     spotlightOuter: 'rgba(255, 107, 74, 0.04)', // Ember warm glow
-    packetColor: '#FF334B',
+    packetColor: '#F28C00',
     packetAccent: '#FBBF24'                     // Cyber Gold
   };
 
@@ -191,7 +191,7 @@
           const dist = Math.hypot(x - mouse.x, y - mouse.y);
           if (dist < mouse.radius) {
             const intensity = (1 - dist / mouse.radius);
-            ctx.fillStyle = `rgba(255, 51, 75, ${intensity * 0.65})`;
+            ctx.fillStyle = `rgba(242, 140, 0, ${intensity * 0.65})`;
             ctx.beginPath();
             ctx.arc(x, y, 2.5 * intensity, 0, Math.PI * 2);
             ctx.fill();

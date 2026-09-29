@@ -27,9 +27,8 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/components.css?v=6">
-  <link rel="stylesheet" href="styles/calculator.css">
-  <link rel="stylesheet" href="styles/responsive.css?v=6">
+  <link rel="stylesheet" href="styles/components.css?v=11">
+  <link rel="stylesheet" href="styles/responsive.css?v=10">
 
   <!-- JSON-LD Structured Data Schema -->
   <script type="application/ld+json">
@@ -79,12 +78,6 @@
         <li class="nav-item">
           <a href="industries.html" class="nav-link">Industries</a>
         </li>
-        <li class="nav-item">
-          <a href="calculator.html" class="nav-link">
-            <span>Calculator</span>
-            <span class="nav-badge-pill">ROI</span>
-          </a>
-        </li>
         <li class="nav-item nav-dropdown" id="features-dropdown">
           <button class="nav-link nav-dropdown-toggle" id="features-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true">
             <span>Features</span>
@@ -92,46 +85,54 @@
           </button>
           <div class="dropdown-menu" id="features-dropdown-menu" role="menu">
             <a href="index.html#technologies" class="dropdown-item" role="menuitem">
-              <span class="dropdown-icon">⚡</span>
+              <span class="dropdown-icon icon-tech">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+              </span>
               <div class="dropdown-info">
                 <span class="dropdown-title">Technologies</span>
                 <span class="dropdown-desc">Modern tech ecosystem & stacks</span>
               </div>
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
             <a href="index.html#process" class="dropdown-item" role="menuitem">
-              <span class="dropdown-icon">🔄</span>
+              <span class="dropdown-icon icon-workflow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+              </span>
               <div class="dropdown-info">
                 <span class="dropdown-title">4-Step Workflow</span>
                 <span class="dropdown-desc">Transparent agile delivery process</span>
               </div>
-            </a>
-            <a href="index.html#pricing" class="dropdown-item" role="menuitem">
-              <span class="dropdown-icon">🏷️</span>
-              <div class="dropdown-info">
-                <span class="dropdown-title">Pricing Packages</span>
-                <span class="dropdown-desc">Fixed-price sprint packages</span>
-              </div>
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
             <a href="index.html#why-choose-us" class="dropdown-item" role="menuitem">
-              <span class="dropdown-icon">⚖️</span>
+              <span class="dropdown-icon icon-why">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
               <div class="dropdown-info">
                 <span class="dropdown-title">Why Choose Us</span>
                 <span class="dropdown-desc">Comparison matrix with agencies</span>
               </div>
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
             <a href="index.html#reviews" class="dropdown-item" role="menuitem">
-              <span class="dropdown-icon">⭐</span>
+              <span class="dropdown-icon icon-reviews">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </span>
               <div class="dropdown-info">
                 <span class="dropdown-title">Client Reviews</span>
                 <span class="dropdown-desc">Endorsements from founders & CTOs</span>
               </div>
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
             <a href="index.html#faq" class="dropdown-item" role="menuitem">
-              <span class="dropdown-icon">❓</span>
+              <span class="dropdown-icon icon-faq">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </span>
               <div class="dropdown-info">
-                <span class="dropdown-title">FAQ</span>
+                <span class="dropdown-title">FAQ Knowledge</span>
                 <span class="dropdown-desc">Answers to common questions</span>
               </div>
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
           </div>
         </li>
@@ -193,12 +194,6 @@
           </a>
         </li>
         <li>
-          <a href="calculator.html" class="nav-modal-link">
-            <span>Cost & ROI Calculator</span>
-            <span class="link-arrow">&rarr;</span>
-          </a>
-        </li>
-        <li>
           <a href="index.html#technologies" class="nav-modal-link">
             <span>Technologies We Power</span>
             <span class="link-arrow">&rarr;</span>
@@ -207,12 +202,6 @@
         <li>
           <a href="index.html#process" class="nav-modal-link">
             <span>4-Step Workflow</span>
-            <span class="link-arrow">&rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="index.html#pricing" class="nav-modal-link">
-            <span>Sprint Pricing Packages</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
@@ -286,8 +275,8 @@
           Hi, I’m <strong>Saurabh</strong> — Web Developer & Solutions Architect. Together with my dedicated development team, we engineer lightning-fast, high-converting digital products, enterprise platforms, and modern web applications that drive real business results.
         </p>
         <div class="hero-cta-group">
-          <a href="#calculator" class="btn btn-primary btn-lg btn-glow">
-            <span>Calculate Project Estimate</span>
+          <a href="contact.html" class="btn btn-primary btn-lg btn-glow">
+            <span>Start a Project &rarr;</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="#projects" class="btn btn-secondary btn-lg">
@@ -314,48 +303,78 @@
 
       <div class="hero-visual-wrapper reveal">
         <!-- Interactive Team Tech & Code Showcase Window -->
-        <div class="hero-tech-window">
+        <!-- Premium Digital Workspace Preview -->
+        <div class="hero-tech-window workspace-preview">
           <div class="tech-window-header">
             <div class="window-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+              <span class="dot" style="background: #ef4444;"></span>
+              <span class="dot" style="background: #FFD166;"></span>
+              <span class="dot" style="background: #10B981;"></span>
             </div>
-            <div class="window-tab">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-              <span>ProjectWorkspace.tsx</span>
+            <div class="window-tab" style="color: var(--text-primary); font-weight: 500;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+              <span>Platform Dashboard</span>
             </div>
-            <div class="window-badge">Live Build</div>
+            <div class="window-badge" style="background: rgba(184, 227, 52, 0.15); color: #B8E334; border-color: rgba(184, 227, 52, 0.3);">Live Sync</div>
           </div>
-          <div class="tech-window-body">
-            <pre class="code-block"><code><span class="code-comment">// Saurabh & Development Team</span>
-<span class="code-keyword">const</span> <span class="code-var">ClientProject</span> = {
-  <span class="code-prop">teamLead</span>: <span class="code-string">"Saurabh (Web Developer)"</span>,
-  <span class="code-prop">specialists</span>: [
-    <span class="code-string">"UI/UX Design"</span>, 
-    <span class="code-string">"Frontend Dev"</span>, 
-    <span class="code-string">"Backend & API"</span>
-  ],
-  <span class="code-prop">deliverables</span>: <span class="code-string">"Fast, High-Converting Web Apps"</span>,
-  <span class="code-prop">performance</span>: <span class="code-string">"99/100 Mobile & Desktop"</span>,
-  <span class="code-prop">status</span>: <span class="code-string">"Ready to Launch Your Project 🚀"</span>
-};
-
-<span class="code-comment">// Guaranteed Client Outcomes</span>
-<span class="code-keyword">export default</span> <span class="code-func">launchWebsite</span>(<span class="code-var">ClientProject</span>);</code></pre>
-          </div>
-          <div class="tech-window-footer">
-            <div class="tech-feature-pill">
-              <span class="pill-dot green"></span>
-              <span>100% Responsive</span>
+          <div class="workspace-body-flex">
+            <!-- Sidebar -->
+            <div class="workspace-sidebar">
+              <div class="ws-logo-bar"></div>
+              <div class="ws-menu-item active"></div>
+              <div class="ws-menu-item"></div>
+              <div class="ws-menu-item"></div>
+              <div class="ws-menu-item mt-auto"></div>
             </div>
-            <div class="tech-feature-pill">
-              <span class="pill-dot blue"></span>
-              <span>Clean Scalable Code</span>
-            </div>
-            <div class="tech-feature-pill">
-              <span class="pill-dot purple"></span>
-              <span>Full Team Support</span>
+            
+            <!-- Main Area -->
+            <div class="workspace-main">
+              <div class="ws-topbar">
+                <div class="ws-search"></div>
+                <div class="ws-avatar"></div>
+              </div>
+              
+              <div class="ws-content">
+                <div class="ws-header-row">
+                  <div class="ws-title-group">
+                    <div class="ws-title"></div>
+                    <div class="ws-subtitle"></div>
+                  </div>
+                  <div class="ws-btn-primary"></div>
+                </div>
+                
+                <div class="ws-stats-grid">
+                  <div class="ws-stat-card">
+                    <div class="ws-stat-header">
+                      <div class="ws-icon plum"></div>
+                      <div class="ws-badge lime"></div>
+                    </div>
+                    <div class="ws-val"></div>
+                    <div class="ws-graph tangerine"></div>
+                  </div>
+                  <div class="ws-stat-card">
+                    <div class="ws-stat-header">
+                      <div class="ws-icon tangerine"></div>
+                    </div>
+                    <div class="ws-val"></div>
+                    <div class="ws-graph plum"></div>
+                  </div>
+                </div>
+                
+                <div class="ws-table-card">
+                  <div class="ws-table-header"></div>
+                  <div class="ws-table-row">
+                    <div class="ws-col-1"></div>
+                    <div class="ws-col-2"></div>
+                    <div class="ws-col-3 badge-plum"></div>
+                  </div>
+                  <div class="ws-table-row">
+                    <div class="ws-col-1"></div>
+                    <div class="ws-col-2"></div>
+                    <div class="ws-col-3 badge-tangerine"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -445,7 +464,8 @@
         </p>
       </div>
 
-      <div class="industries-grid" id="industries-container">
+
+      <div class="industries-wrapper" id="industries-container">
         <!-- Injected dynamically by main.js -->
       </div>
     </div>
@@ -478,22 +498,6 @@
     </div>
   </section>
 
-  <!-- 5. SKILLS & TECH STACK ECOSYSTEM -->
-  <section class="section" id="skills">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-badge">Technical Mastery</span>
-        <h2 class="section-title">Modern <span class="gradient-text">Tech Stack Ecosystem</span></h2>
-        <p class="section-subtitle">
-          Equipped with battle-tested frameworks, modern cloud infrastructure, and cutting-edge AI toolsets to build resilient applications.
-        </p>
-      </div>
-
-      <div class="skills-wrapper" id="skills-container">
-        <!-- Rendered dynamically by main.js -->
-      </div>
-    </div>
-  </section>
 
   <!-- 6. WORKING PROCESS -->
   <section class="section" id="process" style="background: var(--bg-secondary);">
@@ -512,287 +516,6 @@
     </div>
   </section>
 
-  <!-- 7. INTERACTIVE PROJECT COST & ROI CALCULATOR -->
-  <section class="section" id="calculator">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-badge">Transparent Value & Budgeting</span>
-        <h2 class="section-title">Interactive <span class="gradient-text">Cost & ROI Calculator</span></h2>
-        <p class="section-subtitle">
-          Calculate your project investment or simulate the financial savings and work hours your business can save with custom web apps and AI automation.
-        </p>
-      </div>
-
-      <!-- Dual Mode Switcher Tabs -->
-      <div class="calc-mode-switcher reveal">
-        <button class="calc-mode-btn active" id="mode-btn-cost" type="button">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          <span>Project Cost Estimator</span>
-        </button>
-        <button class="calc-mode-btn" id="mode-btn-roi" type="button">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-          <span>Business ROI & Savings Calculator</span>
-          <span class="calc-mode-badge">High Value</span>
-        </button>
-      </div>
-
-      <!-- 1. Project Cost Estimator Panel -->
-      <div class="calculator-wrapper reveal" id="project-cost-calculator">
-        <!-- Configuration Controls -->
-        <div class="calc-controls">
-          <!-- Step 1: Project Type -->
-          <div class="calc-group">
-            <h4 class="calc-section-title">
-              <span class="calc-step-badge">1</span>
-              <span>Select Core Project Scope</span>
-            </h4>
-            <div class="calc-types-grid">
-              <label class="calc-type-option">
-                <input type="radio" name="calc-project-type" value="landing">
-                <div class="calc-type-card">
-                  <span class="calc-type-name">Starter MVP / Landing</span>
-                  <span class="calc-type-base">From ₹24,999 • 5-7 Days</span>
-                </div>
-              </label>
-
-              <label class="calc-type-option">
-                <input type="radio" name="calc-project-type" value="saas" checked>
-                <div class="calc-type-card">
-                  <span class="calc-type-name">Custom SaaS / Web App</span>
-                  <span class="calc-type-base">From ₹59,999 • 2-3 Weeks</span>
-                </div>
-              </label>
-
-              <label class="calc-type-option">
-                <input type="radio" name="calc-project-type" value="ecommerce">
-                <div class="calc-type-card">
-                  <span class="calc-type-name">Headless E-Commerce</span>
-                  <span class="calc-type-base">From ₹44,999 • 10-14 Days</span>
-                </div>
-              </label>
-
-              <label class="calc-type-option">
-                <input type="radio" name="calc-project-type" value="ai">
-                <div class="calc-type-card">
-                  <span class="calc-type-name">Custom AI Agent / Tool</span>
-                  <span class="calc-type-base">From ₹79,999 • 3-4 Weeks</span>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Step 2: Screen Count Slider -->
-          <div class="calc-group">
-            <h4 class="calc-section-title">
-              <span class="calc-step-badge">2</span>
-              <span>Estimated Number of Screens / Pages</span>
-            </h4>
-            <div class="calc-range-wrapper">
-              <div class="calc-range-header">
-                <span>Scope Size:</span>
-                <span class="calc-range-val" id="calc-screens-val">5 Screens / Pages</span>
-              </div>
-              <input type="range" id="calc-screens-slider" class="calc-range-input" min="1" max="15" value="5" step="1">
-            </div>
-          </div>
-
-          <!-- Step 3: Add-on Features -->
-          <div class="calc-group">
-            <h4 class="calc-section-title">
-              <span class="calc-step-badge">3</span>
-              <span>Optional Capabilities & Add-Ons</span>
-            </h4>
-            <div class="calc-features-grid">
-              <label class="calc-feature-option">
-                <input type="checkbox" name="calc-feature" value="auth">
-                <div class="calc-feature-label">
-                  <span>Auth & RBAC Roles</span>
-                  <span class="calc-feature-price">+₹7,500</span>
-                </div>
-              </label>
-
-              <label class="calc-feature-option">
-                <input type="checkbox" name="calc-feature" value="payments" checked>
-                <div class="calc-feature-label">
-                  <span>Payment Gateway (UPI / Cards)</span>
-                  <span class="calc-feature-price">+₹10,000</span>
-                </div>
-              </label>
-
-              <label class="calc-feature-option">
-                <input type="checkbox" name="calc-feature" value="ai-feature">
-                <div class="calc-feature-label">
-                  <span>AI / LLM Integration</span>
-                  <span class="calc-feature-price">+₹15,000</span>
-                </div>
-              </label>
-
-              <label class="calc-feature-option">
-                <input type="checkbox" name="calc-feature" value="analytics" checked>
-                <div class="calc-feature-label">
-                  <span>Analytics Dashboard</span>
-                  <span class="calc-feature-price">+₹12,000</span>
-                </div>
-              </label>
-
-              <label class="calc-feature-option">
-                <input type="checkbox" name="calc-feature" value="seo-perf">
-                <div class="calc-feature-label">
-                  <span>95+ Speed & SEO</span>
-                  <span class="calc-feature-price">+₹6,000</span>
-                </div>
-              </label>
-
-              <label class="calc-feature-option">
-                <input type="checkbox" name="calc-feature" value="multilang">
-                <div class="calc-feature-label">
-                  <span>Multi-Language (i18n)</span>
-                  <span class="calc-feature-price">+₹8,500</span>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Step 4: Speed -->
-          <div class="calc-group" style="margin-bottom: 0;">
-            <h4 class="calc-section-title">
-              <span class="calc-step-badge">4</span>
-              <span>Delivery Urgency</span>
-            </h4>
-            <select id="calc-speed-select" class="form-select">
-              <option value="standard">Standard Sprint Timeline (Normal Pace)</option>
-              <option value="rush">Priority Fast-Track (+25% Expedited Delivery)</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Summary Panel Output -->
-        <div class="calc-summary-panel">
-          <div class="calc-summary-header">
-            <div class="calc-estimate-label">Projected Investment</div>
-            <div class="calc-estimate-price" id="calc-output-price">₹81,999</div>
-            <div class="calc-timeline-badge" id="calc-output-timeline">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Estimated Timeline: 2 - 3 Weeks
-            </div>
-          </div>
-
-          <ul class="calc-breakdown-list" id="calc-output-breakdown">
-            <!-- Breakdown rendered dynamically -->
-          </ul>
-
-          <div>
-            <button type="button" class="btn btn-primary btn-lg" id="calc-book-btn" style="width: 100%;">
-              <span>Lock In This Scope & Quote &rarr;</span>
-            </button>
-            <p class="calc-guarantee-note">
-              🔒 100% Fixed Price Guarantee • No Hidden Charges • Free 30-Day Warranty
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. Business ROI & Cost Savings Calculator Panel (KrGo Beat Feature) -->
-      <div class="calculator-wrapper reveal" id="project-roi-calculator" style="display: none;">
-        <div class="calc-controls">
-          <div class="calc-group">
-            <h4 class="calc-section-title">
-              <span class="calc-step-badge">1</span>
-              <span>Team Size (Staff Involved in Operations)</span>
-            </h4>
-            <div class="calc-range-wrapper">
-              <div class="calc-range-header">
-                <span>Employees:</span>
-                <span class="calc-range-val" id="roi-team-val">10 Members</span>
-              </div>
-              <input type="range" id="roi-team-slider" class="calc-range-input" min="1" max="50" value="10" step="1">
-            </div>
-          </div>
-
-          <div class="calc-group">
-            <h4 class="calc-section-title">
-              <span class="calc-step-badge">2</span>
-              <span>Hours Spent on Repetitive Tasks per Person / Week</span>
-            </h4>
-            <div class="calc-range-wrapper">
-              <div class="calc-range-header">
-                <span>Manual Tasks:</span>
-                <span class="calc-range-val" id="roi-hours-val">12 Hours / Week</span>
-              </div>
-              <input type="range" id="roi-hours-slider" class="calc-range-input" min="2" max="30" value="12" step="1">
-            </div>
-          </div>
-
-          <div class="calc-group">
-            <h4 class="calc-section-title">
-              <span class="calc-step-badge">3</span>
-              <span>Average Hourly Cost per Employee</span>
-            </h4>
-            <div class="calc-range-wrapper">
-              <div class="calc-range-header">
-                <span>Average Rate:</span>
-                <span class="calc-range-val" id="roi-rate-val">₹600 / Hour</span>
-              </div>
-              <input type="range" id="roi-rate-slider" class="calc-range-input" min="200" max="3000" value="600" step="50">
-            </div>
-          </div>
-
-          <div class="roi-helper-box">
-            <span style="font-size:1.1rem;">💡</span>
-            <span>By automating data entry, customer onboarding, reporting, and invoicing with custom web portals, companies typically eliminate <strong>70% to 80%</strong> of recurring manual work.</span>
-          </div>
-        </div>
-
-        <div class="calc-summary-panel roi-summary-panel">
-          <div class="calc-summary-header">
-            <div class="calc-estimate-label">Projected Annual Cost Savings</div>
-            <div class="calc-estimate-price roi-savings-price" id="roi-output-savings">₹29,95,200</div>
-            <div class="calc-timeline-badge" style="color: #10B981; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-              <span>Estimated ROI: 4.8x in Year 1</span>
-            </div>
-          </div>
-
-          <div class="roi-stats-grid">
-            <div class="roi-stat-card">
-              <div class="roi-stat-num" id="roi-output-hours">384 hrs</div>
-              <div class="roi-stat-label">Hours Saved / Month</div>
-            </div>
-            <div class="roi-stat-card">
-              <div class="roi-stat-num" id="roi-output-efficiency">+75%</div>
-              <div class="roi-stat-label">Operational Velocity</div>
-            </div>
-          </div>
-
-          <div>
-            <button type="button" class="btn btn-primary btn-lg" id="roi-book-btn" style="width: 100%;">
-              <span>Automate These Workflows &rarr;</span>
-            </button>
-            <p class="calc-guarantee-note">
-              🚀 Typical Web App & Automation Payback Period: Under 30 Days
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. PRICING PACKAGES -->
-  <section class="section" id="pricing">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-badge">Clear & Fair Packages</span>
-        <h2 class="section-title">Fixed-Price <span class="gradient-text">Sprint Packages</span></h2>
-        <p class="section-subtitle">
-          No vague hourly billing. Clear scope, defined deliverables, and guaranteed timelines.
-        </p>
-      </div>
-
-      <div class="pricing-grid" id="pricing-container">
-        <!-- Rendered dynamically by main.js -->
-      </div>
-    </div>
-  </section>
 
   <!-- 9. THE COMPETITIVE ADVANTAGE / COMPARISON MATRIX -->
   <section class="section comparison-section" id="why-choose-us" style="background: var(--bg-secondary);">
@@ -846,8 +569,8 @@
               <td><span class="warn-icon">⚠</span> Incomplete repos & assets</td>
             </tr>
             <tr>
-              <td class="feature-name">Pricing Transparency</td>
-              <td class="highlight-col"><span class="check-icon">✓</span> <strong>100% Fixed-Price Sprints</strong></td>
+              <td class="feature-name">Cost Predictability & Transparency</td>
+              <td class="highlight-col"><span class="check-icon">✓</span> <strong>100% Fixed-Scope Sprints</strong></td>
               <td><span class="cross-icon">✗</span> Expensive hourly markups</td>
               <td><span class="warn-icon">⚠</span> Hidden fees & scope creep</td>
             </tr>
@@ -1085,14 +808,32 @@
     </div>
   </div>
 
+  <!-- 14. WELCOME CONTACT MODAL -->
+  <div class="modal-backdrop" id="welcome-modal">
+    <div class="modal-dialog" style="max-width: 500px;">
+      <button class="modal-close-btn" id="welcome-modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body" style="text-align: center; padding: 48px 32px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <span class="badge badge-live" style="margin-bottom: 20px; font-size: 0.9rem; padding: 6px 14px;">👋 Welcome</span>
+        <h2 style="margin-bottom: 16px; font-size: 2rem;">Looking for a Developer?</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 32px; font-size: 1.1rem; line-height: 1.6;">
+          Let's build something amazing together. I'm currently accepting new projects. 
+          Send me a quick message to get started!
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; width: 100%;">
+          <a href="contact.html" class="btn btn-primary btn-glow" style="flex: 1; min-width: 180px;">Start a Project</a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="flex: 1; min-width: 180px;">WhatsApp Me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
-  <script src="scripts/data.js?v=6"></script>
+  <script src="scripts/data.js?v=10"></script>
   <script src="scripts/theme.js"></script>
   <script src="scripts/cyber-grid.js"></script>
   <script src="scripts/tilt.js"></script>
   <script src="scripts/modal.js"></script>
-  <script src="scripts/calculator.js"></script>
   <script src="scripts/contact.js"></script>
-  <script src="scripts/main.js?v=6"></script>
+  <script src="scripts/main.js?v=10"></script>
 </body>
 </html>
