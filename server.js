@@ -110,7 +110,7 @@ function createServer(port) {
 
   server.listen(port, () => {
     console.log('\n==================================================');
-    console.log('  🚀 Saurabh Freelance Website Development Server');
+    console.log('  🚀 DETECH Freelance Platform Development Server');
     console.log('==================================================');
     console.log(`  Local URL:   http://localhost:${port}`);
     console.log('  Serving:     ' + ROOT_DIR);

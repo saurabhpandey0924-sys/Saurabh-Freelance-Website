@@ -1,11 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366F1"/>
-      <stop offset="100%" stop-color="#38BDF8"/>
+    <!-- Background Glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#05070e" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Chrome & Electric Blue Gradients -->
+    <linearGradient id="dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0e7ff"/>
+      <stop offset="35%" stop-color="#60a5fa"/>
+      <stop offset="70%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca"/>
     </linearGradient>
+
+    <linearGradient id="ringGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
-  <rect width="64" height="64" rx="16" fill="#080A10"/>
-  <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#grad)"/>
-  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="central" font-family="'Outfit', sans-serif" font-size="34" font-weight="900" fill="#FFFFFF">S</text>
+
+  <!-- Dark Rounded Squircle Base -->
+  <rect width="100" height="100" rx="24" fill="url(#bgGlow)"/>
+  <rect width="98" height="98" x="1" y="1" rx="23" fill="none" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1.5"/>
+
+  <!-- Orbital Ring Back Arc -->
+  <path d="M 24 64 C 18 60, 20 45, 38 34 C 55 24, 76 21, 84 27 C 88 30, 86 35, 80 40" 
+        fill="none" 
+        stroke="url(#ringGrad)" 
+        stroke-width="3" 
+        stroke-linecap="round"
+        opacity="0.5"/>
+
+  <!-- Stylized 3D 'D' Body -->
+  <path d="M 38 22 
+           C 48 20, 68 24, 73 38 
+           C 78 52, 69 68, 54 75 
+           C 44 80, 36 78, 42 70 
+           C 54 64, 60 52, 56 42 
+           C 52 32, 42 30, 38 31 
+           Z" 
+        fill="url(#dGrad)" 
+        filter="url(#glow)"/>
+
+  <!-- Inner Wing / Spine Curve -->
+  <path d="M 34 26 
+           C 42 36, 42 56, 33 68 
+           C 31 71, 28 66, 30 60 
+           C 34 50, 34 38, 31 30 
+           Z" 
+        fill="#93c5fd" 
+        opacity="0.85"/>
+
+  <!-- Orbital Ring Front Arc -->
+  <path d="M 18 62 
+           C 25 72, 48 74, 68 62 
+           C 82 54, 88 44, 85 38" 
+        fill="none" 
+        stroke="url(#ringGrad)" 
+        stroke-width="3.5" 
+        stroke-linecap="round" 
+        filter="url(#glow)"/>
+
+  <!-- Light Flare Accent -->
+  <circle cx="22" cy="64" r="2.5" fill="#FFFFFF"/>
 </svg>

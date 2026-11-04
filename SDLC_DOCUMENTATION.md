@@ -1,10 +1,10 @@
 # 📋 Software Development Life Cycle (SDLC) Specification Document
-## Project: Saurabh's Elite Freelance Portfolio & Client Acquisition Platform
+## Project: DETECH Elite Freelance Digital Platform & Client Acquisition Studio
 
 ---
 
 ### 1. Overview & Objective
-This document outlines the complete Software Development Life Cycle (SDLC) for developing **Saurabh's Freelance Platform**. The objective of this project is to build a top-tier, high-converting freelance web application that positions Saurabh as a premier freelance developer/engineer, demonstrates technical authority through dynamic project case studies, and drives inbound client inquiries and contract deals.
+This document outlines the complete Software Development Life Cycle (SDLC) for developing **DETECH's Freelance Platform**. The objective of this project is to build a top-tier, high-converting freelance web application that positions DETECH as a premier digital engineering studio, demonstrates technical authority through dynamic project case studies, and drives inbound client inquiries and contract deals.
 
 ---
 
@@ -31,7 +31,7 @@ flowchart LR
   - Small/Medium Business owners needing custom web/software solutions.
   - Agencies looking for dependable white-label development talent.
 - **Core Value Proposition**:
-  - Highlighting Saurabh’s problem-solving skills, speed to market, clean code standards, and customer satisfaction record.
+  - Highlighting DETECH’s problem-solving skills, speed to market, clean code standards, and customer satisfaction record.
 - **Functional Requirements (FR)**:
   1. **Hero & Personal Brand Section**: High-impact headline, dynamic badge, live availability indicator, CTA buttons ("Hire Me" / "Explore Work"), quick stats counter.
   2. **Interactive Service Matrix**: Detailed breakdown of services (e.g., Full-Stack Web Development, Custom Web Apps, UI/UX Engineering, API Integration, AI Automation & Performance Optimization).

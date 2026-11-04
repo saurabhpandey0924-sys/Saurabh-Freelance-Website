@@ -1,5 +1,5 @@
 /**
- * Saurabh's Freelance Platform - Main Logic & Rendering Engine
+ * DETECH Freelance Platform - Main Logic & Rendering Engine
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -316,7 +316,7 @@ window.openServiceSlide = function(serviceId) {
   if (!slideWrapper) return;
 
   const encodedWhatsAppMsg = encodeURIComponent(
-    `Hi Saurabh, I'm interested in discussing your "${service.title}" service for my project!`
+    `Hi DETECH, I'm interested in discussing your "${service.title}" service for my project!`
   );
   const whatsappUrl = `https://wa.me/919876543210?text=${encodedWhatsAppMsg}`;
 
@@ -398,7 +398,7 @@ window.openServiceSlide = function(serviceId) {
               </div>
               <div class="slide-spec-row">
                 <span class="slide-spec-key">Execution Team:</span>
-                <span class="slide-spec-val">Saurabh (Lead) + Senior Devs</span>
+                <span class="slide-spec-val">DETECH Team (Lead Architect + Senior Devs)</span>
               </div>
               <div class="slide-spec-row" style="border-bottom: none; padding-bottom: 0;">
                 <span class="slide-spec-key">Core Technologies:</span>
@@ -514,10 +514,10 @@ function initServiceDetailPage() {
   const prevService = services[prevIdx];
   const nextService = services[nextIdx];
 
-  document.title = `${service.title} | Saurabh.dev`;
+  document.title = `${service.title} | DETECH`;
 
   const encodedWhatsAppMsg = encodeURIComponent(
-    `Hi Saurabh, I'm interested in discussing your "${service.title}" service for my project!`
+    `Hi DETECH, I'm interested in discussing your "${service.title}" service for my project!`
   );
   const whatsappUrl = `https://wa.me/919876543210?text=${encodedWhatsAppMsg}`;
 
@@ -600,7 +600,7 @@ function initServiceDetailPage() {
               </div>
               <div class="slide-spec-row">
                 <span class="slide-spec-key">Execution Team:</span>
-                <span class="slide-spec-val">Saurabh (Lead) + Senior Devs</span>
+                <span class="slide-spec-val">DETECH Team (Lead Architect + Senior Devs)</span>
               </div>
               <div class="slide-spec-row" style="border-bottom: none; padding-bottom: 0;">
                 <span class="slide-spec-key">Core Technologies:</span>
@@ -835,70 +835,151 @@ function renderFAQs(faqs) {
 }
 
 function renderAbout(about) {
-  const container = document.getElementById('about-container');
-  if (!container || !about) return;
+  if (!about) return;
 
-  container.innerHTML = `
-    <div class="about-grid">
-      <!-- Profile Column -->
-      <div class="about-profile-card reveal">
-        <div class="about-avatar-wrapper" style="display: flex; align-items: center; justify-content: center; background: var(--gradient-primary); font-size: 2.8rem; color: #FFF;">
-          <span>💻</span>
-          <div class="about-verified-badge" title="Verified Web Development Team">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  const container = document.getElementById('about-container');
+  if (container) {
+    container.innerHTML = `
+      <div class="about-grid">
+        <!-- Profile Column -->
+        <div class="about-profile-card reveal">
+          <div class="about-avatar-wrapper detech-team-wrapper" style="display: flex; align-items: center; justify-content: center; background: #070b14; border: 2px solid rgba(99, 102, 241, 0.4); box-shadow: 0 0 25px rgba(56, 189, 248, 0.35); overflow: hidden; padding: 4px;">
+            <img src="assets/images/detech-team-avatar.png" alt="DETECH Freelance Team Logo" class="about-avatar-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            <div class="about-verified-badge" title="Verified Engineering Team">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <h3 class="about-profile-name">DETECH Team</h3>
+          <p class="about-profile-title">Full-Stack Digital Solutions & Engineering Team</p>
+          
+          <div class="about-stats-grid">
+            ${about.stats.map(s => `
+              <div class="about-stat-item">
+                <div class="about-stat-val">${s.value}</div>
+                <div class="about-stat-label">${s.label}</div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="about-trust-badges">
+            ${about.trustHighlights.map(t => `
+              <div class="about-trust-item">
+                <span class="about-trust-icon">✓</span>
+                <span>${t}</span>
+              </div>
+            `).join('')}
           </div>
         </div>
-        <h3 class="about-profile-name">Saurabh & Team</h3>
-        <p class="about-profile-title">Web Developer & Specialized Dev Team</p>
-        
-        <div class="about-stats-grid">
-          ${about.stats.map(s => `
-            <div class="about-stat-item">
-              <div class="about-stat-val">${s.value}</div>
-              <div class="about-stat-label">${s.label}</div>
-            </div>
-          `).join('')}
-        </div>
 
-        <div class="about-trust-badges">
-          ${about.trustHighlights.map(t => `
-            <div class="about-trust-item">
-              <span class="about-trust-icon">✓</span>
-              <span>${t}</span>
+        <!-- Philosophy & Guarantees Column -->
+        <div class="about-content-col reveal">
+          <div class="about-quote-box">
+            <p class="about-quote-text">"${about.quote}"</p>
+          </div>
+
+          <div class="about-bio-card glass-card" style="padding: 28px; border-radius: var(--radius-md);">
+            <h4 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--text-primary); font-family: var(--font-heading);">${about.headline}</h4>
+            <p style="font-size: 0.98rem; color: var(--text-secondary); line-height: 1.75;">${about.bio}</p>
+          </div>
+
+          <div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 18px; color: var(--text-primary); font-family: var(--font-heading); display:flex; align-items:center; gap: 10px; flex-wrap: wrap;">
+              <span>Core Working Guarantees</span>
+              <span style="font-size: 0.8rem; padding: 3px 10px; border-radius: 9999px; background: rgba(16, 185, 129, 0.15); color: var(--accent-success); border: 1px solid rgba(16, 185, 129, 0.3); font-weight:600;">Client Peace of Mind</span>
+            </h4>
+            <div class="principles-grid">
+              ${about.principles.map(p => `
+                <div class="principle-card">
+                  <div class="principle-icon-wrapper">${p.icon}</div>
+                  <h5 class="principle-title">${p.title}</h5>
+                  <p class="principle-desc">${p.desc}</p>
+                </div>
+              `).join('')}
             </div>
-          `).join('')}
+          </div>
         </div>
       </div>
+    `;
+  }
 
-      <!-- Philosophy & Guarantees Column -->
-      <div class="about-content-col reveal">
-        <div class="about-quote-box">
-          <p class="about-quote-text">"${about.quote}"</p>
+  // Render Mission & Vision if container exists
+  const mvContainer = document.getElementById('mission-vision-container');
+  if (mvContainer && about.mission && about.vision) {
+    mvContainer.innerHTML = `
+      <div class="mission-vision-grid">
+        <div class="mission-card glass-card reveal">
+          <div class="mission-vision-header">
+            <div class="mv-icon-badge mv-mission-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <span class="mv-label">OUR PURPOSE</span>
+              <h3 class="mv-title">${about.mission.title}</h3>
+            </div>
+          </div>
+          <p class="mv-statement">${about.mission.statement}</p>
+          <div class="mv-pillars">
+            ${about.mission.pillars.map(p => `
+              <div class="mv-pillar-item">
+                <span class="pillar-bullet">&bull;</span>
+                <div>
+                  <h5 class="pillar-title">${p.title}</h5>
+                  <p class="pillar-desc">${p.desc}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
         </div>
 
-        <div class="about-bio-card glass-card" style="padding: 28px; border-radius: var(--radius-md);">
-          <h4 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--text-primary); font-family: var(--font-heading);">${about.headline}</h4>
-          <p style="font-size: 0.98rem; color: var(--text-secondary); line-height: 1.75;">${about.bio}</p>
-        </div>
-
-        <div>
-          <h4 style="font-size: 1.25rem; margin-bottom: 18px; color: var(--text-primary); font-family: var(--font-heading); display:flex; align-items:center; gap: 10px; flex-wrap: wrap;">
-            <span>Core Working Guarantees</span>
-            <span style="font-size: 0.8rem; padding: 3px 10px; border-radius: 9999px; background: rgba(16, 185, 129, 0.15); color: var(--accent-success); border: 1px solid rgba(16, 185, 129, 0.3); font-weight:600;">Client Peace of Mind</span>
-          </h4>
-          <div class="principles-grid">
-            ${about.principles.map(p => `
-              <div class="principle-card">
-                <div class="principle-icon-wrapper">${p.icon}</div>
-                <h5 class="principle-title">${p.title}</h5>
-                <p class="principle-desc">${p.desc}</p>
+        <div class="vision-card glass-card reveal">
+          <div class="mission-vision-header">
+            <div class="mv-icon-badge mv-vision-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
+            <div>
+              <span class="mv-label">OUR HORIZON</span>
+              <h3 class="mv-title">${about.vision.title}</h3>
+            </div>
+          </div>
+          <p class="mv-statement">${about.vision.statement}</p>
+          <div class="mv-pillars">
+            ${about.vision.pillars.map(p => `
+              <div class="mv-pillar-item">
+                <span class="pillar-bullet">&bull;</span>
+                <div>
+                  <h5 class="pillar-title">${p.title}</h5>
+                  <p class="pillar-desc">${p.desc}</p>
+                </div>
               </div>
             `).join('')}
           </div>
         </div>
       </div>
-    </div>
-  `;
+    `;
+  }
+
+  // Render Core Team if container exists
+  const teamContainer = document.getElementById('team-container');
+  if (teamContainer && about.team && about.team.length) {
+    teamContainer.innerHTML = `
+      <div class="team-grid">
+        ${about.team.map(member => `
+          <div class="team-card glass-card reveal">
+            <div class="team-avatar-box">
+              <img src="${member.avatar}" alt="${member.name}" class="team-avatar-img">
+              <span class="team-badge-pill">${member.badge}</span>
+            </div>
+            <h4 class="team-name">${member.name}</h4>
+            <div class="team-role-title">${member.role}</div>
+            <p class="team-bio-text">${member.bio}</p>
+            <div class="team-skills-row">
+              ${member.skills.map(skill => `<span class="team-skill-tag">${skill}</span>`).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -912,7 +993,7 @@ function initNavigation() {
   const backdrop = document.getElementById('nav-modal-backdrop');
   const closeBtn = document.getElementById('nav-modal-close');
   const modalLinks = document.querySelectorAll('.nav-modal-link');
-  const desktopLinks = document.querySelectorAll('.nav-menu .nav-link[href^="#"]');
+  const desktopLinks = document.querySelectorAll('.nav-menu .nav-link');
   const dropdownToggle = document.getElementById('features-dropdown-btn');
   const dropdownWrapper = document.getElementById('features-dropdown');
   const dropdownLinks = document.querySelectorAll('.dropdown-item');
@@ -928,9 +1009,16 @@ function initNavigation() {
       if (!href) return;
       const cleanHref = href.toLowerCase();
 
-      if (!isHomePage) {
+      if (isHomePage) {
+        if (cleanHref === 'index.html' || cleanHref === '/' || cleanHref === './' || cleanHref === '') {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      } else {
         if (
-          (currentPath.includes('services') && cleanHref.includes('services')) ||
+          (currentPath.includes('case-studies') && cleanHref.includes('case-studies')) ||
+          (currentPath.includes('services') && cleanHref.includes('services') && !currentPath.includes('case-studies')) ||
           (currentPath.includes('portfolio') && cleanHref.includes('portfolio')) ||
           (currentPath.includes('industries') && cleanHref.includes('industries')) ||
           (currentPath.includes('about') && cleanHref.includes('about')) ||

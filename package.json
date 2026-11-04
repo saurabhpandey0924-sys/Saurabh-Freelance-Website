@@ -1,7 +1,7 @@
 {
-  "name": "saurabh-freelance-website",
+  "name": "detech-freelance-platform",
   "version": "1.0.0",
-  "description": "Saurabh's Freelance Web Development & Digital Solutions Platform",
+  "description": "DETECH - Elite Web Development & Digital Solutions Platform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -12,12 +12,13 @@
     "preview": "vite preview"
   },
   "keywords": [
+    "detech",
     "freelance",
     "portfolio",
     "web-development",
     "frontend",
     "fullstack"
   ],
-  "author": "Saurabh",
+  "author": "DETECH",
   "license": "MIT"
 }

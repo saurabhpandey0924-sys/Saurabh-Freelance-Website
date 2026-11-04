@@ -1,5 +1,5 @@
 /**
- * SAURABH FREELANCE PLATFORM - PARALLAX FLOATING BACKGROUND
+ * DETECH FREELANCE PLATFORM - PARALLAX FLOATING BACKGROUND
  * Infinite vertical scrolling parallax with zero-gravity hover effect.
  */
 

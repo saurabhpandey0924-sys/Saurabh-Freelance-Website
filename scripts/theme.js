@@ -1,10 +1,10 @@
 /**
- * Saurabh's Freelance Platform - Theme Switcher
+ * DETECH Freelance Platform - Theme Switcher
  * Handles dark & light mode with persistent storage.
  */
 
 (function () {
-  const THEME_KEY = 'saurabh_portfolio_theme';
+  const THEME_KEY = 'detech_portfolio_theme';
   const root = document.documentElement;
 
   // Initialize theme from storage or system preference

@@ -1,5 +1,5 @@
 /**
- * Saurabh's Freelance Platform - Contact & Lead Handling
+ * DETECH Freelance Platform - Contact & Lead Handling
  */
 
 (function () {
@@ -28,7 +28,7 @@
       };
       const indName = industryNames[industryParam] || industryParam;
       if (!messageInput.value) {
-        messageInput.value = `Hi Saurabh, I'm interested in discussing a custom software architecture & development sprint for the ${indName} vertical.`;
+        messageInput.value = `Hi DETECH, I'm interested in discussing a custom software architecture & development sprint for the ${indName} vertical.`;
       }
       if (serviceSelect) {
         serviceSelect.value = 'saas';
@@ -66,7 +66,7 @@
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-        showToast('🎉 Thank you! Your message has been sent. Saurabh will respond within 4-6 hours.', 'success');
+        showToast('🎉 Thank you! Your message has been sent. DETECH will respond within 4-6 hours.', 'success');
         form.reset();
       }, 1500);
     });

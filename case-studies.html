@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+  <!-- SEO Meta Tags -->
+  <title>Case Studies: Problems, Solutions & Results | DETECH</title>
+  <meta name="description" content="Explore real-world engineering case studies by DETECH. In-depth technical breakdowns covering commercial challenges, architectural solutions, and measurable business results.">
+  <meta name="keywords" content="Software Case Studies, SaaS Architecture, React Projects, Next.js ERP, E-Commerce Case Study, DETECH Case Studies">
+  <meta name="author" content="DETECH">
+  
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Case Studies: Problems, Solutions & Results | DETECH">
+  <meta property="og:description" content="In-depth breakdowns covering commercial challenges, architectural solutions, and measurable business results.">
+  <meta property="og:image" content="assets/images/project-saas.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <!-- Interactive Cyber Matrix Grid Canvas Background -->
+  <canvas id="cyber-grid-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-badge brand-logo-badge">
+          <img src="assets/images/detech-d-mark.png" alt="DETECH Logo">
+        </span>
+        <span>DETECH<span class="gradient-text">.dev</span></span>
+      </a>
+
+            <!-- Desktop Navigation Menu (7-Page Sequence) -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="services.html" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+          <a href="industries.html" class="nav-link">Industries</a>
+        </li>
+        <li class="nav-item">
+          <a href="portfolio.html" class="nav-link">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a href="case-studies.html" class="nav-link active">Case Studies</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Header Actions -->
+      <div class="nav-actions">
+        <!-- Theme Switcher Button -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/></svg>
+        </button>
+
+        <!-- Header CTA -->
+        <a href="contact.html" class="btn btn-primary btn-sm nav-cta-btn">
+          <span>Hire Us</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Floating Navigation Modal -->
+  <div class="nav-modal-backdrop" id="nav-modal-backdrop"></div>
+  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="nav-modal-close" id="nav-modal-close" aria-label="Close navigation">&times;</button>
+    <nav class="nav-modal-body">
+            <ul class="nav-modal-list">
+        <li>
+          <a href="index.html" class="nav-modal-link">
+            <span>Home</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="about.html" class="nav-modal-link">
+            <span>About Us</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="services.html" class="nav-modal-link">
+            <span>Services (6 Divisions)</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="industries.html" class="nav-modal-link">
+            <span>Industries We Serve</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html" class="nav-modal-link">
+            <span>Portfolio</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="case-studies.html" class="nav-modal-link active">
+            <span>Case Studies</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="nav-modal-link highlight">
+            <span>Contact & Inquiries</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+      </ul>
+      <div class="nav-modal-cta">
+        <a href="contact.html" class="btn btn-primary btn-glow" style="width: 100%;">
+          <span>Get Free Consultation</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Floating WhatsApp Widget -->
+  <a href="https://wa.me/919876543210?text=Hi%20DETECH,%20I'm%20interested%20in%20discussing%20a%20project!" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp-btn" 
+     id="floating-whatsapp" 
+     aria-label="Chat with us on WhatsApp"
+     title="Chat with us on WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <svg viewBox="0 0 24 24" width="34" height="34" fill="#FFFFFF">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+  </a>
+
+  <!-- PAGE HERO -->
+  <section class="section" style="padding-top: 140px; padding-bottom: 40px;">
+    <div class="container text-center">
+      <div class="section-header reveal">
+        <span class="section-badge">Proven Commercial Impact</span>
+        <h1 class="section-title">Case Studies: <span class="gradient-text">Problems, Solutions & Results</span></h1>
+        <p class="section-subtitle">
+          In-depth technical dissections of enterprise systems, SaaS platforms, and automated workflows engineered by DETECH—highlighting the commercial hurdles, architecture decisions, and measurable outcomes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES SHOWCASE -->
+  <section class="section" style="padding-top: 0; padding-bottom: 80px;">
+    <div class="container">
+      <div class="case-studies-container" id="case-studies-list">
+        
+        <!-- CASE STUDY 1: CAMPUSSPHERE ERP -->
+        <article class="case-study-card reveal" id="cs-campussphere">
+          <div class="case-study-header">
+            <div>
+              <span class="badge badge-popular">Enterprise ERP & Portals</span>
+              <h2 class="case-study-title">CampusSphere — Enterprise College & School ERP</h2>
+              <div class="case-study-client">Client: Higher Education Institute & Campus Network</div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.openProjectModal('campussphere-erp')">
+              <span>View Architecture Specs</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </button>
+          </div>
+
+          <div class="case-breakdown-grid">
+            <!-- 1. Problem -->
+            <div class="problem-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <span>The Problem (Hurdle)</span>
+              </div>
+              <p class="box-desc">
+                The institution relied on fragmented legacy software, manual paperwork for student records, offline cash receipts, and physical exam grading. This resulted in severe administrative delays, lost student payment reconciliations, and zero parental visibility into student attendance.
+              </p>
+            </div>
+
+            <!-- 2. Solution -->
+            <div class="solution-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>The Solution (Architecture)</span>
+              </div>
+              <p class="box-desc">
+                Engineered an integrated multi-tenant cloud ERP with role-based dashboards (Admin, Faculty, Student, Parent). Integrated automated UPI/Card fee payment gateways with instantaneous PDF receipts, SMS triggers for absentee alerts, and a dynamic hall ticket and GPA generator.
+              </p>
+            </div>
+
+            <!-- 3. Results -->
+            <div class="results-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>The Measurable Results</span>
+              </div>
+              <p class="box-desc">
+                Completely eliminated 85% of manual administrative paperwork and collected 100% of semester tuition fees digitally within the first 48 hours of each academic term with zero reconciliation errors.
+              </p>
+              <div class="results-stat-row">
+                <div class="result-chip"><span>85%</span> Admin Time Saved</div>
+                <div class="result-chip"><span>100%</span> Digital Collection</div>
+                <div class="result-chip"><span>12,000+</span> Active Records</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-study-footer">
+            <div class="case-tech-tags">
+              <span class="tech-pill">React 19</span>
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Razorpay / Stripe</span>
+            </div>
+            <div class="case-action-btns">
+              <a href="contact.html?project=campussphere-erp" class="btn btn-primary btn-sm">
+                <span>Build Similar Solution</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE STUDY 2: PULSEMETRICS SAAS -->
+        <article class="case-study-card reveal" id="cs-pulsemetrics">
+          <div class="case-study-header">
+            <div>
+              <span class="badge badge-popular">Full-Stack SaaS Platform</span>
+              <h2 class="case-study-title">PulseMetrics — Real-Time Cloud SaaS Analytics</h2>
+              <div class="case-study-client">Client: Venture-backed FinTech Startup (San Francisco, CA)</div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.openProjectModal('saas-analytics')">
+              <span>View Architecture Specs</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </button>
+          </div>
+
+          <div class="case-breakdown-grid">
+            <!-- 1. Problem -->
+            <div class="problem-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <span>The Problem (Hurdle)</span>
+              </div>
+              <p class="box-desc">
+                The client needed an observability and financial tracking dashboard capable of ingesting and rendering hundreds of live server and revenue events per second with sub-50ms query latency, zero browser stuttering, and strict tenant isolation.
+              </p>
+            </div>
+
+            <!-- 2. Solution -->
+            <div class="solution-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>The Solution (Architecture)</span>
+              </div>
+              <p class="box-desc">
+                Engineered a reactive dashboard driven by binary WebSockets, optimized TimescaleDB time-series partitions, and client-side virtualized lists. Integrated Stripe Billing customer portal with automated tier upgrade webhooks and automated PDF financial summaries.
+              </p>
+            </div>
+
+            <!-- 3. Results -->
+            <div class="results-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>The Measurable Results</span>
+              </div>
+              <p class="box-desc">
+                Delivered the MVP 2 weeks ahead of target schedule. Successfully supported over 2,500+ active business customers and helped the startup secure their $1.8M Seed financing round.
+              </p>
+              <div class="results-stat-row">
+                <div class="result-chip"><span>99.98%</span> Uptime SLA</div>
+                <div class="result-chip"><span>&lt;45ms</span> Query Latency</div>
+                <div class="result-chip"><span>+340%</span> MRR Growth</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-study-footer">
+            <div class="case-tech-tags">
+              <span class="tech-pill">React 19</span>
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">TimescaleDB</span>
+              <span class="tech-pill">Redis Pub/Sub</span>
+              <span class="tech-pill">Stripe Billing</span>
+            </div>
+            <div class="case-action-btns">
+              <a href="contact.html?project=saas-analytics" class="btn btn-primary btn-sm">
+                <span>Build Similar Solution</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE STUDY 3: AURUM LUXURY E-COMMERCE -->
+        <article class="case-study-card reveal" id="cs-aurum">
+          <div class="case-study-header">
+            <div>
+              <span class="badge badge-popular">Headless E-Commerce</span>
+              <h2 class="case-study-title">Aurum — Luxury Audio & Gear Store</h2>
+              <div class="case-study-client">Client: Aurum Sound Labs (London, UK)</div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.openProjectModal('ecommerce-luxury')">
+              <span>View Architecture Specs</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </button>
+          </div>
+
+          <div class="case-breakdown-grid">
+            <!-- 1. Problem -->
+            <div class="problem-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <span>The Problem (Hurdle)</span>
+              </div>
+              <p class="box-desc">
+                Their previous WooCommerce storefront suffered from a sluggish 4.5s initial load time, layout jumping on mobile, high cart abandonment, and poor visual presentation that failed to convey luxury product prestige.
+              </p>
+            </div>
+
+            <!-- 2. Solution -->
+            <div class="solution-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>The Solution (Architecture)</span>
+              </div>
+              <p class="box-desc">
+                Rebuilt the entire storefront as a headless Next.js application with edge caching, optimistic slide-out cart drawer, and interactive 3D product previews. Integrated Shopify Storefront GraphQL API with Stripe Elements 1-click checkout.
+              </p>
+            </div>
+
+            <!-- 3. Results -->
+            <div class="results-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>The Measurable Results</span>
+              </div>
+              <p class="box-desc">
+                Boosted gross monthly revenue by 62% in the first quarter post-launch, dropped cart abandonment by 28%, and achieved a stellar 99/100 Google Lighthouse performance rating.
+              </p>
+              <div class="results-stat-row">
+                <div class="result-chip"><span>+62%</span> Revenue Lift</div>
+                <div class="result-chip"><span>0.7s</span> Load Speed</div>
+                <div class="result-chip"><span>99/100</span> Lighthouse Score</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-study-footer">
+            <div class="case-tech-tags">
+              <span class="tech-pill">Next.js 15</span>
+              <span class="tech-pill">Shopify Storefront API</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Framer Motion</span>
+              <span class="tech-pill">Stripe Elements</span>
+            </div>
+            <div class="case-action-btns">
+              <a href="contact.html?project=ecommerce-luxury" class="btn btn-primary btn-sm">
+                <span>Build Similar Solution</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE STUDY 4: SYNAPSE AI -->
+        <article class="case-study-card reveal" id="cs-synapse">
+          <div class="case-study-header">
+            <div>
+              <span class="badge badge-popular">AI Agents & Workflows</span>
+              <h2 class="case-study-title">Synapse AI — Visual Agent Builder & Workflow Automation</h2>
+              <div class="case-study-client">Client: AutomateHQ (Austin, TX)</div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.openProjectModal('ai-agent-workflow')">
+              <span>View Architecture Specs</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </button>
+          </div>
+
+          <div class="case-breakdown-grid">
+            <!-- 1. Problem -->
+            <div class="problem-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <span>The Problem (Hurdle)</span>
+              </div>
+              <p class="box-desc">
+                Operations teams spent over 12 hours weekly performing manual data extraction from PDFs and routing emails into CRM databases, lacking a no-code visual canvas to connect LLMs with internal databases securely.
+              </p>
+            </div>
+
+            <!-- 2. Solution -->
+            <div class="solution-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>The Solution (Architecture)</span>
+              </div>
+              <p class="box-desc">
+                Architected an interactive drag-and-drop React Flow node canvas wired to an asynchronous Python FastAPI worker pool. Users connect custom prompts, vector stores (Pinecone/ChromaDB), and webhooks with instant test execution and token cost controls.
+              </p>
+            </div>
+
+            <!-- 3. Results -->
+            <div class="results-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>The Measurable Results</span>
+              </div>
+              <p class="box-desc">
+                Over 1.2M automated workflow executions processed within 90 days of launch; featured on Product Hunt #2 Product of the Day and achieved a 4.9/5 user satisfaction score.
+              </p>
+              <div class="results-stat-row">
+                <div class="result-chip"><span>1.2M+</span> Workflows Executed</div>
+                <div class="result-chip"><span>85%</span> Time Saved</div>
+                <div class="result-chip"><span>4.9 / 5</span> User Rating</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-study-footer">
+            <div class="case-tech-tags">
+              <span class="tech-pill">React Flow</span>
+              <span class="tech-pill">Python / FastAPI</span>
+              <span class="tech-pill">LangChain</span>
+              <span class="tech-pill">Gemini API</span>
+              <span class="tech-pill">Vector DB</span>
+            </div>
+            <div class="case-action-btns">
+              <a href="contact.html?project=ai-agent-workflow" class="btn btn-primary btn-sm">
+                <span>Build Similar Solution</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE STUDY 5: QUANTUM TRADING TERMINAL -->
+        <article class="case-study-card reveal" id="cs-quantum">
+          <div class="case-study-header">
+            <div>
+              <span class="badge badge-popular">FinTech & Web3</span>
+              <h2 class="case-study-title">Quantum — Real-Time Financial Trading Terminal</h2>
+              <div class="case-study-client">Client: Quantum Capital Group (Singapore)</div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.openProjectModal('fintech-crypto')">
+              <span>View Architecture Specs</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </button>
+          </div>
+
+          <div class="case-breakdown-grid">
+            <!-- 1. Problem -->
+            <div class="problem-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <span>The Problem (Hurdle)</span>
+              </div>
+              <p class="box-desc">
+                High-frequency traders experienced visual stutter, chart freezing, and delayed trade execution on their old trading dashboard during peak market volatility, leading to order slippage and trader dissatisfaction.
+              </p>
+            </div>
+
+            <!-- 2. Solution -->
+            <div class="solution-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>The Solution (Architecture)</span>
+              </div>
+              <p class="box-desc">
+                Built a hardware-accelerated Canvas/WebGL charting interface driven by low-latency binary WebSocket feeds and Redis Pub/Sub channels. Implemented zero-garbage allocation loops to maintain 60 FPS under extreme market load.
+              </p>
+            </div>
+
+            <!-- 3. Results -->
+            <div class="results-box">
+              <div class="box-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>The Measurable Results</span>
+              </div>
+              <p class="box-desc">
+                Handled over $45M in simulated and live trading transactions with sub-15ms WebSocket latency and zero frontend memory leaks.
+              </p>
+              <div class="results-stat-row">
+                <div class="result-chip"><span>60 FPS</span> Render Rate</div>
+                <div class="result-chip"><span>&lt;15ms</span> WS Latency</div>
+                <div class="result-chip"><span>40,000+</span> Active Traders</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-study-footer">
+            <div class="case-tech-tags">
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">WebGL / Canvas</span>
+              <span class="tech-pill">WebSockets</span>
+              <span class="tech-pill">Go Backend</span>
+              <span class="tech-pill">Redis Pub/Sub</span>
+            </div>
+            <div class="case-action-btns">
+              <a href="contact.html?project=fintech-crypto" class="btn btn-primary btn-sm">
+                <span>Build Similar Solution</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="section cta-banner-section" style="padding-top: 20px;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div class="cta-content">
+          <span class="badge badge-popular" style="margin-bottom: 16px;">Next Sprint Available</span>
+          <h2 class="cta-title">Have a Similar Challenge in Your Business?</h2>
+          <p class="cta-desc">
+            Let's evaluate your technical bottlenecks, draft an architectural blueprint, and engineer a high-impact solution delivered in a dedicated 2 to 4 week sprint.
+          </p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-primary btn-lg btn-glow">
+              <span>Initiate Free Consultation</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">
+              <span>WhatsApp Direct Chat</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand">
+            <span class="brand-badge brand-logo-badge">
+              <img src="assets/images/detech-d-mark.png" alt="DETECH Logo">
+            </span>
+            <span>DETECH<span class="gradient-text">.dev</span></span>
+          </a>
+          <p class="footer-tagline">
+            Elite Web Development & Digital Solutions Studio. Engineering high-converting websites, scalable SaaS applications, and enterprise digital products.
+          </p>
+        </div>
+
+        <!-- Quick Links (Matching the exact sequence) -->
+        <div class="footer-links-group">
+          <div class="footer-heading">Platform</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services (All 6 Divisions)</a></li>
+            <li><a href="industries.html">Industries We Serve</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-links-group">
+          <div class="footer-heading">Direct Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:contact@detech.dev">contact@detech.dev</a></li>
+            <li><a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">+91 98765 43210 (WhatsApp)</a></li>
+            <li><span style="color: var(--text-muted); font-size: 0.9rem;">Global / Remote (IST & UTC)</span></li>
+            <li><span style="color: var(--accent-success); font-size: 0.85rem; font-weight: 600;">● Accepting New Projects</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 DETECH. Built with precision, performance & care. All rights reserved.</div>
+        <div>
+          <a href="#navbar" style="color: var(--accent-primary); font-weight: 600;">Back to Top &uarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY DETAIL MODAL -->
+  <div class="modal-backdrop" id="project-modal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="modal-content-container"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="scripts/data.js"></script>
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/cyber-grid.js"></script>
+  <script src="scripts/tilt.js"></script>
+  <script src="scripts/modal.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

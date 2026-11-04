@@ -1,5 +1,5 @@
 /**
- * Saurabh's Freelance Platform - Case Study Modal System
+ * DETECH Freelance Platform - Case Study Modal System
  */
 
 (function () {
