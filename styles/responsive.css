@@ -483,23 +483,162 @@ img, svg, video, canvas {
     padding: 20px 16px;
   }
 
-  /* Process Grid */
+  /* 4-Step Workflow (Process) Mobile Horizontal Side-Scroll Carousel */
   .process-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 12px 16px 20px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    scrollbar-width: none !important;
+    scroll-padding: 0 16px !important;
+  }
+
+  .process-grid::-webkit-scrollbar {
+    display: none !important;
   }
 
   .process-card {
-    padding: 22px 18px;
-    border-radius: var(--radius-md);
+    flex: 0 0 calc(100vw - 52px) !important;
+    max-width: 360px !important;
+    min-width: 280px !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    padding: 28px 22px !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    min-height: 270px !important;
   }
 
+  .process-step-num {
+    font-size: 2.8rem !important;
+    line-height: 1 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .process-title {
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .process-desc {
+    font-size: 0.94rem !important;
+    line-height: 1.65 !important;
+    color: var(--text-secondary) !important;
+  }
+
+  /* Portfolio & Projects Mobile Horizontal Side-Scroll Carousel */
+  .projects-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 12px 16px 20px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    scrollbar-width: none !important;
+    scroll-padding: 0 16px !important;
+  }
+
+  .projects-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .project-card {
+    flex: 0 0 calc(100vw - 52px) !important;
+    max-width: 360px !important;
+    min-width: 280px !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  /* About Us Core Principles Mobile Horizontal Side-Scroll Carousel */
   .principles-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 12px 16px 20px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    scrollbar-width: none !important;
+    scroll-padding: 0 16px !important;
   }
 
-  /* About Page Elements */
+  .principles-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .principle-card {
+    flex: 0 0 calc(100vw - 52px) !important;
+    max-width: 360px !important;
+    min-width: 280px !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    padding: 26px 22px !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    min-height: 240px !important;
+  }
+
+  /* About Us Mission & Vision Mobile Horizontal Side-Scroll Carousel */
+  .mission-vision-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 12px 16px 20px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    scrollbar-width: none !important;
+    scroll-padding: 0 16px !important;
+  }
+
+  .mission-vision-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .mission-card, .vision-card {
+    flex: 0 0 calc(100vw - 52px) !important;
+    max-width: 360px !important;
+    min-width: 280px !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    padding: 26px 20px !important;
+    border-radius: 20px !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  /* About Page Profile Elements */
   .about-profile-card {
     padding: 24px 18px;
   }
@@ -585,17 +724,107 @@ img, svg, video, canvas {
     line-height: 1.1;
   }
 
-  /* FAQ Accordion */
-  .faq-question {
-    padding: 16px 16px;
-    font-size: 0.96rem;
-    min-height: 52px;
+  /* FAQ Mobile Horizontal Side-Scroll Carousel (Swipeable Question Cards) */
+  #faq-container, .faqs-container {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 12px 16px 20px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    scrollbar-width: none !important;
+    scroll-padding: 0 16px !important;
   }
 
-  .faq-answer {
-    padding: 0 16px 16px;
-    font-size: 0.9rem;
-    line-height: 1.6;
+  #faq-container::-webkit-scrollbar,
+  .faqs-container::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .faq-item {
+    flex: 0 0 calc(100vw - 52px) !important;
+    max-width: 360px !important;
+    min-width: 280px !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    padding: 26px 22px !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    min-height: 240px !important;
+    cursor: default !important;
+  }
+
+  .faq-item .faq-question-btn {
+    padding: 0 !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+    padding-bottom: 14px !important;
+    margin-bottom: 14px !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+    text-align: left !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+
+  .faq-item .faq-answer {
+    display: block !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    padding: 0 !important;
+    font-size: 0.94rem !important;
+    line-height: 1.65 !important;
+    color: var(--text-secondary) !important;
+  }
+
+  .faq-item .faq-icon {
+    display: none !important;
+  }
+
+  /* Testimonials Mobile Horizontal Side-Scroll Carousel */
+  .testimonials-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 12px 16px 20px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    scrollbar-width: none !important;
+    scroll-padding: 0 16px !important;
+  }
+
+  .testimonials-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .testimonial-card {
+    flex: 0 0 calc(100vw - 52px) !important;
+    max-width: 360px !important;
+    min-width: 280px !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    padding: 26px 22px !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    min-height: 280px !important;
   }
 
   /* Contact Page */
@@ -742,14 +971,55 @@ img, svg, video, canvas {
     gap: 12px;
   }
 
-  /* Luxury Accordion on mobile */
-  .luxury-panel.active,
-  .luxury-panel:hover {
-    min-height: 380px;
+  /* Luxury Accordion Mobile Horizontal Side-Scroll Carousel */
+  .luxury-accordion-stage {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 12px 16px 20px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    scrollbar-width: none !important;
+    scroll-padding: 0 16px !important;
+    height: auto !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .luxury-accordion-stage::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .luxury-panel {
+    flex: 0 0 calc(100vw - 52px) !important;
+    max-width: 360px !important;
+    min-width: 280px !important;
+    min-height: 390px !important;
+    border-radius: 20px !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .luxury-collapsed-title {
+    display: none !important;
   }
 
   .luxury-content {
-    padding: 20px 16px;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    padding: 24px 20px !important;
   }
 
   /* Form row: stack input columns to 1 column */

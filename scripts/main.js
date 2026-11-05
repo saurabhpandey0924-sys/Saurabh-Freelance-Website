@@ -1,3 +1,65 @@
+
+/* --------------------------------------------------------------------------
+   REUSABLE MOBILE HORIZONTAL SIDE-SCROLL CAROUSEL DOTS HELPER
+   Transforms grids into interactive swipeable carousels with active dots on mobile <= 768px
+-------------------------------------------------------------------------- */
+function attachMobileCarouselDots(containerId, dotsId, cardSelector) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  let dotsContainer = document.getElementById(dotsId);
+  if (!dotsContainer && container.parentNode) {
+    dotsContainer = document.createElement('div');
+    dotsContainer.id = dotsId;
+    dotsContainer.className = 'services-carousel-dots carousel-dots-mobile';
+    container.parentNode.insertBefore(dotsContainer, container.nextSibling);
+  }
+
+  if (!dotsContainer) return;
+
+  const cards = container.querySelectorAll(cardSelector);
+  if (!cards.length) return;
+
+  dotsContainer.innerHTML = Array.from(cards).map((_, idx) => `
+    <button class="carousel-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Go to slide ${idx + 1}"></button>
+  `).join('');
+
+  const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (cards[idx]) {
+        cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      }
+    });
+  });
+
+  let scrollDebounce = null;
+  container.addEventListener('scroll', () => {
+    if (scrollDebounce) cancelAnimationFrame(scrollDebounce);
+    scrollDebounce = requestAnimationFrame(() => {
+      const containerRect = container.getBoundingClientRect();
+      const center = containerRect.left + containerRect.width / 2;
+      let closestIdx = 0;
+      let minDiff = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const diff = Math.abs(center - cardCenter);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIdx = idx;
+        }
+      });
+
+      dots.forEach((d, i) => d.classList.toggle('active', i === closestIdx));
+    });
+  }, { passive: true });
+}
 /**
  * QUBITHRS TECHNOLOGY SOLUTIONS Platform - Main Logic & Rendering Engine
  */
@@ -277,6 +339,7 @@ function renderIndustries(industries) {
       resumeTimer = setTimeout(() => {
         isUserPausing = false;
         startAutoLoop();
+  attachMobileCarouselDots('luxury-accordion', 'industries-carousel-dots', '.luxury-panel');
       }, 4000);
     });
   }
@@ -771,23 +834,15 @@ function renderProjects(projects, filter = 'all') {
           </button>
         </div>
         <h3 class="project-title">${p.title}</h3>
-        <p class="project-summary">${p.summary}</p>
-        
-        <div class="project-metrics-row">
-          ${p.metrics.map(m => `
-            <div class="project-metric-item">
-              <div class="project-metric-val">${m.value}</div>
-              <div class="project-metric-lbl">${m.label}</div>
-            </div>
-          `).join('')}
-        </div>
-
-        <div class="project-tech-pills">
-          ${p.techStack.map(t => `<span class="tech-pill">${t}</span>`).join('')}
+        <p class="project-desc">${p.description}</p>
+        <div class="project-tags">
+          ${p.tags.slice(0, 3).map(t => `<span class="project-tag">${t}</span>`).join('')}
         </div>
       </div>
     </div>
   `).join('');
+
+  attachMobileCarouselDots('projects-container', 'projects-carousel-dots', '.project-card');
 }
 
 function initProjectFilters(projects) {
@@ -847,6 +902,8 @@ function renderProcess(process) {
       <p class="process-desc">${p.desc}</p>
     </div>
   `).join('');
+
+  attachMobileCarouselDots('process-container', 'process-carousel-dots', '.process-card');
 }
 
 
@@ -867,11 +924,13 @@ function renderTestimonials(testimonials) {
         <div class="testimonial-avatar">${t.avatarInitials}</div>
         <div>
           <div class="testimonial-name">${t.author}</div>
-          <div class="testimonial-role">${t.role} • ${t.company}</div>
+          <div class="testimonial-role">${t.role} · ${t.company}</div>
         </div>
       </div>
     </div>
   `).join('');
+
+  attachMobileCarouselDots('testimonials-container', 'testimonials-carousel-dots', '.testimonial-card');
 }
 
 function renderFAQs(faqs) {
@@ -906,9 +965,12 @@ function renderFAQs(faqs) {
       }
     });
   });
+
+  attachMobileCarouselDots('faq-container', 'faq-carousel-dots', '.faq-item');
 }
 
 function renderAbout(about) {
+  setTimeout(() => { attachMobileCarouselDots("principles-container", "principles-carousel-dots", ".principle-card"); attachMobileCarouselDots("mission-vision-container-grid", "mission-vision-carousel-dots", ".mission-card, .vision-card"); }, 50);
   if (!about) return;
 
   const container = document.getElementById('about-container');
@@ -959,7 +1021,7 @@ function renderAbout(about) {
               <span>Core Working Guarantees</span>
               <span style="font-size: 0.8rem; padding: 3px 10px; border-radius: 9999px; background: rgba(16, 185, 129, 0.15); color: var(--accent-success); border: 1px solid rgba(16, 185, 129, 0.3); font-weight:600;">Client Peace of Mind</span>
             </h4>
-            <div class="principles-grid">
+            <div class="principles-grid" id="principles-container">
               ${about.principles.map(p => `
                 <div class="principle-card">
                   <div class="principle-icon-wrapper">${p.icon}</div>
@@ -978,7 +1040,7 @@ function renderAbout(about) {
   const mvContainer = document.getElementById('mission-vision-container');
   if (mvContainer && about.mission && about.vision) {
     mvContainer.innerHTML = `
-      <div class="mission-vision-grid">
+      <div class="mission-vision-grid" id="mission-vision-container-grid">
         <div class="mission-card glass-card reveal">
           <div class="mission-vision-header">
             <div class="mv-icon-badge mv-mission-icon">
