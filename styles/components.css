@@ -346,26 +346,7 @@
   gap: 12px;
 }
 
-.theme-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-medium);
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
 
-.theme-toggle-btn:hover {
-  background: var(--border-medium);
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  transform: rotate(15deg);
-}
 
 /* Classic 3-Line Hamburger Menu Button (Hidden on Desktop >= 1024px) */
 .menu-toggle-btn {
