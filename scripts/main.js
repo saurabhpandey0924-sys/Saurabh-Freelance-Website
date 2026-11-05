@@ -843,11 +843,9 @@ function renderAbout(about) {
       <div class="about-grid">
         <!-- Profile Column -->
         <div class="about-profile-card reveal">
-          <div class="about-avatar-wrapper qubithrs-brand-wrapper" style="display: flex; align-items: center; justify-content: center; background: #070b14; border: 2px solid rgba(99, 102, 241, 0.4); box-shadow: 0 0 25px rgba(56, 189, 248, 0.35); overflow: hidden; padding: 4px;">
-            <img src="assets/images/qubithrs-team-avatar.png" alt="QUBITHRS Technology Solutions Logo" class="about-avatar-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-            <div class="about-verified-badge" title="Verified Engineering Team">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: rgba(56, 189, 248, 0.12); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.35); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+            <span>ENTERPRISE SOLUTIONS STUDIO</span>
           </div>
           <h3 class="about-profile-name">QUBITHRS Technology Solutions</h3>
           <p class="about-profile-title">Web · Software · AI · Cybersecurity — Building Intelligent & Secure Digital Solutions.</p>
@@ -954,29 +952,6 @@ function renderAbout(about) {
             `).join('')}
           </div>
         </div>
-      </div>
-    `;
-  }
-
-  // Render Core Team if container exists
-  const teamContainer = document.getElementById('team-container');
-  if (teamContainer && about.team && about.team.length) {
-    teamContainer.innerHTML = `
-      <div class="team-grid">
-        ${about.team.map(member => `
-          <div class="team-card glass-card reveal">
-            <div class="team-avatar-box">
-              <img src="${member.avatar}" alt="${member.name}" class="team-avatar-img">
-              <span class="team-badge-pill">${member.badge}</span>
-            </div>
-            <h4 class="team-name">${member.name}</h4>
-            <div class="team-role-title">${member.role}</div>
-            <p class="team-bio-text">${member.bio}</p>
-            <div class="team-skills-row">
-              ${member.skills.map(skill => `<span class="team-skill-tag">${skill}</span>`).join('')}
-            </div>
-          </div>
-        `).join('')}
       </div>
     `;
   }
