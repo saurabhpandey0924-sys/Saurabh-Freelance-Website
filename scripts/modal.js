@@ -1,5 +1,5 @@
 /**
- * QUBITHRS TECHNOLOGY SOLUTIONS Platform - Case Study Modal System
+ * QUBITHRS TECHNOLOGY SOLUTIONS Platform - Project Detail Modal System
  */
 
 (function () {

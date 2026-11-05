@@ -680,7 +680,7 @@ function renderProjects(projects, filter = 'all') {
         <img src="${p.thumbnail}" alt="${p.title}" loading="lazy">
         <div class="project-overlay">
           <button class="btn btn-primary btn-sm" onclick="window.openProjectModal('${p.id}')">
-            <span>View Case Study</span>
+            <span>View Project Details</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
           </button>
           <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
@@ -992,8 +992,7 @@ function initNavigation() {
         }
       } else {
         if (
-          (currentPath.includes('case-studies') && cleanHref.includes('case-studies')) ||
-          (currentPath.includes('services') && cleanHref.includes('services') && !currentPath.includes('case-studies')) ||
+          (currentPath.includes('services') && cleanHref.includes('services')) ||
           (currentPath.includes('portfolio') && cleanHref.includes('portfolio')) ||
           (currentPath.includes('industries') && cleanHref.includes('industries')) ||
           (currentPath.includes('about') && cleanHref.includes('about')) ||
