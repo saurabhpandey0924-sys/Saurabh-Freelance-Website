@@ -466,23 +466,6 @@ img, svg, video, canvas {
     min-height: 44px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .project-card {
-    border-radius: var(--radius-md);
-  }
-
-  .project-card-image {
-    height: 200px;
-  }
-
-  .project-card-content {
-    padding: 20px 16px;
-  }
-
   /* 4-Step Workflow (Process) Mobile Horizontal Side-Scroll Carousel */
   .process-grid {
     display: flex !important;
@@ -568,6 +551,33 @@ img, svg, video, canvas {
     background: #FFFFFF !important;
     border: 1px solid var(--border-medium) !important;
     box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  .project-content {
+    padding: 20px 18px !important;
+  }
+
+  .project-title {
+    font-size: 1.15rem !important;
+  }
+
+  .project-summary {
+    font-size: 0.88rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  .project-metrics-row {
+    padding: 10px 12px !important;
+    gap: 8px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .project-metric-val {
+    font-size: 1rem !important;
+  }
+
+  .project-metric-lbl {
+    font-size: 0.7rem !important;
   }
 
   /* About Us Core Principles Mobile Horizontal Side-Scroll Carousel */

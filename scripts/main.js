@@ -18,7 +18,10 @@ function attachMobileCarouselDots(containerId, dotsId, cardSelector) {
   if (!dotsContainer) return;
 
   const cards = container.querySelectorAll(cardSelector);
-  if (!cards.length) return;
+  if (!cards.length) {
+    dotsContainer.innerHTML = '';
+    return;
+  }
 
   dotsContainer.innerHTML = Array.from(cards).map((_, idx) => `
     <button class="carousel-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Go to slide ${idx + 1}"></button>
@@ -30,35 +33,43 @@ function attachMobileCarouselDots(containerId, dotsId, cardSelector) {
     dot.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      if (cards[idx]) {
-        cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      const currentCards = container.querySelectorAll(cardSelector);
+      if (currentCards[idx]) {
+        currentCards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
         dots.forEach((d, i) => d.classList.toggle('active', i === idx));
       }
     });
   });
 
-  let scrollDebounce = null;
-  container.addEventListener('scroll', () => {
-    if (scrollDebounce) cancelAnimationFrame(scrollDebounce);
-    scrollDebounce = requestAnimationFrame(() => {
-      const containerRect = container.getBoundingClientRect();
-      const center = containerRect.left + containerRect.width / 2;
-      let closestIdx = 0;
-      let minDiff = Infinity;
+  if (!container._hasMobileCarouselListener) {
+    container._hasMobileCarouselListener = true;
+    let scrollDebounce = null;
+    container.addEventListener('scroll', () => {
+      if (scrollDebounce) cancelAnimationFrame(scrollDebounce);
+      scrollDebounce = requestAnimationFrame(() => {
+        const currentCards = container.querySelectorAll(cardSelector);
+        const currentDots = dotsContainer ? dotsContainer.querySelectorAll('.carousel-dot') : [];
+        if (!currentCards.length || !currentDots.length) return;
 
-      cards.forEach((card, idx) => {
-        const cardRect = card.getBoundingClientRect();
-        const cardCenter = cardRect.left + cardRect.width / 2;
-        const diff = Math.abs(center - cardCenter);
-        if (diff < minDiff) {
-          minDiff = diff;
-          closestIdx = idx;
-        }
+        const containerRect = container.getBoundingClientRect();
+        const center = containerRect.left + containerRect.width / 2;
+        let closestIdx = 0;
+        let minDiff = Infinity;
+
+        currentCards.forEach((card, idx) => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const diff = Math.abs(center - cardCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIdx = idx;
+          }
+        });
+
+        currentDots.forEach((d, i) => d.classList.toggle('active', i === closestIdx));
       });
-
-      dots.forEach((d, i) => d.classList.toggle('active', i === closestIdx));
-    });
-  }, { passive: true });
+    }, { passive: true });
+  }
 }
 /**
  * QUBITHRS TECHNOLOGY SOLUTIONS Platform - Main Logic & Rendering Engine
@@ -68,47 +79,106 @@ document.addEventListener('DOMContentLoaded', () => {
   const data = window.PORTFOLIO_DATA;
   if (!data) return;
 
-  // 1. Render Technologies We Power (Marquee + Filter Grid)
-  if (data.technologies) {
-    renderTechnologies(data.technologies);
+  // 1. Navigation & Mobile Menu (Priority #1: Defensively initialized first so menu NEVER fails)
+  try {
+    initNavigation();
+  } catch (err) {
+    console.error('Failed to initialize navigation:', err);
   }
 
-  // 2. Render Services
-  renderServices(data.services);
-
-  // 3. Render Industries We Empower
-  if (data.industries) {
-    renderIndustries(data.industries);
+  // 2. Render Technologies We Power (Sphere & Marquee)
+  try {
+    if (data.technologies) {
+      renderTechnologies(data.technologies);
+    }
+  } catch (err) {
+    console.error('Failed to render technologies:', err);
   }
 
-  // 4. Render Projects & Filter Logic
-  renderProjects(data.projects);
-  initProjectFilters(data.projects);
+  // 3. Render Services
+  try {
+    if (data.services) {
+      renderServices(data.services);
+    }
+  } catch (err) {
+    console.error('Failed to render services:', err);
+  }
 
-  // 5. Render Skills Matrix
-  // renderSkills(data.skills);
+  // 4. Render Industries We Empower
+  try {
+    if (data.industries) {
+      renderIndustries(data.industries);
+    }
+  } catch (err) {
+    console.error('Failed to render industries:', err);
+  }
+
+  // 5. Render Projects & Filter Logic
+  try {
+    if (data.projects) {
+      renderProjects(data.projects);
+      initProjectFilters(data.projects);
+    }
+  } catch (err) {
+    console.error('Failed to render projects:', err);
+  }
 
   // 6. Render Work Process
-  renderProcess(data.process);
+  try {
+    if (data.process) {
+      renderProcess(data.process);
+    }
+  } catch (err) {
+    console.error('Failed to render process:', err);
+  }
 
   // 7. Render About & Working Philosophy
-  renderAbout(data.about);
+  try {
+    if (data.about) {
+      renderAbout(data.about);
+    }
+  } catch (err) {
+    console.error('Failed to render about:', err);
+  }
 
-  // 9. Render Testimonials
-  renderTestimonials(data.testimonials);
+  // 8. Render Testimonials
+  try {
+    if (data.testimonials) {
+      renderTestimonials(data.testimonials);
+    }
+  } catch (err) {
+    console.error('Failed to render testimonials:', err);
+  }
 
-  // 10. Render FAQs
-  renderFAQs(data.faqs);
+  // 9. Render FAQs
+  try {
+    if (data.faqs) {
+      renderFAQs(data.faqs);
+    }
+  } catch (err) {
+    console.error('Failed to render FAQs:', err);
+  }
 
-  // 11. Dedicated Service Detail Page (if on service-detail.html)
-  initServiceDetailPage();
+  // 10. Dedicated Service Detail Page (if on service-detail.html)
+  try {
+    initServiceDetailPage();
+  } catch (err) {
+    console.error('Failed to init service detail page:', err);
+  }
 
-  // 12. Navigation & Scroll Observers
-  initNavigation();
-  initScrollAnimations();
+  // 11. Navigation Scroll Observers & Animations
+  try {
+    initScrollAnimations();
+  } catch (err) {
+    console.error('Failed to init scroll animations:', err);
+  }
   
-  // 13. Welcome Popup
-  initWelcomePopup();
+  // 12. Welcome Popup
+  try {
+    initWelcomePopup();
+  } catch (err) {
+    console.error('Failed to init welcome popup:', err);
+  }
 });
 
 /* --------------------------------------------------------------------------
@@ -339,10 +409,12 @@ function renderIndustries(industries) {
       resumeTimer = setTimeout(() => {
         isUserPausing = false;
         startAutoLoop();
-  attachMobileCarouselDots('luxury-accordion', 'industries-carousel-dots', '.luxury-panel');
       }, 4000);
     });
   }
+
+  // Mobile Swipe Carousel Dots (Only on Mobile <= 768px)
+  attachMobileCarouselDots('luxury-accordion', 'industries-carousel-dots', '.luxury-panel');
 
   // Start initial auto-loop
   startAutoLoop();
@@ -806,41 +878,65 @@ function renderProjects(projects, filter = 'all') {
     ? projects 
     : projects.filter(p => p.category === filter);
 
-  if (filtered.length === 0) {
+  if (!filtered || filtered.length === 0) {
     container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 40px;">No projects found in this category.</p>`;
+    const dotsContainer = document.getElementById('projects-carousel-dots');
+    if (dotsContainer) dotsContainer.innerHTML = '';
     return;
   }
 
-  container.innerHTML = filtered.map(p => `
-    <div class="project-card reveal" data-category="${p.category}">
-      <div class="project-thumb-wrap">
-        <img src="${p.thumbnail}" alt="${p.title}" loading="lazy">
-        <div class="project-overlay">
-          <button class="btn btn-primary btn-sm" onclick="window.openProjectModal('${p.id}')">
-            <span>View Project Details</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-          </button>
-          <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-            <span>Live Demo</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+  container.innerHTML = filtered.map(p => {
+    const techList = p.techStack || p.tags || [];
+    const metricsList = p.metrics || [];
+    const summaryText = p.summary || p.description || '';
+    const categoryLabel = p.categoryLabel || p.category || 'Case Study';
+    const thumbnailImg = p.thumbnail || 'assets/images/project-saas.jpg';
+
+    return `
+      <div class="project-card reveal" data-category="${p.category || 'all'}">
+        <div class="project-thumb-wrap" onclick="window.openProjectModal('${p.id}')" style="cursor: pointer;" title="Tap to view project details">
+          <img src="${thumbnailImg}" alt="${p.title}" loading="lazy">
+          <div class="project-overlay">
+            <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); window.openProjectModal('${p.id}');">
+              <span>View Project Details</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+            ${p.liveUrl ? `
+              <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" onclick="event.stopPropagation();">
+                <span>Live Demo</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            ` : ''}
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-header-info">
+            <span class="project-category-pill">${categoryLabel}</span>
+            <button onclick="window.openProjectModal('${p.id}')" style="color:var(--accent-primary); font-size:0.85rem; font-weight:600; display:flex; align-items:center; gap:4px; background:none; border:none; cursor:pointer;" aria-label="View details for ${p.title}">
+              Details &rarr;
+            </button>
+          </div>
+          <h3 class="project-title" onclick="window.openProjectModal('${p.id}')" style="cursor: pointer;">${p.title}</h3>
+          <p class="project-summary">${summaryText}</p>
+          
+          ${metricsList.length ? `
+            <div class="project-metrics-row">
+              ${metricsList.map(m => `
+                <div class="project-metric-item">
+                  <div class="project-metric-val">${m.value}</div>
+                  <div class="project-metric-lbl">${m.label}</div>
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+
+          <div class="project-tech-pills">
+            ${techList.slice(0, 3).map(t => `<span class="tech-pill">${t}</span>`).join('')}
+          </div>
         </div>
       </div>
-      <div class="project-content">
-        <div class="project-header-info">
-          <span class="project-category-pill">${p.categoryLabel}</span>
-          <button onclick="window.openProjectModal('${p.id}')" style="color:var(--accent-primary); font-size:0.85rem; font-weight:600; display:flex; align-items:center; gap:4px;">
-            Details &rarr;
-          </button>
-        </div>
-        <h3 class="project-title">${p.title}</h3>
-        <p class="project-desc">${p.description}</p>
-        <div class="project-tags">
-          ${p.tags.slice(0, 3).map(t => `<span class="project-tag">${t}</span>`).join('')}
-        </div>
-      </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
   attachMobileCarouselDots('projects-container', 'projects-carousel-dots', '.project-card');
 }
@@ -970,7 +1066,6 @@ function renderFAQs(faqs) {
 }
 
 function renderAbout(about) {
-  setTimeout(() => { attachMobileCarouselDots("principles-container", "principles-carousel-dots", ".principle-card"); attachMobileCarouselDots("mission-vision-container-grid", "mission-vision-carousel-dots", ".mission-card, .vision-card"); }, 50);
   if (!about) return;
 
   const container = document.getElementById('about-container');
@@ -1034,6 +1129,8 @@ function renderAbout(about) {
         </div>
       </div>
     `;
+
+    attachMobileCarouselDots('principles-container', 'principles-carousel-dots', '.principle-card');
   }
 
   // Render Mission & Vision if container exists
@@ -1090,6 +1187,8 @@ function renderAbout(about) {
         </div>
       </div>
     `;
+
+    attachMobileCarouselDots('mission-vision-container-grid', 'mission-vision-carousel-dots', '.mission-card, .vision-card');
   }
 }
 
