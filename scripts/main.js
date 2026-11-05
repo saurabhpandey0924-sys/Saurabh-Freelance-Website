@@ -302,14 +302,68 @@ function renderServices(services) {
       <h3 class="service-title">${s.title}</h3>
       <p class="service-desc">${s.description}</p>
       <div class="service-tags">
-        ${s.tags.map(t => `<span class="service-tag">${t}</span>`).join('')}
+        ${s.tags.slice(0, 3).map(t => `<span class="service-tag">${t}</span>`).join('')}
       </div>
-      <a href="service-detail.html?id=${s.id}" class="service-card-action">
-        <span>Explore Service Details</span>
-        <span class="action-arrow">&rarr;</span>
+      <a href="service-detail.html?id=${s.id}" class="service-card-action" onclick="event.stopPropagation();">
+        <span>LEARN MORE</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
       </a>
     </div>
   `).join('');
+
+  // Mobile Swipe Carousel Dots (Only on Mobile <= 768px)
+  let dotsContainer = document.getElementById('services-carousel-dots');
+  if (!dotsContainer && container.parentNode) {
+    dotsContainer = document.createElement('div');
+    dotsContainer.id = 'services-carousel-dots';
+    dotsContainer.className = 'services-carousel-dots';
+    container.parentNode.insertBefore(dotsContainer, container.nextSibling);
+  }
+
+  if (dotsContainer) {
+    dotsContainer.innerHTML = services.map((_, idx) => `
+      <button class="carousel-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Go to service slide ${idx + 1}"></button>
+    `).join('');
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+    const cards = container.querySelectorAll('.service-card');
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        if (cards[idx]) {
+          cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+      });
+    });
+
+    // Track active slide on swipe
+    let scrollDebounce = null;
+    container.addEventListener('scroll', () => {
+      if (scrollDebounce) cancelAnimationFrame(scrollDebounce);
+      scrollDebounce = requestAnimationFrame(() => {
+        const containerRect = container.getBoundingClientRect();
+        const center = containerRect.left + containerRect.width / 2;
+        let closestIdx = 0;
+        let minDiff = Infinity;
+
+        cards.forEach((card, idx) => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const diff = Math.abs(center - cardCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIdx = idx;
+          }
+        });
+
+        dots.forEach((d, i) => d.classList.toggle('active', i === closestIdx));
+      });
+    }, { passive: true });
+  }
 
   // Check URL hash on init
   checkServiceSlideHash();
