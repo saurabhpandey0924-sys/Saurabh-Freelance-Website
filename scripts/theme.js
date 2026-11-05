@@ -1,10 +1,10 @@
 /**
- * QUBITHRS Freelance Platform - Theme Switcher
+ * QUBITHRS TECHNOLOGY SOLUTIONS Platform - Theme Switcher
  * Handles dark & light mode with persistent storage.
  */
 
 (function () {
-  const THEME_KEY = 'detech_portfolio_theme';
+  const THEME_KEY = 'qubithrs_portfolio_theme';
   const root = document.documentElement;
 
   // Initialize theme from storage or system preference

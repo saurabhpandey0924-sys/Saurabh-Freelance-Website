@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DETECH FREELANCE PLATFORM - COMPONENT STYLES
+   QUBITHRS TECHNOLOGY SOLUTIONS PLATFORM - COMPONENT STYLES
    ========================================================================== */
 
 /* 1. NAVBAR */
@@ -2043,7 +2043,7 @@
 }
 
 /* ==========================================================================
-   14. ABOUT DETECH & WORKING PHILOSOPHY SECTION
+   14. ABOUT QUBITHRS & WORKING PHILOSOPHY SECTION
    ========================================================================== */
 .about-grid {
   display: grid;
@@ -2958,7 +2958,7 @@
   background: rgba(255, 255, 255, 0.02);
 }
 
-/* Highlighted Column (DETECH Team) */
+/* Highlighted Column (QUBITHRS Solutions Team) */
 .comparison-table .highlight-col {
   background: rgba(99, 102, 241, 0.08);
   border-left: 1px solid rgba(99, 102, 241, 0.25);

@@ -1,5 +1,5 @@
 /**
- * QUBITHRS FREELANCE PLATFORM - 3D HOLOGRAPHIC TILT CARDS
+ * QUBITHRS TECHNOLOGY SOLUTIONS PLATFORM - 3D HOLOGRAPHIC TILT CARDS
  * Smooth perspective tilt with dynamic glass sheen highlights matching user colors.
  */
 

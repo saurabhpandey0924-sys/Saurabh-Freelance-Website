@@ -22,7 +22,7 @@ const PORTFOLIO_DATA = {
   about: {
     badge: "The Engineering Team Behind Your Vision",
     headline: "High-Impact Web Development With Dedicated Sprint Execution",
-    bio: "We are DETECH — Web Development & Solutions Engineering Studio. Together with our specialized development squad, we engineer robust web applications, enterprise platforms, and digital products for founders, growing businesses, and agency partners. We manage the entire lifecycle — from technical architecture and clean UI/UX to scalable backend development, rigorous security testing, and production cloud deployment.",
+    bio: "We are QUBITHRS TECHNOLOGY SOLUTIONS — Web · Software · AI · Cybersecurity. Together with our specialized solutions engineering squad, we architect and engineer robust enterprise platforms, intelligent AI workflows, and defense-grade digital ecosystems for founders, modern enterprises, and industry leaders worldwide. We manage the entire engineering lifecycle — from technical architecture and clean UI/UX to scalable cloud backends, hardened cybersecurity protocols, and high-availability production deployments.",
     quote: "True engineering excellence is delivering clean, scalable systems that solve complex business problems and drive tangible commercial growth.",
     
     // Mission & Vision
@@ -72,7 +72,7 @@ const PORTFOLIO_DATA = {
         role: "Principal Systems Architect & Lead Engineer",
         badge: "Lead Architect",
         bio: "Specializing in distributed systems, Next.js/React architectures, cloud microservices, and high-concurrency database modeling. 7+ years of engineering leadership.",
-        avatar: "assets/images/detech-team-avatar.png",
+        avatar: "assets/images/qubithrs-team-avatar.png",
         skills: ["System Architecture", "Next.js / React 19", "Node.js / Go", "PostgreSQL & Redis"]
       },
       {
@@ -81,7 +81,7 @@ const PORTFOLIO_DATA = {
         role: "Senior Full-Stack & Cloud Engineer",
         badge: "Full-Stack Core",
         bio: "Expert in building robust REST/GraphQL APIs, multi-tenant databases, Docker containerization, and automated CI/CD cloud pipelines on AWS & Vercel.",
-        avatar: "assets/images/detech-app-icon.png",
+        avatar: "assets/images/qubithrs-app-icon.png",
         skills: ["Node.js / Express", "FastAPI / Python", "Docker & Kubernetes", "AWS & Cloudflare"]
       },
       {
@@ -90,7 +90,7 @@ const PORTFOLIO_DATA = {
         role: "Lead UI/UX Engineer & Motion Specialist",
         badge: "Design Systems",
         bio: "Obsessed with micro-interactions, responsive typography, WCAG AAA accessibility, and translating complex workflows into intuitive, beautiful user journeys.",
-        avatar: "assets/images/detech-brand-badge.png",
+        avatar: "assets/images/qubithrs-brand-badge.png",
         skills: ["Figma to Code", "Tailwind CSS", "Framer Motion", "Accessibility & Design Systems"]
       },
       {
@@ -99,7 +99,7 @@ const PORTFOLIO_DATA = {
         role: "AI Solutions & Performance Specialist",
         badge: "AI & Performance",
         bio: "Focused on LLM integrations, RAG pipelines, Pinecone vector search, automated test coverage, and driving 95+ Google Lighthouse scores.",
-        avatar: "assets/images/detech-d-mark.png",
+        avatar: "assets/images/qubithrs-d-mark.png",
         skills: ["Gemini & OpenAI API", "LangChain & Vector DBs", "Lighthouse Optimization", "End-to-End QA"]
       }
     ],
@@ -1046,16 +1046,16 @@ const PORTFOLIO_DATA = {
       a: "We work on a transparent milestone model: typically 50% upfront to reserve the sprint and 50% upon final sign-off and deployment (or 33% / 33% / 34% for larger projects). Invoices and contracts are provided."
     },
     {
-      q: "Do I get 100% full intellectual property (IP) and code ownership?",
+      q: "Does our organization receive 100% full intellectual property (IP) and source code ownership?",
       a: "Yes, 100%! Upon final payment, all source code, design assets, GitHub repositories, and database schemas are completely transferred to your ownership with zero vendor lock-in."
     },
     {
-      q: "What happens if I need bug fixes or updates after launch?",
+      q: "What happens if we need bug fixes, updates, or scaling after launch?",
       a: "Every project includes 14 to 60 days of complimentary post-launch support and warranty. If you need ongoing maintenance, new features, or dedicated monthly retainer hours, flexible support packages are available."
     },
     {
       q: "Can you work with our existing codebase or API?",
-      a: "Absolutely. I regularly audit, refactor, and build on top of existing codebases (React, Next.js, Node.js, Python, PHP, etc.), as well as integrate any third-party REST or GraphQL APIs."
+      a: "Absolutely. Our engineering squad regularly audits, refactors, and scales existing enterprise codebases (React, Next.js, Node.js, Python, Go, etc.), and seamlessly integrates modern REST, GraphQL, and microservice APIs with zero operational disruption."
     }
   ]
 };

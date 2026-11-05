@@ -1,10 +1,10 @@
 # 📋 Software Development Life Cycle (SDLC) Specification Document
-## Project: QUBITHRS Elite Freelance Digital Platform & Client Acquisition Studio
+## Project: QUBITHRS Enterprise Technology Solutions & Digital Engineering Platform
 
 ---
 
 ### 1. Overview & Objective
-This document outlines the complete Software Development Life Cycle (SDLC) for developing **QUBITHRS's Freelance Platform**. The objective of this project is to build a top-tier, high-converting freelance web application that positions QUBITHRS as a premier digital engineering studio, demonstrates technical authority through dynamic project case studies, and drives inbound client inquiries and contract deals.
+This document outlines the complete Software Development Life Cycle (SDLC) for developing **QUBITHRS Technology Solutions Platform**. The objective of this project is to build a top-tier, high-converting enterprise web application that positions QUBITHRS as a premier digital engineering and software solutions studio, demonstrates technical authority through dynamic project case studies, and drives qualified inbound enterprise inquiries and contract deals.
 
 ---
 

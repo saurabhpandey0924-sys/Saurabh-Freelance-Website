@@ -1,5 +1,5 @@
 /**
- * QUBITHRS Freelance Platform - Real-Time Project Cost Calculator (INR / ₹)
+ * QUBITHRS TECHNOLOGY SOLUTIONS Platform - Real-Time Project Cost Calculator (INR / ₹)
  */
 
 (function () {
@@ -247,13 +247,13 @@
         const nameInput = document.getElementById('contact-name');
 
         if (window.CURRENT_ESTIMATE && messageInput) {
-          messageInput.value = `Hi QUBITHRS, I configured a custom project estimate via your calculator:\n\n` +
+          messageInput.value = `Hi QUBITHRS, our team configured a custom project estimate via your calculator:\n\n` +
             `• Project Type: ${window.CURRENT_ESTIMATE.type}\n` +
             `• Scope: ${window.CURRENT_ESTIMATE.screens} screens\n` +
             `• Add-ons: ${window.CURRENT_ESTIMATE.features.length ? window.CURRENT_ESTIMATE.features.join(', ') : 'None'}\n` +
             `• Estimated Budget: ${window.CURRENT_ESTIMATE.price}\n` +
             `• Preferred Timeline: ${window.CURRENT_ESTIMATE.timeline}\n\n` +
-            `Let's schedule a kickoff call to discuss next steps!`;
+            `Let's schedule an architectural discovery session to review next steps!`;
 
           // Sync service select
           if (subjectSelect) {
@@ -306,13 +306,13 @@
         const nameInput = document.getElementById('contact-name');
 
         if (window.CURRENT_ROI_ESTIMATE && messageInput) {
-          messageInput.value = `Hi QUBITHRS, I calculated our team's potential savings via your Business ROI Calculator:\n\n` +
+          messageInput.value = `Hi QUBITHRS, we calculated our organization's potential savings via your Business ROI Calculator:\n\n` +
             `• Team Size: ${window.CURRENT_ROI_ESTIMATE.team} staff members\n` +
             `• Repetitive Manual Work: ${window.CURRENT_ROI_ESTIMATE.hours} hrs/week/person\n` +
             `• Projected Time Saved: ${window.CURRENT_ROI_ESTIMATE.hoursSaved} hrs/month\n` +
             `• Projected Annual Cost Savings: ${window.CURRENT_ROI_ESTIMATE.annualSavings}\n` +
             `• Expected Efficiency Uplift: ${window.CURRENT_ROI_ESTIMATE.efficiency}\n\n` +
-            `I'd like to explore how custom web software and workflow automation can achieve these results for our company.`;
+            `We would like to explore how custom enterprise software, AI workflows, and cloud engineering can achieve these results for our company.`;
 
           if (subjectSelect) {
             subjectSelect.value = 'Enterprise ERP & Portal';

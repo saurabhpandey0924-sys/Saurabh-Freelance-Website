@@ -1,5 +1,5 @@
 /**
- * QUBITHRS Freelance Platform - Case Study Modal System
+ * QUBITHRS TECHNOLOGY SOLUTIONS Platform - Case Study Modal System
  */
 
 (function () {

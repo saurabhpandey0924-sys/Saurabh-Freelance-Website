@@ -29,7 +29,7 @@
       };
       const indName = industryNames[industryParam] || industryParam;
       if (!messageInput.value) {
-        messageInput.value = `Hi QUBITHRS, I'm interested in discussing a custom software architecture & development sprint for the ${indName} vertical.`;
+        messageInput.value = `Hi QUBITHRS, our team is interested in exploring a custom technology solution and architecture for the ${indName} vertical.`;
       }
       if (serviceSelect) {
         serviceSelect.value = 'saas';

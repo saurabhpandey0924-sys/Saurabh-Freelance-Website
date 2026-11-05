@@ -1,5 +1,5 @@
 /**
- * QUBITHRS FREELANCE PLATFORM - CYBER MATRIX GRID CANVAS
+ * QUBITHRS TECHNOLOGY SOLUTIONS PLATFORM - CYBER MATRIX GRID CANVAS
  * Interactive geometric background with cursor spotlight aura in Cyber Crimson (#F28C00) & Ember (#FF6B4A).
  */
 
