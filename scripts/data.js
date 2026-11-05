@@ -11,10 +11,10 @@ const PORTFOLIO_DATA = {
     availability: "Available for New Projects & Enterprise Sprints",
     experienceYears: "5+",
     location: "Global / Remote (IST / UTC+5:30)",
-    email: "contact@qubithrs.com",
+    email: "qubithrs@gmail.com",
+    supportEmail: "supportqubithrs@gmail.com",
     whatsapp: "+919876543210",
     calendly: "https://calendly.com",
-    github: "https://github.com/qubithrs",
     linkedin: "https://linkedin.com",
     twitter: "https://x.com",
     instagram: "https://instagram.com"
