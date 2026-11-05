@@ -1,20 +1,20 @@
 /**
- * DETECH Freelance Platform - Data Store
+ * QUBITHRS TECHNOLOGY SOLUTIONS Platform - Data Store
  * Easily extensible for new projects, testimonials, and services.
  */
 
 const PORTFOLIO_DATA = {
   profile: {
-    name: "DETECH",
-    title: "Web Engineering Studio & Digital Solutions",
+    name: "QUBITHRS",
+    title: "QUBITHRS TECHNOLOGY SOLUTIONS — Web · Software · AI · Cybersecurity",
     tagline: "We engineer high-impact websites, custom web applications, and enterprise digital solutions built for speed, conversion, and scale.",
     availability: "Available for New Projects & Enterprise Sprints",
     experienceYears: "5+",
     location: "Global / Remote (IST / UTC+5:30)",
-    email: "contact@detech.dev",
+    email: "contact@qubithrs.com",
     whatsapp: "+919876543210",
     calendly: "https://calendly.com",
-    github: "https://github.com/detech-dev",
+    github: "https://github.com/qubithrs",
     linkedin: "https://linkedin.com",
     twitter: "https://x.com"
   },
@@ -133,7 +133,7 @@ const PORTFOLIO_DATA = {
       { label: "Post-Launch Warranty", value: "30 Days" }
     ],
     trustHighlights: [
-      "Specialized engineering squad powered by DETECH",
+      "Specialized engineering squad powered by QUBITHRS",
       "Strict NDA & comprehensive IP transfer agreements",
       "Daily asynchronous progress updates & live sprint demos"
     ]
@@ -828,7 +828,7 @@ const PORTFOLIO_DATA = {
         results: "Eliminated 85% of manual administrative paperwork and collected 100% of semester fees digitally within the first 48 hours of each academic term."
       },
       liveUrl: "https://demo-campussphere-erp.example.com",
-      githubUrl: "https://github.com/detech-dev/campussphere-erp"
+      githubUrl: "https://github.com/qubithrs/campussphere-erp"
     },
     {
       id: "saas-analytics",
@@ -857,7 +857,7 @@ const PORTFOLIO_DATA = {
         results: "Delivered the MVP 2 weeks ahead of schedule. Helped the startup secure their $1.8M Seed round while supporting 2,500+ active business customers."
       },
       liveUrl: "https://demo-saas-pulsemetrics.example.com",
-      githubUrl: "https://github.com/detech-dev/pulsemetrics-saas"
+      githubUrl: "https://github.com/qubithrs/pulsemetrics-saas"
     },
     {
       id: "ecommerce-luxury",
@@ -886,7 +886,7 @@ const PORTFOLIO_DATA = {
         results: "Boosted monthly revenue by 62% in the first quarter post-launch and reduced page load times to 0.7s."
       },
       liveUrl: "https://demo-aurum-luxury.example.com",
-      githubUrl: "https://github.com/detech-dev/aurum-luxury-commerce"
+      githubUrl: "https://github.com/qubithrs/aurum-luxury-commerce"
     },
     {
       id: "ai-agent-workflow",
@@ -915,7 +915,7 @@ const PORTFOLIO_DATA = {
         results: "Acquired 15,000+ developer users within 90 days of launch; featured on Product Hunt #2 Product of the Day."
       },
       liveUrl: "https://demo-synapse-ai.example.com",
-      githubUrl: "https://github.com/detech-dev/synapse-ai-builder"
+      githubUrl: "https://github.com/qubithrs/synapse-ai-builder"
     },
     {
       id: "fintech-crypto",
@@ -944,7 +944,7 @@ const PORTFOLIO_DATA = {
         results: "Handled over $45M in simulated and live trading volume without a single frontend crash."
       },
       liveUrl: "https://demo-quantum-crypto.example.com",
-      githubUrl: "https://github.com/detech-dev/quantum-trading-terminal"
+      githubUrl: "https://github.com/qubithrs/quantum-trading-terminal"
     }
   ],
 
@@ -1002,7 +1002,7 @@ const PORTFOLIO_DATA = {
   testimonials: [
     {
       id: 1,
-      quote: "DETECH and their team architected our web platform with exceptional attention to detail. Delivered two weeks ahead of schedule, with clean modular code and seamless Stripe billing integration.",
+      quote: "QUBITHRS and their team architected our web platform with exceptional attention to detail. Delivered two weeks ahead of schedule, with clean modular code and seamless Stripe billing integration.",
       author: "Founder & Product Lead",
       role: "SaaS Tech Startup",
       company: "Verified Client Project",

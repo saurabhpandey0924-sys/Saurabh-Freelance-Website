@@ -1,5 +1,5 @@
 /**
- * DETECH FREELANCE PLATFORM - PARALLAX FLOATING BACKGROUND
+ * QUBITHRS FREELANCE PLATFORM - PARALLAX FLOATING BACKGROUND
  * Infinite vertical scrolling parallax with zero-gravity hover effect.
  */
 

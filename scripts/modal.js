@@ -1,5 +1,5 @@
 /**
- * DETECH Freelance Platform - Case Study Modal System
+ * QUBITHRS Freelance Platform - Case Study Modal System
  */
 
 (function () {

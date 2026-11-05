@@ -1,5 +1,5 @@
 /**
- * DETECH Freelance Platform - Theme Switcher
+ * QUBITHRS Freelance Platform - Theme Switcher
  * Handles dark & light mode with persistent storage.
  */
 

@@ -1,5 +1,5 @@
 /**
- * DETECH Freelance Platform - Main Logic & Rendering Engine
+ * QUBITHRS TECHNOLOGY SOLUTIONS Platform - Main Logic & Rendering Engine
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -316,7 +316,7 @@ window.openServiceSlide = function(serviceId) {
   if (!slideWrapper) return;
 
   const encodedWhatsAppMsg = encodeURIComponent(
-    `Hi DETECH, I'm interested in discussing your "${service.title}" service for my project!`
+    `Hi QUBITHRS, I'm interested in discussing your "${service.title}" service for my project!`
   );
   const whatsappUrl = `https://wa.me/919876543210?text=${encodedWhatsAppMsg}`;
 
@@ -398,7 +398,7 @@ window.openServiceSlide = function(serviceId) {
               </div>
               <div class="slide-spec-row">
                 <span class="slide-spec-key">Execution Team:</span>
-                <span class="slide-spec-val">DETECH Team (Lead Architect + Senior Devs)</span>
+                <span class="slide-spec-val">QUBITHRS Squad (Lead Architect + Senior Devs)</span>
               </div>
               <div class="slide-spec-row" style="border-bottom: none; padding-bottom: 0;">
                 <span class="slide-spec-key">Core Technologies:</span>
@@ -514,10 +514,10 @@ function initServiceDetailPage() {
   const prevService = services[prevIdx];
   const nextService = services[nextIdx];
 
-  document.title = `${service.title} | DETECH`;
+  document.title = `${service.title} | QUBITHRS Technology Solutions`;
 
   const encodedWhatsAppMsg = encodeURIComponent(
-    `Hi DETECH, I'm interested in discussing your "${service.title}" service for my project!`
+    `Hi QUBITHRS, I'm interested in discussing your "${service.title}" service for my project!`
   );
   const whatsappUrl = `https://wa.me/919876543210?text=${encodedWhatsAppMsg}`;
 
@@ -600,7 +600,7 @@ function initServiceDetailPage() {
               </div>
               <div class="slide-spec-row">
                 <span class="slide-spec-key">Execution Team:</span>
-                <span class="slide-spec-val">DETECH Team (Lead Architect + Senior Devs)</span>
+                <span class="slide-spec-val">QUBITHRS Squad (Lead Architect + Senior Devs)</span>
               </div>
               <div class="slide-spec-row" style="border-bottom: none; padding-bottom: 0;">
                 <span class="slide-spec-key">Core Technologies:</span>
@@ -844,13 +844,13 @@ function renderAbout(about) {
         <!-- Profile Column -->
         <div class="about-profile-card reveal">
           <div class="about-avatar-wrapper detech-team-wrapper" style="display: flex; align-items: center; justify-content: center; background: #070b14; border: 2px solid rgba(99, 102, 241, 0.4); box-shadow: 0 0 25px rgba(56, 189, 248, 0.35); overflow: hidden; padding: 4px;">
-            <img src="assets/images/detech-team-avatar.png" alt="DETECH Freelance Team Logo" class="about-avatar-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            <img src="assets/images/detech-team-avatar.png" alt="QUBITHRS Technology Solutions Logo" class="about-avatar-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
             <div class="about-verified-badge" title="Verified Engineering Team">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <h3 class="about-profile-name">DETECH Team</h3>
-          <p class="about-profile-title">Full-Stack Digital Solutions & Engineering Team</p>
+          <h3 class="about-profile-name">QUBITHRS Team</h3>
+          <p class="about-profile-title">Web · Software · AI · Cybersecurity — Building Intelligent & Secure Digital Solutions.</p>
           
           <div class="about-stats-grid">
             ${about.stats.map(s => `

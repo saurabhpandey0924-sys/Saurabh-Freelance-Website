@@ -1,5 +1,5 @@
 /**
- * DETECH Freelance Platform - Real-Time Project Cost Calculator (INR / ₹)
+ * QUBITHRS Freelance Platform - Real-Time Project Cost Calculator (INR / ₹)
  */
 
 (function () {
@@ -247,7 +247,7 @@
         const nameInput = document.getElementById('contact-name');
 
         if (window.CURRENT_ESTIMATE && messageInput) {
-          messageInput.value = `Hi DETECH, I configured a custom project estimate via your calculator:\n\n` +
+          messageInput.value = `Hi QUBITHRS, I configured a custom project estimate via your calculator:\n\n` +
             `• Project Type: ${window.CURRENT_ESTIMATE.type}\n` +
             `• Scope: ${window.CURRENT_ESTIMATE.screens} screens\n` +
             `• Add-ons: ${window.CURRENT_ESTIMATE.features.length ? window.CURRENT_ESTIMATE.features.join(', ') : 'None'}\n` +
@@ -306,7 +306,7 @@
         const nameInput = document.getElementById('contact-name');
 
         if (window.CURRENT_ROI_ESTIMATE && messageInput) {
-          messageInput.value = `Hi DETECH, I calculated our team's potential savings via your Business ROI Calculator:\n\n` +
+          messageInput.value = `Hi QUBITHRS, I calculated our team's potential savings via your Business ROI Calculator:\n\n` +
             `• Team Size: ${window.CURRENT_ROI_ESTIMATE.team} staff members\n` +
             `• Repetitive Manual Work: ${window.CURRENT_ROI_ESTIMATE.hours} hrs/week/person\n` +
             `• Projected Time Saved: ${window.CURRENT_ROI_ESTIMATE.hoursSaved} hrs/month\n` +

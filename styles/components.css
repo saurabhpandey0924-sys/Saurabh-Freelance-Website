@@ -3685,3 +3685,45 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+
+
+/* Brand Typography & Subtitle (QUBITHRS TECHNOLOGY SOLUTIONS) */
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 1.22rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.brand-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  color: var(--accent-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.brand-pillars-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-secondary);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}

@@ -1,7 +1,7 @@
 {
-  "name": "detech-freelance-platform",
+  "name": "qubithrs-technology-solutions",
   "version": "1.0.0",
-  "description": "DETECH - Elite Web Development & Digital Solutions Platform",
+  "description": "QUBITHRS TECHNOLOGY SOLUTIONS - Web · Software · AI · Cybersecurity",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -12,13 +12,13 @@
     "preview": "vite preview"
   },
   "keywords": [
-    "detech",
+    "qubithrs",
     "freelance",
     "portfolio",
     "web-development",
     "frontend",
     "fullstack"
   ],
-  "author": "DETECH",
+  "author": "QUBITHRS TECHNOLOGY SOLUTIONS",
   "license": "MIT"
 }
