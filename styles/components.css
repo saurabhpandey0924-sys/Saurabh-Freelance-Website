@@ -2148,8 +2148,12 @@
   color: #0A66C2;
 }
 
-.footer-connect-btn.github svg {
-  color: var(--text-primary);
+.footer-connect-btn.twitter svg {
+  color: #0F172A;
+}
+
+.footer-connect-btn.instagram svg {
+  color: #E1306C;
 }
 
 .footer-connect-btn.whatsapp svg {

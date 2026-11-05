@@ -16,7 +16,8 @@ const PORTFOLIO_DATA = {
     calendly: "https://calendly.com",
     github: "https://github.com/qubithrs",
     linkedin: "https://linkedin.com",
-    twitter: "https://x.com"
+    twitter: "https://x.com",
+    instagram: "https://instagram.com"
   },
 
   about: {
