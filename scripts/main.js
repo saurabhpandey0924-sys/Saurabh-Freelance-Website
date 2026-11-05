@@ -61,8 +61,14 @@ function renderTechnologies(technologies) {
 
   scene.innerHTML = '';
 
-  const isMobile = window.innerWidth <= 768;
-  const radius = isMobile ? 180 : 250;
+  const getResponsiveRadius = () => {
+    const sw = stage.clientWidth || window.innerWidth;
+    if (sw < 380) return Math.min(115, Math.floor(sw * 0.32));
+    if (sw < 480) return Math.min(130, Math.floor(sw * 0.35));
+    if (sw <= 768) return Math.min(155, Math.floor(sw * 0.38));
+    return 240;
+  };
+  let radius = getResponsiveRadius();
 
   const items = technologies.map((t, idx) => {
     const phi = Math.acos(-1 + (2 * idx) / technologies.length);
@@ -129,6 +135,20 @@ function renderTechnologies(technologies) {
     targetRotX -= dy * 0.4;
     lastMouseX = e.touches[0].clientX;
     lastMouseY = e.touches[0].clientY;
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    const newRadius = getResponsiveRadius();
+    if (newRadius !== radius) {
+      radius = newRadius;
+      items.forEach((item, idx) => {
+        const phi = Math.acos(-1 + (2 * idx) / technologies.length);
+        const theta = Math.sqrt(technologies.length * Math.PI) * phi;
+        item.x = radius * Math.cos(theta) * Math.sin(phi);
+        item.y = radius * Math.sin(theta) * Math.sin(phi);
+        item.z = radius * Math.cos(phi);
+      });
+    }
   }, { passive: true });
 
   function animate() {

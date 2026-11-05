@@ -3480,20 +3480,17 @@
   color: #38BDF8 !important;
   border: 1px solid rgba(56, 189, 248, 0.35) !important;
 }
-}
 
 .badge-plum, .badge-premium {
   background: rgba(148, 163, 184, 0.14) !important;
   color: #FFFFFF !important;
   border: 1px solid rgba(148, 163, 184, 0.32) !important;
 }
-}
 
 .badge-lime, .badge-special {
   background: rgba(125, 211, 252, 0.15) !important;
   color: #7DD3FC !important;
   border: 1px solid rgba(125, 211, 252, 0.35) !important;
-}
 }
 
 
@@ -3774,4 +3771,40 @@
   color: var(--accent-secondary);
   letter-spacing: 0.05em;
   margin-bottom: 16px;
+}
+
+
+/* Form 2-Column Responsive Layout */
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .form-row-2col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Mobile Horizontal Scroll Hint for Tables */
+.mobile-scroll-hint {
+  display: none;
+  font-size: 0.78rem;
+  color: var(--accent-primary);
+  text-align: right;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .mobile-scroll-hint {
+    display: block;
+  }
+  .comparison-table {
+    min-width: 620px;
+  }
 }
