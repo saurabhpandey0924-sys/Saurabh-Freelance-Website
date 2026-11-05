@@ -749,53 +749,57 @@ const PORTFOLIO_DATA = {
       ]
     },
     {
-      id: "uiux-performance",
-      division: "Division 06",
-      icon: `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
-      title: "UI/UX Engineering & Performance Optimization",
-      subtitle: "Bespoke design systems, responsive interfaces, sub-second page speed audits, WCAG AAA accessibility, and guaranteed 95+ Core Web Vitals.",
-      description: "Bespoke design systems, responsive interfaces, sub-second page speed audits, WCAG AAA accessibility, and guaranteed 95+ Core Web Vitals.",
-      tags: ["95+ Core Web Vitals", "Sub-Second Speed", "Design Systems", "WCAG 2.1 AAA", "Lighthouse 100", "Security Hardening"],
-      badge: "Essential",
-      timeline: "1 - 2 Weeks",
-      bestFor: "Websites and web apps suffering from slow load times, high bounce rates, clunky mobile UX, or poor Google search rankings.",
-      overview: "Elevate your digital product into a lightning-fast, visually breathtaking experience that converts visitors into paying customers and passes every Google Web Vital with flying colors.",
-      detailedOverview: "Elevate your digital product into a lightning-fast, visually breathtaking experience that converts visitors into paying customers and passes every Google Web Vital with flying colors.",
+      id: "cybersecurity-defense",
+      title: "Cybersecurity & Cloud Defense",
+      badge: "Security",
+      description: "Defense-grade web application firewalls, penetration testing, zero-trust architectures, and automated vulnerability audits to protect enterprise data.",
+      tags: ["Zero-Trust", "Penetration Testing", "OWASP Hardening", "Data Encryption", "Vulnerability Scans", "Cloud Defense"],
+      icon: `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
+      overview: "We architect resilient digital fortifications for web applications, APIs, and cloud infrastructure. Our cybersecurity engineers conduct deep penetration testing, eliminate OWASP Top 10 vulnerabilities, enforce end-to-end cryptographic encryption, and establish zero-trust security postures that protect your customer data and ensure regulatory compliance.",
       capabilities: [
         {
-          title: "Sub-Second Speed & Web Vitals Audit",
-          desc: "Diagnose and eliminate layout shifts (CLS), long task delays (INP/FID), and bloated JavaScript bundles to achieve 95+ Lighthouse.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`
+          title: "Penetration Testing & Audits",
+          desc: "Rigorous ethical hacking simulations to discover and patch critical infrastructure vulnerabilities before adversaries find them.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8"/><circle cx="10" cy="10" r="7"/></svg>`
         },
         {
-          title: "Bespoke Modern Design Systems",
-          desc: "Curated dark/light themes, cohesive typography, reusable component libraries, and glassmorphic micro-interactions.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>`
+          title: "OWASP Top 10 Hardening",
+          desc: "Complete immunization against SQL injections, XSS, CSRF, broken access controls, and SSRF attacks with runtime validators.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
         },
         {
-          title: "Accessibility (WCAG 2.1 AAA) & Security",
-          desc: "Full keyboard accessibility, screen-reader compliance, strict Content-Security-Policy (CSP) headers, and XSS sanitization.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
+          title: "End-to-End Cryptography",
+          desc: "Defense-grade data-at-rest and data-in-transit encryption utilizing AWS KMS, modern hashing algorithms, and automated key rotation.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`
+        },
+        {
+          title: "API Gateway & DDoS Protection",
+          desc: "Cloudflare enterprise shields, token-bucket sliding rate limiters, and perimeter firewalls neutralizing distributed flood traffic.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m8 11 4 4 4-4"/></svg>`
+        },
+        {
+          title: "Zero-Trust Architecture",
+          desc: "Strict principle of least privilege, role-based access control (RBAC), multi-factor authentication (MFA), and granular identity isolation.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>`
+        },
+        {
+          title: "SOC2 & GDPR Compliance Prep",
+          desc: "Audit-ready logs, tamper-proof system telemetry, data retention policies, and architectural evidence packages for international certifications.",
+          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>`
         }
       ],
       deliverables: [
-        "Guaranteed 95+ Google Lighthouse score on both Mobile and Desktop",
-        "Sub-1.2s First Contentful Paint (FCP) and near-zero Cumulative Layout Shift (CLS < 0.05)",
-        "Image asset optimization and conversion to modern WebP/AVIF formats",
-        "Complete responsive layout audit across phone, tablet, laptop, and ultra-wide screens",
-        "WCAG 2.1 AAA contrast and keyboard focus trapping compliance",
-        "Security hardening report with CSP headers and OWASP recommendations"
+        "Comprehensive Vulnerability Audit Report with CVSS severity scoring",
+        "OWASP Top 10 remediation patches and code hardening",
+        "Encrypted database configurations & automated KMS key management",
+        "Cloudflare WAF rules, DDoS defenses, and sliding-window rate limiters",
+        "Executive Security Clearance Certificate & compliance readiness report"
       ],
-      milestones: [
-        { phase: "Day 1-3", title: "Diagnostic Audit & Benchmark Run", desc: "Performance profiler traces, network waterfall analysis, and design audit." },
-        { phase: "Day 4-7", title: "Refactoring, Compression & Asset Pipeline", desc: "Code splitting, render blocking elimination, and CSS optimization." },
-        { phase: "Day 8-10", title: "Verification, Lighthouse Validation & Handover", desc: "Before/after benchmark documentation and production deployment." }
-      ],
+      timeline: "1 - 2 Weeks",
       includedGuarantees: [
-        "Guaranteed 95+ Google Lighthouse Performance Score",
-        "Measurable reduction in bounce rates and page latency",
-        "Zero visual regression or broken layout states",
-        "30-Day post-launch performance maintenance warranty"
+        "Zero Critical Vulnerability Guarantee upon sign-off",
+        "NDA & strict confidentiality protection on all code & infrastructure",
+        "30-day post-audit security monitoring & breach prevention support"
       ]
     }
   ],

@@ -10,7 +10,8 @@
     const nameInput = document.getElementById('contact-name');
     const emailInput = document.getElementById('contact-email');
     const serviceSelect = document.getElementById('contact-service-type');
-    const budgetSelect = document.getElementById('contact-budget');
+    const phoneInput = document.getElementById('contact-phone');
+    const timelineSelect = document.getElementById('contact-timeline');
     const messageInput = document.getElementById('contact-message');
     const submitBtn = document.getElementById('contact-submit-btn');
 

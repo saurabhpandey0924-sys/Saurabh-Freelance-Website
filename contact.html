@@ -81,7 +81,7 @@
 
         <!-- Header CTA -->
         <a href="contact.html" class="btn btn-primary btn-sm nav-cta-btn">
-          <span>Hire Us</span>
+          <span>Book Consultation</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
 
@@ -234,39 +234,46 @@
               <input type="text" id="contact-name" class="form-input" placeholder="e.g. Alex Morgan" required>
             </div>
 
-            <div class="form-group">
-              <label for="contact-email" class="form-label">Email Address *</label>
-              <input type="email" id="contact-email" class="form-input" placeholder="alex@company.com" required>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Work Email *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="alex@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-phone" class="form-label">Phone / WhatsApp (Optional)</label>
+                <input type="tel" id="contact-phone" class="form-input" placeholder="+91 98765 43210">
+              </div>
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <div class="form-group">
-                <label for="contact-service-type" class="form-label">Service Needed</label>
+                <label for="contact-service-type" class="form-label">Service Division</label>
                 <select id="contact-service-type" class="form-select">
-                  <option value="Full-Stack Web App">Full-Stack Web App</option>
-                  <option value="Enterprise ERP & Portal">Enterprise ERP & Portal</option>
-                  <option value="Custom SaaS / MVP">Custom SaaS / MVP</option>
-                  <option value="AI Integration">AI & LLM Workflows</option>
-                  <option value="Headless E-Commerce">Headless E-Commerce</option>
-                  <option value="Speed / Code Audit">Speed & Performance Audit</option>
-                  <option value="Other Inquiry">Other Custom Inquiry</option>
+                  <option value="Web & Custom Software">Web & Custom Software</option>
+                  <option value="Custom SaaS & Cloud Architecture">Custom SaaS & Cloud Architecture</option>
+                  <option value="AI Agents & Workflow Automation">AI Agents & Workflow Automation</option>
+                  <option value="Cybersecurity & Cloud Defense">Cybersecurity & Cloud Defense</option>
+                  <option value="Mobile & Cross-Platform Apps">Mobile & Cross-Platform Apps</option>
+                  <option value="API & Enterprise Integration">API & Enterprise Integration</option>
+                  <option value="Other Custom Inquiry">Other Custom Inquiry</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="contact-budget" class="form-label">Expected Budget</label>
-                <select id="contact-budget" class="form-select">
-                  <option value="₹20,000 - ₹50,000">₹20,000 - ₹50,000</option>
-                  <option value="₹50,000 - ₹1,00,000" selected>₹50,000 - ₹1,00,000</option>
-                  <option value="₹1,00,000 - ₹2,50,000">₹1,00,000 - ₹2,50,000</option>
-                  <option value="₹2,50,000+">₹2,50,000+ (Enterprise)</option>
+                <label for="contact-timeline" class="form-label">Target Timeline</label>
+                <select id="contact-timeline" class="form-select">
+                  <option value="Immediate (< 2 Weeks)">Immediate (&lt; 2 Weeks)</option>
+                  <option value="1 - 2 Months" selected>1 - 2 Months (Standard Sprint)</option>
+                  <option value="3+ Months">3+ Months (Long-Term Enterprise)</option>
+                  <option value="Flexible / Exploring">Flexible / Exploring Feasibility</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
               <label for="contact-message" class="form-label">Project Details & Objectives *</label>
-              <textarea id="contact-message" class="form-textarea" placeholder="Describe your project, main features, timeline, or links to references..." required></textarea>
+              <textarea id="contact-message" class="form-textarea" placeholder="Describe your project, main features, requirements, or links to references..." required></textarea>
             </div>
 
             <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-lg" style="width: 100%;">
