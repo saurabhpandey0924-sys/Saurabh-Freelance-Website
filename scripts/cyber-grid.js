@@ -31,14 +31,14 @@
 
   // Colors matching Cyber Crimson & Obsidian Stealth palette
   const colors = {
-    gridDark: 'rgba(242, 140, 0, 0.07)',        // Subtle Crimson grid lines
-    gridLight: 'rgba(242, 140, 0, 0.05)',
-    dotDark: 'rgba(242, 140, 0, 0.22)',         // Crimson nodes
-    dotLight: 'rgba(242, 140, 0, 0.15)',
-    spotlightInner: 'rgba(242, 140, 0, 0.2)',   // Cyber Crimson Red
-    spotlightOuter: 'rgba(255, 107, 74, 0.04)', // Ember warm glow
-    packetColor: '#F28C00',
-    packetAccent: '#FBBF24'                     // Cyber Gold
+    gridDark: 'rgba(56, 189, 248, 0.08)',        // Sky Blue grid lines
+    gridLight: 'rgba(14, 165, 233, 0.05)',
+    dotDark: 'rgba(56, 189, 248, 0.28)',         // Sky Blue quantum nodes
+    dotLight: 'rgba(14, 165, 233, 0.18)',
+    spotlightInner: 'rgba(56, 189, 248, 0.22)',  // Vibrant Sky Blue cursor spotlight
+    spotlightOuter: 'rgba(14, 165, 233, 0.05)',  // Deep sky blue aura
+    packetColor: '#38BDF8',                      // Electric Sky Blue packet
+    packetAccent: '#FFFFFF'                      // Pure White pulse
   };
 
   function resize() {

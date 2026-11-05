@@ -3,49 +3,57 @@
    ========================================================================== */
 
 :root {
-  /* Tangerine & Deep Plum Palette */
-  --bg-primary: #FFF9ED;
-  --bg-secondary: #FFFFFF;
-  --bg-tertiary: #FFF9ED;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #FFF9ED;
-  --bg-glass: rgba(255, 249, 237, 0.9);
+  /* ==========================================================================
+     QUBITHRS TECHNOLOGY SOLUTIONS - SKY BLUE, WHITE, GREY, BLACK PALETTE
+     ========================================================================== */
   
-  /* Text & Foreground */
-  --text-primary: #171717;
-  --text-secondary: #625F59;
-  --text-muted: #8A867D;
-  --text-invert: #FFFFFF;
+  /* Black & Obsidian Deep Bases */
+  --bg-primary: #050811;          /* Deep Cyber Black */
+  --bg-secondary: #0A0F1D;        /* Obsidian Slate */
+  --bg-tertiary: #0F172A;         /* Charcoal Slate Grey */
+  --bg-card: rgba(11, 17, 33, 0.85); /* Deep Translucent Glass */
+  --bg-card-hover: rgba(15, 23, 42, 0.95);
+  --bg-glass: rgba(5, 8, 17, 0.85);
   
-  /* Accents */
-  --accent-primary: #F28C00;     /* Tangerine */
-  --accent-primary-hover: #D96B00; 
-  --accent-secondary: #3B1838;   /* Deep Plum */
-  --accent-secondary-hover: #4F204B;
-  --accent-tertiary: #FFD166;    /* Warm Gold */
-  --accent-highlight: #B8E334;   /* Acid Lime */
-  --accent-neutral: #F3D99A;     /* Soft Gold */
-  --accent-success: #10B981;     
-  --accent-success-btn: #F28C00;
-  --accent-warning: #FFD166;
-  --accent-danger: #ef4444;
+  /* Text & Foreground (White & Grey Hierarchy) */
+  --text-primary: #FFFFFF;        /* Pure Crisp White */
+  --text-secondary: #94A3B8;      /* Cool Slate Grey */
+  --text-muted: #64748B;          /* Muted Neutral Grey */
+  --text-invert: #050811;         /* Deep Black Invert */
   
-  --gradient-primary: linear-gradient(135deg, #F28C00 0%, #D96B00 100%);
-  --gradient-accent: linear-gradient(135deg, #F28C00 0%, #FFD166 100%);
-  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(242, 140, 0, 0.15) 0%, rgba(255, 209, 102, 0.05) 50%, transparent 80%);
-  --gradient-card-border: linear-gradient(135deg, rgba(243, 217, 154, 0.6) 0%, rgba(243, 217, 154, 0.2) 100%);
-  --gradient-card-border-active: linear-gradient(135deg, #F28C00 0%, #F3D99A 100%);
+  /* Sky Blue Accents */
+  --accent-primary: #38BDF8;      /* Vibrant Sky Blue */
+  --accent-primary-hover: #0EA5E9; /* Electric Sky Blue */
+  --accent-secondary: #7DD3FC;    /* Light Frost Sky Blue */
+  --accent-secondary-hover: #38BDF8;
+  --accent-tertiary: #BAE6FD;     /* Ice Sky */
+  --accent-highlight: #38BDF8;    /* Sky Blue Accent */
+  --accent-neutral: #1E293B;      /* Slate Grey */
+  --accent-success: #38BDF8;      /* Sky Blue Accent */
+  --accent-success-btn: #0EA5E9;
+  --accent-warning: #94A3B8;      /* Cool Grey Warning */
+  --accent-danger: #F43F5E;       /* Rose Red */
+  
+  /* High-Tech Cyber Gradients */
+  --gradient-primary: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%);
+  --gradient-accent: linear-gradient(135deg, #FFFFFF 0%, #38BDF8 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.18) 0%, rgba(2, 132, 199, 0.05) 50%, transparent 80%);
+  --gradient-card-border: linear-gradient(135deg, rgba(56, 189, 248, 0.35) 0%, rgba(148, 163, 184, 0.12) 100%);
+  --gradient-card-border-active: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%);
 
-  /* Borders & Shadows */
-  --border-subtle: rgba(243, 217, 154, 0.4);
-  --border-medium: #F3D99A;
-  --border-glow: rgba(242, 140, 0, 0.3);
+  /* Borders & Shadows (Grey & Sky Blue Glows) */
+  --border-subtle: rgba(148, 163, 184, 0.16);
+  --border-medium: rgba(56, 189, 248, 0.32);
+  --border-glow: rgba(56, 189, 248, 0.45);
   
-  --shadow-sm: 0 1px 3px rgba(59, 24, 56, 0.06);
-  --shadow-md: 0 4px 16px rgba(59, 24, 56, 0.08);
-  --shadow-lg: 0 12px 32px rgba(59, 24, 56, 0.12);
-  --shadow-glow: 0 0 28px rgba(242, 140, 0, 0.2);
-  --shadow-cyan-glow: 0 0 28px rgba(255, 209, 102, 0.25);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 0 28px rgba(56, 189, 248, 0.28);
+  --shadow-cyan-glow: 0 0 32px rgba(56, 189, 248, 0.35);
+
+  --btn-secondary-bg: #0F172A;
+  --btn-secondary-text: #FFFFFF;
 
   /* Typography */
   --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
@@ -67,30 +75,57 @@
 }
 
 [data-theme="dark"] {
-  /* Dark Mode Palette (Premium Obsidian & Tangerine) */
-  --bg-primary: #0D0B0D;
-  --bg-secondary: #161216;
-  --bg-tertiary: #0D0B0D;
-  --bg-card: #161216;
-  --bg-card-hover: #1E181D;
-  --bg-glass: rgba(13, 11, 13, 0.85);
+  /* Dark Mode Palette (Pure Obsidian Black, Grey & Electric Sky Blue) */
+  --bg-primary: #050811;
+  --bg-secondary: #0A0F1D;
+  --bg-tertiary: #0F172A;
+  --bg-card: rgba(11, 17, 33, 0.85);
+  --bg-card-hover: rgba(15, 23, 42, 0.95);
+  --bg-glass: rgba(5, 8, 17, 0.85);
   
-  --text-primary: #F5F1E8;
-  --text-secondary: #AFAAA0;
-  --text-muted: #78736B;
-  --text-invert: #171717;
+  --text-primary: #FFFFFF;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-invert: #050811;
 
-  --border-subtle: rgba(255, 209, 102, 0.15);
-  --border-medium: rgba(255, 209, 102, 0.3);
-  --border-glow: rgba(242, 140, 0, 0.4);
+  --border-subtle: rgba(148, 163, 184, 0.16);
+  --border-medium: rgba(56, 189, 248, 0.32);
+  --border-glow: rgba(56, 189, 248, 0.45);
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.8);
-  --shadow-glow: 0 0 28px rgba(242, 140, 0, 0.3);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 0 28px rgba(56, 189, 248, 0.28);
   
-  --btn-secondary-bg: #1E181D;
-  --btn-secondary-text: #F5F1E8;
+  --btn-secondary-bg: #0F172A;
+  --btn-secondary-text: #FFFFFF;
+}
+
+[data-theme="light"] {
+  /* Light Mode Palette (Crisp White Base, Grey Surfaces, Sky Blue Accents) */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-tertiary: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-invert: #FFFFFF;
+
+  --border-subtle: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --border-glow: rgba(14, 165, 233, 0.35);
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 0 24px rgba(14, 165, 233, 0.2);
+  
+  --btn-secondary-bg: #F1F5F9;
+  --btn-secondary-text: #0F172A;
 }
 
 /* Base Styles */
@@ -201,8 +236,8 @@ button {
   gap: 8px;
   padding: 6px 16px;
   border-radius: var(--radius-full);
-  background: rgba(242, 140, 0, 0.12);
-  border: 1px solid rgba(242, 140, 0, 0.28);
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.28);
   color: var(--accent-primary);
   font-family: var(--font-heading);
   font-size: 0.85rem;
@@ -213,8 +248,8 @@ button {
 }
 
 [data-theme="light"] .section-badge {
-  background: rgba(242, 140, 0, 0.08);
-  border-color: rgba(242, 140, 0, 0.25);
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.25);
 }
 
 .section-title {
@@ -285,30 +320,30 @@ button {
 
 .btn-primary {
   background: var(--gradient-primary);
-  color: #FFF9ED;
+  color: #FFFFFF;
   font-weight: 700;
-  border: 1px solid rgba(255, 249, 237, 0.3);
-  box-shadow: 0 4px 20px rgba(242, 140, 0, 0.4), inset 0 1px 0 rgba(255, 249, 237, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #3B1838 0%, #4F204B 100%);
-  border-color: #3B1838;
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  border-color: #38BDF8;
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(59, 24, 56, 0.5);
-  color: #FFF9ED;
+  box-shadow: 0 6px 28px rgba(56, 189, 248, 0.55);
+  color: #FFFFFF;
 }
 
 [data-theme="light"] .btn-primary {
-  background: linear-gradient(135deg, #F28C00 0%, #EA580C 100%);
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 16px rgba(242, 140, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
 }
 
 [data-theme="light"] .btn-primary:hover {
-  background: linear-gradient(135deg, #B91C1C 0%, #FFD166 100%);
-  box-shadow: 0 6px 22px rgba(255, 209, 102, 0.4);
+  background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
+  box-shadow: 0 6px 22px rgba(14, 165, 233, 0.45);
 }
 
 .btn-secondary {
@@ -342,10 +377,9 @@ button {
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 2px 14px rgba(242, 140, 0, 0.4); }
-  100% { box-shadow: 0 4px 24px rgba(255, 209, 102, 0.55); }
+  0% { box-shadow: 0 2px 14px rgba(56, 189, 248, 0.4); }
+  100% { box-shadow: 0 4px 28px rgba(14, 165, 233, 0.6); }
 }
-
 /* Badges */
 .badge {
   display: inline-flex;
