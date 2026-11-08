@@ -912,7 +912,7 @@ function renderProjects(projects, filter = 'all') {
         <div class="project-content">
           <div class="project-header-info">
             <span class="project-category-pill">${categoryLabel}</span>
-            <button onclick="window.openProjectModal('${p.id}')" style="color:var(--accent-primary); font-size:0.85rem; font-weight:600; display:flex; align-items:center; gap:4px; background:none; border:none; cursor:pointer;" aria-label="View details for ${p.title}">
+            <button onclick="window.openProjectModal('${p.id}')" style="color:#C084FC; font-size:0.85rem; font-weight:700; display:flex; align-items:center; gap:4px; background:none; border:none; cursor:pointer;" aria-label="View details for ${p.title}">
               Details &rarr;
             </button>
           </div>
@@ -1074,8 +1074,8 @@ function renderAbout(about) {
       <div class="about-grid">
         <!-- Profile Column -->
         <div class="about-profile-card reveal">
-          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: #000000; color: #FACC15; border: 1.5px solid #000000; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
-            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #FACC15; box-shadow: 0 0 8px #FACC15;"></span>
+          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: #2E1065; color: #E9D5FF; border: 1.5px solid #2E1065; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #C084FC; box-shadow: 0 0 8px #C084FC;"></span>
             <span>ENTERPRISE SOLUTIONS STUDIO</span>
           </div>
           <h3 class="about-profile-name">QUBITHRS Technology Solutions</h3>

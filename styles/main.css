@@ -12,45 +12,45 @@
   --bg-card-hover: #141418;       /* Active Card Hover State */
   --bg-glass: rgba(250, 204, 21, 0.95); /* Frosted Cyber Yellow Glass Header */
   
-  /* Black Sub-color Text Hierarchy on Yellow Canvas */
-  --text-primary: #000000;        /* Deep Jet Black for high-impact headings */
-  --text-secondary: #18181B;      /* Dark Charcoal for ultra-readable body text */
-  --text-muted: #3F3F46;          /* Muted Charcoal for metadata and timestamps */
-  --text-invert: #FACC15;         /* Vibrant Yellow for text on black cards & elements */
+  /* Purple Text Hierarchy on Cyber Electric Yellow Canvas */
+  --text-primary: #2E1065;        /* Deep Imperial Purple for high-impact headings (Contrast 10.5:1 WCAG AAA) */
+  --text-secondary: #3B0764;      /* Deep Midnight Violet for body text */
+  --text-muted: #6B21A8;          /* Medium Plum Violet for metadata and timestamps */
+  --text-invert: #E9D5FF;         /* Soft Radiant Lavender for text on black cards & elements */
   
-  /* Cyber Yellow & Black Accents */
-  --accent-primary: #000000;      /* Primary action color: Jet Black */
-  --accent-primary-hover: #18181B;
-  --accent-secondary: #FACC15;    /* Electric Yellow Accent */
-  --accent-secondary-hover: #EAB308;
-  --accent-tertiary: #FEF08A;     /* Pale Radiant Yellow */
-  --accent-highlight: #000000;
-  --accent-neutral: #000000;      /* Deep Black Border & Divider */
+  /* Cyber Purple & Yellow Accents */
+  --accent-primary: #2E1065;      /* Primary action color: Deep Imperial Purple */
+  --accent-primary-hover: #3B0764;
+  --accent-secondary: #7E22CE;    /* Electric Purple Accent */
+  --accent-secondary-hover: #9333EA;
+  --accent-tertiary: #C084FC;     /* Radiant Lavender Purple */
+  --accent-highlight: #A855F7;
+  --accent-neutral: #2E1065;      /* Deep Purple Border & Divider */
   --accent-success: #15803D;      /* Deep Green for status */
-  --accent-success-btn: #000000;
+  --accent-success-btn: #2E1065;
   --accent-warning: #B45309;      /* Rich Amber */
   --accent-danger: #DC2626;       /* Crimson Red */
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #000000 0%, #18181B 100%);
-  --gradient-accent: linear-gradient(135deg, #000000 0%, #27272A 100%);
-  --gradient-glow: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.05) 0%, transparent 70%);
-  --gradient-card-border: linear-gradient(135deg, #000000 0%, rgba(0, 0, 0, 0.3) 100%);
-  --gradient-card-border-active: linear-gradient(135deg, #000000 0%, #FACC15 100%);
+  --gradient-primary: linear-gradient(135deg, #2E1065 0%, #7E22CE 100%);
+  --gradient-accent: linear-gradient(135deg, #3B0764 0%, #9333EA 100%);
+  --gradient-glow: radial-gradient(circle at 50% 0%, rgba(126, 34, 206, 0.12) 0%, transparent 70%);
+  --gradient-card-border: linear-gradient(135deg, #2E1065 0%, rgba(46, 16, 101, 0.3) 100%);
+  --gradient-card-border-active: linear-gradient(135deg, #7E22CE 0%, #C084FC 100%);
 
   /* Borders & Shadows */
-  --border-subtle: rgba(0, 0, 0, 0.15);
-  --border-medium: #000000;
-  --border-glow: rgba(0, 0, 0, 0.35);
+  --border-subtle: rgba(46, 16, 101, 0.2);
+  --border-medium: #2E1065;
+  --border-glow: rgba(126, 34, 206, 0.35);
   
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.28);
-  --shadow-glow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  --shadow-cyan-glow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 2px 8px rgba(46, 16, 101, 0.12);
+  --shadow-md: 0 8px 24px rgba(46, 16, 101, 0.2);
+  --shadow-lg: 0 16px 48px rgba(46, 16, 101, 0.28);
+  --shadow-glow: 0 4px 20px rgba(126, 34, 206, 0.25);
+  --shadow-cyan-glow: 0 4px 20px rgba(126, 34, 206, 0.25);
 
   --btn-secondary-bg: transparent;
-  --btn-secondary-text: #000000;
+  --btn-secondary-text: #2E1065;
 
   /* Typography */
   --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
@@ -179,27 +179,27 @@ button {
   gap: 8px;
   padding: 6px 16px;
   border-radius: var(--radius-full);
-  background: #000000;
-  border: 1.5px solid #000000;
-  color: #FACC15;
+  background: #2E1065;
+  border: 1.5px solid #2E1065;
+  color: #E9D5FF;
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 4px 14px rgba(46, 16, 101, 0.25);
 }
 
 .section-title {
   font-size: clamp(2.2rem, 4vw, 3rem);
   margin-bottom: 18px;
-  color: #000000;
+  color: #2E1065;
 }
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #18181B;
+  color: #3B0764;
   line-height: 1.7;
 }
 
@@ -209,7 +209,7 @@ button {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #000000;
+  color: #2E1065;
   display: inline;
 }
 
@@ -218,7 +218,7 @@ button {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #000000;
+  color: #3B0764;
   display: inline;
 }
 
@@ -227,27 +227,27 @@ button {
   background: var(--bg-card);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  border: 1.5px solid #000000;
+  border: 1.5px solid rgba(168, 85, 247, 0.25);
   border-radius: var(--radius-lg);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth), background var(--transition-smooth);
   position: relative;
   overflow: hidden;
-  color: #CBD5E1;
+  color: #DDD6FE;
 }
 
 .glass-card:hover {
-  border-color: #000000;
-  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.4);
+  border-color: #7E22CE;
+  box-shadow: 0 14px 44px rgba(46, 16, 101, 0.35);
   transform: translateY(-4px);
 }
 
 .glass-card h1, .glass-card h2, .glass-card h3, .glass-card h4, .glass-card h5, .glass-card h6 {
-  color: #FFFFFF;
+  color: #E9D5FF;
 }
 
 .glass-card p {
-  color: #CBD5E1;
+  color: #DDD6FE;
 }
 
 /* Buttons */
@@ -268,34 +268,34 @@ button {
 }
 
 .btn-primary {
-  background: #000000;
-  color: #FACC15 !important;
+  background: #2E1065;
+  color: #FFFFFF !important;
   font-weight: 800;
-  border: 2px solid #000000;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  border: 2px solid #2E1065;
+  box-shadow: 0 4px 18px rgba(46, 16, 101, 0.35);
 }
 
 .btn-primary:hover {
-  background: #18181B;
-  border-color: #000000;
-  color: #FEF08A !important;
+  background: #3B0764;
+  border-color: #3B0764;
+  color: #E9D5FF !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 26px rgba(46, 16, 101, 0.45);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #000000 !important;
-  border: 2px solid #000000;
+  color: #2E1065 !important;
+  border: 2px solid #2E1065;
   box-shadow: none;
 }
 
 .btn-secondary:hover {
-  background: #000000;
-  border-color: #000000;
-  color: #FACC15 !important;
+  background: #2E1065;
+  border-color: #2E1065;
+  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 22px rgba(46, 16, 101, 0.25);
 }
 
 .btn-sm {

@@ -390,9 +390,9 @@ img, svg, video, canvas {
     width: 56px !important;
     height: 56px !important;
     border-radius: 16px !important;
-    background: rgba(250, 204, 21, 0.12) !important;
-    border: 1px solid rgba(250, 204, 21, 0.35) !important;
-    color: var(--accent-primary) !important;
+    background: rgba(126, 34, 206, 0.15) !important;
+    border: 1px solid rgba(168, 85, 247, 0.35) !important;
+    color: #C084FC !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -401,14 +401,14 @@ img, svg, video, canvas {
   .service-title {
     font-size: 1.35rem !important;
     font-weight: 800 !important;
-    color: #FFFFFF !important;
+    color: #E9D5FF !important;
     margin-bottom: 12px !important;
   }
 
   .service-desc {
     font-size: 0.94rem !important;
     line-height: 1.65 !important;
-    color: #CBD5E1 !important;
+    color: #DDD6FE !important;
     margin-bottom: 20px !important;
   }
 
@@ -416,7 +416,7 @@ img, svg, video, canvas {
     display: inline-flex !important;
     align-items: center !important;
     gap: 8px !important;
-    color: #FACC15 !important;
+    color: #C084FC !important;
     font-size: 0.88rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.08em !important;
@@ -429,7 +429,7 @@ img, svg, video, canvas {
   .service-card-action:hover,
   .service-card-action:active {
     gap: 12px !important;
-    color: #FEF08A !important;
+    color: #F3E8FF !important;
   }
 
   .services-carousel-dots {
@@ -464,9 +464,9 @@ img, svg, video, canvas {
     padding: 8px 16px;
     font-size: 0.85rem;
     font-weight: 700;
-    color: #FFFFFF;
-    background: #000000;
-    border: 1.5px solid #000000;
+    color: #E9D5FF;
+    background: #0A0A0C;
+    border: 1.5px solid rgba(168, 85, 247, 0.4);
     min-height: 44px;
   }
 
@@ -510,21 +510,21 @@ img, svg, video, canvas {
     font-size: 2.8rem !important;
     line-height: 1 !important;
     margin-bottom: 16px !important;
-    color: #FACC15 !important;
+    color: #C084FC !important;
     font-weight: 800 !important;
   }
 
   .process-title {
     font-size: 1.35rem !important;
     font-weight: 800 !important;
-    color: #FFFFFF !important;
+    color: #E9D5FF !important;
     margin-bottom: 12px !important;
   }
 
   .process-desc {
     font-size: 0.94rem !important;
     line-height: 1.65 !important;
-    color: #CBD5E1 !important;
+    color: #DDD6FE !important;
   }
 
   /* Portfolio & Projects Mobile Horizontal Side-Scroll Carousel */
@@ -566,12 +566,12 @@ img, svg, video, canvas {
   .project-title {
     font-size: 1.15rem !important;
     font-weight: 800 !important;
-    color: #FFFFFF !important;
+    color: #E9D5FF !important;
   }
 
   .project-summary {
     font-size: 0.88rem !important;
-    color: #CBD5E1 !important;
+    color: #DDD6FE !important;
     margin-bottom: 14px !important;
   }
 
@@ -580,18 +580,18 @@ img, svg, video, canvas {
     gap: 8px !important;
     margin-bottom: 14px !important;
     background: #141418 !important;
-    border: 1px solid rgba(250, 204, 21, 0.25) !important;
+    border: 1px solid rgba(168, 85, 247, 0.35) !important;
   }
 
   .project-metric-val {
     font-size: 1rem !important;
     font-weight: 800 !important;
-    color: #FACC15 !important;
+    color: #C084FC !important;
   }
 
   .project-metric-lbl {
     font-size: 0.7rem !important;
-    color: #CBD5E1 !important;
+    color: #C4B5FD !important;
   }
 
   /* About Us Core Principles Mobile Horizontal Side-Scroll Carousel */
@@ -633,12 +633,12 @@ img, svg, video, canvas {
   .principle-title {
     font-size: 1.2rem !important;
     font-weight: 800 !important;
-    color: #FFFFFF !important;
+    color: #E9D5FF !important;
   }
 
   .principle-desc {
     font-size: 0.92rem !important;
-    color: #CBD5E1 !important;
+    color: #DDD6FE !important;
   }
 
   /* About Us Mission & Vision Mobile Horizontal Side-Scroll Carousel */
@@ -674,12 +674,12 @@ img, svg, video, canvas {
   }
 
   .mission-card h3, .vision-card h3 {
-    color: #FFFFFF !important;
+    color: #E9D5FF !important;
     font-weight: 800 !important;
   }
 
   .mission-card p, .vision-card p {
-    color: #CBD5E1 !important;
+    color: #DDD6FE !important;
   }
 
   /* About Page Profile Elements */
@@ -810,12 +810,12 @@ img, svg, video, canvas {
 
   .faq-item .faq-question-btn {
     padding: 0 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.25) !important;
     padding-bottom: 14px !important;
     margin-bottom: 14px !important;
     font-size: 1.05rem !important;
     font-weight: 800 !important;
-    color: #FFFFFF !important;
+    color: #E9D5FF !important;
     text-align: left !important;
     display: flex !important;
     align-items: center !important;
@@ -830,7 +830,7 @@ img, svg, video, canvas {
     padding: 0 !important;
     font-size: 0.94rem !important;
     line-height: 1.65 !important;
-    color: #CBD5E1 !important;
+    color: #DDD6FE !important;
   }
 
   .faq-item .faq-icon {
@@ -874,12 +874,12 @@ img, svg, video, canvas {
   }
 
   .testimonial-name {
-    color: #FFFFFF !important;
+    color: #E9D5FF !important;
     font-weight: 800 !important;
   }
 
   .testimonial-quote {
-    color: #CBD5E1 !important;
+    color: #DDD6FE !important;
   }
 
   /* Contact Page */
