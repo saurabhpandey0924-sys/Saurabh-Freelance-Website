@@ -66,7 +66,7 @@
         <img src="${project.thumbnail}" alt="${project.title}" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
       </div>
 
-      <div class="project-metrics-row" style="margin-bottom: 30px; padding: 18px 24px; background: rgba(99, 102, 241, 0.08); border-color: rgba(99, 102, 241, 0.25);">
+      <div class="project-metrics-row" style="margin-bottom: 30px; padding: 18px 24px; background: rgba(250, 204, 21, 0.08); border-color: rgba(250, 204, 21, 0.28);">
         ${metricsHtml}
       </div>
 
@@ -95,8 +95,8 @@
         </ul>
       </div>
 
-      <div style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.25); border-radius: var(--radius-md); padding: 20px; margin-bottom: 30px;">
-        <h4 style="font-size: 1.05rem; color: var(--accent-secondary); margin-bottom: 6px;">Business Outcome & Impact</h4>
+      <div style="background: rgba(250, 204, 21, 0.08); border: 1px solid rgba(250, 204, 21, 0.28); border-radius: var(--radius-md); padding: 20px; margin-bottom: 30px;">
+        <h4 style="font-size: 1.05rem; color: var(--accent-primary); margin-bottom: 6px;">Business Outcome & Impact</h4>
         <p style="font-size: 0.92rem; color: var(--text-primary);">${project.caseStudy.results}</p>
       </div>
 

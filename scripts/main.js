@@ -1074,8 +1074,8 @@ function renderAbout(about) {
       <div class="about-grid">
         <!-- Profile Column -->
         <div class="about-profile-card reveal">
-          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: rgba(56, 189, 248, 0.12); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.35); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
-            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: rgba(250, 204, 21, 0.12); color: var(--accent-primary); border: 1px solid rgba(250, 204, 21, 0.35); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #FACC15; box-shadow: 0 0 8px #FACC15;"></span>
             <span>ENTERPRISE SOLUTIONS STUDIO</span>
           </div>
           <h3 class="about-profile-name">QUBITHRS Technology Solutions</h3>

@@ -376,9 +376,9 @@ img, svg, video, canvas {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    background: #FFFFFF !important;
+    background: var(--bg-card) !important;
     border: 1px solid var(--border-medium) !important;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
     min-height: 380px !important;
   }
 
@@ -390,8 +390,8 @@ img, svg, video, canvas {
     width: 56px !important;
     height: 56px !important;
     border-radius: 16px !important;
-    background: rgba(56, 189, 248, 0.12) !important;
-    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+    background: rgba(250, 204, 21, 0.12) !important;
+    border: 1px solid rgba(250, 204, 21, 0.35) !important;
     color: var(--accent-primary) !important;
     display: flex !important;
     align-items: center !important;
@@ -496,9 +496,9 @@ img, svg, video, canvas {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    background: #FFFFFF !important;
+    background: var(--bg-card) !important;
     border: 1px solid var(--border-medium) !important;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
     min-height: 270px !important;
   }
 
@@ -548,9 +548,9 @@ img, svg, video, canvas {
     scroll-snap-stop: always !important;
     border-radius: 20px !important;
     overflow: hidden !important;
-    background: #FFFFFF !important;
+    background: var(--bg-card) !important;
     border: 1px solid var(--border-medium) !important;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
   }
 
   .project-content {
@@ -610,9 +610,9 @@ img, svg, video, canvas {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    background: #FFFFFF !important;
+    background: var(--bg-card) !important;
     border: 1px solid var(--border-medium) !important;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
     min-height: 240px !important;
   }
 
@@ -643,9 +643,9 @@ img, svg, video, canvas {
     scroll-snap-stop: always !important;
     padding: 26px 20px !important;
     border-radius: 20px !important;
-    background: #FFFFFF !important;
+    background: var(--bg-card) !important;
     border: 1px solid var(--border-medium) !important;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
   }
 
   /* About Page Profile Elements */
@@ -765,9 +765,9 @@ img, svg, video, canvas {
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    background: #FFFFFF !important;
+    background: var(--bg-card) !important;
     border: 1px solid var(--border-medium) !important;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
     min-height: 240px !important;
     cursor: default !important;
   }
@@ -831,9 +831,9 @@ img, svg, video, canvas {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    background: #FFFFFF !important;
+    background: var(--bg-card) !important;
     border: 1px solid var(--border-medium) !important;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
     min-height: 280px !important;
   }
 
