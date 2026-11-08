@@ -1074,7 +1074,7 @@ function renderAbout(about) {
       <div class="about-grid">
         <!-- Profile Column -->
         <div class="about-profile-card reveal">
-          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: rgba(250, 204, 21, 0.12); color: var(--accent-primary); border: 1px solid rgba(250, 204, 21, 0.35); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
+          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: #000000; color: #FACC15; border: 1.5px solid #000000; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
             <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #FACC15; box-shadow: 0 0 8px #FACC15;"></span>
             <span>ENTERPRISE SOLUTIONS STUDIO</span>
           </div>

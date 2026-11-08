@@ -400,15 +400,15 @@ img, svg, video, canvas {
 
   .service-title {
     font-size: 1.35rem !important;
-    font-weight: 700 !important;
-    color: var(--text-primary) !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
     margin-bottom: 12px !important;
   }
 
   .service-desc {
     font-size: 0.94rem !important;
     line-height: 1.65 !important;
-    color: var(--text-secondary) !important;
+    color: #CBD5E1 !important;
     margin-bottom: 20px !important;
   }
 
@@ -416,7 +416,7 @@ img, svg, video, canvas {
     display: inline-flex !important;
     align-items: center !important;
     gap: 8px !important;
-    color: var(--accent-primary) !important;
+    color: #FACC15 !important;
     font-size: 0.88rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.08em !important;
@@ -429,7 +429,7 @@ img, svg, video, canvas {
   .service-card-action:hover,
   .service-card-action:active {
     gap: 12px !important;
-    color: var(--accent-primary-hover) !important;
+    color: #FEF08A !important;
   }
 
   .services-carousel-dots {
@@ -463,6 +463,10 @@ img, svg, video, canvas {
     white-space: nowrap;
     padding: 8px 16px;
     font-size: 0.85rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: #000000;
+    border: 1.5px solid #000000;
     min-height: 44px;
   }
 
@@ -497,7 +501,7 @@ img, svg, video, canvas {
     flex-direction: column !important;
     justify-content: space-between !important;
     background: var(--bg-card) !important;
-    border: 1px solid var(--border-medium) !important;
+    border: 1.5px solid #000000 !important;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
     min-height: 270px !important;
   }
@@ -506,19 +510,21 @@ img, svg, video, canvas {
     font-size: 2.8rem !important;
     line-height: 1 !important;
     margin-bottom: 16px !important;
+    color: #FACC15 !important;
+    font-weight: 800 !important;
   }
 
   .process-title {
     font-size: 1.35rem !important;
-    font-weight: 700 !important;
-    color: var(--text-primary) !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
     margin-bottom: 12px !important;
   }
 
   .process-desc {
     font-size: 0.94rem !important;
     line-height: 1.65 !important;
-    color: var(--text-secondary) !important;
+    color: #CBD5E1 !important;
   }
 
   /* Portfolio & Projects Mobile Horizontal Side-Scroll Carousel */
@@ -549,7 +555,7 @@ img, svg, video, canvas {
     border-radius: 20px !important;
     overflow: hidden !important;
     background: var(--bg-card) !important;
-    border: 1px solid var(--border-medium) !important;
+    border: 1.5px solid #000000 !important;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
   }
 
@@ -559,10 +565,13 @@ img, svg, video, canvas {
 
   .project-title {
     font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
   }
 
   .project-summary {
     font-size: 0.88rem !important;
+    color: #CBD5E1 !important;
     margin-bottom: 14px !important;
   }
 
@@ -570,14 +579,19 @@ img, svg, video, canvas {
     padding: 10px 12px !important;
     gap: 8px !important;
     margin-bottom: 14px !important;
+    background: #141418 !important;
+    border: 1px solid rgba(250, 204, 21, 0.25) !important;
   }
 
   .project-metric-val {
     font-size: 1rem !important;
+    font-weight: 800 !important;
+    color: #FACC15 !important;
   }
 
   .project-metric-lbl {
     font-size: 0.7rem !important;
+    color: #CBD5E1 !important;
   }
 
   /* About Us Core Principles Mobile Horizontal Side-Scroll Carousel */
@@ -611,9 +625,20 @@ img, svg, video, canvas {
     flex-direction: column !important;
     justify-content: space-between !important;
     background: var(--bg-card) !important;
-    border: 1px solid var(--border-medium) !important;
+    border: 1.5px solid #000000 !important;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
     min-height: 240px !important;
+  }
+
+  .principle-title {
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+  }
+
+  .principle-desc {
+    font-size: 0.92rem !important;
+    color: #CBD5E1 !important;
   }
 
   /* About Us Mission & Vision Mobile Horizontal Side-Scroll Carousel */
@@ -644,13 +669,24 @@ img, svg, video, canvas {
     padding: 26px 20px !important;
     border-radius: 20px !important;
     background: var(--bg-card) !important;
-    border: 1px solid var(--border-medium) !important;
+    border: 1.5px solid #000000 !important;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
+  }
+
+  .mission-card h3, .vision-card h3 {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+  }
+
+  .mission-card p, .vision-card p {
+    color: #CBD5E1 !important;
   }
 
   /* About Page Profile Elements */
   .about-profile-card {
     padding: 24px 18px;
+    background: var(--bg-card) !important;
+    border: 1.5px solid #000000 !important;
   }
 
   .about-bio-card {
@@ -766,7 +802,7 @@ img, svg, video, canvas {
     flex-direction: column !important;
     justify-content: flex-start !important;
     background: var(--bg-card) !important;
-    border: 1px solid var(--border-medium) !important;
+    border: 1.5px solid #000000 !important;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
     min-height: 240px !important;
     cursor: default !important;
@@ -774,12 +810,12 @@ img, svg, video, canvas {
 
   .faq-item .faq-question-btn {
     padding: 0 !important;
-    border-bottom: 1px solid var(--border-subtle) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding-bottom: 14px !important;
     margin-bottom: 14px !important;
     font-size: 1.05rem !important;
-    font-weight: 700 !important;
-    color: var(--text-primary) !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
     text-align: left !important;
     display: flex !important;
     align-items: center !important;
@@ -794,7 +830,7 @@ img, svg, video, canvas {
     padding: 0 !important;
     font-size: 0.94rem !important;
     line-height: 1.65 !important;
-    color: var(--text-secondary) !important;
+    color: #CBD5E1 !important;
   }
 
   .faq-item .faq-icon {
@@ -832,9 +868,18 @@ img, svg, video, canvas {
     flex-direction: column !important;
     justify-content: space-between !important;
     background: var(--bg-card) !important;
-    border: 1px solid var(--border-medium) !important;
+    border: 1.5px solid #000000 !important;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
     min-height: 280px !important;
+  }
+
+  .testimonial-name {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+  }
+
+  .testimonial-quote {
+    color: #CBD5E1 !important;
   }
 
   /* Contact Page */
