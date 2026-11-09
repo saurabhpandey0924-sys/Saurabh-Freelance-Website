@@ -1081,9 +1081,14 @@ function renderAbout(about) {
       <div class="about-grid">
         <!-- Profile Column -->
         <div class="about-profile-card reveal">
-          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: rgba(56, 189, 248, 0.12); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.35); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
-            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
-            <span>ENTERPRISE SOLUTIONS STUDIO</span>
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+            <div class="brand-badge" style="width: 48px; height: 48px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.3), 0 0 16px rgba(56,189,248,0.35);">
+              <img src="assets/images/qh-logo-badge.png" alt="QUBITHRS QH Logo" class="brand-logo-img">
+            </div>
+            <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: rgba(56, 189, 248, 0.12); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.35); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">
+              <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+              <span>ENTERPRISE SOLUTIONS STUDIO</span>
+            </div>
           </div>
           <h3 class="about-profile-name">QUBITHRS Technology Solutions</h3>
           <p class="about-profile-title">Web · Software · AI · Cybersecurity — Building Intelligent & Secure Digital Solutions.</p>

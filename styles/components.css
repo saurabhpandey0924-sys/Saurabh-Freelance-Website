@@ -45,27 +45,26 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-sm);
-  background: rgba(11, 15, 25, 0.85);
-  border: 1px solid rgba(99, 102, 241, 0.35);
-  color: var(--accent-secondary);
-  font-weight: 800;
-  font-size: 1.05rem;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: #000000;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25), 0 0 14px rgba(56, 189, 248, 0.3);
   overflow: hidden;
-  padding: 3px;
+  padding: 2px;
   transition: all var(--transition-smooth);
+  flex-shrink: 0;
 }
 
 .brand-badge img,
 .brand-logo-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
-  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.5));
+  border-radius: 7px;
+  transition: transform var(--transition-fast);
 }
 
 .nav-brand:hover .brand-badge {
