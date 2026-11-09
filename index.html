@@ -29,9 +29,9 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/main.css?v=15">
-  <link rel="stylesheet" href="styles/components.css?v=15">
-  <link rel="stylesheet" href="styles/responsive.css?v=15">
+  <link rel="stylesheet" href="styles/main.css?v=16">
+  <link rel="stylesheet" href="styles/components.css?v=16">
+  <link rel="stylesheet" href="styles/responsive.css?v=16">
 
   <!-- JSON-LD Structured Data Schema -->
   <script type="application/ld+json">
@@ -55,14 +55,14 @@
   }
   </script>
 </head>
-<body>
+<body class="spacex-theme">
   <!-- Premium Zero-Gravity Parallax Background Engine -->
   <script src="scripts/parallax-bg.js?v=2"></script>
 
   <!-- ==========================================================================
-       SPACEX-STYLE MINIMALIST NAVBAR
+       SPACEX TRANSPARENT HEADER
        ========================================================================== -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar transparent-nav" id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="nav-brand" aria-label="QUBITHRS Tech Solutions Home">
         <span class="brand-badge brand-logo-badge">
@@ -76,7 +76,7 @@
 
       <!-- Header Actions -->
       <div class="nav-actions">
-        <!-- Header Direct CTA -->
+        <!-- Direct Header Action -->
         <a href="contact.html" class="btn btn-primary btn-sm nav-cta-btn">
           <span>Book Consultation</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -197,70 +197,47 @@
   </a>
 
   <!-- ==========================================================================
-       SCENE 0: FULL-VIEWPORT CINEMATIC HERO
+       SCENE 0: HERO (FULL-VIEWPORT 100vh)
        ========================================================================== -->
-  <section class="spacex-service-scene" id="home" style="min-height: 100vh; padding-top: 140px;">
-    <div class="spacex-scene-bg bg-web-apps"></div>
-    <div class="container spacex-scene-container" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-      <div class="spacex-kicker" style="justify-content: center;">
-        <span class="spacex-badge">QH TECH SOLUTIONS</span>
-        <span class="spacex-kicker-text">ENTERPRISE DIGITAL ARCHITECTURE</span>
-      </div>
-      <h1 class="spacex-service-title" style="font-size: clamp(2.5rem, 5.5vw, 4.4rem); max-width: 960px; line-height: 1.12; margin-bottom: 24px;">
-        Building High-Performance <span class="gradient-text">Digital Systems</span>.
-      </h1>
-      <p class="spacex-service-desc" style="font-size: clamp(1.05rem, 1.8vw, 1.25rem); max-width: 780px; margin-bottom: 38px;">
-        We architect and engineer scalable web applications, enterprise SaaS platforms, and autonomous AI automation workflows for high-growth founders and modern enterprises.
+  <section class="spacex-slide" id="home">
+    <img src="assets/images/ecommerce-bg.jpg" alt="QH Tech Solutions Engineering" class="spacex-slide-bg" loading="eager">
+    <div class="spacex-slide-overlay"></div>
+    <div class="spacex-slide-content reveal">
+      <div class="spacex-slide-kicker">QH TECH SOLUTIONS • ENTERPRISE ENGINEERING</div>
+      <h1 class="spacex-slide-title">BUILDING HIGH-PERFORMANCE DIGITAL SYSTEMS</h1>
+      <p class="spacex-slide-subtitle">
+        We architect and engineer scalable web applications, enterprise SaaS platforms, and autonomous AI automation engines.
       </p>
-      <div class="spacex-actions" style="justify-content: center;">
-        <a href="#service-01" class="btn btn-primary btn-lg btn-glow">
-          <span>Explore Core Divisions ↓</span>
+      <div class="spacex-btn-group">
+        <a href="#division-01" class="spacex-btn">
+          <span>EXPLORE CORE DIVISIONS</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
-        <a href="contact.html" class="btn btn-secondary btn-lg">
-          <span>Schedule 20-Min Discovery Call &rarr;</span>
+        <a href="contact.html" class="spacex-btn spacex-btn-solid">
+          <span>SCHEDULE DISCOVERY CALL</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
-
-      <!-- SpaceX Scroll Prompter -->
-      <a href="#service-01" class="spacex-scroll-indicator" aria-label="Scroll to discover core engineering services">
-        <span>SCROLL TO EXPLORE DIVISIONS</span>
-        <div class="scroll-line"></div>
-      </a>
     </div>
   </section>
 
   <!-- ==========================================================================
        SCENE 1: DIVISION 01 — SOFTWARE & CUSTOM WEB DEVELOPMENT
        ========================================================================== -->
-  <section class="spacex-service-scene" id="service-01">
-    <div class="spacex-scene-bg bg-web-apps"></div>
-    <div class="container spacex-scene-container">
-      <div class="spacex-service-card reveal">
-        <div class="spacex-kicker">
-          <span class="spacex-badge">DIVISION 01</span>
-          <span class="spacex-kicker-text">FULL-STACK WEB APPLICATIONS</span>
-        </div>
-        <h2 class="spacex-service-title">Software & Custom Web Development</h2>
-        <p class="spacex-service-desc">
-          We architect and engineer mission-critical enterprise web applications, high-converting platforms, custom ERP & CRM solutions, and client portals built for instant loading, sub-second latency, and zero technical debt.
-        </p>
-        <div class="spacex-tech-specs">
-          <span class="spec-pill">React 19 / Next.js</span>
-          <span class="spec-pill">Node.js Enterprise</span>
-          <span class="spec-pill">TypeScript Hardened</span>
-          <span class="spec-pill">Tailwind Architecture</span>
-          <span class="spec-pill">PostgreSQL / Redis</span>
-          <span class="spec-pill">Sub-Second Latency</span>
-        </div>
-        <div class="spacex-actions">
-          <a href="service-detail.html?id=software-web" class="btn btn-primary btn-lg">
-            <span>Explore Web Specifications</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href="contact.html" class="btn btn-secondary btn-lg">
-            <span>Schedule Architecture Sprint</span>
-          </a>
-        </div>
+  <section class="spacex-slide" id="division-01">
+    <img src="assets/images/project-ecommerce.jpg" alt="Software & Custom Web Development" class="spacex-slide-bg" loading="lazy">
+    <div class="spacex-slide-overlay"></div>
+    <div class="spacex-slide-content reveal">
+      <div class="spacex-slide-kicker">CORE DIVISION • 01</div>
+      <h2 class="spacex-slide-title">SOFTWARE &amp; CUSTOM WEB DEVELOPMENT</h2>
+      <p class="spacex-slide-subtitle">
+        Mission-critical enterprise web applications, high-converting platforms, custom ERP &amp; CRM solutions, and client portals built for sub-second performance.
+      </p>
+      <div class="spacex-btn-group">
+        <a href="service-detail.html?id=software-web" class="spacex-btn">
+          <span>EXPLORE SPECIFICATIONS</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -268,35 +245,20 @@
   <!-- ==========================================================================
        SCENE 2: DIVISION 02 — CUSTOM SAAS & CLOUD ARCHITECTURE
        ========================================================================== -->
-  <section class="spacex-service-scene" id="service-02">
-    <div class="spacex-scene-bg bg-saas-cloud"></div>
-    <div class="container spacex-scene-container">
-      <div class="spacex-service-card reveal">
-        <div class="spacex-kicker">
-          <span class="spacex-badge">DIVISION 02</span>
-          <span class="spacex-kicker-text">CLOUD MICROSERVICES & PLATFORMS</span>
-        </div>
-        <h2 class="spacex-service-title">Custom SaaS & Cloud Architecture</h2>
-        <p class="spacex-service-desc">
-          Turn your software vision into an investor-ready, multi-tenant SaaS platform. We design cloud-native microservices, automated subscription billing, role-based access control, and high-concurrency database architectures.
-        </p>
-        <div class="spacex-tech-specs">
-          <span class="spec-pill">Multi-Tenancy Isolation</span>
-          <span class="spec-pill">Stripe / Razorpay Billing</span>
-          <span class="spec-pill">AWS / GCP Cloud Native</span>
-          <span class="spec-pill">Docker & Kubernetes</span>
-          <span class="spec-pill">GraphQL & REST APIs</span>
-          <span class="spec-pill">Zero Vendor Lock-in</span>
-        </div>
-        <div class="spacex-actions">
-          <a href="service-detail.html?id=saas-cloud" class="btn btn-primary btn-lg">
-            <span>Explore SaaS Specifications</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href="contact.html" class="btn btn-secondary btn-lg">
-            <span>Build SaaS MVP</span>
-          </a>
-        </div>
+  <section class="spacex-slide" id="division-02">
+    <img src="assets/images/project-saas.jpg" alt="Custom SaaS & Cloud Architecture" class="spacex-slide-bg" loading="lazy">
+    <div class="spacex-slide-overlay"></div>
+    <div class="spacex-slide-content reveal">
+      <div class="spacex-slide-kicker">CORE DIVISION • 02</div>
+      <h2 class="spacex-slide-title">CUSTOM SAAS &amp; CLOUD ARCHITECTURE</h2>
+      <p class="spacex-slide-subtitle">
+        Investor-ready multi-tenant SaaS platforms, resilient cloud microservices, automated subscription billing, and zero vendor lock-in.
+      </p>
+      <div class="spacex-btn-group">
+        <a href="service-detail.html?id=saas-cloud" class="spacex-btn">
+          <span>EXPLORE SPECIFICATIONS</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -304,35 +266,20 @@
   <!-- ==========================================================================
        SCENE 3: DIVISION 03 — AI AGENTS & WORKFLOW AUTOMATION
        ========================================================================== -->
-  <section class="spacex-service-scene" id="service-03">
-    <div class="spacex-scene-bg bg-ai-automation"></div>
-    <div class="container spacex-scene-container">
-      <div class="spacex-service-card reveal">
-        <div class="spacex-kicker">
-          <span class="spacex-badge">DIVISION 03</span>
-          <span class="spacex-kicker-text">AUTONOMOUS INTELLIGENCE & COPILOTS</span>
-        </div>
-        <h2 class="spacex-service-title">AI Agents & Workflow Automation</h2>
-        <p class="spacex-service-desc">
-          Embed autonomous LLM agents, intelligent RAG vector pipelines, dynamic document cognition, and token-streaming AI copilots directly into your operational workflows to multiply productivity and eliminate human latency.
-        </p>
-        <div class="spacex-tech-specs">
-          <span class="spec-pill">Gemini & OpenAI Systems</span>
-          <span class="spec-pill">LangChain / LlamaIndex</span>
-          <span class="spec-pill">Vector DBs (Pinecone / pgvector)</span>
-          <span class="spec-pill">Enterprise RAG Pipelines</span>
-          <span class="spec-pill">Token-Streaming Protocols</span>
-          <span class="spec-pill">Automated Copilots</span>
-        </div>
-        <div class="spacex-actions">
-          <a href="service-detail.html?id=ai-automation" class="btn btn-primary btn-lg">
-            <span>Explore AI Specifications</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href="contact.html" class="btn btn-secondary btn-lg">
-            <span>Deploy AI Solution</span>
-          </a>
-        </div>
+  <section class="spacex-slide" id="division-03">
+    <img src="assets/images/project-ai.jpg" alt="AI Agents & Workflow Automation" class="spacex-slide-bg" loading="lazy">
+    <div class="spacex-slide-overlay"></div>
+    <div class="spacex-slide-content reveal">
+      <div class="spacex-slide-kicker">CORE DIVISION • 03</div>
+      <h2 class="spacex-slide-title">AI AGENTS &amp; WORKFLOW AUTOMATION</h2>
+      <p class="spacex-slide-subtitle">
+        Autonomous LLM agents, intelligent RAG vector pipelines, dynamic document cognition, and token-streaming AI copilots.
+      </p>
+      <div class="spacex-btn-group">
+        <a href="service-detail.html?id=ai-automation" class="spacex-btn">
+          <span>EXPLORE SPECIFICATIONS</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -340,35 +287,20 @@
   <!-- ==========================================================================
        SCENE 4: DIVISION 04 — MOBILE & CROSS-PLATFORM APPS
        ========================================================================== -->
-  <section class="spacex-service-scene" id="service-04">
-    <div class="spacex-scene-bg bg-mobile-apps"></div>
-    <div class="container spacex-scene-container">
-      <div class="spacex-service-card reveal">
-        <div class="spacex-kicker">
-          <span class="spacex-badge">DIVISION 04</span>
-          <span class="spacex-kicker-text">CROSS-PLATFORM ECOSYSTEMS</span>
-        </div>
-        <h2 class="spacex-service-title">Mobile & Cross-Platform Development</h2>
-        <p class="spacex-service-desc">
-          Native-grade iOS and Android applications engineered with React Native and Flutter. Backed by unified cloud backends, real-time WebSockets, offline-first sync, and Progressive Web App (PWA) distribution.
-        </p>
-        <div class="spacex-tech-specs">
-          <span class="spec-pill">React Native</span>
-          <span class="spec-pill">Flutter Architecture</span>
-          <span class="spec-pill">iOS & Android App Store</span>
-          <span class="spec-pill">Progressive Web Apps</span>
-          <span class="spec-pill">Real-Time Sync</span>
-          <span class="spec-pill">Offline-First Engine</span>
-        </div>
-        <div class="spacex-actions">
-          <a href="service-detail.html?id=mobile-apps" class="btn btn-primary btn-lg">
-            <span>Explore Mobile Specifications</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href="contact.html" class="btn btn-secondary btn-lg">
-            <span>Launch Mobile App</span>
-          </a>
-        </div>
+  <section class="spacex-slide" id="division-04">
+    <img src="assets/images/project-fintech.jpg" alt="Mobile & Cross-Platform Development" class="spacex-slide-bg" loading="lazy">
+    <div class="spacex-slide-overlay"></div>
+    <div class="spacex-slide-content reveal">
+      <div class="spacex-slide-kicker">CORE DIVISION • 04</div>
+      <h2 class="spacex-slide-title">MOBILE &amp; CROSS-PLATFORM APPS</h2>
+      <p class="spacex-slide-subtitle">
+        Native-grade iOS and Android platforms engineered with React Native and Flutter, unified cloud backends, and offline-first sync.
+      </p>
+      <div class="spacex-btn-group">
+        <a href="service-detail.html?id=mobile-apps" class="spacex-btn">
+          <span>EXPLORE SPECIFICATIONS</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -376,35 +308,20 @@
   <!-- ==========================================================================
        SCENE 5: DIVISION 05 — API ENGINEERING & ENTERPRISE INTEGRATION
        ========================================================================== -->
-  <section class="spacex-service-scene" id="service-05">
-    <div class="spacex-scene-bg bg-api-integration"></div>
-    <div class="container spacex-scene-container">
-      <div class="spacex-service-card reveal">
-        <div class="spacex-kicker">
-          <span class="spacex-badge">DIVISION 05</span>
-          <span class="spacex-kicker-text">HIGH-CONCURRENCY CONNECTIVITY</span>
-        </div>
-        <h2 class="spacex-service-title">API Engineering & Enterprise Integration</h2>
-        <p class="spacex-service-desc">
-          Connect legacy systems, third-party ERPs, payment gateways, and modern SaaS tools into a coherent event-driven ecosystem. We build fault-tolerant webhooks, GraphQL endpoints, and high-throughput REST APIs.
-        </p>
-        <div class="spacex-tech-specs">
-          <span class="spec-pill">RESTful & GraphQL Design</span>
-          <span class="spec-pill">Event-Driven Architecture</span>
-          <span class="spec-pill">Salesforce / SAP Sync</span>
-          <span class="spec-pill">Payment Gateways</span>
-          <span class="spec-pill">Rate Limiting & Caching</span>
-          <span class="spec-pill">99.99% Reliability SLA</span>
-        </div>
-        <div class="spacex-actions">
-          <a href="service-detail.html?id=api-integration" class="btn btn-primary btn-lg">
-            <span>Explore API Specifications</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href="contact.html" class="btn btn-secondary btn-lg">
-            <span>Integrate Enterprise Systems</span>
-          </a>
-        </div>
+  <section class="spacex-slide" id="division-05">
+    <img src="assets/images/ecommerce-bg.jpg" alt="API Engineering & Enterprise Integration" class="spacex-slide-bg" loading="lazy">
+    <div class="spacex-slide-overlay"></div>
+    <div class="spacex-slide-content reveal">
+      <div class="spacex-slide-kicker">CORE DIVISION • 05</div>
+      <h2 class="spacex-slide-title">API ENGINEERING &amp; INTEGRATION</h2>
+      <p class="spacex-slide-subtitle">
+        High-concurrency RESTful and GraphQL APIs, event-driven webhooks, ERP/CRM synchronization, and payment gateways.
+      </p>
+      <div class="spacex-btn-group">
+        <a href="service-detail.html?id=api-integration" class="spacex-btn">
+          <span>EXPLORE SPECIFICATIONS</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -412,87 +329,64 @@
   <!-- ==========================================================================
        SCENE 6: DIVISION 06 — CYBERSECURITY & CLOUD DEFENSE
        ========================================================================== -->
-  <section class="spacex-service-scene" id="service-06">
-    <div class="spacex-scene-bg bg-cybersecurity"></div>
-    <div class="container spacex-scene-container">
-      <div class="spacex-service-card reveal">
-        <div class="spacex-kicker">
-          <span class="spacex-badge">DIVISION 06</span>
-          <span class="spacex-kicker-text">ZERO-TRUST CLOUD INFRASTRUCTURE</span>
-        </div>
-        <h2 class="spacex-service-title">Cybersecurity & Cloud Defense</h2>
-        <p class="spacex-service-desc">
-          Hardening your digital perimeter against attacks. Defense-grade penetration testing, OWASP Top 10 remediation, end-to-end data encryption, automated vulnerability scanning, and compliance-ready infrastructure.
-        </p>
-        <div class="spacex-tech-specs">
-          <span class="spec-pill">Zero-Trust Architecture</span>
-          <span class="spec-pill">Penetration Testing</span>
-          <span class="spec-pill">OWASP Hardening</span>
-          <span class="spec-pill">Data Encryption at Rest</span>
-          <span class="spec-pill">Automated Audit Protocols</span>
-          <span class="spec-pill">Security Compliance</span>
-        </div>
-        <div class="spacex-actions">
-          <a href="service-detail.html?id=cybersecurity-defense" class="btn btn-primary btn-lg">
-            <span>Explore Security Specifications</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href="contact.html" class="btn btn-secondary btn-lg">
-            <span>Request Security Audit</span>
-          </a>
-        </div>
+  <section class="spacex-slide" id="division-06">
+    <img src="assets/images/project-saas.jpg" alt="Cybersecurity & Cloud Defense" class="spacex-slide-bg" loading="lazy">
+    <div class="spacex-slide-overlay"></div>
+    <div class="spacex-slide-content reveal">
+      <div class="spacex-slide-kicker">CORE DIVISION • 06</div>
+      <h2 class="spacex-slide-title">CYBERSECURITY &amp; CLOUD DEFENSE</h2>
+      <p class="spacex-slide-subtitle">
+        Defense-grade security audits, penetration testing, OWASP Top 10 hardening, automated vulnerability scans, and data encryption.
+      </p>
+      <div class="spacex-btn-group">
+        <a href="service-detail.html?id=cybersecurity-defense" class="spacex-btn">
+          <span>EXPLORE SPECIFICATIONS</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       SCENE 7: AUTHENTIC COMMITMENTS & CLOSING CTA BANNER
+       SCENE 7: AUTHENTIC COMMITMENTS & CLOSING ACTION
        ========================================================================== -->
-  <section class="metrics-section">
-    <div class="container">
-      <div class="metrics-grid">
-        <div class="metric-card reveal">
-          <div class="metric-number">100%</div>
-          <div class="metric-label">Full Code & IP Ownership</div>
-          <div class="metric-subtext">Zero vendor lock-in; complete GitHub & cloud repository handover</div>
+  <section class="spacex-slide spacex-closing-slide" id="closing">
+    <div class="spacex-slide-bg-solid"></div>
+    <div class="container spacex-closing-container">
+      <div class="spacex-metrics-row reveal">
+        <div class="spacex-metric-item">
+          <div class="spacex-metric-val">100%</div>
+          <div class="spacex-metric-lbl">Full Code &amp; IP Ownership</div>
         </div>
-        <div class="metric-card reveal">
-          <div class="metric-number">95+</div>
-          <div class="metric-label">Core Web Vitals & SEO</div>
-          <div class="metric-subtext">Sub-second page loading & mobile optimization guaranteed</div>
+        <div class="spacex-metric-item">
+          <div class="spacex-metric-val">95+</div>
+          <div class="spacex-metric-lbl">Core Web Vitals &amp; SEO</div>
         </div>
-        <div class="metric-card reveal">
-          <div class="metric-number">&lt;24h</div>
-          <div class="metric-label">Direct Response SLA</div>
-          <div class="metric-subtext">Direct developer communication without agency middlemen</div>
+        <div class="spacex-metric-item">
+          <div class="spacex-metric-val">&lt;24h</div>
+          <div class="spacex-metric-lbl">Direct Developer SLA</div>
         </div>
-        <div class="metric-card reveal">
-          <div class="metric-number">30 Days</div>
-          <div class="metric-label">Complimentary Warranty</div>
-          <div class="metric-subtext">Free post-launch bug fixes & stability support included</div>
+        <div class="spacex-metric-item">
+          <div class="spacex-metric-val">30 Days</div>
+          <div class="spacex-metric-lbl">Complimentary Support</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section cta-banner-section">
-    <div class="container">
-      <div class="cta-banner-card reveal">
-        <div class="cta-banner-content">
-          <span class="badge badge-live">Instant 24h Response</span>
-          <h2 class="cta-banner-title">Ready to Build a High-Performing Web App or Automate Your Business?</h2>
-          <p class="cta-banner-subtitle">
-            Book a complimentary 20-minute architecture discovery call. We'll evaluate your requirements, review technical feasibility, and prepare an actionable sprint roadmap.
-          </p>
-          <div class="cta-banner-actions">
-            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-glow">
-              <span>Schedule 20-Min Discovery Call</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="contact.html" class="btn btn-secondary btn-lg">
-              <span>Send Project Inquiry &rarr;</span>
-            </a>
-          </div>
+      <div class="spacex-closing-content reveal">
+        <div class="spacex-slide-kicker">START YOUR PROJECT</div>
+        <h2 class="spacex-slide-title">READY TO BUILD A HIGH-PERFORMING DIGITAL SYSTEM?</h2>
+        <p class="spacex-slide-subtitle">
+          Book a complimentary 20-minute architecture discovery call. We'll evaluate your requirements, review technical feasibility, and prepare an actionable sprint roadmap.
+        </p>
+        <div class="spacex-btn-group">
+          <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="spacex-btn spacex-btn-solid">
+            <span>SCHEDULE 20-MIN DISCOVERY CALL</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="contact.html" class="spacex-btn">
+            <span>SEND PROJECT INQUIRY</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -576,11 +470,11 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="scripts/data.js?v=11"></script>
+  <script src="scripts/data.js?v=12"></script>
   <script src="scripts/cyber-grid.js"></script>
   <script src="scripts/tilt.js"></script>
   <script src="scripts/modal.js"></script>
   <script src="scripts/contact.js"></script>
-  <script src="scripts/main.js?v=15"></script>
+  <script src="scripts/main.js?v=16"></script>
 </body>
 </html>
