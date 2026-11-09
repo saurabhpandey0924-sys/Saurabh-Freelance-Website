@@ -109,17 +109,6 @@ img, svg, video, canvas {
     margin-bottom: 40px;
   }
 
-  .calculator-wrapper {
-    grid-template-columns: 1fr;
-    padding: 32px 24px;
-    gap: 32px;
-  }
-
-  .calc-summary-panel {
-    max-width: 100%;
-    margin: 0 auto;
-    width: 100%;
-  }
 
   .contact-grid {
     grid-template-columns: 1fr;
@@ -714,43 +703,6 @@ img, svg, video, canvas {
     font-size: 2.2rem;
   }
 
-  /* Calculator on Mobile */
-  .calculator-wrapper {
-    padding: 22px 16px;
-    gap: 26px;
-    border-radius: var(--radius-md);
-  }
-
-  .calc-types-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .calc-type-card {
-    min-height: 48px;
-    padding: 12px 14px;
-  }
-
-  .calc-features-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .calc-feature-label {
-    min-height: 48px;
-    padding: 12px 14px;
-    font-size: 0.88rem;
-  }
-
-  .calc-summary-panel {
-    padding: 22px 16px;
-    border-radius: var(--radius-md);
-  }
-
-  .calc-estimate-price {
-    font-size: clamp(2rem, 6.5vw, 2.5rem);
-    line-height: 1.1;
-  }
 
   /* FAQ Mobile Horizontal Side-Scroll Carousel (Swipeable Question Cards) */
   #faq-container, .faqs-container {
@@ -1182,9 +1134,6 @@ img, svg, video, canvas {
     padding: 5px 12px;
   }
 
-  .calc-estimate-price {
-    font-size: clamp(1.85rem, 6vw, 2.25rem);
-  }
 
   .btn-lg {
     padding: 12px 20px;
@@ -1245,9 +1194,6 @@ img, svg, video, canvas {
     font-size: 0.86rem;
   }
 
-  .calc-estimate-price {
-    font-size: 1.85rem;
-  }
 
   .btn {
     padding: 10px 14px;
