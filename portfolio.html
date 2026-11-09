@@ -88,58 +88,91 @@
       </div>
     </div>
   </nav>
-
-  <!-- Centered Floating Navigation Modal (Mobile / Tablet) -->
+  <!-- SpaceX-Style Luxury Navigation Drawer -->
   <div class="nav-modal-backdrop" id="nav-modal-backdrop"></div>
-  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <button class="nav-modal-close" id="nav-modal-close" aria-label="Close navigation">&times;</button>
+  <aside class="nav-modal spacex-drawer" id="nav-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <span class="brand-badge brand-logo-badge">
+          <img src="assets/images/qh-logo-badge.png" alt="QUBITHRS QH Logo" class="brand-logo-img">
+        </span>
+        <span class="drawer-brand-name">QH TECH SOLUTIONS</span>
+      </div>
+      <button class="nav-modal-close" id="nav-modal-close" aria-label="Close navigation">&times;</button>
+    </div>
+
     <nav class="nav-modal-body">
-            <ul class="nav-modal-list">
+      <div class="drawer-section-label">DIRECT PAGES</div>
+      <ul class="nav-modal-list">
         <li>
-          <a href="index.html" class="nav-modal-link">
-            <span>Home</span>
+          <a href="index.html" class="nav-modal-link ">
+            <span class="drawer-num">01</span>
+            <span class="drawer-label">HOME & SERVICES SHOWCASE</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="about.html" class="nav-modal-link">
-            <span>About Us</span>
+          <a href="services.html" class="nav-modal-link ">
+            <span class="drawer-num">02</span>
+            <span class="drawer-label">SERVICES DIRECTORY</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="services.html" class="nav-modal-link">
-            <span>Services (6 Divisions)</span>
+          <a href="service-detail.html" class="nav-modal-link ">
+            <span class="drawer-num">03</span>
+            <span class="drawer-label">SERVICE ARCHITECTURE DETAILS</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="industries.html" class="nav-modal-link">
-            <span>Industries We Serve</span>
+          <a href="industries.html" class="nav-modal-link ">
+            <span class="drawer-num">04</span>
+            <span class="drawer-label">INDUSTRIES WE SERVE</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
           <a href="portfolio.html" class="nav-modal-link active">
-            <span>Portfolio</span>
+            <span class="drawer-num">05</span>
+            <span class="drawer-label">PORTFOLIO & CASE STUDIES</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="contact.html" class="nav-modal-link highlight">
-            <span>Contact & Inquiries</span>
+          <a href="about.html" class="nav-modal-link ">
+            <span class="drawer-num">06</span>
+            <span class="drawer-label">ABOUT QUBITHRS & MISSION</span>
+            <span class="link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="nav-modal-link highlight ">
+            <span class="drawer-num">07</span>
+            <span class="drawer-label">CONTACT & INQUIRIES</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
       </ul>
-      <div class="nav-modal-cta">
-        <a href="contact.html" class="btn btn-primary btn-glow" style="width: 100%;">
-          <span>Get Free Consultation</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+
+      <div class="drawer-footer">
+        <div class="drawer-contact-card">
+          <div class="drawer-contact-item">
+            <span class="contact-lbl">Direct Email</span>
+            <a href="mailto:qubithrs@gmail.com" class="contact-val">qubithrs@gmail.com</a>
+          </div>
+          <div class="drawer-contact-item">
+            <span class="contact-lbl">Response Commitment</span>
+            <span class="contact-val">Under 24 Hours Guaranteed</span>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-lg drawer-cta-btn">
+          <span>Schedule Discovery Call</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
     </nav>
-  </div>
+  </aside>
 
   <!-- Floating Quick Chat / Inquiry Button -->
   <a href="contact.html" 

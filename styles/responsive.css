@@ -194,35 +194,18 @@ img, svg, video, canvas {
     justify-content: center;
   }
 
-  /* Mobile Nav Modal Drawer */
+  /* SpaceX Mobile Nav Drawer */
   .nav-modal {
-    width: min(94vw, 420px);
-    max-height: 85vh;
-    border-radius: 20px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .nav-modal-body {
-    padding: 44px 16px 20px 16px;
-  }
-
-  .nav-modal-close {
-    width: 44px;
-    height: 44px;
-    top: 12px;
-    right: 12px;
+    width: min(100vw, 440px);
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
   }
 
   .nav-modal-link {
     min-height: 48px;
     padding: 12px 16px;
-    font-size: 1rem;
-  }
-
-  .nav-modal-cta .btn {
-    min-height: 48px;
-    width: 100%;
+    font-size: 0.95rem;
   }
 
   /* Hero Section */
