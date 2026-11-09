@@ -4,13 +4,13 @@
    ========================================================================== */
 
 :root {
-  /* Crisp White & Platinum Bases */
-  --bg-primary: #FFFFFF;          /* Pure Crisp White */
-  --bg-secondary: #F8FAFC;        /* Subtle Platinum Slate Tint for section contrast */
-  --bg-tertiary: #F1F5F9;         /* Cool Silver Grey panel background */
-  --bg-card: #FFFFFF;             /* Crisp Pure White Cards */
+  /* Soft Platinum Grey Canvas & Crisp White Floating Cards */
+  --bg-primary: #F8FAFC;          /* Soft Platinum Grey Canvas (Easy on the eyes, luxury feel) */
+  --bg-secondary: #F1F5F9;        /* Cool Platinum Slate Tint for alternating section contrast */
+  --bg-tertiary: #E2E8F0;         /* Refined Metallic Silver panel background */
+  --bg-card: #FFFFFF;             /* Crisp Pure White Floating Cards for exquisite depth */
   --bg-card-hover: #FFFFFF;
-  --bg-glass: rgba(255, 255, 255, 0.94); /* Frosted Glass Header */
+  --bg-glass: rgba(248, 250, 252, 0.94); /* Frosted Platinum Glass Header */
   
   /* Jet Black & Silver Text Hierarchy */
   --text-primary: #0A0A0C;        /* Pure Jet Obsidian Black for highest contrast executive titles */
@@ -34,22 +34,22 @@
   /* Luxury Monochromatic Gradients */
   --gradient-primary: linear-gradient(135deg, #0A0A0C 0%, #334155 100%);
   --gradient-accent: linear-gradient(135deg, #0A0A0C 0%, #475569 100%);
-  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.01) 50%, transparent 80%);
-  --gradient-card-border: linear-gradient(135deg, rgba(15, 23, 42, 0.15) 0%, rgba(226, 232, 240, 0.9) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.04) 0%, rgba(15, 23, 42, 0.01) 50%, transparent 80%);
+  --gradient-card-border: linear-gradient(135deg, rgba(15, 23, 42, 0.12) 0%, rgba(203, 213, 225, 0.8) 100%);
   --gradient-card-border-active: linear-gradient(135deg, #0A0A0C 0%, #475569 100%);
 
   /* Borders & Shadows (Refined Silver & Soft Luxury Depths) */
   --border-subtle: #E2E8F0;
   --border-medium: #CBD5E1;
-  --border-glow: rgba(15, 23, 42, 0.2);
+  --border-glow: rgba(15, 23, 42, 0.15);
   
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.03);
-  --shadow-lg: 0 16px 36px rgba(15, 23, 42, 0.09), 0 4px 10px rgba(15, 23, 42, 0.04);
-  --shadow-glow: 0 4px 20px rgba(15, 23, 42, 0.1);
-  --shadow-cyan-glow: 0 4px 20px rgba(15, 23, 42, 0.12);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.08), 0 4px 10px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  --shadow-cyan-glow: 0 4px 20px rgba(15, 23, 42, 0.1);
 
-  --btn-secondary-bg: #F1F5F9;
+  --btn-secondary-bg: #FFFFFF;
   --btn-secondary-text: #0A0A0C;
 
   /* Typography */
