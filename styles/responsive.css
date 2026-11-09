@@ -131,6 +131,25 @@ img, svg, video, canvas {
    3. STANDARD MOBILE & PHABLETS (<= 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+
+  /* Floating Quick Chat Widget for Mobile */
+  .floating-chat-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 6px 20px rgba(0, 163, 255, 0.45), 0 2px 6px rgba(15, 23, 42, 0.12);
+  }
+
+  .floating-chat-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .chat-tooltip {
+    display: none;
+  }
+
   :root {
     --header-height: 64px;
   }

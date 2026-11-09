@@ -80,6 +80,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!data) return;
 
   // 1. Navigation & Mobile Menu (Priority #1: Defensively initialized first so menu NEVER fails)
+  
+  // Floating Chat Smooth Scroll on Contact Page
+  const floatingChat = document.getElementById('floating-chat');
+  if (floatingChat) {
+    if (window.location.pathname.includes('contact.html') || window.location.pathname.endsWith('contact')) {
+      floatingChat.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetForm = document.getElementById('contact-form') || document.querySelector('form');
+        if (targetForm) {
+          targetForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const firstInput = targetForm.querySelector('input:not([type="hidden"]), textarea');
+          if (firstInput) setTimeout(() => firstInput.focus(), 450);
+        }
+      });
+    }
+  }
+
   try {
     initNavigation();
   } catch (err) {
