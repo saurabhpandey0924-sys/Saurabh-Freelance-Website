@@ -66,7 +66,7 @@
         <img src="${project.thumbnail}" alt="${project.title}" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
       </div>
 
-      <div class="project-metrics-row" style="margin-bottom: 30px; padding: 18px 24px; background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.35);">
+      <div class="project-metrics-row" style="margin-bottom: 30px; padding: 18px 24px; background: rgba(99, 102, 241, 0.08); border-color: rgba(99, 102, 241, 0.25);">
         ${metricsHtml}
       </div>
 
@@ -95,9 +95,9 @@
         </ul>
       </div>
 
-      <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: var(--radius-md); padding: 20px; margin-bottom: 30px;">
-        <h4 style="font-size: 1.05rem; color: #C084FC; margin-bottom: 6px;">Business Outcome & Impact</h4>
-        <p style="font-size: 0.92rem; color: #E9D5FF;">${project.caseStudy.results}</p>
+      <div style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.25); border-radius: var(--radius-md); padding: 20px; margin-bottom: 30px;">
+        <h4 style="font-size: 1.05rem; color: var(--accent-secondary); margin-bottom: 6px;">Business Outcome & Impact</h4>
+        <p style="font-size: 0.92rem; color: var(--text-primary);">${project.caseStudy.results}</p>
       </div>
 
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 20px; border-top: 1px solid var(--border-subtle);">

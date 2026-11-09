@@ -30,12 +30,15 @@
   <link rel="stylesheet" href="styles/responsive.css?v=14">
 </head>
 <body>
-<!-- Navigation Bar -->
+  <!-- Interactive Cyber Matrix Grid Canvas Background -->
+  <canvas id="cyber-grid-canvas"></canvas>
+
+  <!-- Navigation Bar -->
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="nav-brand">
         <span class="brand-badge brand-logo-badge">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary); filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.6));">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-secondary); filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));">
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
             <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
             <line x1="12" y1="22.08" x2="12" y2="12"/>
@@ -216,7 +219,7 @@
         <div class="footer-brand-col">
           <a href="index.html" class="nav-brand footer-brand-link">
             <span class="brand-badge brand-logo-badge">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-secondary);">
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
                 <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
                 <line x1="12" y1="22.08" x2="12" y2="12"/>
@@ -313,7 +316,8 @@
   <!-- Scripts -->
   <script src="scripts/data.js"></script>
   <script src="scripts/theme.js"></script>
-<script src="scripts/tilt.js"></script>
+  <script src="scripts/cyber-grid.js"></script>
+  <script src="scripts/tilt.js"></script>
   <script src="scripts/modal.js"></script>
   <script src="scripts/contact.js"></script>
   <script src="scripts/main.js?v=14"></script>
