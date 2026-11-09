@@ -13,7 +13,6 @@ const PORTFOLIO_DATA = {
     location: "Global / Remote (IST / UTC+5:30)",
     email: "qubithrs@gmail.com",
     supportEmail: "supportqubithrs@gmail.com",
-    whatsapp: "+919876543210",
     calendly: "https://calendly.com",
     linkedin: "https://linkedin.com",
     twitter: "https://x.com",
@@ -546,7 +545,7 @@ const PORTFOLIO_DATA = {
         "100% Intellectual Property & Code Ownership",
         "30-Day Post-Launch Bugfix Warranty",
         "95+ Google Lighthouse Performance Score",
-        "Daily Async Loom / WhatsApp Progress Updates"
+        "Daily Async Loom / Sprint Progress Updates"
       ]
     },
     {
@@ -827,7 +826,7 @@ const PORTFOLIO_DATA = {
         keyFeatures: [
           "Role-Based Access Control (RBAC) for Admins, Teachers, Students, and Accounts.",
           "Automated online fee collection with UPI, NetBanking, and automated receipts.",
-          "Digital attendance tracker with SMS/WhatsApp notification triggers for parents.",
+          "Digital attendance tracker with SMS/Email notification triggers for parents.",
           "Examination schedule builder, hall ticket generator, and GPA report cards."
         ],
         results: "Eliminated 85% of manual administrative paperwork and collected 100% of semester fees digitally within the first 48 hours of each academic term."

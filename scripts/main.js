@@ -524,11 +524,6 @@ window.openServiceSlide = function(serviceId) {
   const slideWrapper = document.getElementById('service-slide-wrapper');
   if (!slideWrapper) return;
 
-  const encodedWhatsAppMsg = encodeURIComponent(
-    `Hi QUBITHRS, our team would like to consult on your "${service.title}" technology solution for our company!`
-  );
-  const whatsappUrl = `https://wa.me/919876543210?text=${encodedWhatsAppMsg}`;
-
   slideWrapper.innerHTML = `
     <!-- Top Action Nav -->
     <div class="slide-top-nav">
@@ -633,9 +628,9 @@ window.openServiceSlide = function(serviceId) {
 
         <!-- Action Buttons Footer -->
         <div class="slide-action-footer">
-          <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
-            <span>Discuss on WhatsApp</span>
+          <a href="contact.html?service=${service.id}" class="btn btn-primary btn-lg btn-glow">
+            <span>Inquire About This Service</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
           <a href="contact.html" class="btn btn-secondary btn-lg">
             <span>Book Discovery Call &rarr;</span>
@@ -724,11 +719,6 @@ function initServiceDetailPage() {
   const nextService = services[nextIdx];
 
   document.title = `${service.title} | QUBITHRS Technology Solutions`;
-
-  const encodedWhatsAppMsg = encodeURIComponent(
-    `Hi QUBITHRS, our team would like to consult on your "${service.title}" technology solution for our company!`
-  );
-  const whatsappUrl = `https://wa.me/919876543210?text=${encodedWhatsAppMsg}`;
 
   detailContainer.innerHTML = `
     <!-- Top Action Nav -->
@@ -835,9 +825,9 @@ function initServiceDetailPage() {
 
         <!-- Action Buttons Footer -->
         <div class="slide-action-footer">
-          <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
-            <span>Discuss on WhatsApp</span>
+          <a href="contact.html?service=${service.id}" class="btn btn-primary btn-lg btn-glow">
+            <span>Inquire About This Service</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
           <a href="contact.html" class="btn btn-secondary btn-lg">
             <span>Book Discovery Call &rarr;</span>
@@ -912,7 +902,7 @@ function renderProjects(projects, filter = 'all') {
         <div class="project-content">
           <div class="project-header-info">
             <span class="project-category-pill">${categoryLabel}</span>
-            <button onclick="window.openProjectModal('${p.id}')" style="color:#C084FC; font-size:0.85rem; font-weight:700; display:flex; align-items:center; gap:4px; background:none; border:none; cursor:pointer;" aria-label="View details for ${p.title}">
+            <button onclick="window.openProjectModal('${p.id}')" style="color:var(--accent-primary); font-size:0.85rem; font-weight:600; display:flex; align-items:center; gap:4px; background:none; border:none; cursor:pointer;" aria-label="View details for ${p.title}">
               Details &rarr;
             </button>
           </div>
@@ -1074,8 +1064,8 @@ function renderAbout(about) {
       <div class="about-grid">
         <!-- Profile Column -->
         <div class="about-profile-card reveal">
-          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: #2E1065; color: #E9D5FF; border: 1.5px solid #2E1065; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
-            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #C084FC; box-shadow: 0 0 8px #C084FC;"></span>
+          <div class="about-profile-header-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; background: rgba(56, 189, 248, 0.12); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.35); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
             <span>ENTERPRISE SOLUTIONS STUDIO</span>
           </div>
           <h3 class="about-profile-name">QUBITHRS Technology Solutions</h3>
