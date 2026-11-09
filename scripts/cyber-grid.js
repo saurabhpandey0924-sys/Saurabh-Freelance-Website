@@ -31,14 +31,14 @@
 
   // Colors matching Cyber Crimson & Obsidian Stealth palette
   const colors = {
-    gridDark: 'rgba(56, 189, 248, 0.08)',        // Sky Blue grid lines
-    gridLight: 'rgba(14, 165, 233, 0.05)',
-    dotDark: 'rgba(56, 189, 248, 0.28)',         // Sky Blue quantum nodes
-    dotLight: 'rgba(14, 165, 233, 0.18)',
-    spotlightInner: 'rgba(56, 189, 248, 0.22)',  // Vibrant Sky Blue cursor spotlight
-    spotlightOuter: 'rgba(14, 165, 233, 0.05)',  // Deep sky blue aura
-    packetColor: '#38BDF8',                      // Electric Sky Blue packet
-    packetAccent: '#FFFFFF'                      // Pure White pulse
+    gridDark: 'rgba(15, 23, 42, 0.04)',          // Refined Silver Slate grid lines
+    gridLight: 'rgba(15, 23, 42, 0.03)',
+    dotDark: 'rgba(15, 23, 42, 0.14)',           // Charcoal quantum nodes
+    dotLight: 'rgba(15, 23, 42, 0.08)',
+    spotlightInner: 'rgba(15, 23, 42, 0.06)',    // Subtle Platinum spotlight aura
+    spotlightOuter: 'rgba(15, 23, 42, 0.015)',
+    packetColor: '#0F172A',                      // Jet Obsidian packet
+    packetAccent: '#64748B'                      // Metallic Silver pulse
   };
 
   function resize() {

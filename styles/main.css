@@ -4,53 +4,53 @@
    ========================================================================== */
 
 :root {
-  /* White & Light Grey Bases */
+  /* Crisp White & Platinum Bases */
   --bg-primary: #FFFFFF;          /* Pure Crisp White */
-  --bg-secondary: #F8FAFC;        /* Subtle Light Slate Tint for section contrast */
-  --bg-tertiary: #F1F5F9;         /* Cool Slate Grey panel background */
+  --bg-secondary: #F8FAFC;        /* Subtle Platinum Slate Tint for section contrast */
+  --bg-tertiary: #F1F5F9;         /* Cool Silver Grey panel background */
   --bg-card: #FFFFFF;             /* Crisp Pure White Cards */
   --bg-card-hover: #FFFFFF;
   --bg-glass: rgba(255, 255, 255, 0.94); /* Frosted Glass Header */
   
-  /* Black & Grey Text Hierarchy */
-  --text-primary: #0F172A;        /* Obsidian Black / Dark Slate for high contrast headings */
-  --text-secondary: #334155;      /* Slate Grey for crisp readable body text */
-  --text-muted: #64748B;          /* Neutral Grey for captions and metadata */
-  --text-invert: #FFFFFF;         /* Pure White invert */
+  /* Jet Black & Silver Text Hierarchy */
+  --text-primary: #0A0A0C;        /* Pure Jet Obsidian Black for highest contrast executive titles */
+  --text-secondary: #334155;      /* Refined Charcoal Slate for readable body text */
+  --text-muted: #64748B;          /* Polished Silver Grey for captions and metadata */
+  --text-invert: #FFFFFF;         /* Pure White invert on black buttons */
   
-  /* Sky Blue Accents */
-  --accent-primary: #0284C7;      /* Vibrant Sky Blue 600 */
-  --accent-primary-hover: #0369A1; /* Deep Sky Blue 700 */
-  --accent-secondary: #0EA5E9;    /* Sky Blue 500 */
-  --accent-secondary-hover: #0284C7;
-  --accent-tertiary: #38BDF8;     /* Sky Blue 400 */
-  --accent-highlight: #0284C7;
-  --accent-neutral: #E2E8F0;      /* Crisp Light Grey */
-  --accent-success: #0284C7;
-  --accent-success-btn: #0284C7;
-  --accent-warning: #64748B;
+  /* Jet Black & Platinum Silver Accents */
+  --accent-primary: #0A0A0C;      /* Jet Black Primary Action Color */
+  --accent-primary-hover: #1E293B; /* Deep Charcoal Slate Hover */
+  --accent-secondary: #0F172A;    /* Obsidian 900 Accent */
+  --accent-secondary-hover: #1E293B;
+  --accent-tertiary: #475569;     /* Slate Silver 600 */
+  --accent-highlight: #0A0A0C;
+  --accent-neutral: #E2E8F0;      /* Fine Metallic Silver Border */
+  --accent-success: #10B981;      /* Emerald Green for active status badges */
+  --accent-success-btn: #0A0A0C;
+  --accent-warning: #D97706;      /* Polished Amber */
   --accent-danger: #E11D48;
   
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%);
-  --gradient-accent: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
-  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.12) 0%, rgba(2, 132, 199, 0.04) 50%, transparent 80%);
-  --gradient-card-border: linear-gradient(135deg, rgba(14, 165, 233, 0.3) 0%, rgba(226, 232, 240, 0.8) 100%);
-  --gradient-card-border-active: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
+  /* Luxury Monochromatic Gradients */
+  --gradient-primary: linear-gradient(135deg, #0A0A0C 0%, #334155 100%);
+  --gradient-accent: linear-gradient(135deg, #0A0A0C 0%, #475569 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.01) 50%, transparent 80%);
+  --gradient-card-border: linear-gradient(135deg, rgba(15, 23, 42, 0.15) 0%, rgba(226, 232, 240, 0.9) 100%);
+  --gradient-card-border-active: linear-gradient(135deg, #0A0A0C 0%, #475569 100%);
 
-  /* Borders & Shadows */
+  /* Borders & Shadows (Refined Silver & Soft Luxury Depths) */
   --border-subtle: #E2E8F0;
   --border-medium: #CBD5E1;
-  --border-glow: rgba(14, 165, 233, 0.35);
+  --border-glow: rgba(15, 23, 42, 0.2);
   
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12), 0 4px 8px rgba(15, 23, 42, 0.06);
-  --shadow-glow: 0 0 24px rgba(14, 165, 233, 0.22);
-  --shadow-cyan-glow: 0 0 28px rgba(14, 165, 233, 0.28);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 16px 36px rgba(15, 23, 42, 0.09), 0 4px 10px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 4px 20px rgba(15, 23, 42, 0.1);
+  --shadow-cyan-glow: 0 4px 20px rgba(15, 23, 42, 0.12);
 
   --btn-secondary-bg: #F1F5F9;
-  --btn-secondary-text: #0F172A;
+  --btn-secondary-text: #0A0A0C;
 
   /* Typography */
   --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
@@ -179,12 +179,12 @@ button {
   gap: 8px;
   padding: 6px 16px;
   border-radius: var(--radius-full);
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  color: var(--accent-primary);
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  color: var(--text-primary);
   font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 16px;
@@ -262,31 +262,19 @@ button {
 }
 
 .btn-primary {
-  background: var(--gradient-primary);
+  background: #0A0A0C;
   color: #FFFFFF;
   font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(10, 10, 12, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
-  border-color: #38BDF8;
+  background: #1E293B;
+  border-color: #334155;
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(56, 189, 248, 0.55);
+  box-shadow: 0 6px 24px rgba(10, 10, 12, 0.35);
   color: #FFFFFF;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
-  box-shadow: 0 6px 22px rgba(14, 165, 233, 0.45);
 }
 
 .btn-secondary {
