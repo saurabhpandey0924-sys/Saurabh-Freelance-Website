@@ -342,7 +342,7 @@
   <!-- Video Viewport -->
   <main class="video-viewport">
     <video id="active-video" class="video-bg" autoplay muted loop playsinline poster="assets/images/ecommerce-bg.jpg">
-      <source id="video-source" src="assets/videos/hero-tech-biz-engineers.mp4" type="video/mp4">
+      <source id="video-source" src="assets/videos/hero-combined-enterprise.mp4" type="video/mp4">
     </video>
 
     <div class="video-overlay" id="video-overlay"></div>
@@ -369,13 +369,23 @@
   <!-- Bottom Video Switcher -->
   <footer class="bottom-selector">
     <div class="selector-title">
-      <span id="grid-header-label">6 TECHNOLOGY BUSINESS VIDEOS (CLICK ANY TO PREVIEW IN REAL-TIME)</span>
-      <span id="active-video-status" style="color: #38BDF8;">Playing: 01 (Tech Team &amp; Multiple Screens)</span>
+      <span id="grid-header-label">★ MASTER COMBINED REEL & TECHNOLOGY BUSINESS VIDEOS</span>
+      <span id="active-video-status" style="color: #38BDF8;">Playing: ★ MASTER (Combined 2+1+4+8+9)</span>
     </div>
 
     <div class="video-cards-grid" id="video-cards-grid">
+      <!-- MASTER COMBINED REEL (2 + 1 + 4 + 8 + 9) -->
+      <div class="video-card active" data-category="business" data-src="assets/videos/hero-combined-enterprise.mp4" data-index="★" style="border-color: #38BDF8; background: rgba(56, 189, 248, 0.18); box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);">
+        <div class="card-top">
+          <span class="video-num" style="color: #F59E0B;">★ MASTER</span>
+          <span class="video-pill" style="color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.12);">5-IN-1 REEL</span>
+        </div>
+        <span class="video-name" style="font-weight: 800; color: #FFFFFF;">Combined (2+1+4+8+9)</span>
+        <span class="video-meta" style="color: #FCD34D;">CEO • Devs • UX • Focus • Code</span>
+      </div>
+
       <!-- BUSINESS 1 -->
-      <div class="video-card active" data-category="business" data-src="assets/videos/hero-tech-biz-engineers.mp4" data-index="1">
+      <div class="video-card" data-category="business" data-src="assets/videos/hero-tech-biz-engineers.mp4" data-index="1">
         <div class="card-top">
           <span class="video-num">01</span>
           <span class="video-pill" style="color: #38BDF8;">Enterprise</span>
@@ -489,7 +499,7 @@
     const applyBtn = document.getElementById('apply-btn');
     const catPills = document.querySelectorAll('.cat-pill');
 
-    let currentVideo = localStorage.getItem('qh_hero_video') || 'assets/videos/hero-tech-biz-engineers.mp4';
+    let currentVideo = localStorage.getItem('qh_hero_video') || 'assets/videos/hero-combined-enterprise.mp4';
     let textHidden = false;
 
     // Filter cards by category
