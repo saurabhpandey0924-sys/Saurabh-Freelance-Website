@@ -27,7 +27,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding-bottom: 140px;
+      padding-bottom: 160px;
       overflow: hidden;
     }
 
@@ -40,7 +40,7 @@
       object-position: center;
       z-index: 1;
       filter: brightness(0.68) contrast(1.15);
-      transition: opacity 0.5s ease;
+      transition: opacity 0.4s ease;
     }
 
     .video-overlay {
@@ -89,9 +89,9 @@
       align-items: center;
       justify-content: space-between;
       padding: 16px 32px;
-      background: rgba(10, 10, 12, 0.82);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      background: rgba(10, 10, 12, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -154,8 +154,8 @@
       left: 0;
       right: 0;
       z-index: 100;
-      padding: 18px 32px;
-      background: rgba(10, 10, 12, 0.92);
+      padding: 16px 32px 20px 32px;
+      background: rgba(10, 10, 12, 0.94);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -176,16 +176,16 @@
 
     .video-cards-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
     }
 
     .video-card {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 14px;
-      border-radius: 10px;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px 12px;
+      border-radius: 8px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
       cursor: pointer;
@@ -202,26 +202,34 @@
     .video-card.active {
       background: rgba(56, 189, 248, 0.14);
       border-color: #38BDF8;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .video-num {
       font-family: var(--font-mono);
-      font-size: 0.88rem;
+      font-size: 0.8rem;
       font-weight: 800;
       color: #38BDF8;
-      flex-shrink: 0;
     }
 
-    .video-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      overflow: hidden;
+    .video-pill {
+      font-size: 0.64rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #CBD5E1;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
     }
 
     .video-name {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: #FFFFFF;
       white-space: nowrap;
@@ -230,22 +238,34 @@
     }
 
     .video-meta {
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: #94A3B8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       .video-cards-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .video-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
       .top-bar {
         padding: 12px 16px;
       }
       .bottom-selector {
-        padding: 14px 16px;
+        padding: 12px 16px 16px 16px;
       }
       .hero-content {
         padding: 0 20px;
+      }
+      .video-viewport {
+        padding-bottom: 230px;
       }
     }
   </style>
@@ -258,10 +278,7 @@
       <a href="index.html" class="ctrl-btn" title="Back to Homepage">
         &larr; Back to Home
       </a>
-      <span class="badge-tag">VIDEO SHOWCASE STUDIO</span>
-      <span style="font-size: 0.84rem; color: #94A3B8; display: none; @media(min-width:768px){display:inline;}">
-        Clean Raw Video (Zero Watermarks / Zero Text Embedded)
-      </span>
+      <span class="badge-tag">AUTHENTIC HUMAN-TECH VIDEO STUDIO</span>
     </div>
 
     <div class="top-actions">
@@ -294,7 +311,7 @@
         We architect and engineer scalable web applications, enterprise SaaS platforms, and autonomous AI automation engines.
       </p>
       <div class="spacex-btn-group">
-        <a href="#division-01" class="spacex-btn">
+        <a href="index.html#division-01" class="spacex-btn">
           <span>EXPLORE CORE DIVISIONS</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
@@ -306,48 +323,72 @@
     </div>
   </main>
 
-  <!-- Bottom Video Switcher -->
+  <!-- Bottom Video Switcher (6 Curated Human-Tech Videos) -->
   <footer class="bottom-selector">
     <div class="selector-title">
-      <span>SELECT VIDEO CANDIDATE (CLICK TO PREVIEW IN REAL-TIME)</span>
-      <span id="active-video-status" style="color: #38BDF8;">Playing: Candidate 01</span>
+      <span>6 CURATED AUTHENTIC CODING VIDEOS (CLICK ANY TO PREVIEW IN REAL-TIME)</span>
+      <span id="active-video-status" style="color: #38BDF8;">Playing: 01 (Dual-Monitor Engineer)</span>
     </div>
 
     <div class="video-cards-grid">
-      <!-- Candidate 1 -->
+      <!-- Option 1 -->
       <div class="video-card active" data-src="assets/videos/hero-human-engineer.mp4" data-index="1">
-        <span class="video-num">01</span>
-        <div class="video-info">
-          <span class="video-name">Senior Engineer Coding</span>
-          <span class="video-meta">Dual screens • Human craft • 6.2 MB</span>
+        <div class="card-top">
+          <span class="video-num">01</span>
+          <span class="video-pill" style="color: #34D399; border-color: rgba(52,211,153,0.3);">Approved</span>
         </div>
+        <span class="video-name">Dual-Monitor Engineer</span>
+        <span class="video-meta">Pair of screens • Code review</span>
       </div>
 
-      <!-- Candidate 2 -->
-      <div class="video-card" data-src="assets/videos/hero-futuristic-human.mp4" data-index="2">
-        <span class="video-num">02</span>
-        <div class="video-info">
-          <span class="video-name">Human & Neural Interface</span>
-          <span class="video-meta">Hologram VR • Futuristic human • 5.8 MB</span>
+      <!-- Option 2 -->
+      <div class="video-card" data-src="assets/videos/hero-developer-focus.mp4" data-index="2">
+        <div class="card-top">
+          <span class="video-num">02</span>
+          <span class="video-pill">Deep Focus</span>
         </div>
+        <span class="video-name">Senior Dev System Focus</span>
+        <span class="video-meta">Concentrated • Big display</span>
       </div>
 
-      <!-- Candidate 3 -->
-      <div class="video-card" data-src="assets/videos/hero-datacenter-cloud.mp4" data-index="3">
-        <span class="video-num">03</span>
-        <div class="video-info">
-          <span class="video-name">Cloud Datacenter Timelapse</span>
-          <span class="video-meta">Server infrastructure • Hardware • 3.4 MB</span>
+      <!-- Option 3 -->
+      <div class="video-card" data-src="assets/videos/hero-multi-screen-coder.mp4" data-index="3">
+        <div class="card-top">
+          <span class="video-num">03</span>
+          <span class="video-pill">Dark Studio</span>
         </div>
+        <span class="video-name">Multi-Screen Workstation</span>
+        <span class="video-meta">Atmospheric code monitors</span>
       </div>
 
-      <!-- Candidate 4 -->
-      <div class="video-card" data-src="assets/videos/hero-humanoid-ai.mp4" data-index="4">
-        <span class="video-num">04</span>
-        <div class="video-info">
-          <span class="video-name">Humanoid Robotics & AI</span>
-          <span class="video-meta">Autonomous mechanics • AI lab • 4.6 MB</span>
+      <!-- Option 4 -->
+      <div class="video-card" data-src="assets/videos/hero-multi-display-architect.mp4" data-index="4">
+        <div class="card-top">
+          <span class="video-num">04</span>
+          <span class="video-pill">Multi-Display</span>
         </div>
+        <span class="video-name">Architecture Monitor</span>
+        <span class="video-meta">Code patterns & data logs</span>
+      </div>
+
+      <!-- Option 5 -->
+      <div class="video-card" data-src="assets/videos/hero-hands-typing-code.mp4" data-index="5">
+        <div class="card-top">
+          <span class="video-num">05</span>
+          <span class="video-pill">High Energy</span>
+        </div>
+        <span class="video-name">Hands Engineering Code</span>
+        <span class="video-meta">Mechanical keys • Screen glow</span>
+      </div>
+
+      <!-- Option 6 -->
+      <div class="video-card" data-src="assets/videos/hero-software-engineering.mp4" data-index="6">
+        <div class="card-top">
+          <span class="video-num">06</span>
+          <span class="video-pill">Night Sprint</span>
+        </div>
+        <span class="video-name">Lead Developer Sprint</span>
+        <span class="video-meta">Modern software building</span>
       </div>
     </div>
   </footer>
@@ -363,8 +404,20 @@
     const videoOverlay = document.getElementById('video-overlay');
     const applyBtn = document.getElementById('apply-btn');
 
-    let currentVideo = 'assets/videos/hero-human-engineer.mp4';
+    let currentVideo = localStorage.getItem('qh_hero_video') || 'assets/videos/hero-human-engineer.mp4';
     let textHidden = false;
+
+    // Highlight initial active card
+    cards.forEach(c => {
+      if (c.getAttribute('data-src') === currentVideo) {
+        cards.forEach(card => card.classList.remove('active'));
+        c.classList.add('active');
+        source.src = currentVideo;
+        video.load();
+        video.play().catch(() => {});
+        statusText.textContent = `Playing: 0${c.getAttribute('data-index')} (${c.querySelector('.video-name').textContent})`;
+      }
+    });
 
     // Switch video on card click
     cards.forEach(card => {
@@ -381,7 +434,7 @@
         video.load();
         video.play().catch(e => console.log('Autoplay handled:', e));
 
-        statusText.textContent = `Playing: Candidate 0${idx} (${name})`;
+        statusText.textContent = `Playing: 0${idx} (${name})`;
       });
     });
 
@@ -404,7 +457,7 @@
     // Set as homepage video
     applyBtn.addEventListener('click', () => {
       localStorage.setItem('qh_hero_video', currentVideo);
-      alert('Selected video saved! Opening homepage...');
+      alert('Selected video applied to Homepage! Redirecting...');
       window.location.href = 'index.html';
     });
   </script>
