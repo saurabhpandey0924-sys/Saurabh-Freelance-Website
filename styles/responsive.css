@@ -194,7 +194,7 @@ img, svg, video, canvas {
     justify-content: center;
   }
 
-  /* SpaceX Mobile Nav Drawer */
+  /* QH Mobile Nav Drawer */
   .nav-modal {
     width: min(100vw, 440px);
     height: 100vh;

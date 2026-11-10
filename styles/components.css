@@ -401,7 +401,7 @@
 }
 
 /* ==========================================================================
-   SPACEX LUXURY RIGHT-SIDE SLIDE DRAWER & NAVIGATION
+   QH LUXURY RIGHT-SIDE SLIDE DRAWER & NAVIGATION
    ========================================================================== */
 .nav-menu {
   display: none !important;
@@ -3979,9 +3979,9 @@
 
 
 /* ==========================================================================
-   SPACEX TRUE FULL-VIEWPORT CINEMATIC SLIDES (100vh)
+   QH FULL-VIEWPORT CINEMATIC SLIDES (100vh)
    ========================================================================== */
-.spacex-slide {
+.qh-slide {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -3994,7 +3994,7 @@
   background-color: #0A0A0C;
 }
 
-.spacex-slide-bg {
+.qh-slide-bg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -4008,11 +4008,11 @@
   transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.spacex-slide:hover .spacex-slide-bg {
+.qh-slide:hover .qh-slide-bg {
   transform: scale(1.05);
 }
 
-.spacex-slide-overlay {
+.qh-slide-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -4026,7 +4026,7 @@
   pointer-events: none;
 }
 
-.spacex-slide-content {
+.qh-slide-content {
   position: relative;
   z-index: 3;
   width: 100%;
@@ -4035,7 +4035,7 @@
   padding: 0 48px;
 }
 
-.spacex-slide-kicker {
+.qh-slide-kicker {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   font-weight: 700;
@@ -4045,7 +4045,7 @@
   margin-bottom: 14px;
 }
 
-.spacex-slide-title {
+.qh-slide-title {
   font-family: var(--font-heading);
   font-size: clamp(2.4rem, 5.2vw, 4.2rem);
   font-weight: 800;
@@ -4057,7 +4057,7 @@
   max-width: 900px;
 }
 
-.spacex-slide-subtitle {
+.qh-slide-subtitle {
   font-size: clamp(1rem, 1.5vw, 1.18rem);
   line-height: 1.6;
   color: #CBD5E1;
@@ -4065,14 +4065,14 @@
   max-width: 660px;
 }
 
-.spacex-btn-group {
+.qh-btn-group {
   display: flex;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
 }
 
-.spacex-btn {
+.qh-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -4092,7 +4092,7 @@
   transition: all var(--transition-fast);
 }
 
-.spacex-btn:hover {
+.qh-btn:hover {
   background: #FFFFFF;
   color: #0A0A0C;
   border-color: #FFFFFF;
@@ -4100,19 +4100,19 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.spacex-btn-solid {
+.qh-btn-solid {
   background: #FFFFFF !important;
   color: #0A0A0C !important;
   border-color: #FFFFFF !important;
 }
 
-.spacex-btn-solid:hover {
+.qh-btn-solid:hover {
   background: #F1F5F9 !important;
   transform: translateY(-2px);
 }
 
 /* Closing Slide */
-.spacex-closing-slide {
+.qh-closing-slide {
   background-color: #0A0A0C;
   justify-content: center;
   padding: 120px 0 80px 0;
@@ -4120,14 +4120,14 @@
   min-height: 100vh;
 }
 
-.spacex-slide-bg-solid {
+.qh-slide-bg-solid {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
   z-index: 1;
 }
 
-.spacex-closing-container {
+.qh-closing-container {
   position: relative;
   z-index: 3;
   width: 100%;
@@ -4139,7 +4139,7 @@
   gap: 60px;
 }
 
-.spacex-metrics-row {
+.qh-metrics-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
@@ -4147,13 +4147,13 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.spacex-metric-item {
+.qh-metric-item {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.spacex-metric-val {
+.qh-metric-val {
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 3.8vw, 3.2rem);
   font-weight: 800;
@@ -4161,7 +4161,7 @@
   line-height: 1;
 }
 
-.spacex-metric-lbl {
+.qh-metric-lbl {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 600;
@@ -4171,9 +4171,9 @@
 }
 
 /* ==========================================================================
-   SPACEX TRUE ULTRA-MINIMALIST TRANSPARENT NAVBAR
+   QH ULTRA-MINIMALIST TRANSPARENT NAVBAR
    ========================================================================== */
-body.spacex-theme .navbar {
+body.qh-cinema-theme .navbar {
   height: 64px;
   background: transparent !important;
   backdrop-filter: none !important;
@@ -4182,14 +4182,14 @@ body.spacex-theme .navbar {
   transition: all var(--transition-smooth);
 }
 
-body.spacex-theme .navbar.scrolled {
+body.qh-cinema-theme .navbar.scrolled {
   background: rgba(10, 10, 12, 0.88) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-body.spacex-theme .nav-container {
+body.qh-cinema-theme .nav-container {
   max-width: 1360px;
   width: 100%;
   padding: 0 48px;
@@ -4200,13 +4200,13 @@ body.spacex-theme .nav-container {
 }
 
 @media (max-width: 768px) {
-  body.spacex-theme .nav-container {
+  body.qh-cinema-theme .nav-container {
     padding: 0 24px;
   }
 }
 
-/* 100% Transparent SpaceX Brand Logo & Typography */
-body.spacex-theme .spacex-brand {
+/* 100% Transparent QH Brand Logo & Typography */
+body.qh-cinema-theme .qh-nav-brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -4217,7 +4217,7 @@ body.spacex-theme .spacex-brand {
   margin: 0;
 }
 
-body.spacex-theme .spacex-brand-img {
+body.qh-cinema-theme .qh-brand-img {
   height: 38px;
   width: auto;
   object-fit: contain;
@@ -4227,11 +4227,11 @@ body.spacex-theme .spacex-brand-img {
   transition: transform var(--transition-fast);
 }
 
-body.spacex-theme .spacex-brand:hover .spacex-brand-img {
+body.qh-cinema-theme .qh-nav-brand:hover .qh-brand-img {
   transform: scale(1.05);
 }
 
-body.spacex-theme .spacex-brand-title {
+body.qh-cinema-theme .qh-brand-title {
   font-family: var(--font-heading);
   font-size: clamp(1.15rem, 1.8vw, 1.38rem);
   font-weight: 800;
@@ -4241,18 +4241,18 @@ body.spacex-theme .spacex-brand-title {
   transition: opacity var(--transition-fast);
 }
 
-body.spacex-theme .spacex-brand:hover .spacex-brand-title {
+body.qh-cinema-theme .qh-nav-brand:hover .qh-brand-title {
   opacity: 0.85;
 }
 
-/* 100% Transparent SpaceX 3-Line Hamburger (No Box, No Border) */
-body.spacex-theme .spacex-nav-actions {
+/* 100% Transparent QH 3-Line Hamburger (No Box, No Border) */
+body.qh-cinema-theme .qh-nav-actions {
   display: flex;
   align-items: center;
   margin-left: auto;
 }
 
-body.spacex-theme .menu-toggle-btn {
+body.qh-cinema-theme .menu-toggle-btn {
   display: flex !important;
   flex-direction: column;
   justify-content: center;
@@ -4270,12 +4270,12 @@ body.spacex-theme .menu-toggle-btn {
   transition: opacity var(--transition-fast);
 }
 
-body.spacex-theme .menu-toggle-btn:hover {
+body.qh-cinema-theme .menu-toggle-btn:hover {
   background: transparent !important;
   opacity: 0.75;
 }
 
-body.spacex-theme .menu-toggle-btn .hamburger-line {
+body.qh-cinema-theme .menu-toggle-btn .hamburger-line {
   display: block;
   width: 22px;
   height: 1.8px;
@@ -4284,54 +4284,54 @@ body.spacex-theme .menu-toggle-btn .hamburger-line {
   transition: all var(--transition-fast);
 }
 
-body.spacex-theme .menu-toggle-btn:hover .hamburger-line:nth-child(2) {
+body.qh-cinema-theme .menu-toggle-btn:hover .hamburger-line:nth-child(2) {
   width: 17px;
 }
 
-/* Mobile Responsiveness for SpaceX Slides */
+/* Mobile Responsiveness for QH Cinematic Slides */
 @media (max-width: 768px) {
-  .spacex-slide {
+  .qh-slide {
     padding: 0 0 60px 0;
   }
   
-  .spacex-slide-content {
+  .qh-slide-content {
     padding: 0 20px;
   }
   
-  .spacex-slide-title {
+  .qh-slide-title {
     font-size: clamp(2rem, 8vw, 2.7rem);
     line-height: 1.12;
   }
   
-  .spacex-slide-subtitle {
+  .qh-slide-subtitle {
     font-size: 0.98rem;
     margin-bottom: 24px;
   }
   
-  .spacex-btn-group {
+  .qh-btn-group {
     flex-direction: column;
     width: 100%;
     align-items: stretch;
   }
   
-  .spacex-btn {
+  .qh-btn {
     width: 100%;
     justify-content: center;
   }
   
-  .spacex-metrics-row {
+  .qh-metrics-row {
     grid-template-columns: 1fr 1fr;
     gap: 24px;
   }
   
-  .spacex-closing-container {
+  .qh-closing-container {
     padding: 0 20px;
     gap: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .spacex-metrics-row {
+  .qh-metrics-row {
     grid-template-columns: 1fr;
     gap: 18px;
   }
