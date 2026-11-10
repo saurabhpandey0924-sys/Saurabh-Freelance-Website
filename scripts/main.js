@@ -1401,6 +1401,26 @@ function initScrollAnimations() {
   
   // Also observe skill columns directly
   document.querySelectorAll('.skills-column').forEach(el => observer.observe(el));
+
+  // Defensively ensure background slide videos play smoothly & efficiently
+  const slideVideos = document.querySelectorAll('video.qh-slide-bg');
+  if (slideVideos.length > 0 && 'IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const vid = entry.target;
+        if (entry.isIntersecting) {
+          vid.play().catch(() => {});
+        } else {
+          vid.pause();
+        }
+      });
+    }, { threshold: 0.15 });
+
+    slideVideos.forEach(vid => {
+      videoObserver.observe(vid);
+      vid.play().catch(() => {});
+    });
+  }
 }
 
 /* --------------------------------------------------------------------------
