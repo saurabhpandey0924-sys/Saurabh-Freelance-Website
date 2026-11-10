@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QH TECH SOLUTIONS | Background Video Showcase & Selector</title>
+  <title>QH TECH SOLUTIONS | Technology Business & Engineering Video Showcase</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding-bottom: 160px;
+      padding-bottom: 175px;
       overflow: hidden;
     }
 
@@ -41,6 +41,7 @@
       z-index: 1;
       filter: brightness(0.68) contrast(1.15);
       transition: opacity 0.4s ease;
+      pointer-events: none;
     }
 
     .video-overlay {
@@ -78,7 +79,7 @@
       pointer-events: none;
     }
 
-    /* Fixed Top Control Bar */
+    /* Fixed Top Bar */
     .top-bar {
       position: fixed;
       top: 0;
@@ -88,8 +89,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 32px;
-      background: rgba(10, 10, 12, 0.85);
+      padding: 14px 32px;
+      background: rgba(10, 10, 12, 0.88);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -98,7 +99,7 @@
     .top-left {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .badge-tag {
@@ -107,24 +108,55 @@
       font-weight: 700;
       padding: 5px 12px;
       border-radius: 999px;
-      background: rgba(56, 189, 248, 0.12);
+      background: rgba(56, 189, 248, 0.14);
       color: #38BDF8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .category-pills {
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cat-pill {
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: #94A3B8;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-heading);
+    }
+
+    .cat-pill:hover {
+      color: #FFFFFF;
+    }
+
+    .cat-pill.active {
+      background: #FFFFFF;
+      color: #0A0A0C;
     }
 
     .top-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .ctrl-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 18px;
+      padding: 9px 16px;
       font-size: 0.82rem;
       font-weight: 600;
       border-radius: 8px;
@@ -154,8 +186,8 @@
       left: 0;
       right: 0;
       z-index: 100;
-      padding: 16px 32px 20px 32px;
-      background: rgba(10, 10, 12, 0.94);
+      padding: 14px 32px 18px 32px;
+      background: rgba(10, 10, 12, 0.95);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -163,12 +195,12 @@
 
     .selector-title {
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 700;
       color: #94A3B8;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -177,14 +209,14 @@
     .video-cards-grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
+      gap: 10px;
     }
 
     .video-card {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      padding: 10px 12px;
+      gap: 3px;
+      padding: 9px 12px;
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -213,13 +245,13 @@
 
     .video-num {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 800;
       color: #38BDF8;
     }
 
     .video-pill {
-      font-size: 0.64rem;
+      font-size: 0.62rem;
       padding: 2px 6px;
       border-radius: 4px;
       background: rgba(255, 255, 255, 0.08);
@@ -229,7 +261,7 @@
     }
 
     .video-name {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       color: #FFFFFF;
       white-space: nowrap;
@@ -238,16 +270,19 @@
     }
 
     .video-meta {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       color: #94A3B8;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1200px) {
       .video-cards-grid {
         grid-template-columns: repeat(3, 1fr);
+      }
+      .video-viewport {
+        padding-bottom: 230px;
       }
     }
 
@@ -256,16 +291,18 @@
         grid-template-columns: repeat(2, 1fr);
       }
       .top-bar {
-        padding: 12px 16px;
+        padding: 10px 14px;
+        flex-wrap: wrap;
+        gap: 8px;
       }
       .bottom-selector {
-        padding: 12px 16px 16px 16px;
+        padding: 10px 14px 14px 14px;
       }
       .hero-content {
         padding: 0 20px;
       }
       .video-viewport {
-        padding-bottom: 230px;
+        padding-bottom: 240px;
       }
     }
   </style>
@@ -278,19 +315,25 @@
       <a href="index.html" class="ctrl-btn" title="Back to Homepage">
         &larr; Back to Home
       </a>
-      <span class="badge-tag">AUTHENTIC HUMAN-TECH VIDEO STUDIO</span>
+      <span class="badge-tag">VIDEO SHOWCASE STUDIO</span>
+
+      <!-- Category Switcher Filter -->
+      <div class="category-pills">
+        <button class="cat-pill active" data-filter="business">💼 Technology Business</button>
+        <button class="cat-pill" data-filter="coding">💻 Coding &amp; Dev</button>
+      </div>
     </div>
 
     <div class="top-actions">
       <!-- Toggle Overlay Button -->
       <button class="ctrl-btn" id="toggle-overlay-btn" title="Toggle website text to see raw video footage">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
         <span id="overlay-btn-text">Hide Text (Inspect Raw Video)</span>
       </button>
 
       <!-- Apply to Homepage -->
       <button class="ctrl-btn active" id="apply-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
         <span>Set as Homepage Video</span>
       </button>
     </div>
@@ -299,7 +342,7 @@
   <!-- Video Viewport -->
   <main class="video-viewport">
     <video id="active-video" class="video-bg" autoplay muted loop playsinline poster="assets/images/ecommerce-bg.jpg">
-      <source id="video-source" src="assets/videos/hero-human-engineer.mp4" type="video/mp4">
+      <source id="video-source" src="assets/videos/hero-tech-biz-engineers.mp4" type="video/mp4">
     </video>
 
     <div class="video-overlay" id="video-overlay"></div>
@@ -323,69 +366,109 @@
     </div>
   </main>
 
-  <!-- Bottom Video Switcher (6 Curated Human-Tech Videos) -->
+  <!-- Bottom Video Switcher -->
   <footer class="bottom-selector">
     <div class="selector-title">
-      <span>6 CURATED AUTHENTIC CODING VIDEOS (CLICK ANY TO PREVIEW IN REAL-TIME)</span>
-      <span id="active-video-status" style="color: #38BDF8;">Playing: 01 (Dual-Monitor Engineer)</span>
+      <span id="grid-header-label">6 TECHNOLOGY BUSINESS VIDEOS (CLICK ANY TO PREVIEW IN REAL-TIME)</span>
+      <span id="active-video-status" style="color: #38BDF8;">Playing: 01 (Tech Team &amp; Multiple Screens)</span>
     </div>
 
-    <div class="video-cards-grid">
-      <!-- Option 1 -->
-      <div class="video-card active" data-src="assets/videos/hero-human-engineer.mp4" data-index="1">
+    <div class="video-cards-grid" id="video-cards-grid">
+      <!-- BUSINESS 1 -->
+      <div class="video-card active" data-category="business" data-src="assets/videos/hero-tech-biz-engineers.mp4" data-index="1">
         <div class="card-top">
           <span class="video-num">01</span>
-          <span class="video-pill" style="color: #34D399; border-color: rgba(52,211,153,0.3);">Approved</span>
+          <span class="video-pill" style="color: #38BDF8;">Enterprise</span>
         </div>
-        <span class="video-name">Dual-Monitor Engineer</span>
-        <span class="video-meta">Pair of screens • Code review</span>
+        <span class="video-name">Tech Team &amp; Monitors</span>
+        <span class="video-meta">Engineers &amp; data screens</span>
       </div>
 
-      <!-- Option 2 -->
-      <div class="video-card" data-src="assets/videos/hero-developer-focus.mp4" data-index="2">
+      <!-- BUSINESS 2 -->
+      <div class="video-card" data-category="business" data-src="assets/videos/hero-tech-biz-ceo-team.mp4" data-index="2">
         <div class="card-top">
           <span class="video-num">02</span>
-          <span class="video-pill">Deep Focus</span>
+          <span class="video-pill">Executive</span>
         </div>
-        <span class="video-name">Senior Dev System Focus</span>
-        <span class="video-meta">Concentrated • Big display</span>
+        <span class="video-name">CEO &amp; Tech Squad Sprint</span>
+        <span class="video-meta">Agile leadership &amp; design</span>
       </div>
 
-      <!-- Option 3 -->
-      <div class="video-card" data-src="assets/videos/hero-multi-screen-coder.mp4" data-index="3">
+      <!-- BUSINESS 3 -->
+      <div class="video-card" data-category="business" data-src="assets/videos/hero-tech-biz-boardroom.mp4" data-index="3">
         <div class="card-top">
           <span class="video-num">03</span>
-          <span class="video-pill">Dark Studio</span>
+          <span class="video-pill">Strategy</span>
         </div>
-        <span class="video-name">Multi-Screen Workstation</span>
-        <span class="video-meta">Atmospheric code monitors</span>
+        <span class="video-name">Boardroom Strategy Session</span>
+        <span class="video-meta">Corporate tech roadmap</span>
       </div>
 
-      <!-- Option 4 -->
-      <div class="video-card" data-src="assets/videos/hero-multi-display-architect.mp4" data-index="4">
+      <!-- BUSINESS 4 -->
+      <div class="video-card" data-category="business" data-src="assets/videos/hero-tech-biz-founder-pitch.mp4" data-index="4">
         <div class="card-top">
           <span class="video-num">04</span>
-          <span class="video-pill">Multi-Display</span>
+          <span class="video-pill">Startup</span>
         </div>
-        <span class="video-name">Architecture Monitor</span>
-        <span class="video-meta">Code patterns & data logs</span>
+        <span class="video-name">Founders Reviewing UX</span>
+        <span class="video-meta">SaaS architecture presentation</span>
       </div>
 
-      <!-- Option 5 -->
-      <div class="video-card" data-src="assets/videos/hero-hands-typing-code.mp4" data-index="5">
+      <!-- BUSINESS 5 -->
+      <div class="video-card" data-category="business" data-src="assets/videos/hero-tech-biz-highrise.mp4" data-index="5">
         <div class="card-top">
           <span class="video-num">05</span>
-          <span class="video-pill">High Energy</span>
+          <span class="video-pill">Prestige</span>
         </div>
-        <span class="video-name">Hands Engineering Code</span>
-        <span class="video-meta">Mechanical keys • Screen glow</span>
+        <span class="video-name">Skyline Window Silhouette</span>
+        <span class="video-meta">Tech executives at dusk</span>
       </div>
 
-      <!-- Option 6 -->
-      <div class="video-card" data-src="assets/videos/hero-software-engineering.mp4" data-index="6">
+      <!-- BUSINESS 6 -->
+      <div class="video-card" data-category="business" data-src="assets/videos/hero-tech-biz-corporate-hq.mp4" data-index="6">
         <div class="card-top">
           <span class="video-num">06</span>
-          <span class="video-pill">Night Sprint</span>
+          <span class="video-pill">Architectural</span>
+        </div>
+        <span class="video-name">Glass Corporate Tech HQ</span>
+        <span class="video-meta">High-rise skyscrapers</span>
+      </div>
+
+      <!-- CODING 1 (Hidden in business tab, shown in coding tab) -->
+      <div class="video-card" data-category="coding" data-src="assets/videos/hero-human-engineer.mp4" data-index="7" style="display: none;">
+        <div class="card-top">
+          <span class="video-num">07</span>
+          <span class="video-pill" style="color: #34D399;">Coding</span>
+        </div>
+        <span class="video-name">Dual-Monitor Engineer</span>
+        <span class="video-meta">System code review</span>
+      </div>
+
+      <!-- CODING 2 -->
+      <div class="video-card" data-category="coding" data-src="assets/videos/hero-developer-focus.mp4" data-index="8" style="display: none;">
+        <div class="card-top">
+          <span class="video-num">08</span>
+          <span class="video-pill">Focus</span>
+        </div>
+        <span class="video-name">Senior Dev System Focus</span>
+        <span class="video-meta">Concentrated code audit</span>
+      </div>
+
+      <!-- CODING 3 -->
+      <div class="video-card" data-category="coding" data-src="assets/videos/hero-hands-typing-code.mp4" data-index="9" style="display: none;">
+        <div class="card-top">
+          <span class="video-num">09</span>
+          <span class="video-pill">Hands</span>
+        </div>
+        <span class="video-name">Hands Typing Clean Code</span>
+        <span class="video-meta">Mechanical keys &amp; glow</span>
+      </div>
+
+      <!-- CODING 4 -->
+      <div class="video-card" data-category="coding" data-src="assets/videos/hero-software-engineering.mp4" data-index="10" style="display: none;">
+        <div class="card-top">
+          <span class="video-num">10</span>
+          <span class="video-pill">Sprint</span>
         </div>
         <span class="video-name">Lead Developer Sprint</span>
         <span class="video-meta">Modern software building</span>
@@ -398,25 +481,44 @@
     const source = document.getElementById('video-source');
     const cards = document.querySelectorAll('.video-card');
     const statusText = document.getElementById('active-video-status');
+    const gridHeaderLabel = document.getElementById('grid-header-label');
     const toggleOverlayBtn = document.getElementById('toggle-overlay-btn');
     const overlayBtnText = document.getElementById('overlay-btn-text');
     const heroContent = document.getElementById('hero-content');
     const videoOverlay = document.getElementById('video-overlay');
     const applyBtn = document.getElementById('apply-btn');
+    const catPills = document.querySelectorAll('.cat-pill');
 
-    let currentVideo = localStorage.getItem('qh_hero_video') || 'assets/videos/hero-human-engineer.mp4';
+    let currentVideo = localStorage.getItem('qh_hero_video') || 'assets/videos/hero-tech-biz-engineers.mp4';
     let textHidden = false;
 
-    // Highlight initial active card
-    cards.forEach(c => {
-      if (c.getAttribute('data-src') === currentVideo) {
-        cards.forEach(card => card.classList.remove('active'));
-        c.classList.add('active');
-        source.src = currentVideo;
-        video.load();
-        video.play().catch(() => {});
-        statusText.textContent = `Playing: 0${c.getAttribute('data-index')} (${c.querySelector('.video-name').textContent})`;
-      }
+    // Filter cards by category
+    catPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        catPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.getAttribute('data-filter');
+
+        if (filter === 'business') {
+          gridHeaderLabel.textContent = '6 TECHNOLOGY BUSINESS VIDEOS (CLICK ANY TO PREVIEW IN REAL-TIME)';
+        } else {
+          gridHeaderLabel.textContent = '4 PURE CODING & SOFTWARE CRAFT VIDEOS';
+        }
+
+        cards.forEach(card => {
+          if (card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Trigger click on first visible card of the category
+        const firstVisible = Array.from(cards).find(c => c.getAttribute('data-category') === filter);
+        if (firstVisible) {
+          firstVisible.click();
+        }
+      });
     });
 
     // Switch video on card click
@@ -437,6 +539,17 @@
         statusText.textContent = `Playing: 0${idx} (${name})`;
       });
     });
+
+    // Check if initial video matches any card
+    const initialCard = Array.from(cards).find(c => c.getAttribute('data-src') === currentVideo);
+    if (initialCard) {
+      initialCard.click();
+      const cat = initialCard.getAttribute('data-category');
+      const catPill = Array.from(catPills).find(p => p.getAttribute('data-filter') === cat);
+      if (catPill && !catPill.classList.contains('active')) {
+        catPill.click();
+      }
+    }
 
     // Toggle text overlay to inspect raw video
     toggleOverlayBtn.addEventListener('click', () => {
