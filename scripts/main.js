@@ -76,6 +76,18 @@ function attachMobileCarouselDots(containerId, dotsId, cardSelector) {
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Hero Background Video Persistence
+  const heroVideo = document.getElementById('hero-bg-video');
+  const heroVideoSrc = document.getElementById('hero-video-src');
+  if (heroVideo && heroVideoSrc) {
+    const savedVideo = localStorage.getItem('qh_hero_video');
+    if (savedVideo && heroVideoSrc.getAttribute('src') !== savedVideo) {
+      heroVideoSrc.setAttribute('src', savedVideo);
+      heroVideo.load();
+      heroVideo.play().catch(() => {});
+    }
+  }
+
   const data = window.PORTFOLIO_DATA;
   if (!data) return;
 

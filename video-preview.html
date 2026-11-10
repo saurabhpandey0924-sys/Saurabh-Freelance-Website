@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QH TECH SOLUTIONS | Background Video Showcase & Selector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css?v=16">
+  <link rel="stylesheet" href="styles/components.css?v=16">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0A0A0C;
+      color: #FFFFFF;
+      overflow-x: hidden;
+      font-family: var(--font-body);
+    }
+
+    .video-viewport {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 140px;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+      filter: brightness(0.68) contrast(1.15);
+      transition: opacity 0.5s ease;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 10, 12, 0.45) 0%,
+        rgba(10, 10, 12, 0.15) 35%,
+        rgba(10, 10, 12, 0.65) 65%,
+        rgba(10, 10, 12, 0.96) 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-overlay.hidden {
+      opacity: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 48px;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero-content.hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+
+    /* Fixed Top Control Bar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: rgba(10, 10, 12, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .badge-tag {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ctrl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+      color: #FFFFFF;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .ctrl-btn.active {
+      background: #FFFFFF;
+      color: #0A0A0C;
+      border-color: #FFFFFF;
+    }
+
+    /* Fixed Bottom Video Selector Drawer */
+    .bottom-selector {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 18px 32px;
+      background: rgba(10, 10, 12, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .selector-title {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #94A3B8;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .video-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .video-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .video-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .video-card.active {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: #38BDF8;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+    }
+
+    .video-num {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #38BDF8;
+      flex-shrink: 0;
+    }
+
+    .video-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      overflow: hidden;
+    }
+
+    .video-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .video-meta {
+      font-size: 0.72rem;
+      color: #94A3B8;
+    }
+
+    @media (max-width: 900px) {
+      .video-cards-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .top-bar {
+        padding: 12px 16px;
+      }
+      .bottom-selector {
+        padding: 14px 16px;
+      }
+      .hero-content {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <div class="top-left">
+      <a href="index.html" class="ctrl-btn" title="Back to Homepage">
+        &larr; Back to Home
+      </a>
+      <span class="badge-tag">VIDEO SHOWCASE STUDIO</span>
+      <span style="font-size: 0.84rem; color: #94A3B8; display: none; @media(min-width:768px){display:inline;}">
+        Clean Raw Video (Zero Watermarks / Zero Text Embedded)
+      </span>
+    </div>
+
+    <div class="top-actions">
+      <!-- Toggle Overlay Button -->
+      <button class="ctrl-btn" id="toggle-overlay-btn" title="Toggle website text to see raw video footage">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span id="overlay-btn-text">Hide Text (Inspect Raw Video)</span>
+      </button>
+
+      <!-- Apply to Homepage -->
+      <button class="ctrl-btn active" id="apply-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Set as Homepage Video</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Video Viewport -->
+  <main class="video-viewport">
+    <video id="active-video" class="video-bg" autoplay muted loop playsinline poster="assets/images/ecommerce-bg.jpg">
+      <source id="video-source" src="assets/videos/hero-human-engineer.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-overlay" id="video-overlay"></div>
+
+    <div class="hero-content" id="hero-content">
+      <div class="spacex-slide-kicker">QH TECH SOLUTIONS • ENTERPRISE ENGINEERING</div>
+      <h1 class="spacex-slide-title">BUILDING HIGH-PERFORMANCE DIGITAL SYSTEMS</h1>
+      <p class="spacex-slide-subtitle">
+        We architect and engineer scalable web applications, enterprise SaaS platforms, and autonomous AI automation engines.
+      </p>
+      <div class="spacex-btn-group">
+        <a href="#division-01" class="spacex-btn">
+          <span>EXPLORE CORE DIVISIONS</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <a href="contact.html" class="spacex-btn spacex-btn-solid">
+          <span>SCHEDULE DISCOVERY CALL</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Video Switcher -->
+  <footer class="bottom-selector">
+    <div class="selector-title">
+      <span>SELECT VIDEO CANDIDATE (CLICK TO PREVIEW IN REAL-TIME)</span>
+      <span id="active-video-status" style="color: #38BDF8;">Playing: Candidate 01</span>
+    </div>
+
+    <div class="video-cards-grid">
+      <!-- Candidate 1 -->
+      <div class="video-card active" data-src="assets/videos/hero-human-engineer.mp4" data-index="1">
+        <span class="video-num">01</span>
+        <div class="video-info">
+          <span class="video-name">Senior Engineer Coding</span>
+          <span class="video-meta">Dual screens • Human craft • 6.2 MB</span>
+        </div>
+      </div>
+
+      <!-- Candidate 2 -->
+      <div class="video-card" data-src="assets/videos/hero-futuristic-human.mp4" data-index="2">
+        <span class="video-num">02</span>
+        <div class="video-info">
+          <span class="video-name">Human & Neural Interface</span>
+          <span class="video-meta">Hologram VR • Futuristic human • 5.8 MB</span>
+        </div>
+      </div>
+
+      <!-- Candidate 3 -->
+      <div class="video-card" data-src="assets/videos/hero-datacenter-cloud.mp4" data-index="3">
+        <span class="video-num">03</span>
+        <div class="video-info">
+          <span class="video-name">Cloud Datacenter Timelapse</span>
+          <span class="video-meta">Server infrastructure • Hardware • 3.4 MB</span>
+        </div>
+      </div>
+
+      <!-- Candidate 4 -->
+      <div class="video-card" data-src="assets/videos/hero-humanoid-ai.mp4" data-index="4">
+        <span class="video-num">04</span>
+        <div class="video-info">
+          <span class="video-name">Humanoid Robotics & AI</span>
+          <span class="video-meta">Autonomous mechanics • AI lab • 4.6 MB</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const video = document.getElementById('active-video');
+    const source = document.getElementById('video-source');
+    const cards = document.querySelectorAll('.video-card');
+    const statusText = document.getElementById('active-video-status');
+    const toggleOverlayBtn = document.getElementById('toggle-overlay-btn');
+    const overlayBtnText = document.getElementById('overlay-btn-text');
+    const heroContent = document.getElementById('hero-content');
+    const videoOverlay = document.getElementById('video-overlay');
+    const applyBtn = document.getElementById('apply-btn');
+
+    let currentVideo = 'assets/videos/hero-human-engineer.mp4';
+    let textHidden = false;
+
+    // Switch video on card click
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        cards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+
+        const src = card.getAttribute('data-src');
+        const idx = card.getAttribute('data-index');
+        const name = card.querySelector('.video-name').textContent;
+
+        currentVideo = src;
+        source.src = src;
+        video.load();
+        video.play().catch(e => console.log('Autoplay handled:', e));
+
+        statusText.textContent = `Playing: Candidate 0${idx} (${name})`;
+      });
+    });
+
+    // Toggle text overlay to inspect raw video
+    toggleOverlayBtn.addEventListener('click', () => {
+      textHidden = !textHidden;
+      if (textHidden) {
+        heroContent.classList.add('hidden');
+        videoOverlay.classList.add('hidden');
+        overlayBtnText.textContent = 'Show Text Overlay';
+        toggleOverlayBtn.classList.add('active');
+      } else {
+        heroContent.classList.remove('hidden');
+        videoOverlay.classList.remove('hidden');
+        overlayBtnText.textContent = 'Hide Text (Inspect Raw Video)';
+        toggleOverlayBtn.classList.remove('active');
+      }
+    });
+
+    // Set as homepage video
+    applyBtn.addEventListener('click', () => {
+      localStorage.setItem('qh_hero_video', currentVideo);
+      alert('Selected video saved! Opening homepage...');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

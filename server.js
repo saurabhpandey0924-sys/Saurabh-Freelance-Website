@@ -21,7 +21,9 @@ const MIME_TYPES = {
   '.woff2': 'font/woff2',
   '.ttf': 'font/ttf',
   '.otf': 'font/otf',
-  '.txt': 'text/plain; charset=utf-8'
+  '.txt': 'text/plain; charset=utf-8',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm'
 };
 
 function createServer(port) {
@@ -53,7 +55,7 @@ function createServer(port) {
         // Try appending .html for clean URLs (e.g. /services -> /services.html)
         const htmlFilePath = filePath + '.html';
         if (fs.existsSync(htmlFilePath) && fs.statSync(htmlFilePath).isFile()) {
-          serveFile(htmlFilePath, res);
+          serveFile(htmlFilePath, res, req);
           return;
         }
 
@@ -61,7 +63,7 @@ function createServer(port) {
         if (stats && stats.isDirectory()) {
           const indexFilePath = path.join(filePath, 'index.html');
           if (fs.existsSync(indexFilePath)) {
-            serveFile(indexFilePath, res);
+            serveFile(indexFilePath, res, req);
             return;
           }
         }
@@ -80,16 +82,39 @@ function createServer(port) {
         return;
       }
 
-      serveFile(filePath, res);
+      serveFile(filePath, res, req);
     });
   });
 
-  function serveFile(targetPath, res) {
+  function serveFile(targetPath, res, req) {
     const ext = path.extname(targetPath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+    const stat = fs.statSync(targetPath);
+    const fileSize = stat.size;
+    const range = req && req.headers && req.headers.range;
 
+    if (range && (ext === '.mp4' || ext === '.webm')) {
+      const parts = range.replace(/bytes=/, '').split('-');
+      const start = parseInt(parts[0], 10);
+      const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
+      const chunksize = (end - start) + 1;
+      const file = fs.createReadStream(targetPath, { start, end });
+      res.writeHead(206, {
+        'Content-Range': `bytes ${start}-${end}/${fileSize}`,
+        'Accept-Ranges': 'bytes',
+        'Content-Length': chunksize,
+        'Content-Type': contentType
+      });
+      file.pipe(res);
+      return;
+    }
+
+    res.writeHead(200, {
+      'Content-Length': fileSize,
+      'Content-Type': contentType,
+      'Accept-Ranges': 'bytes'
+    });
     const stream = fs.createReadStream(targetPath);
-    res.writeHead(200, { 'Content-Type': contentType });
     stream.pipe(res);
     stream.on('error', () => {
       if (!res.headersSent) {

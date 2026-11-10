@@ -4002,6 +4002,7 @@
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  pointer-events: none;
   filter: brightness(0.68) contrast(1.15);
   transform: scale(1.02);
   transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
