@@ -4205,10 +4205,11 @@ body.spacex-theme .nav-container {
   }
 }
 
-/* 100% Transparent SpaceX Brand Typography */
+/* 100% Transparent SpaceX Brand Logo & Typography */
 body.spacex-theme .spacex-brand {
   display: inline-flex;
   align-items: center;
+  gap: 12px;
   text-decoration: none;
   background: transparent !important;
   border: none !important;
@@ -4216,18 +4217,32 @@ body.spacex-theme .spacex-brand {
   margin: 0;
 }
 
+body.spacex-theme .spacex-brand-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  background: transparent !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  transition: transform var(--transition-fast);
+}
+
+body.spacex-theme .spacex-brand:hover .spacex-brand-img {
+  transform: scale(1.05);
+}
+
 body.spacex-theme .spacex-brand-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.38rem);
   font-weight: 800;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #FFFFFF !important;
   transition: opacity var(--transition-fast);
 }
 
 body.spacex-theme .spacex-brand:hover .spacex-brand-title {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* 100% Transparent SpaceX 3-Line Hamburger (No Box, No Border) */
