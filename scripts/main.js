@@ -1260,13 +1260,18 @@ function initNavigation() {
 
   highlightPageLink();
 
-  // Sticky Navbar on scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+  // Hide Navbar on scroll, reappear when at top
+  const handleNavbarScroll = () => {
+    if (window.scrollY > 30) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
+  };
+
+  handleNavbarScroll();
+  window.addEventListener('scroll', () => {
+    handleNavbarScroll();
 
     if (isHomePage) {
       // Scrollspy active link on home page
@@ -1295,7 +1300,7 @@ function initNavigation() {
         }
       });
     }
-  });
+  }, { passive: true });
 
   // Dropdown toggle on click & outside click
   if (dropdownToggle && dropdownWrapper) {
