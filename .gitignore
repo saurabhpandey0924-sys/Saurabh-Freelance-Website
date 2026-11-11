@@ -7,3 +7,7 @@ Thumbs.db
 # Archives and build artifacts
 *.zip
 *.tar.gz
+
+# Agent workspace data
+.agents/
+

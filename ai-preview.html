@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agents &amp; Workflow Automation — People Working with AI (6 Ultra-HD Videos) | QUBITHRS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030305;
+      --card-bg: #0c0d12;
+      --border: rgba(255, 255, 255, 0.1);
+      --border-hover: rgba(56, 189, 248, 0.65);
+      --accent: #38bdf8;
+      --accent-purple: #c084fc;
+      --accent-emerald: #34d399;
+      --text-muted: #94a3b8;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: var(--bg);
+      color: #ffffff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 40px 24px 80px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+    .brand-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+    }
+    .badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 40%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 960px;
+      line-height: 1.55;
+    }
+    .instruction-banner {
+      margin: 24px 0 36px;
+      padding: 20px 24px;
+      background: rgba(56, 189, 248, 0.05);
+      border-left: 3px solid #38bdf8;
+      border-radius: 6px;
+      font-size: 0.96rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+    .instruction-banner strong {
+      color: #ffffff;
+    }
+    .instruction-banner code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: #38bdf8;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+    }
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+    }
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .num-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 5px 14px;
+      border-radius: 6px;
+      z-index: 2;
+    }
+    .size-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      z-index: 2;
+    }
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .tag-purple {
+      color: #c084fc;
+      background: rgba(192, 132, 252, 0.08);
+      border-color: rgba(192, 132, 252, 0.2);
+    }
+    .tag-emerald {
+      color: #34d399;
+      background: rgba(52, 211, 153, 0.08);
+      border-color: rgba(52, 211, 153, 0.2);
+    }
+    .footer-actions {
+      margin-top: 56px;
+      text-align: center;
+      padding: 36px;
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.015);
+    }
+    .footer-actions h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+    .footer-actions p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .back-link {
+      color: #38bdf8;
+      text-decoration: underline;
+      font-size: 0.92rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-row">
+        <img src="assets/images/qh-logo-transparent.png" alt="QH Logo" class="brand-logo">
+        <div class="brand-title">QUBITHRS</div>
+      </div>
+      <div class="badge">Core Division 03 • People Working with AI on Computers</div>
+      <h1>AI Agents &amp; Workflow Automation</h1>
+      <p class="subtitle">
+        Exactly what you asked for: Real people, engineers and developers working on computers with AI, featuring visible glowing <strong>"AI"</strong> badges, holographic interface screens, live neural code execution, and real-time telemetry overlays.
+      </p>
+      <div class="instruction-banner">
+        💡 <strong>Live Preview:</strong> Sabhi 6 videos locally downloaded hain aur neeche smoothly play ho rahi hain:
+        <br>• Single video pasand aaye: <code>"Bro video #1 laga do"</code> ya <code>"Video #3 laga do"</code>
+        <br>• 2 videos ko combine karke reel banani ho: <code>"Bro 1 &amp; 3 combine kar do"</code>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="video-wrapper">
+          <div class="num-tag">VIDEO #1</div>
+          <div class="size-tag">AI CORE • 3.3 MB</div>
+          <video src="assets/videos/ai-people-01-command-center.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="card-title">AI Agent Command Center &amp; Multi-Screen Engineer</h2>
+            <p class="card-desc">An AI systems engineer actively orchestrating operations across a 4-monitor array with real-time data maps, audio analysis, and telemetry. Features glowing <strong>[ AI CORE ] AI AGENT COMMAND CENTER</strong> HUD overlay and live 173 T/S inference velocity.</p>
+          </div>
+          <div class="card-meta">
+            <div class="tags">
+              <span class="tag">AI Command Center</span>
+              <span class="tag">4-Screen Workstation</span>
+              <span class="tag-emerald">People with AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="video-wrapper">
+          <div class="num-tag">VIDEO #2</div>
+          <div class="size-tag">AI AGENT • 1.6 MB</div>
+          <video src="assets/videos/ai-people-02-holographic-vr.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="card-title">Holographic AI Interface &amp; Neural VR Gestures</h2>
+            <p class="card-desc">A developer wearing a futuristic VR/AR neural headset, manipulating a curved floating holographic glass interface with hand gestures in front of computer displays. Features glowing <strong>[ AI AGENT ] HOLOGRAPHIC AI INTERFACE</strong> badge and telemetry.</p>
+          </div>
+          <div class="card-meta">
+            <div class="tags">
+              <span class="tag-purple">Holographic AI</span>
+              <span class="tag">AR/VR Neural</span>
+              <span class="tag">Gesture Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="video-wrapper">
+          <div class="num-tag">VIDEO #3</div>
+          <div class="size-tag">AI CODE • 1.9 MB</div>
+          <video src="assets/videos/ai-people-03-code-reflection.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="card-title">AI Neural Code Compiler &amp; Focused Developer</h2>
+            <p class="card-desc">Cinematic close-up of a developer's eyes and glasses reflecting bright cyber code, algorithms, and real-time execution graphs. Features glowing <strong>[ AI CODE ] AI NEURAL CODE COMPILER</strong> HUD with live token streaming.</p>
+          </div>
+          <div class="card-meta">
+            <div class="tags">
+              <span class="tag-emerald">Code Reflection</span>
+              <span class="tag">LLM Stream</span>
+              <span class="tag">Focused Developer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="video-wrapper">
+          <div class="num-tag">VIDEO #4</div>
+          <div class="size-tag">AI LAB • 2.6 MB</div>
+          <video src="assets/videos/ai-people-04-neural-lab.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="card-title">Neural Cognition Research Lab &amp; BCI Displays</h2>
+            <p class="card-desc">AI research scientists in high-tech laboratory with floating holographic neural screens, brain-computer interface waveforms, and cognitive models. Features glowing <strong>[ AI LAB ] NEURAL COGNITION RESEARCH LAB</strong>.</p>
+          </div>
+          <div class="card-meta">
+            <div class="tags">
+              <span class="tag">AI Research Lab</span>
+              <span class="tag-purple">Holographic Waves</span>
+              <span class="tag">Cognitive BCI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card">
+        <div class="video-wrapper">
+          <div class="num-tag">VIDEO #5</div>
+          <div class="size-tag">AI TEAM • 1.8 MB</div>
+          <video src="assets/videos/ai-people-05-team-collaboration.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="card-title">Enterprise AI Agent Team &amp; Laptop Collaboration</h2>
+            <p class="card-desc">Two software engineers collaborating side-by-side on modern laptops, deploying autonomous pipelines in a sleek modern tech office. Features glowing <strong>[ AI TEAM ] ENTERPRISE AI AGENT TEAM</strong> badge.</p>
+          </div>
+          <div class="card-meta">
+            <div class="tags">
+              <span class="tag">AI Team</span>
+              <span class="tag-emerald">Laptop Collaboration</span>
+              <span class="tag">Multi-Agent Swarm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card">
+        <div class="video-wrapper">
+          <div class="num-tag">VIDEO #6</div>
+          <div class="size-tag">AI WORKFLOW • 1.1 MB</div>
+          <video src="assets/videos/ai-people-06-large-screen-dev.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="card-title">Autonomous AI Workflow Builder &amp; Large Monitor</h2>
+            <p class="card-desc">System architect working at dark-mode terminal screen writing code to deploy and orchestrate enterprise AI agent workflows. Features glowing <strong>[ AI WORKFLOW ] AUTONOMOUS AI WORKFLOW BUILDER</strong>.</p>
+          </div>
+          <div class="card-meta">
+            <div class="tags">
+              <span class="tag">AI Workflow</span>
+              <span class="tag-purple">System Architect</span>
+              <span class="tag">Large Monitor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-actions">
+      <h3>Ready to Apply to Division 03?</h3>
+      <p>Bataiye inme se kaun sa number aapko Division 03 ("AI AGENTS &amp; WORKFLOW AUTOMATION") me lagana hai!</p>
+      <a href="/" class="back-link">&larr; Return to Homepage</a>
+    </div>
+  </div>
+</body>
+</html>
