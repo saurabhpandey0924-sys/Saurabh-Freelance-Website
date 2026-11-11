@@ -40,6 +40,55 @@ function createServer(port) {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
 
     const reqUrl = new URL(req.url, `http://localhost:${port}`);
+
+    // Dynamic API to query or update Division 05 background video
+    if (req.method === 'GET' && reqUrl.pathname === '/api/get-division-05') {
+      try {
+        const indexPath = path.join(ROOT_DIR, 'index.html');
+        const html = fs.readFileSync(indexPath, 'utf-8');
+        const match = html.match(/id="division-05"[\s\S]*?<source src="([^"]+)"/);
+        const currentVideo = match ? match[1] : 'assets/videos/api-sample-04-master-reel.mp4';
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, activeVideo: currentVideo }));
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: err.message }));
+      }
+      return;
+    }
+
+    if (req.method === 'POST' && reqUrl.pathname === '/api/set-division-05') {
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      req.on('end', () => {
+        try {
+          const payload = JSON.parse(body || '{}');
+          const targetVideo = payload.video;
+          if (!targetVideo || !targetVideo.startsWith('assets/videos/')) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: false, error: 'Invalid video path' }));
+            return;
+          }
+          const indexPath = path.join(ROOT_DIR, 'index.html');
+          let html = fs.readFileSync(indexPath, 'utf-8');
+          const regex = /(<section class="qh-slide" id="division-05">[\s\S]*?<source src=")[^"]+("[\s\S]*?<\/section>)/;
+          if (regex.test(html)) {
+            html = html.replace(regex, `$1${targetVideo}$2`);
+            fs.writeFileSync(indexPath, html, 'utf-8');
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: true, activeVideo: targetVideo }));
+          } else {
+            res.writeHead(404, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: false, error: 'Division 05 section not found' }));
+          }
+        } catch (err) {
+          res.writeHead(500, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: false, error: err.message }));
+        }
+      });
+      return;
+    }
+
     let decodedPath = decodeURIComponent(reqUrl.pathname);
 
     // Default to index.html
