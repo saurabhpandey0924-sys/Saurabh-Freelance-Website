@@ -691,9 +691,11 @@
     }
 
     function updateActiveClasses() {
+      const isEquivalent = (v1, v2) => v1 === v2 || (v1 && v2 && ((v1.includes('sample-04') && v2.includes('division-05')) || (v2.includes('sample-04') && v1.includes('division-05'))));
+
       cards.forEach(card => {
         const v = card.getAttribute('data-video');
-        if (v === activeOnHomepage) {
+        if (isEquivalent(v, activeOnHomepage)) {
           card.classList.add('is-active-on-home');
         } else {
           card.classList.remove('is-active-on-home');
@@ -701,7 +703,7 @@
       });
 
       // Update indicator
-      if (currentlySelectedVideo === activeOnHomepage) {
+      if (isEquivalent(currentlySelectedVideo, activeOnHomepage)) {
         liveIndicatorPill.style.display = 'inline-flex';
         liveIndicatorPill.textContent = '● LIVE IN DIVISION 05';
         applyBtn.innerHTML = `
@@ -812,3 +814,4 @@
   </script>
 </body>
 </html>
+
