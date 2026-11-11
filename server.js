@@ -2,6 +2,13 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
+process.on('uncaughtException', (err) => {
+  console.error('[UNCAUGHT EXCEPTION]', err.message);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('[UNHANDLED REJECTION]', reason);
+});
+
 const DEFAULT_PORT = 3000;
 const ROOT_DIR = __dirname;
 
@@ -96,7 +103,22 @@ function createServer(port) {
     if (range && (ext === '.mp4' || ext === '.webm')) {
       const parts = range.replace(/bytes=/, '').split('-');
       const start = parseInt(parts[0], 10);
-      const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
+      let end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
+
+      // RFC 7233 Section 4.4: If start is out of range, return 416 Range Not Satisfiable
+      if (isNaN(start) || start >= fileSize || start < 0 || start > end) {
+        res.writeHead(416, {
+          'Content-Range': `bytes */${fileSize}`,
+          'Content-Type': 'text/plain; charset=utf-8'
+        });
+        res.end('416 Range Not Satisfiable');
+        return;
+      }
+
+      if (end >= fileSize) {
+        end = fileSize - 1;
+      }
+
       const chunksize = (end - start) + 1;
       const file = fs.createReadStream(targetPath, { start, end });
       res.writeHead(206, {
@@ -104,6 +126,13 @@ function createServer(port) {
         'Accept-Ranges': 'bytes',
         'Content-Length': chunksize,
         'Content-Type': contentType
+      });
+      file.on('error', (streamErr) => {
+        console.error('[STREAM ERROR]', streamErr.message);
+        if (!res.headersSent) {
+          res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
+          res.end('500 Internal Server Error');
+        }
       });
       file.pipe(res);
       return;
