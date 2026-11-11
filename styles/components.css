@@ -45,14 +45,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  overflow: visible;
-  padding: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: #000000;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 2px;
   transition: all var(--transition-smooth);
   flex-shrink: 0;
 }
@@ -63,14 +63,14 @@
   height: 100%;
   object-fit: contain;
   display: block;
-  border-radius: 10px;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+  border-radius: 7px;
   transition: transform var(--transition-fast);
 }
 
-.nav-brand:hover .brand-badge img,
-.nav-brand:hover .brand-logo-img {
-  transform: translateY(-1px) scale(1.06);
+.nav-brand:hover .brand-badge {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 20px rgba(15, 23, 42, 0.20);
+  transform: translateY(-1px) scale(1.05);
 }
 
 /* Desktop Navigation Menu */
@@ -4227,11 +4227,10 @@ body.qh-cinema-theme .qh-nav-brand {
 }
 
 body.qh-cinema-theme .qh-brand-img {
-  height: 40px;
-  width: 40px;
+  height: 38px;
+  width: auto;
   object-fit: contain;
   display: block;
-  border-radius: 9px;
   background: transparent !important;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
   transition: transform var(--transition-fast);
