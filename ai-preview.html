@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Agents &amp; Workflow Automation — People Working with AI (6 Ultra-HD Videos) | QUBITHRS</title>
+  <title>AI Agents &amp; Workflow Automation — 1080p Ultra-HD Master Suite | QUBITHRS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -49,93 +49,164 @@
     .brand-logo {
       height: 38px;
       width: auto;
-      object-fit: contain;
     }
     .brand-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
-      letter-spacing: 0.18em;
+      font-size: 20px;
       font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #fff;
     }
     .badge {
-      display: inline-block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #38bdf8;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       background: rgba(56, 189, 248, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.35);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--accent);
       padding: 6px 14px;
       border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       margin-bottom: 14px;
     }
     h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      font-size: clamp(26px, 4vw, 42px);
       font-weight: 700;
       letter-spacing: -0.02em;
-      text-transform: uppercase;
       line-height: 1.15;
       margin-bottom: 12px;
-      background: linear-gradient(135deg, #ffffff 40%, #38bdf8 100%);
+      background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .subtitle {
       color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 960px;
-      line-height: 1.55;
-    }
-    .instruction-banner {
-      margin: 24px 0 36px;
-      padding: 20px 24px;
-      background: rgba(56, 189, 248, 0.05);
-      border-left: 3px solid #38bdf8;
-      border-radius: 6px;
-      font-size: 0.96rem;
-      color: #e2e8f0;
+      font-size: 15px;
       line-height: 1.6;
+      max-width: 900px;
+      margin-bottom: 24px;
     }
-    .instruction-banner strong {
-      color: #ffffff;
+    .featured-section {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(12, 13, 18, 0.95) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 48px;
     }
-    .instruction-banner code {
-      font-family: 'JetBrains Mono', monospace;
-      background: rgba(255, 255, 255, 0.12);
-      padding: 2px 8px;
-      border-radius: 4px;
+    .featured-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .featured-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
       color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .featured-badge {
+      background: #34d399;
+      color: #030305;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .featured-video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      margin-bottom: 16px;
+    }
+    .featured-video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .featured-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .featured-live-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #38bdf8;
+      color: #030305;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .featured-live-btn:hover {
+      background: #7dd3fc;
+      transform: translateY(-1px);
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 14px;
       overflow: hidden;
+      transition: all 0.25s ease;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-      position: relative;
     }
     .card:hover {
       border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
     }
-    .video-wrapper {
+    .video-wrap {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
       background: #000;
       overflow: hidden;
     }
-    .video-wrapper video {
+    .video-wrap video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -143,108 +214,66 @@
     }
     .num-tag {
       position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(0, 0, 0, 0.88);
+      top: 12px;
+      left: 12px;
+      background: rgba(12, 13, 18, 0.85);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
       font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
       font-weight: 700;
-      font-size: 0.95rem;
-      padding: 5px 14px;
+      padding: 4px 10px;
       border-radius: 6px;
       z-index: 2;
     }
     .size-tag {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(0, 0, 0, 0.88);
-      backdrop-filter: blur(8px);
+      top: 12px;
+      right: 12px;
+      background: rgba(56, 189, 248, 0.2);
       border: 1px solid rgba(56, 189, 248, 0.4);
-      color: #38bdf8;
+      color: var(--accent);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      padding: 4px 10px;
+      font-size: 11px;
+      padding: 4px 8px;
       border-radius: 6px;
       z-index: 2;
     }
     .card-body {
-      padding: 24px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      flex: 1;
       justify-content: space-between;
-      gap: 18px;
+      flex: 1;
+      gap: 14px;
     }
     .card-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
+      font-size: 17px;
       font-weight: 600;
-      color: #ffffff;
-      line-height: 1.35;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      color: #fff;
     }
     .card-desc {
-      font-size: 0.92rem;
+      font-size: 13px;
       color: var(--text-muted);
-      line-height: 1.55;
+      line-height: 1.5;
     }
-    .card-meta {
+    .tags-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-    .tags {
-      display: flex;
-      gap: 8px;
       flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
     }
-    .tag {
+    .tech-tag {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: #38bdf8;
-      background: rgba(56, 189, 248, 0.08);
-      padding: 4px 10px;
+      font-size: 10px;
+      padding: 3px 8px;
       border-radius: 4px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-    }
-    .tag-purple {
-      color: #c084fc;
-      background: rgba(192, 132, 252, 0.08);
-      border-color: rgba(192, 132, 252, 0.2);
-    }
-    .tag-emerald {
-      color: #34d399;
-      background: rgba(52, 211, 153, 0.08);
-      border-color: rgba(52, 211, 153, 0.2);
-    }
-    .footer-actions {
-      margin-top: 56px;
-      text-align: center;
-      padding: 36px;
-      border: 1px dashed var(--border);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.015);
-    }
-    .footer-actions h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.35rem;
-      margin-bottom: 8px;
-    }
-    .footer-actions p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-    .back-link {
-      color: #38bdf8;
-      text-decoration: underline;
-      font-size: 0.92rem;
-      cursor: pointer;
+      background: rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
   </style>
 </head>
@@ -252,159 +281,137 @@
   <div class="container">
     <header>
       <div class="brand-row">
-        <img src="assets/images/qh-logo-transparent.png" alt="QH Logo" class="brand-logo">
-        <div class="brand-title">QUBITHRS</div>
+        <img src="assets/images/logo.png" alt="QUBITHRS Logo" class="brand-logo" onerror="this.style.display='none'">
+        <div class="brand-title">QUBITHRS // ENTERPRISE AI SUITE</div>
       </div>
-      <div class="badge">Core Division 03 • People Working with AI on Computers</div>
-      <h1>AI Agents &amp; Workflow Automation</h1>
+      <div class="badge">1080p FULL HD • ZERO FAKE OVERLAYS • PRISTINE FIDELITY</div>
+      <h1>Core Division 03 — AI Agents &amp; Workflow Automation</h1>
       <p class="subtitle">
-        Exactly what you asked for: Real people, engineers and developers working on computers with AI, featuring visible glowing <strong>"AI"</strong> badges, holographic interface screens, live neural code execution, and real-time telemetry overlays.
+        100% clean, professional 1080p Full HD video options with zero artificial text boxes, zero medical scans, and crystal-clear bitrate. Featuring real developers at multi-monitor workstations, live terminal matrix telemetry, and keyboard code execution.
       </p>
-      <div class="instruction-banner">
-        💡 <strong>Live Preview:</strong> Sabhi 6 videos locally downloaded hain aur neeche smoothly play ho rahi hain:
-        <br>• Single video pasand aaye: <code>"Bro video #1 laga do"</code> ya <code>"Video #3 laga do"</code>
-        <br>• 2 videos ko combine karke reel banani ho: <code>"Bro 1 &amp; 3 combine kar do"</code>
-      </div>
     </header>
 
-    <div class="grid">
-      <!-- Card 1 -->
-      <div class="card">
-        <div class="video-wrapper">
-          <div class="num-tag">VIDEO #1</div>
-          <div class="size-tag">AI CORE • 3.3 MB</div>
-          <video src="assets/videos/ai-people-01-command-center.mp4" autoplay muted loop playsinline></video>
+    <!-- CURRENTLY ACTIVE MASTER REEL -->
+    <div class="featured-section">
+      <div class="featured-header">
+        <div class="featured-title">
+          <span>⚡ CURRENTLY LIVE ON HOMEPAGE (#division-03)</span>
+          <span class="featured-badge">1080p MASTER REEL</span>
         </div>
-        <div class="card-body">
-          <div>
-            <h2 class="card-title">AI Agent Command Center &amp; Multi-Screen Engineer</h2>
-            <p class="card-desc">An AI systems engineer actively orchestrating operations across a 4-monitor array with real-time data maps, audio analysis, and telemetry. Features glowing <strong>[ AI CORE ] AI AGENT COMMAND CENTER</strong> HUD overlay and live 173 T/S inference velocity.</p>
-          </div>
-          <div class="card-meta">
-            <div class="tags">
-              <span class="tag">AI Command Center</span>
-              <span class="tag">4-Screen Workstation</span>
-              <span class="tag-emerald">People with AI</span>
-            </div>
-          </div>
-        </div>
+        <a href="/#division-03" class="featured-live-btn" target="_blank">
+          <span>VIEW ON HOMEPAGE</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
       </div>
-
-      <!-- Card 2 -->
-      <div class="card">
-        <div class="video-wrapper">
-          <div class="num-tag">VIDEO #2</div>
-          <div class="size-tag">AI AGENT • 1.6 MB</div>
-          <video src="assets/videos/ai-people-02-holographic-vr.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div class="card-body">
-          <div>
-            <h2 class="card-title">Holographic AI Interface &amp; Neural VR Gestures</h2>
-            <p class="card-desc">A developer wearing a futuristic VR/AR neural headset, manipulating a curved floating holographic glass interface with hand gestures in front of computer displays. Features glowing <strong>[ AI AGENT ] HOLOGRAPHIC AI INTERFACE</strong> badge and telemetry.</p>
-          </div>
-          <div class="card-meta">
-            <div class="tags">
-              <span class="tag-purple">Holographic AI</span>
-              <span class="tag">AR/VR Neural</span>
-              <span class="tag">Gesture Automation</span>
-            </div>
-          </div>
-        </div>
+      <div class="featured-video-wrapper">
+        <video src="assets/videos/division-03-ai-automation.mp4" autoplay muted loop playsinline controls></video>
       </div>
-
-      <!-- Card 3 -->
-      <div class="card">
-        <div class="video-wrapper">
-          <div class="num-tag">VIDEO #3</div>
-          <div class="size-tag">AI CODE • 1.9 MB</div>
-          <video src="assets/videos/ai-people-03-code-reflection.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div class="card-body">
-          <div>
-            <h2 class="card-title">AI Neural Code Compiler &amp; Focused Developer</h2>
-            <p class="card-desc">Cinematic close-up of a developer's eyes and glasses reflecting bright cyber code, algorithms, and real-time execution graphs. Features glowing <strong>[ AI CODE ] AI NEURAL CODE COMPILER</strong> HUD with live token streaming.</p>
-          </div>
-          <div class="card-meta">
-            <div class="tags">
-              <span class="tag-emerald">Code Reflection</span>
-              <span class="tag">LLM Stream</span>
-              <span class="tag">Focused Developer</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="card">
-        <div class="video-wrapper">
-          <div class="num-tag">VIDEO #4</div>
-          <div class="size-tag">AI LAB • 2.6 MB</div>
-          <video src="assets/videos/ai-people-04-neural-lab.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div class="card-body">
-          <div>
-            <h2 class="card-title">Neural Cognition Research Lab &amp; BCI Displays</h2>
-            <p class="card-desc">AI research scientists in high-tech laboratory with floating holographic neural screens, brain-computer interface waveforms, and cognitive models. Features glowing <strong>[ AI LAB ] NEURAL COGNITION RESEARCH LAB</strong>.</p>
-          </div>
-          <div class="card-meta">
-            <div class="tags">
-              <span class="tag">AI Research Lab</span>
-              <span class="tag-purple">Holographic Waves</span>
-              <span class="tag">Cognitive BCI</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="card">
-        <div class="video-wrapper">
-          <div class="num-tag">VIDEO #5</div>
-          <div class="size-tag">AI TEAM • 1.8 MB</div>
-          <video src="assets/videos/ai-people-05-team-collaboration.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div class="card-body">
-          <div>
-            <h2 class="card-title">Enterprise AI Agent Team &amp; Laptop Collaboration</h2>
-            <p class="card-desc">Two software engineers collaborating side-by-side on modern laptops, deploying autonomous pipelines in a sleek modern tech office. Features glowing <strong>[ AI TEAM ] ENTERPRISE AI AGENT TEAM</strong> badge.</p>
-          </div>
-          <div class="card-meta">
-            <div class="tags">
-              <span class="tag">AI Team</span>
-              <span class="tag-emerald">Laptop Collaboration</span>
-              <span class="tag">Multi-Agent Swarm</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="card">
-        <div class="video-wrapper">
-          <div class="num-tag">VIDEO #6</div>
-          <div class="size-tag">AI WORKFLOW • 1.1 MB</div>
-          <video src="assets/videos/ai-people-06-large-screen-dev.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div class="card-body">
-          <div>
-            <h2 class="card-title">Autonomous AI Workflow Builder &amp; Large Monitor</h2>
-            <p class="card-desc">System architect working at dark-mode terminal screen writing code to deploy and orchestrate enterprise AI agent workflows. Features glowing <strong>[ AI WORKFLOW ] AUTONOMOUS AI WORKFLOW BUILDER</strong>.</p>
-          </div>
-          <div class="card-meta">
-            <div class="tags">
-              <span class="tag">AI Workflow</span>
-              <span class="tag-purple">System Architect</span>
-              <span class="tag">Large Monitor</span>
-            </div>
-          </div>
-        </div>
+      <div class="featured-footer">
+        <div><strong>Sequence:</strong> Multi-Monitor Engineer (0:00) ➔ AI Matrix Terminal Telemetry (0:04) ➔ Code & Keyboard Execution (0:08)</div>
+        <div><strong>Format:</strong> 1920×1080 Full HD • 30 FPS • ~8.6 Mbps Pristine Bitrate</div>
       </div>
     </div>
 
-    <div class="footer-actions">
-      <h3>Ready to Apply to Division 03?</h3>
-      <p>Bataiye inme se kaun sa number aapko Division 03 ("AI AGENTS &amp; WORKFLOW AUTOMATION") me lagana hai!</p>
-      <a href="/" class="back-link">&larr; Return to Homepage</a>
+    <!-- INDIVIDUAL CLEAN 1080P CLIPS -->
+    <div class="section-title">
+      <span>Stand-Alone 1080p Full HD Video Options</span>
+    </div>
+
+    <div class="grid">
+      <!-- OPTION 1 -->
+      <div class="card">
+        <div class="video-wrap">
+          <div class="num-tag">OPTION #1</div>
+          <div class="size-tag">1080p • 6.8 MB</div>
+          <video src="assets/videos/ai-clean-01-multi-monitor.mp4" autoplay muted loop playsinline controls></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="card-title">Multi-Monitor AI Engineer Workstation</div>
+            <p class="card-desc">
+              Cinematic over-the-shoulder view of a software engineer at a dark multi-monitor workstation with glowing code and dark IDEs.
+            </p>
+            <div class="tags-row">
+              <span class="tech-tag">1920×1080</span>
+              <span class="tech-tag">Multi-Screen</span>
+              <span class="tech-tag">Software Engineer</span>
+              <span class="tech-tag">Dark Ambient</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTION 2 -->
+      <div class="card">
+        <div class="video-wrap">
+          <div class="num-tag">OPTION #2</div>
+          <div class="size-tag">1080p • 8.1 MB</div>
+          <video src="assets/videos/ai-clean-02-matrix-terminal.mp4" autoplay muted loop playsinline controls></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="card-title">Live AI Matrix Terminal &amp; Workflow Telemetry</div>
+            <p class="card-desc">
+              Close-up of LG high-tech monitors running live system monitors, CPU/RAM pipelines, matrix terminal logs, and streaming code.
+            </p>
+            <div class="tags-row">
+              <span class="tech-tag">1920×1080</span>
+              <span class="tech-tag">Live Terminal</span>
+              <span class="tech-tag">AI Telemetry</span>
+              <span class="tech-tag">Matrix Stream</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTION 3 -->
+      <div class="card">
+        <div class="video-wrap">
+          <div class="num-tag">OPTION #3</div>
+          <div class="size-tag">1080p • 5.9 MB</div>
+          <video src="assets/videos/ai-clean-03-coding-interface.mp4" autoplay muted loop playsinline controls></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="card-title">Dual-Screen Code &amp; Mechanical Keyboard</div>
+            <p class="card-desc">
+              Over-the-shoulder high angle showing developer hands typing on mechanical keyboard with dual Samsung monitors glowing with code.
+            </p>
+            <div class="tags-row">
+              <span class="tech-tag">1920×1080</span>
+              <span class="tech-tag">Keyboard Action</span>
+              <span class="tech-tag">Dual Screens</span>
+              <span class="tech-tag">Dark Cyber</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTION 4 -->
+      <div class="card">
+        <div class="video-wrap">
+          <div class="num-tag">OPTION #4</div>
+          <div class="size-tag">1080p • 8.2 MB</div>
+          <video src="assets/videos/ai-clean-04-focused-engineer.mp4" autoplay muted loop playsinline controls></video>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="card-title">Focused Engineer in Cyber Ambient Room</div>
+            <p class="card-desc">
+              Macro profile of a software developer focused on monitor reflection with glowing RGB PC fans and neon lighting.
+            </p>
+            <div class="tags-row">
+              <span class="tech-tag">1920×1080</span>
+              <span class="tech-tag">Engineer Profile</span>
+              <span class="tech-tag">Cyber Ambient</span>
+              <span class="tech-tag">RGB Glow</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
