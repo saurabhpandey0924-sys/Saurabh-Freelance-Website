@@ -30,7 +30,17 @@
   const maxParticles = 24;
 
   // Colors matching Cyber Crimson & Obsidian Stealth palette
-  const colors = {
+  const isDarkPage = document.body && document.body.classList.contains('qh-dark-page');
+  const colors = isDarkPage ? {
+    gridDark: 'rgba(255, 255, 255, 0.04)',          // Subtle frosted grid lines
+    gridLight: 'rgba(255, 255, 255, 0.02)',
+    dotDark: 'rgba(255, 255, 255, 0.16)',           // Luminous quantum nodes
+    dotLight: 'rgba(255, 255, 255, 0.08)',
+    spotlightInner: 'rgba(255, 255, 255, 0.08)',    // Platinum cursor spotlight aura
+    spotlightOuter: 'rgba(255, 255, 255, 0.015)',
+    packetColor: '#FFFFFF',                         // Crisp White packet
+    packetAccent: '#94A3B8'                         // Polished Silver pulse
+  } : {
     gridDark: 'rgba(15, 23, 42, 0.04)',          // Refined Silver Slate grid lines
     gridLight: 'rgba(15, 23, 42, 0.03)',
     dotDark: 'rgba(15, 23, 42, 0.14)',           // Charcoal quantum nodes

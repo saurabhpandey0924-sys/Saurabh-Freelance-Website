@@ -4620,3 +4620,466 @@ p.lead {
   zoom: 0.95;
 }
 
+/* ==========================================================================
+   QH DARK PAGE ARCHITECTURE
+   Applied to all pages except Home (index.html). Footer remains 100% untouched.
+   Deep Pure Black Background (#000000) with High-Contrast White Typography.
+   ========================================================================== */
+
+body.qh-dark-page {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+
+  /* CSS Variables for Deep Dark Luxury Theme */
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-tertiary: #0A0A0C;
+  --bg-card: #0A0A0C;
+  --bg-card-hover: #121318;
+  --bg-glass: rgba(10, 10, 12, 0.92);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #FFFFFF;
+  --text-muted: #E2E8F0;
+  --text-invert: #000000;
+
+  --accent-primary: #FFFFFF;
+  --accent-secondary: #E2E8F0;
+
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-medium: rgba(255, 255, 255, 0.20);
+  --border-glow: rgba(255, 255, 255, 0.40);
+
+  --gradient-primary: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 50%, #CBD5E1 100%);
+  --gradient-accent: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.7);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.95);
+}
+
+/* Sections on Dark Pages */
+body.qh-dark-page .section,
+body.qh-dark-page main,
+body.qh-dark-page .metrics-section,
+body.qh-dark-page .comparison-section,
+body.qh-dark-page .industries-section,
+body.qh-dark-page .cta-banner-section,
+body.qh-dark-page #projects,
+body.qh-dark-page #reviews,
+body.qh-dark-page #contact,
+body.qh-dark-page #about,
+body.qh-dark-page #mission-vision {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+/* All Headings across Dark Pages (excluding footer) */
+body.qh-dark-page h1:not(.footer *),
+body.qh-dark-page h2:not(.footer *),
+body.qh-dark-page h3:not(.footer *),
+body.qh-dark-page h4:not(.footer *),
+body.qh-dark-page h5:not(.footer *),
+body.qh-dark-page h6:not(.footer *),
+body.qh-dark-page .section-title,
+body.qh-dark-page .cta-banner-title,
+body.qh-dark-page .slide-header-title,
+body.qh-dark-page .slide-section-title,
+body.qh-dark-page .project-title,
+body.qh-dark-page .industry-title,
+body.qh-dark-page .capability-title,
+body.qh-dark-page .channel-title,
+body.qh-dark-page .feature-name,
+body.qh-dark-page .process-title,
+body.qh-dark-page .principle-title,
+body.qh-dark-page .mv-title,
+body.qh-dark-page .pillar-title,
+body.qh-dark-page .about-profile-name {
+  color: #FFFFFF !important;
+}
+
+/* All Body, Subtitles, Paragraphs, Lists, and Metadata (excluding footer) */
+body.qh-dark-page p:not(.footer *),
+body.qh-dark-page span:not(.footer *):not(.check-icon):not(.cross-icon):not(.warn-icon):not(.badge-tangerine):not(.badge-lime):not(.badge-plum),
+body.qh-dark-page li:not(.footer *),
+body.qh-dark-page td:not(.footer *),
+body.qh-dark-page th:not(.footer *),
+body.qh-dark-page label:not(.footer *),
+body.qh-dark-page .section-subtitle,
+body.qh-dark-page .cta-banner-subtitle,
+body.qh-dark-page .slide-header-subtitle,
+body.qh-dark-page .slide-overview-text,
+body.qh-dark-page .project-description,
+body.qh-dark-page .project-summary,
+body.qh-dark-page .industry-desc,
+body.qh-dark-page .capability-desc,
+body.qh-dark-page .deliverable-item,
+body.qh-dark-page .testimonial-quote,
+body.qh-dark-page .testimonial-author,
+body.qh-dark-page .testimonial-role,
+body.qh-dark-page .metric-subtext,
+body.qh-dark-page .metric-label,
+body.qh-dark-page .channel-value,
+body.qh-dark-page .process-desc,
+body.qh-dark-page .principle-desc,
+body.qh-dark-page .mv-statement,
+body.qh-dark-page .pillar-desc,
+body.qh-dark-page .about-profile-title,
+body.qh-dark-page .about-quote-text,
+body.qh-dark-page .about-stat-val,
+body.qh-dark-page .about-stat-label,
+body.qh-dark-page .about-trust-item span,
+body.qh-dark-page .faq-answer {
+  color: #FFFFFF !important;
+}
+
+/* Luminous Metallic Gradient Headings */
+body.qh-dark-page .gradient-text,
+body.qh-dark-page .gradient-text-accent {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 50%, #CBD5E1 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #FFFFFF !important;
+}
+
+body.qh-dark-page .metric-number {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 50%, #E2E8F0 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #FFFFFF !important;
+}
+
+body.qh-dark-page strong,
+body.qh-dark-page b {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+/* Cards & Surface Containers */
+body.qh-dark-page .glass-card,
+body.qh-dark-page .metric-card,
+body.qh-dark-page .project-card,
+body.qh-dark-page .testimonial-card,
+body.qh-dark-page .cta-banner-card,
+body.qh-dark-page .service-card,
+body.qh-dark-page .industry-card,
+body.qh-dark-page .industry-detail-card,
+body.qh-dark-page .service-slide-card,
+body.qh-dark-page .contact-info-card,
+body.qh-dark-page .contact-form-card,
+body.qh-dark-page .comparison-table-wrapper,
+body.qh-dark-page .about-profile-card,
+body.qh-dark-page .about-bio-card,
+body.qh-dark-page .mission-card,
+body.qh-dark-page .vision-card,
+body.qh-dark-page .value-card,
+body.qh-dark-page .capability-card,
+body.qh-dark-page .deliverable-card,
+body.qh-dark-page .principle-card,
+body.qh-dark-page .process-card,
+body.qh-dark-page .slide-header-banner,
+body.qh-dark-page .slide-body-content,
+body.qh-dark-page .modal-dialog,
+body.qh-dark-page .faq-item {
+  background: #0A0A0C !important;
+  background-color: #0A0A0C !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.75) !important;
+}
+
+/* Card Hover States */
+body.qh-dark-page .glass-card:hover,
+body.qh-dark-page .metric-card:hover,
+body.qh-dark-page .project-card:hover,
+body.qh-dark-page .testimonial-card:hover,
+body.qh-dark-page .cta-banner-card:hover,
+body.qh-dark-page .service-card:hover,
+body.qh-dark-page .industry-card:hover,
+body.qh-dark-page .principle-card:hover {
+  border-color: rgba(255, 255, 255, 0.38) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 255, 255, 0.05) !important;
+  transform: translateY(-4px);
+}
+
+/* Badges & Pills */
+body.qh-dark-page .section-badge,
+body.qh-dark-page .badge,
+body.qh-dark-page .badge-live,
+body.qh-dark-page .project-tag,
+body.qh-dark-page .about-profile-header-badge,
+body.qh-dark-page .luxury-badge,
+body.qh-dark-page .th-badge {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #FFFFFF !important;
+}
+
+body.qh-dark-page .badge-live::before,
+body.qh-dark-page .cta-banner-card .badge-live::before {
+  background: #FFFFFF !important;
+}
+
+/* Comparison Table on industries.html */
+body.qh-dark-page .comparison-table {
+  background: #0A0A0C !important;
+}
+body.qh-dark-page .comparison-table th {
+  background: #14161E !important;
+  color: #FFFFFF !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+body.qh-dark-page .comparison-table td {
+  color: #FFFFFF !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09) !important;
+}
+body.qh-dark-page .comparison-table .highlight-col {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .th-brand {
+  color: #FFFFFF !important;
+}
+
+/* Form Controls on contact.html */
+body.qh-dark-page .form-label {
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .form-input,
+body.qh-dark-page .form-select,
+body.qh-dark-page .form-textarea {
+  background: #0E0F14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .form-input::placeholder,
+body.qh-dark-page .form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+body.qh-dark-page .form-input:focus,
+body.qh-dark-page .form-select:focus,
+body.qh-dark-page .form-textarea:focus {
+  border-color: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15) !important;
+  background: #141620 !important;
+}
+body.qh-dark-page .form-select option {
+  background: #0E0F14 !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .contact-channel-item {
+  background: #0E0F14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .contact-channel-item:hover {
+  background: #141720 !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Filter Buttons on portfolio.html */
+body.qh-dark-page .filter-btn {
+  background: #0E0F14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .filter-btn:hover {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  background: #161822 !important;
+}
+body.qh-dark-page .filter-btn.active {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border-color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+/* Service Detail Navigation (service-detail.html) */
+body.qh-dark-page .btn-back-to-services,
+body.qh-dark-page .slide-pager-btn {
+  background: #0E0F14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .btn-back-to-services:hover,
+body.qh-dark-page .slide-pager-btn:hover {
+  background: #161822 !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .slide-pager-counter {
+  color: #FFFFFF !important;
+}
+
+/* Top Navbar on Dark Pages */
+body.qh-dark-page .qh-brand-title {
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .nav-crumb-separator {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+body.qh-dark-page .nav-active-page-pill {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .nav-active-page-pill .active-page-name {
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .menu-toggle-btn .hamburger-line {
+  background-color: #FFFFFF !important;
+}
+body.qh-dark-page .menu-toggle-btn {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Primary & Secondary Action Buttons */
+body.qh-dark-page .btn-primary {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid #FFFFFF !important;
+  font-weight: 700 !important;
+}
+body.qh-dark-page .btn-primary:hover {
+  background: #E2E8F0 !important;
+  color: #000000 !important;
+}
+body.qh-dark-page .btn-secondary {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+}
+body.qh-dark-page .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .btn-glow {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.20) !important;
+}
+
+/* Floating Chat Button on Dark Pages */
+body.qh-dark-page #floating-chat {
+  background: #0A0A0C !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Navigation Drawer on Dark Pages */
+body.qh-dark-page .qh-drawer {
+  background: #0A0A0C !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+body.qh-dark-page .nav-modal-link {
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .drawer-label {
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .drawer-num {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+body.qh-dark-page .drawer-contact-card {
+  background: #12141A !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+body.qh-dark-page .contact-lbl {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+body.qh-dark-page .contact-val {
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .nav-modal-close {
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   STRICT FOOTER PROTECTION: KEEP FOOTER 100% UNTOUCHED ACROSS ALL PAGES
+   ========================================================================== */
+body.qh-dark-page .footer {
+  background: #F1F5F9 !important;
+  color: #334155 !important;
+  border-top: 1px solid #CBD5E1 !important;
+}
+
+body.qh-dark-page .footer .footer-bio {
+  color: #334155 !important;
+}
+
+body.qh-dark-page .footer .brand-title {
+  color: #0A0A0C !important;
+}
+
+body.qh-dark-page .footer .brand-subtitle {
+  color: #64748B !important;
+}
+
+body.qh-dark-page .footer .footer-heading {
+  color: #0A0A0C !important;
+}
+
+body.qh-dark-page .footer .footer-link,
+body.qh-dark-page .footer .footer-links a {
+  color: #334155 !important;
+}
+
+body.qh-dark-page .footer .footer-link:hover,
+body.qh-dark-page .footer .footer-links a:hover {
+  color: #0A0A0C !important;
+}
+
+body.qh-dark-page .footer .footer-status-pill {
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0A0A0C !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.qh-dark-page .footer .footer-status-pill svg {
+  color: #0A0A0C !important;
+}
+
+body.qh-dark-page .footer .footer-email-pill {
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0A0A0C !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.qh-dark-page .footer .footer-email-pill svg {
+  color: #0A0A0C !important;
+}
+
+body.qh-dark-page .footer .footer-connect-btn {
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0A0A0C !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.qh-dark-page .footer .footer-connect-btn.linkedin svg {
+  color: #0A66C2 !important;
+}
+
+body.qh-dark-page .footer .footer-connect-btn.twitter svg {
+  color: #0F172A !important;
+}
+
+body.qh-dark-page .footer .footer-connect-btn.instagram svg {
+  color: #E1306C !important;
+}
+
+body.qh-dark-page .footer .footer-bottom {
+  color: #64748B !important;
+  border-top: 1px solid #E2E8F0 !important;
+}
+
+body.qh-dark-page .footer .footer-back-to-top {
+  color: #0A0A0C !important;
+}
+
+
