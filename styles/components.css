@@ -4237,9 +4237,26 @@ html:has(.qh-slide) {
 /* ==========================================================================
    QH ULTRA-MINIMALIST TRANSPARENT NAVBAR (DISAPPEARS ON SCROLL, REAPPEARS AT TOP)
    ========================================================================== */
+/* ==========================================================================
+   QH ULTRA-MINIMALIST NAVBAR & ACTIVE PAGE INDICATOR
+   ========================================================================== */
+.navbar {
+  height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+              background 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Cinema Theme (Home Page) Transparent Nav */
 body.qh-cinema-theme .navbar,
 .navbar.transparent-nav {
-  height: 64px;
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -4249,9 +4266,6 @@ body.qh-cinema-theme .navbar,
   visibility: visible;
   transform: translate3d(0, 0, 0);
   pointer-events: auto;
-  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
-              visibility 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body.qh-cinema-theme .navbar.scrolled,
@@ -4262,6 +4276,22 @@ body.qh-cinema-theme .navbar.scrolled,
   pointer-events: none !important;
 }
 
+/* Light / Content Pages Frosted Glass Sticky Header */
+.navbar:not(.transparent-nav) {
+  background: rgba(248, 250, 252, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+.navbar:not(.transparent-nav).scrolled {
+  background: rgba(248, 250, 252, 0.98) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nav-container.qh-nav-container,
 body.qh-cinema-theme .nav-container {
   max-width: 1360px;
   width: 100%;
@@ -4273,16 +4303,23 @@ body.qh-cinema-theme .nav-container {
 }
 
 @media (max-width: 768px) {
+  .nav-container.qh-nav-container,
   body.qh-cinema-theme .nav-container {
     padding: 0 24px;
   }
 }
 
-/* 100% Transparent QH Brand Logo & Typography */
-body.qh-cinema-theme .qh-nav-brand {
+/* Nav Brand & Active Page Group */
+.nav-brand-group {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+}
+
+.qh-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
   background: transparent !important;
   border: none !important;
@@ -4290,41 +4327,96 @@ body.qh-cinema-theme .qh-nav-brand {
   margin: 0;
 }
 
-body.qh-cinema-theme .qh-brand-img {
-  height: 38px;
+.qh-brand-img {
+  height: 36px;
   width: auto;
   object-fit: contain;
   display: block;
   background: transparent !important;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
   transition: transform var(--transition-fast);
 }
 
-body.qh-cinema-theme .qh-nav-brand:hover .qh-brand-img {
-  transform: scale(1.05);
+.qh-nav-brand:hover .qh-brand-img {
+  transform: scale(1.04);
 }
 
-body.qh-cinema-theme .qh-brand-title {
+.qh-brand-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.15rem, 1.8vw, 1.38rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #FFFFFF !important;
+  color: #0F172A;
   transition: opacity var(--transition-fast);
 }
 
-body.qh-cinema-theme .qh-nav-brand:hover .qh-brand-title {
+body.qh-cinema-theme .qh-brand-title {
+  color: #FFFFFF !important;
+}
+
+.qh-nav-brand:hover .qh-brand-title {
   opacity: 0.85;
 }
 
-/* 100% Transparent QH 3-Line Hamburger (No Box, No Border) */
+/* Nav Crumb Separator */
+.nav-crumb-separator {
+  color: rgba(15, 23, 42, 0.28);
+  font-size: 1.15rem;
+  font-weight: 300;
+  user-select: none;
+  line-height: 1;
+}
+
+body.qh-cinema-theme .nav-crumb-separator {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Active Page Pill Badge */
+.nav-active-page-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 13px;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  font-family: var(--font-sans);
+  font-size: 0.80rem;
+  font-weight: 600;
+  color: #0F172A;
+  letter-spacing: 0.02em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  user-select: none;
+}
+
+body.qh-cinema-theme .nav-active-page-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.20);
+  color: #FFFFFF;
+}
+
+/* Live Active Pulse Dot */
+.nav-active-page-pill .active-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+/* 100% Transparent Minimalist Hamburger Menu */
+.qh-nav-actions,
 body.qh-cinema-theme .qh-nav-actions {
   display: flex;
   align-items: center;
   margin-left: auto;
 }
 
+.qh-hamburger-btn,
 body.qh-cinema-theme .menu-toggle-btn {
   display: flex !important;
   flex-direction: column;
@@ -4343,22 +4435,57 @@ body.qh-cinema-theme .menu-toggle-btn {
   transition: opacity var(--transition-fast);
 }
 
+.qh-hamburger-btn:hover,
 body.qh-cinema-theme .menu-toggle-btn:hover {
   background: transparent !important;
   opacity: 0.75;
 }
 
+.qh-hamburger-btn .hamburger-line,
 body.qh-cinema-theme .menu-toggle-btn .hamburger-line {
   display: block;
   width: 22px;
-  height: 1.8px;
-  background-color: #FFFFFF !important;
+  height: 2px;
+  background-color: #0F172A !important;
   border-radius: 1px;
   transition: all var(--transition-fast);
 }
 
+body.qh-cinema-theme .qh-hamburger-btn .hamburger-line {
+  background-color: #FFFFFF !important;
+}
+
+.qh-hamburger-btn:hover .hamburger-line:nth-child(2),
 body.qh-cinema-theme .menu-toggle-btn:hover .hamburger-line:nth-child(2) {
   width: 17px;
+}
+
+@media (max-width: 540px) {
+  .qh-brand-img {
+    height: 30px;
+  }
+  .qh-brand-title {
+    font-size: 1.02rem;
+    letter-spacing: 0.12em;
+  }
+  .nav-crumb-separator {
+    font-size: 1rem;
+    margin: 0 2px;
+  }
+  .nav-active-page-pill {
+    padding: 3px 9px;
+    font-size: 0.74rem;
+    gap: 6px;
+  }
+  .nav-brand-group {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-crumb-separator {
+    display: none;
+  }
 }
 
 /* Mobile Responsiveness for QH Cinematic Slides */

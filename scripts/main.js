@@ -1251,7 +1251,7 @@ function initNavigation() {
         }
       } else {
         if (
-          (currentPath.includes('services') && cleanHref.includes('services')) ||
+          (currentPath.includes('service') && cleanHref.includes('service')) ||
           (currentPath.includes('portfolio') && cleanHref.includes('portfolio')) ||
           (currentPath.includes('industries') && cleanHref.includes('industries')) ||
           (currentPath.includes('about') && cleanHref.includes('about')) ||

@@ -36,48 +36,23 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="nav-brand" aria-label="QUBITHRS Tech Solutions Home">
-        <span class="brand-badge brand-logo-badge">
-          <img src="assets/images/qh-logo-badge.png" alt="QUBITHRS QH Logo" class="brand-logo-img">
-        </span>
-        <div class="brand-text-wrap">
-          <span class="brand-title">QUBITHRS</span>
-          <span class="brand-subtitle">TECH SOLUTIONS</span>
-        </div>
-      </a>
-
-            <!-- Desktop Navigation Menu (5-Page Sequence) -->
-      <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home & Services</a>
-        </li>
-        <li class="nav-item">
-          <a href="about.html" class="nav-link">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a href="industries.html" class="nav-link">Industries</a>
-        </li>
-        <li class="nav-item">
-          <a href="portfolio.html" class="nav-link">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
-      </ul>
-
-      <!-- Header Actions -->
-      <div class="nav-actions">
-        
-
-        <!-- Header CTA -->
-        <a href="contact.html" class="btn btn-primary btn-sm nav-cta-btn">
-          <span>Book Consultation</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    <div class="nav-container qh-nav-container">
+      <div class="nav-brand-group">
+        <a href="index.html" class="nav-brand qh-nav-brand" aria-label="QUBITHRS Tech Solutions Home">
+          <img src="assets/images/qh-logo-black-transparent.png" alt="QUBITHRS QH Logo" class="qh-brand-img">
+          <span class="qh-brand-title">QUBITHRS</span>
         </a>
+        <span class="nav-crumb-separator" aria-hidden="true">/</span>
+        <div class="nav-active-page-pill" aria-label="Current Page: Service Details">
+          <span class="active-pulse-dot" aria-hidden="true"></span>
+          <span class="active-page-name">Service Details</span>
+        </div>
+      </div>
 
-        <!-- Hamburger Menu Button -->
-        <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+      <!-- QH Hamburger Menu (Right Side Only, 100% Transparent) -->
+      <div class="nav-actions qh-nav-actions">
+        <button class="menu-toggle-btn qh-hamburger-btn" id="menu-toggle-btn" aria-label="Toggle Navigation Menu"
+          aria-expanded="false">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -85,15 +60,16 @@
       </div>
     </div>
   </nav>
+
   <!-- QH Luxury Navigation Drawer -->
   <div class="nav-modal-backdrop" id="nav-modal-backdrop"></div>
   <aside class="nav-modal qh-drawer" id="nav-modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="drawer-header">
       <div class="drawer-brand">
-        <span class="brand-badge brand-logo-badge">
-          <img src="assets/images/qh-logo-badge.png" alt="QUBITHRS QH Logo" class="brand-logo-img">
+        <span class="brand-badge brand-logo-badge" style="background: transparent; border: none; box-shadow: none;">
+          <img src="assets/images/qh-logo-transparent.png" alt="QUBITHRS QH Logo" class="brand-logo-img">
         </span>
-        <span class="drawer-brand-name">QH TECH SOLUTIONS</span>
+        <span class="drawer-brand-name">QUBITHRS</span>
       </div>
       <button class="nav-modal-close" id="nav-modal-close" aria-label="Close navigation">&times;</button>
     </div>
@@ -102,7 +78,7 @@
       <div class="drawer-section-label">DIRECT PAGES</div>
       <ul class="nav-modal-list">
         <li>
-          <a href="index.html" class="nav-modal-link ">
+          <a href="index.html" class="nav-modal-link">
             <span class="drawer-num">01</span>
             <span class="drawer-label">HOME & SERVICES (6 DIVISIONS)</span>
             <span class="link-arrow">&rarr;</span>
@@ -116,28 +92,28 @@
           </a>
         </li>
         <li>
-          <a href="industries.html" class="nav-modal-link ">
+          <a href="industries.html" class="nav-modal-link">
             <span class="drawer-num">03</span>
             <span class="drawer-label">INDUSTRIES WE SERVE</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="portfolio.html" class="nav-modal-link ">
+          <a href="portfolio.html" class="nav-modal-link">
             <span class="drawer-num">04</span>
             <span class="drawer-label">PORTFOLIO & CASE STUDIES</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="about.html" class="nav-modal-link ">
+          <a href="about.html" class="nav-modal-link">
             <span class="drawer-num">05</span>
             <span class="drawer-label">ABOUT QUBITHRS & MISSION</span>
             <span class="link-arrow">&rarr;</span>
           </a>
         </li>
         <li>
-          <a href="contact.html" class="nav-modal-link highlight ">
+          <a href="contact.html" class="nav-modal-link highlight">
             <span class="drawer-num">06</span>
             <span class="drawer-label">CONTACT & INQUIRIES</span>
             <span class="link-arrow">&rarr;</span>
