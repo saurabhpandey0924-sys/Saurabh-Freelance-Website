@@ -2078,8 +2078,8 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1.3fr 1.15fr;
-  gap: 48px;
+  grid-template-columns: 1.6fr 1fr 1.35fr 1.25fr;
+  gap: 44px;
   margin-bottom: 48px;
   align-items: start;
 }
@@ -2127,8 +2127,49 @@
   color: var(--text-secondary);
   font-size: 0.92rem;
   line-height: 1.65;
-  margin: 16px 0 16px;
+  margin: 14px 0 12px;
   max-width: 380px;
+}
+
+.footer-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #047857;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  margin: 4px 0 16px 0;
+  transition: all var(--transition-fast);
+}
+
+.footer-status-pill:hover {
+  background: rgba(16, 185, 129, 0.14);
+  border-color: rgba(16, 185, 129, 0.45);
+  color: #065F46;
+  transform: translateY(-1px);
+}
+
+.footer-status-pill .status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  display: inline-block;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
 .footer-emails-wrap {
@@ -2136,7 +2177,7 @@
   flex-direction: column;
   gap: 10px;
   align-items: flex-start;
-  margin: 16px 0 22px;
+  margin: 0 0 12px;
 }
 
 .footer-email-pill {
@@ -2229,13 +2270,13 @@
 .footer-connect-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: var(--radius-sm);
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 9999px;
   background: #FFFFFF;
   border: 1px solid var(--border-medium);
   color: var(--text-primary);
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 600;
   text-decoration: none;
   transition: all var(--transition-fast);
