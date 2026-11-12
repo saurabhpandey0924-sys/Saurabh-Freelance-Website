@@ -5048,40 +5048,41 @@ body.qh-dark-page .menu-toggle-btn {
 }
 
 /* ==========================================================================
-   PRIMARY & SECONDARY ACTION BUTTONS (BULLETPROOF HIGH-CONTRAST)
+   PRIMARY & SECONDARY ACTION BUTTONS (STEALTH OBSIDIAN PILL ARCHITECTURE)
    ========================================================================== */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-glow,
+.luxury-cta,
+.drawer-cta-btn,
+.filter-btn,
+.slide-pager-btn,
+.btn-back-to-services,
+button[type="submit"],
+#contact-submit-btn,
+.modal-dialog .btn,
+.project-card .btn {
+  border-radius: 9999px !important;
+}
+
 body.qh-dark-page .btn-primary,
 body.qh-dark-page .btn-primary *,
-body.qh-dark-page .btn-primary span,
-body.qh-dark-page .btn-primary svg,
-body.qh-dark-page .btn-primary path,
-body.qh-dark-page .btn-primary line,
-body.qh-dark-page .btn-primary polyline,
-body.qh-dark-page .btn-primary polygon,
 body.qh-dark-page button[type="submit"],
 body.qh-dark-page button[type="submit"] *,
-body.qh-dark-page button[type="submit"] span,
-body.qh-dark-page button[type="submit"] svg,
-body.qh-dark-page button[type="submit"] path,
-body.qh-dark-page button[type="submit"] line,
-body.qh-dark-page button[type="submit"] polyline,
-body.qh-dark-page button[type="submit"] polygon,
 body.qh-dark-page #contact-submit-btn,
 body.qh-dark-page #contact-submit-btn *,
-body.qh-dark-page #contact-submit-btn span,
-body.qh-dark-page #contact-submit-btn svg,
 body.qh-dark-page .drawer-cta-btn,
 body.qh-dark-page .drawer-cta-btn *,
-body.qh-dark-page .drawer-cta-btn span,
-body.qh-dark-page .drawer-cta-btn svg,
 body.qh-dark-page .luxury-cta,
 body.qh-dark-page .luxury-cta *,
-body.qh-dark-page .luxury-cta span,
-body.qh-dark-page .luxury-cta svg {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  stroke: #000000 !important;
-  border-color: #FFFFFF !important;
+body.qh-dark-page .filter-btn.active,
+body.qh-dark-page .filter-btn.active * {
+  background: #14161B !important;
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
   font-weight: 700 !important;
 }
 
@@ -5089,9 +5090,10 @@ body.qh-dark-page .btn-primary span,
 body.qh-dark-page button[type="submit"] span,
 body.qh-dark-page #contact-submit-btn span,
 body.qh-dark-page .drawer-cta-btn span,
-body.qh-dark-page .luxury-cta span {
+body.qh-dark-page .luxury-cta span,
+body.qh-dark-page .filter-btn.active span {
   background: transparent !important;
-  color: #000000 !important;
+  color: #FFFFFF !important;
   font-weight: 700 !important;
   display: inline-block !important;
   opacity: 1 !important;
@@ -5104,8 +5106,8 @@ body.qh-dark-page #contact-submit-btn svg,
 body.qh-dark-page .drawer-cta-btn svg,
 body.qh-dark-page .luxury-cta svg {
   background: transparent !important;
-  color: #000000 !important;
-  stroke: #000000 !important;
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
   fill: none !important;
 }
 
@@ -5113,7 +5115,7 @@ body.qh-dark-page .btn-primary svg *,
 body.qh-dark-page button[type="submit"] svg *,
 body.qh-dark-page #contact-submit-btn svg *,
 body.qh-dark-page .drawer-cta-btn svg * {
-  stroke: #000000 !important;
+  stroke: #FFFFFF !important;
 }
 
 body.qh-dark-page .btn-primary:hover,
@@ -5131,10 +5133,11 @@ body.qh-dark-page .drawer-cta-btn:hover span,
 body.qh-dark-page .luxury-cta:hover,
 body.qh-dark-page .luxury-cta:hover *,
 body.qh-dark-page .luxury-cta:hover span {
-  background: #E2E8F0 !important;
-  color: #000000 !important;
-  stroke: #000000 !important;
-  border-color: #E2E8F0 !important;
+  background: #232733 !important;
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.12) !important;
 }
 
 body.qh-dark-page .btn-primary:hover span,
@@ -5143,7 +5146,7 @@ body.qh-dark-page #contact-submit-btn:hover span,
 body.qh-dark-page .drawer-cta-btn:hover span,
 body.qh-dark-page .luxury-cta:hover span {
   background: transparent !important;
-  color: #000000 !important;
+  color: #FFFFFF !important;
 }
 
 /* Secondary Action Buttons (Crisp White on Dark Background) */
@@ -5153,6 +5156,7 @@ body.qh-dark-page .btn-secondary span {
   background: transparent !important;
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
   border-color: rgba(255, 255, 255, 0.4) !important;
   font-weight: 600 !important;
 }
@@ -5185,7 +5189,7 @@ body.qh-dark-page .btn-secondary:hover span {
 }
 
 body.qh-dark-page .btn-glow {
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.12), 0 4px 18px rgba(0, 0, 0, 0.6) !important;
 }
 
 /* Floating Chat Button on Dark Pages */

@@ -13,11 +13,11 @@
 
   // Factory Default State
   const DEFAULTS = {
-    buttonRadius: 10,
-    shapePreset: 'rounded',
+    buttonRadius: 50,
+    shapePreset: 'pill',
     themePreset: 'monochrome',
-    primaryBtnBg: '#FFFFFF',
-    primaryBtnText: '#000000',
+    primaryBtnBg: '#14161b',
+    primaryBtnText: '#ffffff',
     secondaryBtnBg: 'transparent',
     secondaryBtnBorder: 'rgba(255, 255, 255, 0.4)',
     secondaryBtnText: '#FFFFFF',
@@ -31,10 +31,10 @@
   const THEME_PRESETS = {
     monochrome: {
       name: 'Monochrome Stealth',
-      sub: 'Jet Black & Pure White',
-      dots: ['#FFFFFF', '#000000', '#0E0F14'],
-      primaryBtnBg: '#FFFFFF',
-      primaryBtnText: '#000000',
+      sub: 'Obsidian Pill & Crisp White',
+      dots: ['#14161B', '#FFFFFF', '#0E0F14'],
+      primaryBtnBg: '#14161b',
+      primaryBtnText: '#ffffff',
       secondaryBtnBg: 'transparent',
       secondaryBtnBorder: 'rgba(255, 255, 255, 0.4)',
       secondaryBtnText: '#FFFFFF',
@@ -748,3 +748,4 @@ body.qh-dark-page .badge-live {
   // Launch
   init();
 })();
+
