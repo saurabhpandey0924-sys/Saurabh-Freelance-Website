@@ -4310,16 +4310,14 @@ body:not(.qh-cinema-theme) .navbar.scrolled:hover .qh-nav-actions {
   pointer-events: auto !important;
 }
 
-/* SIRF active page pill stays floating, 100% transparent and visible! */
+/* SIRF active page pill stays floating, Starlink-grade matte obsidian badge! */
 body:not(.qh-cinema-theme) .navbar.scrolled .nav-active-page-pill {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
-  background: rgba(248, 250, 252, 0.60) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(15, 23, 42, 0.16) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+  background: linear-gradient(180deg, #1A1B1E 0%, #0E0F12 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
   transform: translate3d(0, 0, 0) !important;
 }
 
@@ -4411,49 +4409,38 @@ body.qh-cinema-theme .nav-crumb-separator {
   color: rgba(255, 255, 255, 0.35);
 }
 
-/* Active Page Pill Badge - 100% Transparent */
+/* Starlink-grade Matte Obsidian Active Page Badge */
 .nav-active-page-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 14px;
-  border-radius: 9999px;
-  background: rgba(15, 23, 42, 0.04);
-  border: 1px solid rgba(15, 23, 42, 0.14);
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #0F172A;
-  letter-spacing: 0.02em;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #1A1B1E 0%, #0E0F12 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFFFFF !important;
   user-select: none;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
 }
 
 .nav-active-page-pill:hover {
-  background: rgba(15, 23, 42, 0.08);
-  border-color: rgba(15, 23, 42, 0.22);
+  background: linear-gradient(180deg, #24262B 0%, #141519 100%);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   transform: translateY(-1px);
 }
 
-body.qh-cinema-theme .nav-active-page-pill {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.20);
-  color: #FFFFFF;
-}
-
-/* Live Active Pulse Dot */
-.nav-active-page-pill .active-pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #10B981;
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
-  animation: pulse-green 2s infinite ease-in-out;
-  flex-shrink: 0;
+.nav-active-page-pill .active-page-name {
+  color: #FFFFFF !important;
+  line-height: 1;
 }
 
 /* 100% Transparent Minimalist Hamburger Menu */
