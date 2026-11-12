@@ -1191,17 +1191,21 @@
 .btn-back-to-services {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
   color: var(--accent-primary);
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px 0;
+  padding: 10px 26px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  text-decoration: none;
   transition: all var(--transition-fast);
 }
 
@@ -4993,16 +4997,58 @@ body.qh-dark-page .filter-btn.active span {
 }
 
 /* Service Detail Navigation (service-detail.html) */
-body.qh-dark-page .btn-back-to-services,
+body.qh-dark-page .btn-back-to-services {
+  background: #0E0F14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #FFFFFF !important;
+  padding: 10px 26px !important;
+  border-radius: 9999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  transition: all var(--transition-fast) !important;
+}
+body.qh-dark-page .btn-back-to-services *,
+body.qh-dark-page .btn-back-to-services span {
+  color: #FFFFFF !important;
+  white-space: nowrap !important;
+}
+body.qh-dark-page .btn-back-to-services:hover {
+  background: #161822 !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  color: #FFFFFF !important;
+  transform: translateX(-4px) !important;
+}
+
 body.qh-dark-page .slide-pager-btn {
   background: #0E0F14 !important;
-  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
   color: #FFFFFF !important;
+  padding: 8px 20px !important;
+  border-radius: 9999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  transition: all var(--transition-fast) !important;
 }
-body.qh-dark-page .btn-back-to-services:hover,
+body.qh-dark-page .slide-pager-btn *,
+body.qh-dark-page .slide-pager-btn span {
+  color: #FFFFFF !important;
+  white-space: nowrap !important;
+}
 body.qh-dark-page .slide-pager-btn:hover {
   background: #161822 !important;
-  border-color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
   color: #FFFFFF !important;
 }
 body.qh-dark-page .slide-pager-counter {
@@ -5052,6 +5098,7 @@ button[type="submit"],
 .modal-dialog .btn,
 .project-card .btn {
   border-radius: 9999px !important;
+  white-space: nowrap !important;
 }
 
 /* STRICT ZERO-BORDER ON BUTTON INNER ELEMENTS (ELIMINATES RECTANGULAR BOX ON SPANS) */
@@ -5070,6 +5117,12 @@ button[type="submit"],
 .drawer-cta-btn span,
 .filter-btn *,
 .filter-btn span,
+.slide-pager-btn *,
+.slide-pager-btn span,
+.btn-back-to-services *,
+.btn-back-to-services span,
+#contact-submit-btn *,
+#contact-submit-btn span,
 button *,
 button span {
   border: none !important;
