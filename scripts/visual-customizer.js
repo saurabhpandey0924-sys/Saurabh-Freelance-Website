@@ -8,26 +8,26 @@
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'qh_visual_customizer_v1';
+  const STORAGE_KEY = 'qh_visual_customizer_v2';
   const DRAG_STORAGE_KEY = 'qh_visual_customizer_trigger_pos';
 
-  // Default values matching original design system
+  // Default values matching user baseline design
   const DEFAULTS = {
-    slideTitleSize: 48,       // px (clamp fallback avg)
-    slideTitleLineHeight: 1.08,
-    slideSubtitleSize: 17,    // px
-    slideSubtitleLineHeight: 1.6,
-    slideKickerSize: 13,      // px
-    heroTitleSize: 52,        // px
-    bodyFontSize: 16,         // px
-    letterSpacingHeading: -0.8, // px
+    slideTitleSize: 38,       // px
+    slideTitleLineHeight: 1.1,
+    slideSubtitleSize: 15,    // px
+    slideSubtitleLineHeight: 1.5,
+    slideKickerSize: 11,      // px
+    heroTitleSize: 42,        // px
+    bodyFontSize: 14,         // px
+    letterSpacingHeading: -0.5, // px
 
-    btnFontSize: 14,          // px
-    btnPaddingY: 14,          // px
-    btnPaddingX: 34,          // px
-    btnRadius: 4,             // px
-    btnLetterSpacing: 1.2,    // px
-    btnScale: 1.0,            // multiplier
+    btnFontSize: 12,          // px
+    btnPaddingY: 8,           // px
+    btnPaddingX: 16,          // px
+    btnRadius: 36,            // px (modern pill rounded)
+    btnLetterSpacing: 1.0,    // px
+    btnScale: 0.95,           // multiplier
     btnTextTransform: 'uppercase'
   };
 

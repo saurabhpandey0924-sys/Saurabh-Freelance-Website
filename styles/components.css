@@ -4358,3 +4358,55 @@ body.qh-cinema-theme .menu-toggle-btn:hover .hamburger-line:nth-child(2) {
     gap: 18px;
   }
 }
+
+/* ==========================================================================
+   PERMANENT DESIGN CUSTOMIZATION (USER BASELINE)
+   ========================================================================== */
+
+/* Slide Titles (Divisions 01 to 06) */
+.qh-slide-title {
+  font-size: 38px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.5px !important;
+}
+
+/* Slide Subtitles */
+.qh-slide-subtitle {
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+}
+
+/* Slide Kickers */
+.qh-slide-kicker {
+  font-size: 11px !important;
+}
+
+/* Hero Section Title */
+.hero-title,
+.qh-closing-title,
+h1.qh-slide-title {
+  font-size: 42px !important;
+}
+
+/* General Body / Subtext */
+.qh-slide-subtitle,
+.footer-bio,
+p.lead {
+  font-size: 14px !important;
+}
+
+/* Button Sizing & Architecture (All Division & Primary Buttons) */
+.qh-btn,
+.qh-btn-solid,
+.btn-hero-primary,
+.nav-cta-btn,
+.service-card-cta {
+  font-size: 12px !important;
+  padding: 8px 16px !important;
+  border-radius: 36px !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  transform-origin: left center;
+  zoom: 0.95;
+}
+
