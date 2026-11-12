@@ -752,9 +752,9 @@ function initServiceDetailPage() {
   detailContainer.innerHTML = `
     <!-- Top Action Nav -->
     <div class="slide-top-nav">
-      <a href="services.html" class="btn-back-to-services" aria-label="Back to all services">
+      <a href="index.html" class="btn-back-to-services" aria-label="Back to home and services showcase">
         <span>&larr;</span>
-        <span>BACK TO SERVICES</span>
+        <span>BACK TO SHOWCASE</span>
       </a>
 
       <div class="slide-pager-nav">

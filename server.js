@@ -91,6 +91,13 @@ function createServer(port) {
 
     let decodedPath = decodeURIComponent(reqUrl.pathname);
 
+    // Redirect legacy services directory requests to home & services showcase
+    if (decodedPath === '/services' || decodedPath === '/services.html') {
+      res.writeHead(301, { Location: '/' });
+      res.end();
+      return;
+    }
+
     // Default to index.html
     if (decodedPath === '/' || decodedPath === '') {
       decodedPath = '/index.html';
