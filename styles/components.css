@@ -4621,7 +4621,7 @@ p.lead {
 }
 
 /* ==========================================================================
-   QH DARK PAGE ARCHITECTURE
+   QH DARK PAGE ARCHITECTURE (EXHAUSTIVE & BULLETPROOF)
    Applied to all pages except Home (index.html). Footer remains 100% untouched.
    Deep Pure Black Background (#000000) with High-Contrast White Typography.
    ========================================================================== */
@@ -4640,7 +4640,7 @@ body.qh-dark-page {
 
   --text-primary: #FFFFFF;
   --text-secondary: #FFFFFF;
-  --text-muted: #E2E8F0;
+  --text-muted: #CBD5E1;
   --text-invert: #000000;
 
   --accent-primary: #FFFFFF;
@@ -4685,6 +4685,8 @@ body.qh-dark-page .section-title,
 body.qh-dark-page .cta-banner-title,
 body.qh-dark-page .slide-header-title,
 body.qh-dark-page .slide-section-title,
+body.qh-dark-page .slide-solution-title,
+body.qh-dark-page .slide-box-heading,
 body.qh-dark-page .project-title,
 body.qh-dark-page .industry-title,
 body.qh-dark-page .capability-title,
@@ -4694,7 +4696,8 @@ body.qh-dark-page .process-title,
 body.qh-dark-page .principle-title,
 body.qh-dark-page .mv-title,
 body.qh-dark-page .pillar-title,
-body.qh-dark-page .about-profile-name {
+body.qh-dark-page .about-profile-name,
+body.qh-dark-page .luxury-title {
   color: #FFFFFF !important;
 }
 
@@ -4709,6 +4712,9 @@ body.qh-dark-page .section-subtitle,
 body.qh-dark-page .cta-banner-subtitle,
 body.qh-dark-page .slide-header-subtitle,
 body.qh-dark-page .slide-overview-text,
+body.qh-dark-page .slide-solution-desc,
+body.qh-dark-page .slide-item-row,
+body.qh-dark-page .slide-guarantee-row,
 body.qh-dark-page .project-description,
 body.qh-dark-page .project-summary,
 body.qh-dark-page .industry-desc,
@@ -4717,6 +4723,7 @@ body.qh-dark-page .deliverable-item,
 body.qh-dark-page .testimonial-quote,
 body.qh-dark-page .testimonial-author,
 body.qh-dark-page .testimonial-role,
+body.qh-dark-page .testimonial-name,
 body.qh-dark-page .metric-subtext,
 body.qh-dark-page .metric-label,
 body.qh-dark-page .channel-value,
@@ -4728,8 +4735,11 @@ body.qh-dark-page .about-profile-title,
 body.qh-dark-page .about-quote-text,
 body.qh-dark-page .about-stat-val,
 body.qh-dark-page .about-stat-label,
+body.qh-dark-page .about-trust-item,
 body.qh-dark-page .about-trust-item span,
-body.qh-dark-page .faq-answer {
+body.qh-dark-page .faq-answer,
+body.qh-dark-page .luxury-desc,
+body.qh-dark-page .slide-spec-val {
   color: #FFFFFF !important;
 }
 
@@ -4757,7 +4767,9 @@ body.qh-dark-page b {
   font-weight: 700 !important;
 }
 
-/* Cards & Surface Containers */
+/* ==========================================================================
+   PRIMARY CARDS & CONTAINERS (DEEP OBSIDIAN #0A0A0C)
+   ========================================================================== */
 body.qh-dark-page .glass-card,
 body.qh-dark-page .metric-card,
 body.qh-dark-page .project-card,
@@ -4775,12 +4787,6 @@ body.qh-dark-page .about-bio-card,
 body.qh-dark-page .mission-card,
 body.qh-dark-page .vision-card,
 body.qh-dark-page .value-card,
-body.qh-dark-page .capability-card,
-body.qh-dark-page .deliverable-card,
-body.qh-dark-page .principle-card,
-body.qh-dark-page .process-card,
-body.qh-dark-page .slide-header-banner,
-body.qh-dark-page .slide-body-content,
 body.qh-dark-page .modal-dialog,
 body.qh-dark-page .faq-item {
   background: #0A0A0C !important;
@@ -4789,7 +4795,7 @@ body.qh-dark-page .faq-item {
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.75) !important;
 }
 
-/* Card Hover States */
+/* Primary Card Hover States */
 body.qh-dark-page .glass-card:hover,
 body.qh-dark-page .metric-card:hover,
 body.qh-dark-page .project-card:hover,
@@ -4797,10 +4803,99 @@ body.qh-dark-page .testimonial-card:hover,
 body.qh-dark-page .cta-banner-card:hover,
 body.qh-dark-page .service-card:hover,
 body.qh-dark-page .industry-card:hover,
-body.qh-dark-page .principle-card:hover {
+body.qh-dark-page .about-profile-card:hover,
+body.qh-dark-page .mission-card:hover,
+body.qh-dark-page .vision-card:hover {
   border-color: rgba(255, 255, 255, 0.38) !important;
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 255, 255, 0.05) !important;
   transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   NESTED SUB-CARDS, PILLARS, INNER BOXES (DARK CHARCOAL #0E0F14 - NEVER WHITE!)
+   ========================================================================== */
+body.qh-dark-page .mv-pillar-item,
+body.qh-dark-page .slide-solution-card,
+body.qh-dark-page .slide-deliverables-box,
+body.qh-dark-page .slide-spec-panel,
+body.qh-dark-page .principle-card,
+body.qh-dark-page .process-card,
+body.qh-dark-page .contact-channel-item,
+body.qh-dark-page .about-quote-box {
+  background: #0E0F14 !important;
+  background-color: #0E0F14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.qh-dark-page .mv-pillar-item:hover,
+body.qh-dark-page .slide-solution-card:hover,
+body.qh-dark-page .principle-card:hover,
+body.qh-dark-page .process-card:hover,
+body.qh-dark-page .contact-channel-item:hover {
+  background: #141620 !important;
+  background-color: #141620 !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7) !important;
+  transform: translateX(4px);
+}
+
+/* Nested Bullet Icons & Number Circles inside Inner Cards */
+body.qh-dark-page .mv-pillar-item .pillar-bullet {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+body.qh-dark-page .mv-pillar-item .pillar-title {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+body.qh-dark-page .mv-pillar-item .pillar-desc {
+  color: #CBD5E1 !important;
+}
+
+body.qh-dark-page .mv-icon-badge {
+  background: #141620 !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+}
+
+body.qh-dark-page .mv-label {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.qh-dark-page .principle-icon-wrapper,
+body.qh-dark-page .slide-solution-icon,
+body.qh-dark-page .channel-icon {
+  background: #161822 !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+}
+
+body.qh-dark-page .about-quote-box {
+  border-left: 4px solid #FFFFFF !important;
+}
+
+body.qh-dark-page .about-stat-label,
+body.qh-dark-page .slide-spec-key,
+body.qh-dark-page .channel-title {
+  color: #94A3B8 !important;
+}
+
+body.qh-dark-page .about-trust-icon {
+  color: #10B981 !important;
+}
+
+/* Service Detail Banner & Header */
+body.qh-dark-page .slide-header-banner {
+  background: #0E0F14 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+body.qh-dark-page .slide-body-content {
+  background: #0A0A0C !important;
 }
 
 /* Badges & Pills */
@@ -4810,7 +4905,10 @@ body.qh-dark-page .badge-live,
 body.qh-dark-page .project-tag,
 body.qh-dark-page .about-profile-header-badge,
 body.qh-dark-page .luxury-badge,
-body.qh-dark-page .th-badge {
+body.qh-dark-page .th-badge,
+body.qh-dark-page .service-tag,
+body.qh-dark-page .tech-pill,
+body.qh-dark-page .project-category-pill {
   background: rgba(255, 255, 255, 0.08) !important;
   border: 1px solid rgba(255, 255, 255, 0.22) !important;
   color: #FFFFFF !important;
@@ -4831,7 +4929,7 @@ body.qh-dark-page .comparison-table th {
   border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
 }
 body.qh-dark-page .comparison-table td {
-  color: #FFFFFF !important;
+  color: #E2E8F0 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.09) !important;
 }
 body.qh-dark-page .comparison-table .highlight-col {
@@ -4870,14 +4968,21 @@ body.qh-dark-page .form-select option {
   background: #0E0F14 !important;
   color: #FFFFFF !important;
 }
-body.qh-dark-page .contact-channel-item {
-  background: #0E0F14 !important;
+
+/* FAQ Accordion on contact.html */
+body.qh-dark-page .faq-item {
+  background: #0A0A0C !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+body.qh-dark-page .faq-question-btn {
+  background: transparent !important;
   color: #FFFFFF !important;
 }
-body.qh-dark-page .contact-channel-item:hover {
-  background: #141720 !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
+body.qh-dark-page .faq-answer {
+  color: #CBD5E1 !important;
+}
+body.qh-dark-page .faq-icon {
+  color: #FFFFFF !important;
 }
 
 /* Filter Buttons on portfolio.html */
@@ -4921,13 +5026,16 @@ body.qh-dark-page .qh-brand-title {
 body.qh-dark-page .nav-crumb-separator {
   color: rgba(255, 255, 255, 0.55) !important;
 }
-body.qh-dark-page .nav-active-page-pill {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+body.qh-dark-page .nav-active-page-pill,
+body.qh-dark-page .navbar.scrolled .nav-active-page-pill {
+  background: linear-gradient(180deg, #1A1B1E 0%, #0E0F12 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
   color: #FFFFFF !important;
 }
 body.qh-dark-page .nav-active-page-pill .active-page-name {
   color: #FFFFFF !important;
+  font-weight: 700 !important;
 }
 body.qh-dark-page .menu-toggle-btn .hamburger-line {
   background-color: #FFFFFF !important;
@@ -4995,6 +5103,28 @@ body.qh-dark-page .contact-val {
 }
 body.qh-dark-page .nav-modal-close {
   color: #FFFFFF !important;
+}
+
+/* Project Modal on Dark Pages */
+body.qh-dark-page .modal-dialog {
+  background: #0A0A0C !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .modal-dialog h1,
+body.qh-dark-page .modal-dialog h2,
+body.qh-dark-page .modal-dialog h3,
+body.qh-dark-page .modal-dialog h4,
+body.qh-dark-page .modal-dialog h5,
+body.qh-dark-page .modal-dialog p,
+body.qh-dark-page .modal-dialog li,
+body.qh-dark-page .modal-dialog span {
+  color: #FFFFFF !important;
+}
+body.qh-dark-page .modal-close-btn {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 /* ==========================================================================
@@ -5081,5 +5211,3 @@ body.qh-dark-page .footer .footer-bottom {
 body.qh-dark-page .footer .footer-back-to-top {
   color: #0A0A0C !important;
 }
-
-
