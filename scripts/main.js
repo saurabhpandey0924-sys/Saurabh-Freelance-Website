@@ -1393,6 +1393,16 @@ function initNavigation() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
+
+  // Clicking active page pill smoothly scrolls back to top
+  document.querySelectorAll('.nav-active-page-pill').forEach(pill => {
+    pill.style.cursor = 'pointer';
+    pill.setAttribute('title', 'Click to scroll to top');
+    pill.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
 }
 
 function initScrollAnimations() {

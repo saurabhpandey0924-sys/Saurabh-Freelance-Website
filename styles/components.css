@@ -2,25 +2,28 @@
    QUBITHRS TECHNOLOGY SOLUTIONS PLATFORM - COMPONENT STYLES
    ========================================================================== */
 
-/* 1. NAVBAR */
+/* 1. NAVBAR - 100% TRANSPARENT */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--header-height);
-  background: var(--bg-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-subtle);
+  height: 64px;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
   z-index: 1000;
-  transition: all var(--transition-smooth);
+  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar.scrolled {
-  background: var(--bg-glass);
-  border-bottom-color: var(--border-medium);
-  box-shadow: var(--shadow-sm);
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 .nav-container {
@@ -4235,60 +4238,89 @@ html:has(.qh-slide) {
 }
 
 /* ==========================================================================
-   QH ULTRA-MINIMALIST TRANSPARENT NAVBAR (DISAPPEARS ON SCROLL, REAPPEARS AT TOP)
+   QH 100% TRANSPARENT MINIMALIST NAVBAR & ACTIVE PAGE INDICATOR
    ========================================================================== */
-/* ==========================================================================
-   QH ULTRA-MINIMALIST NAVBAR & ACTIVE PAGE INDICATOR
-   ========================================================================== */
-.navbar {
+.navbar,
+.navbar.transparent-nav {
   height: 64px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
-              background 0.3s ease,
-              border-color 0.3s ease,
-              box-shadow 0.3s ease;
-}
-
-/* Cinema Theme (Home Page) Transparent Nav */
-body.qh-cinema-theme .navbar,
-.navbar.transparent-nav {
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+  border: none !important;
   border-bottom: none !important;
   box-shadow: none !important;
   opacity: 1;
   visibility: visible;
-  transform: translate3d(0, 0, 0);
   pointer-events: auto;
+  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-body.qh-cinema-theme .navbar.scrolled,
-.navbar.transparent-nav.scrolled {
+/* Home Page Cinema Theme: Entire navbar disappears on scroll */
+body.qh-cinema-theme .navbar.scrolled {
   opacity: 0 !important;
   visibility: hidden !important;
   transform: translate3d(0, -28px, 0) !important;
   pointer-events: none !important;
 }
 
-/* Light / Content Pages Frosted Glass Sticky Header */
-.navbar:not(.transparent-nav) {
-  background: rgba(248, 250, 252, 0.92) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+/* All other pages: On scroll down, navbar brand & hamburger disappear,
+   SIRF transparent active page indicator stays visible! */
+body:not(.qh-cinema-theme) .navbar.scrolled {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: none !important;
 }
 
-.navbar:not(.transparent-nav).scrolled {
-  background: rgba(248, 250, 252, 0.98) !important;
-  border-bottom-color: rgba(15, 23, 42, 0.12) !important;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04) !important;
+/* Hide brand logo & separator on scroll */
+body:not(.qh-cinema-theme) .navbar.scrolled .qh-nav-brand,
+body:not(.qh-cinema-theme) .navbar.scrolled .nav-crumb-separator {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  max-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  transform: translate3d(-14px, 0, 0) !important;
+}
+
+/* Hide hamburger on scroll, but smoothly reveal if hovering near top header */
+body:not(.qh-cinema-theme) .navbar.scrolled .qh-nav-actions {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translate3d(14px, 0, 0) !important;
+  pointer-events: none !important;
+}
+
+body:not(.qh-cinema-theme) .navbar.scrolled:hover .qh-nav-actions {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate3d(0, 0, 0) !important;
+  pointer-events: auto !important;
+}
+
+/* SIRF active page pill stays floating, 100% transparent and visible! */
+body:not(.qh-cinema-theme) .navbar.scrolled .nav-active-page-pill {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  background: rgba(248, 250, 252, 0.60) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(15, 23, 42, 0.16) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+  transform: translate3d(0, 0, 0) !important;
 }
 
 .nav-container.qh-nav-container,
@@ -4314,6 +4346,11 @@ body.qh-cinema-theme .nav-container {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  transition: gap 0.35s ease;
+}
+
+body:not(.qh-cinema-theme) .navbar.scrolled .nav-brand-group {
+  gap: 0;
 }
 
 .qh-nav-brand {
@@ -4325,6 +4362,7 @@ body.qh-cinema-theme .nav-container {
   border: none !important;
   padding: 0;
   margin: 0;
+  transition: opacity 0.35s ease, max-width 0.38s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s ease, margin 0.35s ease;
 }
 
 .qh-brand-img {
@@ -4347,6 +4385,7 @@ body.qh-cinema-theme .nav-container {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #0F172A;
+  white-space: nowrap;
   transition: opacity var(--transition-fast);
 }
 
@@ -4365,30 +4404,39 @@ body.qh-cinema-theme .qh-brand-title {
   font-weight: 300;
   user-select: none;
   line-height: 1;
+  transition: opacity 0.35s ease, max-width 0.35s ease;
 }
 
 body.qh-cinema-theme .nav-crumb-separator {
   color: rgba(255, 255, 255, 0.35);
 }
 
-/* Active Page Pill Badge */
+/* Active Page Pill Badge - 100% Transparent */
 .nav-active-page-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 13px;
+  padding: 5px 14px;
   border-radius: 9999px;
-  background: rgba(15, 23, 42, 0.05);
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.14);
   font-family: var(--font-sans);
-  font-size: 0.80rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: #0F172A;
   letter-spacing: 0.02em;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-active-page-pill:hover {
+  background: rgba(15, 23, 42, 0.08);
+  border-color: rgba(15, 23, 42, 0.22);
+  transform: translateY(-1px);
 }
 
 body.qh-cinema-theme .nav-active-page-pill {
@@ -4414,6 +4462,7 @@ body.qh-cinema-theme .qh-nav-actions {
   display: flex;
   align-items: center;
   margin-left: auto;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .qh-hamburger-btn,
