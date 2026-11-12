@@ -1,13 +1,15 @@
 /**
  * QUBITHRS TECHNOLOGY SOLUTIONS — VISUAL DESIGN & TYPOGRAPHY CUSTOMIZER
  * Allows live in-browser manual adjustment of font sizes, letter spacing,
- * and button dimensions with real-time preview, persistence, and CSS export.
+ * and button dimensions with real-time preview, persistence, CSS export,
+ * and a fully draggable/movable trigger pill (left-to-right / anywhere on screen).
  */
 
 (function () {
   'use strict';
 
   const STORAGE_KEY = 'qh_visual_customizer_v1';
+  const DRAG_STORAGE_KEY = 'qh_visual_customizer_trigger_pos';
 
   // Default values matching original design system
   const DEFAULTS = {
@@ -181,13 +183,16 @@ p.lead {
   function initUI() {
     if (document.getElementById('qh-customizer-root')) return;
 
-    // Trigger Pill Button
+    // Trigger Pill Button (Draggable Left-to-Right & Anywhere)
     const triggerBtn = document.createElement('button');
     triggerBtn.id = 'qh-customizer-trigger';
     triggerBtn.setAttribute('aria-label', 'Open Design Customizer');
-    triggerBtn.title = 'Adjust Font Sizes & Buttons (Alt + T)';
+    triggerBtn.title = 'Drag left/right to move • Click to adjust fonts & buttons (Alt + T)';
     triggerBtn.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="qh-cust-grip" title="Drag to move anywhere">
+        <span></span><span></span>
+      </div>
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="4" y1="21" x2="4" y2="14"></line>
         <line x1="4" y1="10" x2="4" y2="3"></line>
         <line x1="12" y1="21" x2="12" y2="12"></line>
@@ -418,8 +423,170 @@ p.lead {
     root.appendChild(panel);
     document.body.appendChild(root);
 
-    // Event Handlers
-    triggerBtn.addEventListener('click', togglePanel);
+    // =========================================================================
+    // DRAGGABLE / MOVABLE TRIGGER LOGIC (LEFT-TO-RIGHT & FULL VIEWPORT)
+    // =========================================================================
+    let isDragging = false;
+    let hasMoved = false;
+    let justDragged = false;
+    let startX = 0, startY = 0;
+    let initialLeft = 24, initialTop = window.innerHeight - 80;
+
+    // Smart Panel Positioning relative to current trigger button coordinates
+    function positionPanel() {
+      const btnRect = triggerBtn.getBoundingClientRect();
+      const panelWidth = Math.min(370, window.innerWidth - 24);
+      const margin = 12;
+
+      // Horizontal: align to button, ensuring panel stays fully inside viewport
+      let targetLeft = btnRect.left;
+      if (btnRect.left > window.innerWidth / 2) {
+        // Button is on right side -> align right edge of panel to right edge of button
+        targetLeft = btnRect.right - panelWidth;
+      }
+      // Clamp inside screen
+      targetLeft = Math.max(margin, Math.min(window.innerWidth - panelWidth - margin, targetLeft));
+      panel.style.left = `${Math.round(targetLeft)}px`;
+      panel.style.right = 'auto';
+
+      // Vertical: if in lower half, position above button; if in upper half, position below button
+      if (btnRect.top > window.innerHeight / 2) {
+        const targetBottom = window.innerHeight - btnRect.top + 10;
+        panel.style.bottom = `${Math.round(targetBottom)}px`;
+        panel.style.top = 'auto';
+      } else {
+        const targetTop = btnRect.bottom + 10;
+        panel.style.top = `${Math.round(targetTop)}px`;
+        panel.style.bottom = 'auto';
+      }
+    }
+
+    function clampTriggerPosition() {
+      const rect = triggerBtn.getBoundingClientRect();
+      const maxLeft = Math.max(10, window.innerWidth - triggerBtn.offsetWidth - 10);
+      const maxTop = Math.max(10, window.innerHeight - triggerBtn.offsetHeight - 10);
+      const clampedLeft = Math.min(Math.max(10, rect.left), maxLeft);
+      const clampedTop = Math.min(Math.max(10, rect.top), maxTop);
+
+      triggerBtn.style.left = `${Math.round(clampedLeft)}px`;
+      triggerBtn.style.top = `${Math.round(clampedTop)}px`;
+      triggerBtn.style.bottom = 'auto';
+      triggerBtn.style.right = 'auto';
+    }
+
+    function restoreTriggerPosition() {
+      try {
+        const saved = localStorage.getItem(DRAG_STORAGE_KEY);
+        if (saved) {
+          const { left, top } = JSON.parse(saved);
+          const maxLeft = Math.max(10, window.innerWidth - 180);
+          const maxTop = Math.max(10, window.innerHeight - 60);
+          const clampedLeft = Math.min(Math.max(10, left), maxLeft);
+          const clampedTop = Math.min(Math.max(10, top), maxTop);
+
+          triggerBtn.style.left = `${clampedLeft}px`;
+          triggerBtn.style.top = `${clampedTop}px`;
+          triggerBtn.style.bottom = 'auto';
+          triggerBtn.style.right = 'auto';
+          return;
+        }
+      } catch (e) {
+        console.warn('Could not restore trigger button position', e);
+      }
+
+      // Default bottom-left
+      triggerBtn.style.left = '24px';
+      triggerBtn.style.bottom = '24px';
+      triggerBtn.style.top = 'auto';
+      triggerBtn.style.right = 'auto';
+    }
+
+    restoreTriggerPosition();
+
+    triggerBtn.addEventListener('pointerdown', (e) => {
+      if (e.button && e.button !== 0) return;
+      const rect = triggerBtn.getBoundingClientRect();
+      startX = e.clientX;
+      startY = e.clientY;
+      initialLeft = rect.left;
+      initialTop = rect.top;
+      isDragging = true;
+      hasMoved = false;
+
+      try {
+        triggerBtn.setPointerCapture(e.pointerId);
+      } catch (err) {}
+    });
+
+    triggerBtn.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+
+      if (Math.hypot(dx, dy) > 4) {
+        hasMoved = true;
+        triggerBtn.classList.add('is-dragging');
+
+        const maxLeft = Math.max(10, window.innerWidth - triggerBtn.offsetWidth - 10);
+        const maxTop = Math.max(10, window.innerHeight - triggerBtn.offsetHeight - 10);
+        const currentLeft = Math.min(Math.max(10, initialLeft + dx), maxLeft);
+        const currentTop = Math.min(Math.max(10, initialTop + dy), maxTop);
+
+        triggerBtn.style.left = `${Math.round(currentLeft)}px`;
+        triggerBtn.style.top = `${Math.round(currentTop)}px`;
+        triggerBtn.style.bottom = 'auto';
+        triggerBtn.style.right = 'auto';
+
+        if (panel.classList.contains('open')) {
+          positionPanel();
+        }
+      }
+    });
+
+    function onPointerUp(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      triggerBtn.classList.remove('is-dragging');
+
+      try {
+        triggerBtn.releasePointerCapture(e.pointerId);
+      } catch (err) {}
+
+      if (hasMoved) {
+        justDragged = true;
+        setTimeout(() => { justDragged = false; }, 180);
+
+        const rect = triggerBtn.getBoundingClientRect();
+        try {
+          localStorage.setItem(DRAG_STORAGE_KEY, JSON.stringify({
+            left: Math.round(rect.left),
+            top: Math.round(rect.top)
+          }));
+        } catch (err) {}
+      }
+    }
+
+    triggerBtn.addEventListener('pointerup', onPointerUp);
+    triggerBtn.addEventListener('pointercancel', onPointerUp);
+
+    // Prevent panel toggle if pointer was dragging
+    triggerBtn.addEventListener('click', (e) => {
+      if (justDragged) {
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
+      togglePanel();
+    });
+
+    window.addEventListener('resize', () => {
+      clampTriggerPosition();
+      if (panel.classList.contains('open')) {
+        positionPanel();
+      }
+    });
+
+    // Close button
     panel.querySelector('#qh-cust-close').addEventListener('click', closePanel);
 
     // Keyboard shortcut: Alt + T
@@ -564,8 +731,11 @@ p.lead {
     }
 
     function togglePanel() {
-      panel.classList.toggle('open');
-      triggerBtn.classList.toggle('active');
+      const isOpen = panel.classList.toggle('open');
+      triggerBtn.classList.toggle('active', isOpen);
+      if (isOpen) {
+        positionPanel();
+      }
     }
 
     function closePanel() {
@@ -590,7 +760,7 @@ p.lead {
   const uiStyles = document.createElement('style');
   uiStyles.id = 'qh-customizer-ui-styles';
   uiStyles.textContent = `
-    /* Floating Trigger Button (Bottom Left) */
+    /* Floating Draggable Trigger Button */
     #qh-customizer-trigger {
       position: fixed;
       bottom: 24px;
@@ -598,10 +768,10 @@ p.lead {
       z-index: 99998;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 20px;
+      gap: 9px;
+      padding: 10px 18px 10px 13px;
       border-radius: 9999px;
-      background: rgba(10, 10, 12, 0.88);
+      background: rgba(10, 10, 12, 0.90);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.22);
@@ -611,17 +781,27 @@ p.lead {
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     }
 
     #qh-customizer-trigger:hover {
       background: #FFFFFF;
       color: #0A0A0C;
       border-color: #FFFFFF;
-      transform: translateY(-2px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.65);
+    }
+
+    #qh-customizer-trigger.is-dragging {
+      cursor: grabbing !important;
+      transform: scale(1.06);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.75), 0 0 24px rgba(56, 189, 248, 0.5) !important;
+      border-color: #38BDF8 !important;
+      transition: none !important;
     }
 
     #qh-customizer-trigger.active {
@@ -630,13 +810,36 @@ p.lead {
       box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
     }
 
+    /* Grip Handle Indicator */
+    .qh-cust-grip {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding-right: 6px;
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      opacity: 0.75;
+      cursor: grab;
+    }
+
+    #qh-customizer-trigger:hover .qh-cust-grip {
+      border-right-color: rgba(10, 10, 12, 0.25);
+      opacity: 1;
+    }
+
+    .qh-cust-grip span {
+      width: 3px;
+      height: 12px;
+      border-radius: 2px;
+      background: currentColor;
+    }
+
     /* Customizer Drawer Panel */
     #qh-customizer-panel {
       position: fixed;
       bottom: 84px;
       left: 24px;
       width: 370px;
-      max-width: calc(100vw - 32px);
+      max-width: calc(100vw - 24px);
       max-height: calc(100vh - 110px);
       z-index: 99999;
       background: rgba(12, 14, 18, 0.96);
@@ -652,8 +855,8 @@ p.lead {
       flex-direction: column;
       opacity: 0;
       pointer-events: none;
-      transform: translateY(16px) scale(0.97);
-      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(14px) scale(0.97);
+      transition: all 0.26s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     #qh-customizer-panel.open {
@@ -1003,16 +1206,14 @@ p.lead {
 
     @media (max-width: 600px) {
       #qh-customizer-trigger {
-        bottom: 16px;
-        left: 16px;
-        padding: 10px 16px;
+        padding: 9px 15px;
         font-size: 11.5px;
       }
       #qh-customizer-panel {
-        left: 10px;
-        right: 10px;
-        bottom: 72px;
-        width: auto;
+        left: 10px !important;
+        right: 10px !important;
+        width: auto !important;
+        max-width: none !important;
       }
     }
   `;
