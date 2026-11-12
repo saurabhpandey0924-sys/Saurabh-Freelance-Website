@@ -5066,18 +5066,36 @@ button[type="submit"],
   border-radius: 9999px !important;
 }
 
+/* STRICT ZERO-BORDER ON BUTTON INNER ELEMENTS (ELIMINATES RECTANGULAR BOX ON SPANS) */
+.btn *,
+.btn span,
+.btn svg,
+.btn-primary *,
+.btn-primary span,
+.btn-primary svg,
+.btn-secondary *,
+.btn-secondary span,
+.btn-secondary svg,
+.luxury-cta *,
+.luxury-cta span,
+.drawer-cta-btn *,
+.drawer-cta-btn span,
+.filter-btn *,
+.filter-btn span,
+button *,
+button span {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Primary Button Container */
 body.qh-dark-page .btn-primary,
-body.qh-dark-page .btn-primary *,
 body.qh-dark-page button[type="submit"],
-body.qh-dark-page button[type="submit"] *,
 body.qh-dark-page #contact-submit-btn,
-body.qh-dark-page #contact-submit-btn *,
 body.qh-dark-page .drawer-cta-btn,
-body.qh-dark-page .drawer-cta-btn *,
 body.qh-dark-page .luxury-cta,
-body.qh-dark-page .luxury-cta *,
-body.qh-dark-page .filter-btn.active,
-body.qh-dark-page .filter-btn.active * {
+body.qh-dark-page .filter-btn.active {
   background: #14161B !important;
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
@@ -5098,6 +5116,8 @@ body.qh-dark-page .filter-btn.active span {
   display: inline-block !important;
   opacity: 1 !important;
   visibility: visible !important;
+  border: none !important;
+  outline: none !important;
 }
 
 body.qh-dark-page .btn-primary svg,
@@ -5109,6 +5129,7 @@ body.qh-dark-page .luxury-cta svg {
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
   fill: none !important;
+  border: none !important;
 }
 
 body.qh-dark-page .btn-primary svg *,
@@ -5116,23 +5137,14 @@ body.qh-dark-page button[type="submit"] svg *,
 body.qh-dark-page #contact-submit-btn svg *,
 body.qh-dark-page .drawer-cta-btn svg * {
   stroke: #FFFFFF !important;
+  border: none !important;
 }
 
 body.qh-dark-page .btn-primary:hover,
-body.qh-dark-page .btn-primary:hover *,
-body.qh-dark-page .btn-primary:hover span,
 body.qh-dark-page button[type="submit"]:hover,
-body.qh-dark-page button[type="submit"]:hover *,
-body.qh-dark-page button[type="submit"]:hover span,
 body.qh-dark-page #contact-submit-btn:hover,
-body.qh-dark-page #contact-submit-btn:hover *,
-body.qh-dark-page #contact-submit-btn:hover span,
 body.qh-dark-page .drawer-cta-btn:hover,
-body.qh-dark-page .drawer-cta-btn:hover *,
-body.qh-dark-page .drawer-cta-btn:hover span,
-body.qh-dark-page .luxury-cta:hover,
-body.qh-dark-page .luxury-cta:hover *,
-body.qh-dark-page .luxury-cta:hover span {
+body.qh-dark-page .luxury-cta:hover {
   background: #232733 !important;
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
@@ -5147,12 +5159,12 @@ body.qh-dark-page .drawer-cta-btn:hover span,
 body.qh-dark-page .luxury-cta:hover span {
   background: transparent !important;
   color: #FFFFFF !important;
+  border: none !important;
 }
 
 /* Secondary Action Buttons (Crisp White on Dark Background) */
 body.qh-dark-page .btn-secondary,
-body.qh-dark-page .btn-secondary *,
-body.qh-dark-page .btn-secondary span {
+.btn-secondary {
   background: transparent !important;
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
@@ -5161,31 +5173,37 @@ body.qh-dark-page .btn-secondary span {
   font-weight: 600 !important;
 }
 
-body.qh-dark-page .btn-secondary span {
+body.qh-dark-page .btn-secondary span,
+.btn-secondary span {
   background: transparent !important;
   color: #FFFFFF !important;
   display: inline-block !important;
   opacity: 1 !important;
+  border: none !important;
+  outline: none !important;
 }
 
-body.qh-dark-page .btn-secondary svg {
+body.qh-dark-page .btn-secondary svg,
+.btn-secondary svg {
   background: transparent !important;
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
+  border: none !important;
 }
 
 body.qh-dark-page .btn-secondary:hover,
-body.qh-dark-page .btn-secondary:hover *,
-body.qh-dark-page .btn-secondary:hover span {
+.btn-secondary:hover {
   background: rgba(255, 255, 255, 0.14) !important;
   border-color: #FFFFFF !important;
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
 }
 
-body.qh-dark-page .btn-secondary:hover span {
+body.qh-dark-page .btn-secondary:hover span,
+.btn-secondary:hover span {
   background: transparent !important;
   color: #FFFFFF !important;
+  border: none !important;
 }
 
 body.qh-dark-page .btn-glow {

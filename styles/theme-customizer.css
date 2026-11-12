@@ -374,6 +374,14 @@
   padding: 8px 16px !important;
 }
 
+.qh-preview-sandbox button *,
+.qh-preview-sandbox button span {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
 /* --------------------------------------------------------------------------
    4. COLOR THEME PRESETS & CUSTOM PICKERS (WEBSITE KA COLOUR)
    -------------------------------------------------------------------------- */

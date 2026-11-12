@@ -168,24 +168,41 @@ button[type="submit"],
   border-radius: ${radiusVal} !important;
 }
 
+/* STRICT ZERO-BORDER ON BUTTON INNER ELEMENTS (ELIMINATES RECTANGULAR BOX ON SPANS) */
+.btn *,
+.btn span,
+.btn svg,
+.btn-primary *,
+.btn-primary span,
+.btn-primary svg,
+.btn-secondary *,
+.btn-secondary span,
+.btn-secondary svg,
+.luxury-cta *,
+.luxury-cta span,
+.drawer-cta-btn *,
+.drawer-cta-btn span,
+.filter-btn *,
+.filter-btn span,
+button *,
+button span {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* 2. PRIMARY BUTTON STYLING */
 body.qh-dark-page .btn-primary,
-body.qh-dark-page .btn-primary *,
 body.qh-dark-page button[type="submit"],
-body.qh-dark-page button[type="submit"] *,
 body.qh-dark-page #contact-submit-btn,
-body.qh-dark-page #contact-submit-btn *,
 body.qh-dark-page .drawer-cta-btn,
-body.qh-dark-page .drawer-cta-btn *,
 body.qh-dark-page .luxury-cta,
-body.qh-dark-page .luxury-cta *,
 body.qh-dark-page .filter-btn.active,
-body.qh-dark-page .filter-btn.active *,
-.btn-primary,
-.btn-primary * {
+.btn-primary {
   background: ${s.primaryBtnBg} !important;
   color: ${s.primaryBtnText} !important;
-  border-color: ${s.primaryBtnBg} !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-color: ${s.primaryBtnBg.toLowerCase() === '#14161b' || s.primaryBtnBg.toLowerCase() === '#000000' ? 'rgba(255, 255, 255, 0.22)' : s.primaryBtnBg} !important;
 }
 
 body.qh-dark-page .btn-primary span,
@@ -193,8 +210,12 @@ body.qh-dark-page button[type="submit"] span,
 body.qh-dark-page #contact-submit-btn span,
 body.qh-dark-page .drawer-cta-btn span,
 body.qh-dark-page .luxury-cta span,
+body.qh-dark-page .filter-btn.active span,
 .btn-primary span {
   color: ${s.primaryBtnText} !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
 }
 
 body.qh-dark-page .btn-primary svg,
@@ -205,6 +226,8 @@ body.qh-dark-page .luxury-cta svg,
 .btn-primary svg {
   stroke: ${s.primaryBtnText} !important;
   color: ${s.primaryBtnText} !important;
+  background: transparent !important;
+  border: none !important;
 }
 
 body.qh-dark-page .btn-primary svg *,
@@ -213,27 +236,32 @@ body.qh-dark-page #contact-submit-btn svg *,
 body.qh-dark-page .drawer-cta-btn svg *,
 .btn-primary svg * {
   stroke: ${s.primaryBtnText} !important;
+  border: none !important;
 }
 
 /* 3. SECONDARY BUTTON STYLING */
 body.qh-dark-page .btn-secondary,
-body.qh-dark-page .btn-secondary *,
-.btn-secondary,
-.btn-secondary * {
+.btn-secondary {
   background: ${s.secondaryBtnBg} !important;
   color: ${s.secondaryBtnText} !important;
+  border: 1px solid ${s.secondaryBtnBorder} !important;
   border-color: ${s.secondaryBtnBorder} !important;
 }
 
 body.qh-dark-page .btn-secondary span,
 .btn-secondary span {
   color: ${s.secondaryBtnText} !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
 }
 
 body.qh-dark-page .btn-secondary svg,
 .btn-secondary svg {
   stroke: ${s.secondaryBtnText} !important;
   color: ${s.secondaryBtnText} !important;
+  background: transparent !important;
+  border: none !important;
 }
 
 /* 4. BUTTON GLOW */
