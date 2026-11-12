@@ -201,6 +201,13 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (err) {
     console.error('Failed to init welcome popup:', err);
   }
+
+  // 14. Cinematic Full-Screen Slide Navigation (Exact Top Alignment, No Gaps)
+  try {
+    initCinematicSlideNav();
+  } catch (err) {
+    console.error('Failed to init slide nav:', err);
+  }
 });
 
 /* --------------------------------------------------------------------------
@@ -1459,3 +1466,50 @@ function initWelcomePopup() {
     }
   });
 }
+
+/* --------------------------------------------------------------------------
+   14. CINEMATIC FULL-SCREEN SLIDE NAVIGATION
+-------------------------------------------------------------------------- */
+function initCinematicSlideNav() {
+  const slideAnchors = document.querySelectorAll('a[href^="#division-"], a[href="#home"], a[href="#closing"]');
+  slideAnchors.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        // Calculate exact absolute top of target slide (0px offset for full viewport fit)
+        const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: targetY,
+          behavior: 'smooth'
+        });
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        }
+      }
+    });
+  });
+
+  // Handle direct page load with hash or browser back/forward navigation
+  const alignHashSlide = () => {
+    const hash = window.location.hash;
+    if (hash && (hash.startsWith('#division-') || hash === '#home' || hash === '#closing')) {
+      const targetEl = document.querySelector(hash);
+      if (targetEl) {
+        const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: targetY,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
+  if (window.location.hash) {
+    setTimeout(alignHashSlide, 150);
+  }
+  window.addEventListener('hashchange', alignHashSlide);
+}
+

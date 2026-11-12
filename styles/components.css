@@ -3994,17 +3994,27 @@
 /* ==========================================================================
    QH FULL-VIEWPORT CINEMATIC SLIDES (100vh)
    ========================================================================== */
+html:has(.qh-cinema-theme),
+html:has(.qh-slide) {
+  scroll-padding-top: 0 !important;
+  scroll-snap-type: y proximity;
+}
+
 .qh-slide {
   position: relative;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 0 0 100px 0;
   overflow: hidden;
   background-color: #0A0A0C;
+  scroll-margin-top: 0 !important;
+  scroll-snap-align: start;
 }
 
 .qh-slide-bg {
@@ -4314,6 +4324,12 @@ body.qh-cinema-theme .menu-toggle-btn:hover .hamburger-line:nth-child(2) {
 @media (max-width: 768px) {
   .qh-slide {
     padding: 0 0 60px 0;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    scroll-margin-top: 0 !important;
+    scroll-snap-align: start;
   }
   
   .qh-slide-content {
