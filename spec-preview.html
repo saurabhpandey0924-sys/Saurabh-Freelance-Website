@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Detail UI Showroom | Master Specification Layouts | QUBITHRS</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles/main.css?v=22">
+  <link rel="stylesheet" href="styles/components.css?v=22">
+  <link rel="stylesheet" href="styles/responsive.css?v=22">
+  <style>
+    body.spec-showroom-body {
+      background: #000000 !important;
+      color: #FFFFFF !important;
+      font-family: var(--font-body);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Top Switcher Bar */
+    .spec-header-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(8, 9, 13, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      z-index: 9999;
+      padding: 12px 24px;
+    }
+
+    .spec-header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .spec-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .spec-brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .spec-tag {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      color: #00F0FF;
+      font-family: var(--font-heading);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Layout Selector Pills */
+    .spec-layout-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .spec-layout-pills::-webkit-scrollbar { display: none; }
+
+    .spec-layout-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 15px;
+      border-radius: 9999px;
+      background: #101218;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: var(--font-heading);
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .spec-layout-btn:hover {
+      background: #181A24;
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .spec-layout-btn.active {
+      background: #FFFFFF !important;
+      color: #000000 !important;
+      border-color: #FFFFFF !important;
+      box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Sub-bar: Division Switcher (01..06) */
+    .spec-division-subbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 24px;
+      background: #090A0E;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .spec-division-subbar::-webkit-scrollbar { display: none; }
+
+    .spec-div-label {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+      font-family: monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .spec-div-chip {
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: #12141C;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.78rem;
+      font-family: var(--font-heading);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .spec-div-chip:hover {
+      background: #1C1F2B;
+      color: #FFFFFF;
+    }
+    .spec-div-chip.active {
+      background: #00F0FF;
+      color: #000000;
+      font-weight: 700;
+      border-color: #00F0FF;
+    }
+
+    /* Meta Info Banner */
+    .spec-info-banner {
+      background: #06070A;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 24px;
+    }
+    .spec-info-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .spec-info-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .spec-info-desc {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 720px;
+      line-height: 1.5;
+    }
+
+    /* Container for layout renders */
+    .spec-render-stage {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      min-height: 80vh;
+    }
+
+    /* ==========================================================================
+       LAYOUT 1: THE EXECUTIVE ARCHITECTURAL DOSSIER (APPLE / STRIPE PRESS)
+       ========================================================================== */
+    .l1-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .l1-hero-card {
+      background: #0C0E14;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .l1-watermark {
+      position: absolute;
+      top: -15px;
+      right: 30px;
+      font-size: 9rem;
+      font-weight: 900;
+      font-family: var(--font-heading);
+      color: rgba(255, 255, 255, 0.03);
+      user-select: none;
+      line-height: 1;
+    }
+    .l1-kicker-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .l1-div-badge {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: #00F0FF;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      font-weight: 700;
+    }
+    .l1-title {
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .l1-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 820px;
+    }
+
+    .l1-main-grid {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+    .l1-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .l1-section-card {
+      background: #0B0D13;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .l1-sec-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .l1-sec-desc {
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.72);
+    }
+    .l1-deliverable-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.94rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+    }
+    .l1-deliverable-item:last-child { border-bottom: none; }
+    .l1-check-icon {
+      color: #00F0FF;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Sticky Sidebar Dossier */
+    .l1-sticky-sidebar {
+      position: sticky;
+      top: 140px;
+      background: #0D0F16;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+    .l1-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+    }
+    .l1-meta-lbl {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .l1-meta-val {
+      color: #FFFFFF;
+      font-weight: 700;
+      font-family: var(--font-heading);
+    }
+
+    /* Capabilities 3-Col Modular Grid */
+    .l1-caps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .l1-cap-card {
+      background: #0C0E14;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 24px;
+      transition: all 0.25s ease;
+    }
+    .l1-cap-card:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      background: #11141D;
+    }
+    .l1-cap-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: #161822;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .l1-cap-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      margin-bottom: 8px;
+    }
+    .l1-cap-desc {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       LAYOUT 2: LINEAR / VERCEL MODERN TABBED WORKSPACE
+       ========================================================================== */
+    .l2-tab-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 30px;
+      padding-bottom: 4px;
+      overflow-x: auto;
+    }
+    .l2-tab-btn {
+      padding: 10px 20px;
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .l2-tab-btn:hover { color: #FFFFFF; }
+    .l2-tab-btn.active {
+      color: #FFFFFF;
+    }
+    .l2-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #00F0FF;
+    }
+
+    /* ==========================================================================
+       LAYOUT 3: SWISS MONOSPACE TECHNICAL SPECIFICATION
+       ========================================================================== */
+    .l3-sheet {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #060709;
+      font-family: monospace;
+    }
+    .l3-header-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      background: #0B0D12;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .l3-header-cell {
+      padding: 14px 20px;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .l3-header-cell:last-child { border-right: none; }
+    .l3-body-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .l3-body-cell {
+      padding: 32px;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .l3-body-cell:last-child { border-right: none; }
+
+    /* ==========================================================================
+       LAYOUT 4: CINEMATIC VIDEO SPLIT DOSSIER
+       ========================================================================== */
+    .l4-split {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .l4-video-sticky {
+      position: sticky;
+      top: 140px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Common Buttons */
+    .spec-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      color: #000000;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .spec-btn-primary:hover {
+      background: #E2E8F0;
+      transform: translateY(-2px);
+    }
+
+    .spec-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      background: #14161F;
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .spec-btn-secondary:hover {
+      background: #1F2230;
+      border-color: #FFFFFF;
+    }
+
+    @media (max-width: 992px) {
+      .l1-main-grid { grid-template-columns: 1fr; }
+      .l1-caps-grid { grid-template-columns: 1fr; }
+      .l3-body-grid { grid-template-columns: 1fr; }
+      .l4-split { grid-template-columns: 1fr; }
+      .l4-video-sticky { position: static; }
+    }
+  </style>
+</head>
+<body class="spec-showroom-body">
+
+  <!-- TOP STICKY CONTROLLER -->
+  <header class="spec-header-bar">
+    <div class="spec-header-inner">
+      <div class="spec-top-row">
+        <div class="spec-brand-title">
+          <img src="assets/images/qh-logo-transparent.png" alt="QUBITHRS Logo" style="height: 28px; width: auto;">
+          <span>Service Detail Page Showroom</span>
+          <span class="spec-tag">Live Layout Studio</span>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <a href="service-detail.html?id=software-web" class="sh-btn sh-btn-dark" style="font-size: 0.78rem; padding: 6px 14px;">
+            <span>Current Live Page &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 Master Specification Layouts -->
+      <nav class="spec-layout-pills" id="layout-nav" aria-label="Specification Layouts">
+        <button class="spec-layout-btn active" data-layout="1">
+          <span style="font-family: monospace;">[L1]</span>
+          <span>Executive Architectural Dossier</span>
+        </button>
+        <button class="spec-layout-btn" data-layout="2">
+          <span style="font-family: monospace;">[L2]</span>
+          <span>Linear / Vercel Tabbed Workspace</span>
+        </button>
+        <button class="spec-layout-btn" data-layout="3">
+          <span style="font-family: monospace;">[L3]</span>
+          <span>Swiss Monospace Technical Blueprint</span>
+        </button>
+        <button class="spec-layout-btn" data-layout="4">
+          <span style="font-family: monospace;">[L4]</span>
+          <span>Cinematic Video Split Dossier</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- DIVISION SELECTOR SUB-BAR (Switch between all 6 divisions) -->
+  <div class="spec-division-subbar">
+    <span class="spec-div-label">SELECT DIVISION TO PREVIEW:</span>
+    <button class="spec-div-chip active" onclick="switchDivision(0, this)">01 Software &amp; Web</button>
+    <button class="spec-div-chip" onclick="switchDivision(1, this)">02 Custom SaaS &amp; Cloud</button>
+    <button class="spec-div-chip" onclick="switchDivision(2, this)">03 AI Agents &amp; Automation</button>
+    <button class="spec-div-chip" onclick="switchDivision(3, this)">04 Mobile Apps (iOS/Android)</button>
+    <button class="spec-div-chip" onclick="switchDivision(4, this)">05 API Engineering</button>
+    <button class="spec-div-chip" onclick="switchDivision(5, this)">06 Cybersecurity Defense</button>
+  </div>
+
+  <!-- CURRENT LAYOUT META BANNER -->
+  <div class="spec-info-banner">
+    <div class="spec-info-inner">
+      <div>
+        <div class="spec-info-title" id="spec-meta-title">Layout 1: Executive Architectural Dossier (Apple / Stripe Press Hybrid)</div>
+        <p class="spec-info-desc" id="spec-meta-desc">
+          High-status two-column architecture. Left column holds the deep executive overview, deliverables checklist, and 6-capability modular grid. Right column is a sticky glass dossier with timeline, stack, guarantees, and direct sprint inquiry.
+        </p>
+      </div>
+      <div>
+        <span style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">100% PRODUCTION READY</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN RENDER STAGE -->
+  <main class="spec-render-stage" id="spec-stage">
+    <!-- Populated dynamically by renderLayout() -->
+  </main>
+
+  <script src="scripts/data.js?v=22"></script>
+  <script>
+    let currentLayout = 1;
+    let currentDivisionIndex = 0;
+
+    const layoutMeta = {
+      1: {
+        title: "Layout 1: Executive Architectural Dossier (Apple / Stripe Press Hybrid)",
+        desc: "High-status two-column architecture. Left column holds the deep executive overview, deliverables checklist, and 6-capability modular grid. Right column is a sticky glass dossier with timeline, stack, guarantees, and direct sprint inquiry."
+      },
+      2: {
+        title: "Layout 2: Linear / Vercel Modern Tabbed Workspace",
+        desc: "Sleek developer-first workspace. Organizes Overview, Capabilities, Deliverables, and Guarantees into interactive tabs with zero vertical scrolling fatigue."
+      },
+      3: {
+        title: "Layout 3: Swiss Monospace Technical Blueprint (Stripe Terminal Style)",
+        desc: "Institutional authority. Hairline 1px graphite grid, technical metadata coordinates, structured milestone deliverables table, and verifiable compliance standards."
+      },
+      4: {
+        title: "Layout 4: Cinematic Video Split Dossier (Palantir / Starlink Style)",
+        desc: "Split-screen presentation. Left side features a sticky floating video viewport with real-time status badges; right side scrolls through full technical specifications."
+      }
+    };
+
+    const divisionVideos = [
+      "assets/videos/division-01-web-dev.mp4",
+      "assets/videos/division-02-saas-cloud.mp4",
+      "assets/videos/division-03-ai-automation.mp4",
+      "assets/videos/division-04-mobile-apps.mp4",
+      "assets/videos/division-05-api-integration.mp4",
+      "assets/videos/division-06-cybersecurity.mp4"
+    ];
+
+    function getService() {
+      const services = window.PORTFOLIO_DATA ? window.PORTFOLIO_DATA.services : [];
+      return services[currentDivisionIndex] || {};
+    }
+
+    // Render Layout Switcher
+    function render() {
+      const s = getService();
+      const stage = document.getElementById('spec-stage');
+      const videoSrc = divisionVideos[currentDivisionIndex];
+
+      if (currentLayout === 1) {
+        stage.innerHTML = renderLayout1(s, videoSrc);
+      } else if (currentLayout === 2) {
+        stage.innerHTML = renderLayout2(s, videoSrc);
+      } else if (currentLayout === 3) {
+        stage.innerHTML = renderLayout3(s, videoSrc);
+      } else if (currentLayout === 4) {
+        stage.innerHTML = renderLayout4(s, videoSrc);
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // =========================================================================
+    // LAYOUT 1: EXECUTIVE ARCHITECTURAL DOSSIER
+    // =========================================================================
+    function renderLayout1(s, videoSrc) {
+      return `
+        <div class="l1-wrapper">
+          <!-- Top Back Nav -->
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="sh-btn sh-btn-dark" style="font-size: 0.8rem; padding: 8px 18px;">
+              <span>&larr;</span>
+              <span>BACK TO SHOWCASE</span>
+            </a>
+            <span style="font-family: monospace; font-size: 0.82rem; color: rgba(255,255,255,0.5);">
+              DIVISION ${s.division || '01'} // SPECIFICATION PROTOCOL
+            </span>
+          </div>
+
+          <!-- Hero Banner -->
+          <div class="l1-hero-card">
+            <div class="l1-watermark">${(currentDivisionIndex + 1).toString().padStart(2, '0')}</div>
+            <div class="l1-kicker-row">
+              <span class="l1-div-badge">${s.division || 'DIVISION 01'}</span>
+              <span style="font-size: 0.8rem; color: rgba(255,255,255,0.5); text-transform: uppercase;">ENTERPRISE ARCHITECTURE</span>
+            </div>
+            <h1 class="l1-title">${s.title}</h1>
+            <p class="l1-subtitle">${s.subtitle || s.description}</p>
+          </div>
+
+          <!-- Main Split Columns -->
+          <div class="l1-main-grid">
+            <div class="l1-left-col">
+              <!-- Overview -->
+              <div class="l1-section-card">
+                <h2 class="l1-sec-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <span>Technical Overview</span>
+                </h2>
+                <p class="l1-sec-desc">${s.overview || s.detailedOverview}</p>
+              </div>
+
+              <!-- Key Capabilities 3-Col Grid -->
+              <div>
+                <h3 style="font-size: 1.35rem; font-weight: 700; color: #FFFFFF; font-family: var(--font-heading); margin-bottom: 20px;">
+                  Core Capabilities &amp; Solutions
+                </h3>
+                <div class="l1-caps-grid">
+                  ${(s.capabilities || []).map(cap => `
+                    <div class="l1-cap-card">
+                      <div class="l1-cap-icon">${cap.icon}</div>
+                      <h4 class="l1-cap-title">${cap.title}</h4>
+                      <p class="l1-cap-desc">${cap.desc}</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Deliverables Checklist -->
+              <div class="l1-section-card">
+                <h3 class="l1-sec-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Scope of Deliverables</span>
+                </h3>
+                <div>
+                  ${(s.deliverables || []).map(del => `
+                    <div class="l1-deliverable-item">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2.5" class="l1-check-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                      <span>${del}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Milestone Roadmap -->
+              <div class="l1-section-card">
+                <h3 class="l1-sec-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>Engineering Milestone Cadence</span>
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+                  ${(s.milestones || []).map(m => `
+                    <div style="display: flex; gap: 20px; align-items: flex-start; padding: 14px 18px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+                      <span style="font-family: monospace; font-size: 0.8rem; color: #00F0FF; font-weight: 700; white-space: nowrap;">${m.phase}</span>
+                      <div>
+                        <div style="font-weight: 700; color: #FFFFFF; font-size: 0.95rem;">${m.title}</div>
+                        <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 4px;">${m.desc}</div>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+
+            <!-- Sticky Sidebar Dossier -->
+            <div class="l1-sticky-sidebar">
+              <div>
+                <span style="font-size: 0.75rem; color: #00F0FF; font-family: monospace; letter-spacing: 0.08em;">SPECIFICATION BLUEPRINT</span>
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin-top: 6px;">Delivery Parameters</h3>
+              </div>
+
+              <div>
+                <div class="l1-meta-row">
+                  <span class="l1-meta-lbl">Target Timeline</span>
+                  <span class="l1-meta-val" style="color: #00F0FF;">${s.timeline}</span>
+                </div>
+                <div class="l1-meta-row">
+                  <span class="l1-meta-lbl">Execution Model</span>
+                  <span class="l1-meta-val">Dedicated Developers</span>
+                </div>
+                <div class="l1-meta-row">
+                  <span class="l1-meta-lbl">IP Ownership</span>
+                  <span class="l1-meta-val">100% Code Handover</span>
+                </div>
+                <div class="l1-meta-row" style="border-bottom: none;">
+                  <span class="l1-meta-lbl">Post-Launch Warranty</span>
+                  <span class="l1-meta-val">30 Days Included</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Pills -->
+              <div>
+                <span class="l1-meta-lbl" style="display: block; margin-bottom: 10px; font-size: 0.82rem;">Core Technologies:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                  ${(s.tags || []).map(t => `<span style="font-size: 0.78rem; padding: 4px 10px; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #FFF;">${t}</span>`).join('')}
+                </div>
+              </div>
+
+              <!-- Direct CTA -->
+              <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 10px;">
+                <a href="contact.html?service=${s.id}" class="spec-btn-primary">
+                  <span>Inquire About This Division</span>
+                  <span>&rarr;</span>
+                </a>
+                <a href="contact.html" class="spec-btn-secondary">
+                  <span>Schedule Discovery Call</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // LAYOUT 2: LINEAR / VERCEL MODERN TABBED WORKSPACE
+    // =========================================================================
+    function renderLayout2(s, videoSrc) {
+      return `
+        <div>
+          <!-- Breadcrumb Header -->
+          <div style="font-size: 0.82rem; color: rgba(255,255,255,0.5); font-family: monospace; margin-bottom: 14px;">
+            DIVISIONS / ${s.division} / <span style="color: #00F0FF;">${s.id}</span>
+          </div>
+          <h1 style="font-size: 2.8rem; font-weight: 800; font-family: var(--font-heading); color: #FFFFFF; margin-bottom: 16px;">
+            ${s.title}
+          </h1>
+          <p style="font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 800px; line-height: 1.7; margin-bottom: 30px;">
+            ${s.subtitle || s.description}
+          </p>
+
+          <!-- Tabs -->
+          <div class="l2-tab-nav">
+            <button class="l2-tab-btn active" onclick="switchL2Tab('overview', this)">Overview &amp; Architecture</button>
+            <button class="l2-tab-btn" onclick="switchL2Tab('capabilities', this)">Core Capabilities</button>
+            <button class="l2-tab-btn" onclick="switchL2Tab('deliverables', this)">Scope &amp; Deliverables</button>
+            <button class="l2-tab-btn" onclick="switchL2Tab('guarantees', this)">SLAs &amp; Guarantees</button>
+          </div>
+
+          <!-- Tab Content Panes -->
+          <div id="l2-pane-overview">
+            <div style="background: #0B0D13; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 40px; margin-bottom: 30px;">
+              <h3 style="font-size: 1.4rem; font-weight: 700; color: #FFF; font-family: var(--font-heading); margin-bottom: 16px;">System Blueprint</h3>
+              <p style="font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.75);">${s.overview || s.detailedOverview}</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+              <div style="padding: 24px; border-radius: 12px; background: #0E1017; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">TIMELINE</div>
+                <div style="font-size: 1.3rem; font-weight: 800; color: #FFF; margin-top: 6px;">${s.timeline}</div>
+              </div>
+              <div style="padding: 24px; border-radius: 12px; background: #0E1017; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">PERFORMANCE</div>
+                <div style="font-size: 1.3rem; font-weight: 800; color: #FFF; margin-top: 6px;">95+ Core Web Vitals</div>
+              </div>
+              <div style="padding: 24px; border-radius: 12px; background: #0E1017; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">IP OWNERSHIP</div>
+                <div style="font-size: 1.3rem; font-weight: 800; color: #FFF; margin-top: 6px;">100% Client Transfer</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="l2-pane-capabilities" style="display: none;">
+            <div class="l1-caps-grid">
+              ${(s.capabilities || []).map(cap => `
+                <div class="l1-cap-card">
+                  <div class="l1-cap-icon">${cap.icon}</div>
+                  <h4 class="l1-cap-title">${cap.title}</h4>
+                  <p class="l1-cap-desc">${cap.desc}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div id="l2-pane-deliverables" style="display: none;">
+            <div style="background: #0B0D13; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 36px;">
+              ${(s.deliverables || []).map(del => `
+                <div class="l1-deliverable-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2.5" class="l1-check-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>${del}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div id="l2-pane-guarantees" style="display: none;">
+            <div style="background: #0B0D13; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 36px;">
+              ${(s.includedGuarantees || []).map(g => `
+                <div class="l1-deliverable-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" class="l1-check-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>${g}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div style="margin-top: 40px; display: flex; gap: 14px;">
+            <a href="contact.html?service=${s.id}" class="spec-btn-primary">Inquire About This Service &rarr;</a>
+          </div>
+        </div>
+      `;
+    }
+
+    function switchL2Tab(tabName, btn) {
+      document.querySelectorAll('.l2-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      ['overview', 'capabilities', 'deliverables', 'guarantees'].forEach(t => {
+        const el = document.getElementById('l2-pane-' + t);
+        if (el) el.style.display = (t === tabName) ? 'block' : 'none';
+      });
+    }
+
+    // =========================================================================
+    // LAYOUT 3: SWISS MONOSPACE BLUEPRINT (STRIPE TERMINAL)
+    // =========================================================================
+    function renderLayout3(s, videoSrc) {
+      return `
+        <div class="l3-sheet">
+          <div class="l3-header-row">
+            <div class="l3-header-cell">ORGANIZATION: QUBITHRS ENGINEERING</div>
+            <div class="l3-header-cell">DIV_ID: QH-${s.division || '01'}</div>
+            <div class="l3-header-cell">SLA: 99.99%</div>
+          </div>
+          <div style="padding: 36px; border-bottom: 1px solid rgba(255,255,255,0.15);">
+            <div style="font-size: 0.75rem; color: #00F0FF; letter-spacing: 0.1em; margin-bottom: 8px;">// TECHNICAL SPECIFICATION DOSSIER</div>
+            <h1 style="font-size: 2.5rem; font-weight: 800; color: #FFF; font-family: var(--font-heading); margin-bottom: 14px;">${s.title}</h1>
+            <p style="font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 820px;">${s.overview || s.description}</p>
+          </div>
+
+          <div class="l3-body-grid">
+            <div class="l3-body-cell">
+              <div style="color: #00F0FF; font-weight: 700; margin-bottom: 16px;">[+] VERIFIED SCOPE OF DELIVERABLES</div>
+              <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.88rem; color: rgba(255,255,255,0.85);">
+                ${(s.deliverables || []).map(d => `<li>&bull; ${d}</li>`).join('')}
+              </ul>
+            </div>
+            <div class="l3-body-cell">
+              <div style="color: #00F0FF; font-weight: 700; margin-bottom: 16px;">[+] TECHNICAL ATTRIBUTES</div>
+              <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; line-height: 2.2;">
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                  <td style="color: rgba(255,255,255,0.5);">Timeline</td>
+                  <td style="color: #FFF; font-weight: 700;">${s.timeline}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                  <td style="color: rgba(255,255,255,0.5);">Handover</td>
+                  <td style="color: #FFF; font-weight: 700;">100% Repository Transfer</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                  <td style="color: rgba(255,255,255,0.5);">Warranty</td>
+                  <td style="color: #FFF; font-weight: 700;">30 Days Bugfix Guarantee</td>
+                </tr>
+                <tr>
+                  <td style="color: rgba(255,255,255,0.5);">Core Stack</td>
+                  <td style="color: #FFF; font-weight: 700;">${(s.tags || []).slice(0, 3).join(', ')}</td>
+                </tr>
+              </table>
+              <div style="margin-top: 30px;">
+                <a href="contact.html?service=${s.id}" class="spec-btn-primary" style="font-family: monospace;">INITIALIZE SPRINT DISCOVERY &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // LAYOUT 4: CINEMATIC VIDEO SPLIT DOSSIER
+    // =========================================================================
+    function renderLayout4(s, videoSrc) {
+      return `
+        <div class="l4-split">
+          <!-- Left: Sticky Video Frame -->
+          <div class="l4-video-sticky">
+            <video autoplay muted loop playsinline poster="assets/images/project-saas.jpg" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+              <source src="${videoSrc}" type="video/mp4">
+            </video>
+            <div style="background: #0B0D13; padding: 24px; border-top: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">CORE DIVISION • ${s.division || '01'}</div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #FFF; margin: 4px 0 12px;">${s.title}</h3>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.6);">
+                  <span>Target Delivery:</span>
+                  <span style="color: #FFF; font-weight: 700;">${s.timeline}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.6);">
+                  <span>Client Ownership:</span>
+                  <span style="color: #FFF; font-weight: 700;">100% IP Handover</span>
+                </div>
+              </div>
+              <div style="margin-top: 20px;">
+                <a href="contact.html?service=${s.id}" class="spec-btn-primary" style="width: 100%; box-sizing: border-box;">Start Project Inquiry &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Deep Technical Specifications -->
+          <div style="display: flex; flex-direction: column; gap: 36px;">
+            <div>
+              <span class="l1-div-badge">${s.division || 'DIVISION 01'}</span>
+              <h1 style="font-size: 2.8rem; font-weight: 800; font-family: var(--font-heading); color: #FFF; margin: 12px 0 16px;">${s.title}</h1>
+              <p style="font-size: 1.15rem; line-height: 1.7; color: rgba(255,255,255,0.75);">${s.subtitle || s.description}</p>
+            </div>
+
+            <div class="l1-section-card">
+              <h3 class="l1-sec-title">Overview</h3>
+              <p class="l1-sec-desc">${s.overview || s.detailedOverview}</p>
+            </div>
+
+            <div>
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: #FFF; font-family: var(--font-heading); margin-bottom: 20px;">Key Capabilities</h3>
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                ${(s.capabilities || []).map(cap => `
+                  <div style="background: #0B0D13; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; display: flex; gap: 16px; align-items: flex-start;">
+                    <div style="flex-shrink: 0; color: #00F0FF; margin-top: 2px;">${cap.icon}</div>
+                    <div>
+                      <div style="font-weight: 700; color: #FFF; font-size: 1rem;">${cap.title}</div>
+                      <div style="font-size: 0.88rem; color: rgba(255,255,255,0.65); margin-top: 4px; line-height: 1.6;">${cap.desc}</div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="l1-section-card">
+              <h3 class="l1-sec-title">Deliverables</h3>
+              <div>
+                ${(s.deliverables || []).map(del => `
+                  <div class="l1-deliverable-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2.5" class="l1-check-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>${del}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Layout Switcher Event Handlers
+    document.querySelectorAll('.spec-layout-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.spec-layout-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLayout = parseInt(btn.getAttribute('data-layout'), 10);
+
+        if (layoutMeta[currentLayout]) {
+          document.getElementById('spec-meta-title').textContent = layoutMeta[currentLayout].title;
+          document.getElementById('spec-meta-desc').textContent = layoutMeta[currentLayout].desc;
+        }
+
+        render();
+      });
+    });
+
+    // Division Switcher Event Handler
+    function switchDivision(idx, chip) {
+      document.querySelectorAll('.spec-div-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentDivisionIndex = idx;
+      render();
+    }
+
+    // Initial render
+    window.addEventListener('DOMContentLoaded', () => {
+      render();
+    });
+  </script>
+</body>
+</html>
