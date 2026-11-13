@@ -725,9 +725,9 @@ window.addEventListener('hashchange', checkServiceSlideHash);
 
 // Dedicated Service Detail Page Engine
 function initServiceDetailPage() {
-  // If modern Motion Scrollytelling Engine is present, delegate directly to it
-  if (typeof window.initServiceDetailMotion === 'function') {
-    window.initServiceDetailMotion();
+  // If Clean Specification Engine is present, delegate directly to it
+  if (typeof window.initCleanSpecification === 'function') {
+    window.initCleanSpecification();
     return;
   }
 
