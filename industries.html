@@ -27,7 +27,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/main.css?v=12">
-  <link rel="stylesheet" href="styles/components.css?v=29">
+  <link rel="stylesheet" href="styles/components.css?v=30">
   <link rel="stylesheet" href="styles/responsive.css?v=15">
 </head>
 <body class="qh-dark-page">
@@ -175,71 +175,143 @@
     </div>
   </section>
 
-  <!-- WHY CHOOSE US / COMPARISON MATRIX -->
-  <section class="section comparison-section" id="why-choose-us" >
+  <!-- WHY CHOOSE US / THE COMPETITIVE ADVANTAGE -->
+  <section class="section comparison-section" id="why-choose-us" style="padding-top: 60px; padding-bottom: 80px;">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header reveal text-center" style="max-width: 840px; margin: 0 auto 40px;">
         <span class="section-badge">The Competitive Advantage</span>
-        <h2 class="section-title">Why Companies <span class="gradient-text">Choose Us</span></h2>
-        <p class="section-subtitle">
-          How our dedicated technology squads outperform bloated agency overhead and unpredictable gig contractors.
+        <h2 class="section-title">Why Companies <span class="gradient-text">Choose QUBITHRS</span></h2>
+        <p class="section-subtitle" style="font-size: 1.15rem; line-height: 1.8; margin-top: 16px;">
+          How our dedicated technology squads outperform bloated agency overhead and unpredictable gig contractors with architectural precision, guaranteed speed, and zero technical debt.
         </p>
       </div>
 
-      <div class="comparison-table-wrapper reveal">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Key Decision Metric</th>
-              <th class="highlight-col">
-                <div class="th-brand">
-                  <span class="th-badge">Recommended</span>
-                  <span>QUBITHRS Solutions Squad</span>
-                </div>
-              </th>
-              <th>Traditional Agencies</th>
-              <th>Bargain Gig Contractors</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="feature-name">Direct Engineering Access</td>
-              <td class="highlight-col"><span class="check-icon">✓</span> Direct Access to Lead Solutions Architects</td>
-              <td><span class="cross-icon">✗</span> Account managers & middlemen</td>
-              <td><span class="warn-icon">⚠</span> Fragmented / Unreliable</td>
-            </tr>
-            <tr>
-              <td class="feature-name">Delivery Speed & Cadence</td>
-              <td class="highlight-col"><span class="check-icon">✓</span> <strong>2 - 3 Weeks</strong> (Weekly Live Demos)</td>
-              <td><span class="cross-icon">✗</span> 3 - 6 Months average</td>
-              <td><span class="cross-icon">✗</span> Frequent missed deadlines</td>
-            </tr>
-            <tr>
-              <td class="feature-name">Core Web Vitals & Speed</td>
-              <td class="highlight-col"><span class="check-icon">✓</span> <strong>95+ Guaranteed</strong> (Lighthouse)</td>
-              <td><span class="warn-icon">⚠</span> Hit or miss / Bloated</td>
-              <td><span class="cross-icon">✗</span> Ignored (slow load times)</td>
-            </tr>
-            <tr>
-              <td class="feature-name">Code & IP Ownership</td>
-              <td class="highlight-col"><span class="check-icon">✓</span> <strong>100% Day One Transfer</strong></td>
-              <td><span class="warn-icon">⚠</span> Often proprietary / Locked-in</td>
-              <td><span class="warn-icon">⚠</span> Incomplete repos & assets</td>
-            </tr>
-            <tr>
-              <td class="feature-name">Cost Predictability & Transparency</td>
-              <td class="highlight-col"><span class="check-icon">✓</span> <strong>100% Fixed-Scope Sprints</strong></td>
-              <td><span class="cross-icon">✗</span> Expensive hourly markups</td>
-              <td><span class="warn-icon">⚠</span> Hidden fees & scope creep</td>
-            </tr>
-            <tr>
-              <td class="feature-name">Post-Launch Warranty</td>
-              <td class="highlight-col"><span class="check-icon">✓</span> <strong>30-Day Free Bugfix Warranty</strong></td>
-              <td><span class="cross-icon">✗</span> Expensive retainer contracts</td>
-              <td><span class="cross-icon">✗</span> Often unresponsive after launch</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- 4 Pillars Advantage Grid -->
+      <div class="advantage-grid reveal">
+        <!-- Card 1: Direct Architect Access -->
+        <div class="advantage-card">
+          <div>
+            <div class="advantage-header">
+              <span class="advantage-kicker">01 / Collaboration</span>
+              <span class="advantage-badge-pill">Direct Access</span>
+            </div>
+            <h3 class="advantage-title">Direct Solutions Architect Collaboration</h3>
+            <p class="advantage-desc">
+              Zero account managers, sales intermediaries, or junior handoffs. You partner directly with principal systems engineers who design the system architecture, write production code, and take total technical accountability.
+            </p>
+          </div>
+          <div class="advantage-compare-box">
+            <div class="advantage-compare-row">
+              <span class="advantage-compare-label">QUBITHRS</span>
+              <span class="advantage-compare-val-qh">Senior Squad · Direct Slack/Daily Demos</span>
+            </div>
+            <div class="advantage-compare-row">
+              <span class="advantage-compare-label">Agencies</span>
+              <span class="advantage-compare-val-alt">Layered Account Execs &amp; Middlemen</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Velocity & Performance -->
+        <div class="advantage-card">
+          <div>
+            <div class="advantage-header">
+              <span class="advantage-kicker">02 / Execution</span>
+              <span class="advantage-badge-pill">High Velocity</span>
+            </div>
+            <h3 class="advantage-title">2–3 Week Sprints &amp; 95+ Core Web Vitals</h3>
+            <p class="advantage-desc">
+              We eliminate bureaucratic inertia. Features are delivered in test-driven 14-day sprint cadences with weekly live interactive demos, sub-second latency, and guaranteed 95+ Google Lighthouse performance scores.
+            </p>
+          </div>
+          <div class="advantage-compare-box">
+            <div class="advantage-compare-row">
+              <span class="advantage-compare-label">QUBITHRS</span>
+              <span class="advantage-compare-val-qh">2–3 Weeks to Production · 95+ Vitals</span>
+            </div>
+            <div class="advantage-compare-row">
+              <span class="advantage-compare-label">Agencies</span>
+              <span class="advantage-compare-val-alt">3–6 Months Delivery · Bloated Assets</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: 100% IP Ownership -->
+        <div class="advantage-card">
+          <div>
+            <div class="advantage-header">
+              <span class="advantage-kicker">03 / Sovereignty</span>
+              <span class="advantage-badge-pill">100% Ownership</span>
+            </div>
+            <h3 class="advantage-title">Full Source Code &amp; IP Ownership Day One</h3>
+            <p class="advantage-desc">
+              Complete client autonomy with zero proprietary lock-in. You receive full GitHub repository handover, cloud environment access (AWS/Vercel/GCP), design tokens, and modular documentation from day one.
+            </p>
+          </div>
+          <div class="advantage-compare-box">
+            <div class="advantage-compare-row">
+              <span class="advantage-compare-label">QUBITHRS</span>
+              <span class="advantage-compare-val-qh">100% Repository &amp; IP Handover</span>
+            </div>
+            <div class="advantage-compare-row">
+              <span class="advantage-compare-label">Agencies</span>
+              <span class="advantage-compare-val-alt">Proprietary Stacks &amp; Vendor Lock-In</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Predictable Scope & Warranty -->
+        <div class="advantage-card">
+          <div>
+            <div class="advantage-header">
+              <span class="advantage-kicker">04 / Integrity</span>
+              <span class="advantage-badge-pill">Guaranteed</span>
+            </div>
+            <h3 class="advantage-title">Fixed-Scope Milestones &amp; 30-Day Warranty</h3>
+            <p class="advantage-desc">
+              Predictable economics with absolute pricing transparency. Every sprint has clear deliverables, weekly milestone sign-offs, and an included complimentary 30-day post-launch bugfix and stability warranty.
+            </p>
+          </div>
+          <div class="advantage-compare-box">
+            <div class="advantage-compare-row">
+              <span class="advantage-compare-label">QUBITHRS</span>
+              <span class="advantage-compare-val-qh">Fixed Milestones + 30-Day Free Warranty</span>
+            </div>
+            <div class="advantage-compare-row">
+              <span class="advantage-compare-label">Agencies</span>
+              <span class="advantage-compare-val-alt">Costly Hourly Billing &amp; Scope Creep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-Way Model Contrast Summary -->
+      <div class="advantage-summary-banner reveal">
+        <div class="advantage-summary-grid">
+          <div class="advantage-summary-col">
+            <span class="advantage-summary-tag">Traditional Agencies</span>
+            <h4 class="advantage-summary-heading">Bloated &amp; Bureaucratic</h4>
+            <p class="advantage-summary-desc">
+              Heavily marked-up hourly rates to cover non-technical management overhead, junior developers doing the actual build, and 3–6 month timelines.
+            </p>
+          </div>
+
+          <div class="advantage-summary-col">
+            <span class="advantage-summary-tag">Gig Freelancers</span>
+            <h4 class="advantage-summary-heading">Fragmented &amp; Risky</h4>
+            <p class="advantage-summary-desc">
+              Unpredictable delivery schedules, lack of architectural standards, accumulating technical debt, and zero reliability after project handover.
+            </p>
+          </div>
+
+          <div class="advantage-summary-col highlight-col">
+            <span class="advantage-summary-tag">The QUBITHRS Standard</span>
+            <h4 class="advantage-summary-heading">Senior Engineering Squad</h4>
+            <p class="advantage-summary-desc">
+              Direct access to lead software architects, rapid 2–3 week sprint delivery, guaranteed 95+ Core Web Vitals, and 100% intellectual property sovereignty.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -249,7 +321,7 @@
     <div class="container">
       <div class="cta-banner-card reveal">
         <div class="cta-banner-content">
-          <span class="badge badge-live" style="margin-bottom: 14px;">Industry Expertise</span>
+          <span class="section-badge" style="margin-bottom: 14px;">Industry Expertise</span>
           <h2 class="cta-banner-title">Ready to Modernize Your Industry Workflows?</h2>
           <p class="cta-banner-subtitle">
             Schedule a 20-minute architecture discovery call. We'll examine your specific industry requirements and draft an execution plan.
