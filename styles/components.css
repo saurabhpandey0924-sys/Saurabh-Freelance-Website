@@ -5651,3 +5651,18 @@ body.qh-dark-page .mission-vision-simple-grid .mv-statement {
     min-height: 38px !important;
   }
 }
+
+
+/* ==========================================================================
+   PERMANENT REMOVAL OF STATUS DOTS / PULSE DOTS / LIVE BADGE DOTS
+   ========================================================================== */
+.chat-pulse,
+.badge-live::before,
+.cta-banner-card .badge-live::before,
+body.qh-dark-page .badge-live::before,
+body.qh-dark-page .cta-banner-card .badge-live::before {
+  display: none !important;
+  content: none !important;
+  animation: none !important;
+  box-shadow: none !important;
+}
