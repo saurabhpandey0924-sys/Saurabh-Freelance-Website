@@ -1371,6 +1371,7 @@ function initScrollAnimations() {
     window.addEventListener('scroll', unlockMobileVideos, { passive: true, once: true });
     window.addEventListener('click', unlockMobileVideos, { passive: true, once: true });
   }
+}
 
 /* --------------------------------------------------------------------------
    13. WELCOME POPUP
