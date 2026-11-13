@@ -153,83 +153,51 @@
   </a>
 
 
-  <!-- PAGE HEADER / HERO -->
-  <section class="section" style="padding-top: 140px; padding-bottom: 40px;">
-    <div class="container text-center">
-      <div class="section-header reveal">
-        <span class="section-badge">Proven Results</span>
-        <h1 class="section-title">Production Systems & <span class="gradient-text">Featured Work</span></h1>
-        <p class="section-subtitle">
-          Real-world applications engineered to solve complex operational challenges, boost conversion rates, and handle massive scale.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO SECTION -->
-  <section class="section" id="projects" style="padding-top: 0;">
-    <div class="container">
-      <!-- Category Filter Tabs -->
-      <div class="portfolio-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="fullstack">Full-Stack SaaS</button>
-        <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-        <button class="filter-btn" data-filter="ai">AI & Automation</button>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="projects-grid" id="projects-container">
-        <!-- Rendered dynamically by main.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- CLIENT TESTIMONIALS -->
-  <section class="section" id="reviews" >
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-badge">Client Testimonials</span>
-        <h2 class="section-title">Endorsed by <span class="gradient-text">Founders & CTOs</span></h2>
-        <p class="section-subtitle">
-          What founders, venture-backed leaders, and engineering executives say about our delivery speed and code quality.
-        </p>
-      </div>
-
-      <div class="testimonials-grid" id="testimonials-container">
-        <!-- Rendered dynamically by main.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- READY TO LAUNCH BANNER -->
-  <section class="section cta-banner-section">
-    <div class="container">
-      <div class="cta-banner-card reveal">
-        <div class="cta-banner-content">
-          <span class="badge badge-live" style="margin-bottom: 14px;">Instant 24h Response</span>
-          <h2 class="cta-banner-title">Have a Project in Mind? Let's Build Together</h2>
-          <p class="cta-banner-subtitle">
-            Let's review your product specifications, examine feasibility, and map out a fixed-price sprint timeline.
+  <!-- MAIN PORTFOLIO CONTENT: CLEAN COMING SOON -->
+  <main>
+    <section class="section" style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center; padding-top: 150px; padding-bottom: 90px;">
+      <div class="container text-center" style="max-width: 860px;">
+        <div class="section-header reveal" style="margin-bottom: 32px;">
+          <span class="section-badge" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #38BDF8; box-shadow: 0 0 10px #38BDF8;"></span>
+            <span>Case Studies in Curation</span>
+          </span>
+          <h1 class="section-title" style="font-size: clamp(2.4rem, 5vw, 3.8rem); margin-top: 20px; line-height: 1.15;">
+            Client Showcase &amp; Projects <span class="gradient-text">Coming Soon</span>
+          </h1>
+          <p class="section-subtitle" style="font-size: 1.15rem; line-height: 1.8; max-width: 660px; margin: 16px auto 0;">
+            We are currently curating technical breakdowns, architecture blueprints, and production metrics for our enterprise web applications, custom SaaS platforms, and AI systems.
           </p>
-          <div class="cta-banner-actions">
-            <a href="contact.html" class="btn btn-primary btn-lg btn-glow">
-              <span>Start Your Project Inquiry &rarr;</span>
-            </a>
+        </div>
+
+        <!-- Subtle Info Card -->
+        <div class="glass-card reveal" style="max-width: 580px; margin: 0 auto 40px; padding: 26px 30px; border-radius: var(--radius-lg); background: #0A0A0C; border: 1px solid rgba(255, 255, 255, 0.16); text-align: left;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">Private Portfolio Access</div>
+              <div style="font-size: 1.05rem; font-weight: 700; color: #FFFFFF; font-family: var(--font-heading); margin-top: 4px;">Available Upon Discovery Inquiry</div>
+            </div>
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 9999px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); color: #38BDF8; font-size: 0.78rem; font-weight: 600;">
+              NDA Compliant
+            </span>
           </div>
+          <p style="font-size: 0.92rem; color: #CBD5E1; margin-top: 14px; line-height: 1.6; margin-bottom: 0;">
+            Due to non-disclosure agreements with enterprise clients, detailed source architectures and live production previews are shared directly during initial technical consultations.
+          </p>
+        </div>
+
+        <!-- Actions -->
+        <div class="reveal" style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg btn-glow">
+            <span>Schedule Discovery Call &rarr;</span>
+          </a>
+          <a href="index.html" class="btn btn-secondary btn-lg">
+            <span>Explore Engineering Divisions</span>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- PROJECT DETAIL MODAL -->
-  <div class="modal-backdrop" id="project-modal">
-    <div class="modal-dialog">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
-      <div class="modal-body" id="modal-content-container">
-        <!-- Content injected dynamically by modal.js -->
-      </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
