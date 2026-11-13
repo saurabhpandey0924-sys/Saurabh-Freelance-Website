@@ -106,24 +106,28 @@ const PORTFOLIO_DATA = {
 
     principles: [
       {
-        icon: "⚡",
-        title: "Sub-Second Speed & 95+ Core Web Vitals",
-        desc: "Every web app and portal is tuned for instant loading, optimized asset bundles, and peak SEO visibility on all mobile and desktop devices."
+        num: "01",
+        title: "100% Client Sovereignty",
+        desc: "You own every single line of code, every configuration file, and all IP from Day 1. No vendor lock-in.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`
       },
       {
-        icon: "🛡️",
-        title: "Clean, Modular Architecture (Zero Debt)",
-        desc: "Strict typing, modular components, and comprehensive documentation ensure your codebase is future-proof and effortless to maintain or scale."
+        num: "02",
+        title: "Direct Engineering Collaboration",
+        desc: "Communicate directly with the dedicated developers building your platform via structured milestone demos and dedicated channels.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`
       },
       {
-        icon: "🔥",
-        title: "100% Intellectual Property & Code Ownership",
-        desc: "You retain total ownership of all source code, design assets, databases, and deployment repositories from day one with zero vendor lock-in."
+        num: "03",
+        title: "Production Performance Standard",
+        desc: "Every web application is engineered to meet strict modern performance standards and sub-second response times.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`
       },
       {
-        icon: "🤝",
-        title: "Direct Communication & Sprint Transparency",
-        desc: "Direct access to the lead developer with weekly video walkthroughs, clear milestone tracking, and a guaranteed sub-24h response time."
+        num: "04",
+        title: "Long-Term Technology Partner",
+        desc: "Beyond launch, we provide ongoing architectural support, cloud infrastructure scaling, and dependable milestone maintenance.",
+        icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>`
       }
     ],
     stats: [
@@ -164,12 +168,12 @@ const PORTFOLIO_DATA = {
       category: "healthcare",
       accentColor: "#10B981",
       glowColor: "rgba(16, 185, 129, 0.35)",
-      title: "HIP⚡ Telehealth & Encrypted Medical Portals",
+      title: "HIPAA Telehealth & Encrypted Medical Portals",
       desc: "End-to-end encrypted telemedicine platforms, automated doctor scheduling, WebRTC live video consultations, and HL7/FHIR health sync.",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
       metricsList: [
         { value: "250K+", label: "Consultations" },
-        { value: "100%", label: "HIP⚡ Compliant" },
+        { value: "100%", label: "HIPAA Compliant" },
         { value: "0 Leak", label: "Security Record" }
       ],
       metric: { value: "250K+", label: "Patient Consults" }
@@ -954,28 +958,28 @@ const PORTFOLIO_DATA = {
 
     skills: {
     frontend: [
-      { name: "React / Next.js", level: 96, icon: "⚛️" },
-      { name: "TypeScript / JavaScript ES6+", level: 95, icon: "⚡" },
-      { name: "Tailwind CSS / Vanilla CSS", level: 98, icon: "🎨" },
-      { name: "HTML5 / Semantic SEO / WCAG", level: 99, icon: "💎" },
-      { name: "Framer Motion & GSAP Animations", level: 90, icon: "✨" },
-      { name: "State Management (Redux, Zustand)", level: 94, icon: "📦" }
+      { name: "React / Next.js", level: 96, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#61DAFB" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1.5" fill="#61DAFB"/></svg>` },
+      { name: "TypeScript / JavaScript ES6+", level: 95, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3178C6" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="3"/><path d="M9 10v7M6 10h6M15 17c1.5 0 2.5-.8 2.5-2s-1.2-1.5-2.5-1.8c-1.2-.3-2.5-.8-2.5-2s1-2 2.5-2c1 0 2 .5 2.5 1"/></svg>` },
+      { name: "Tailwind CSS / Vanilla CSS", level: 98, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M6 9c1.5-3 3.5-3.5 6-1.5 1.5 1.2 2.5 2 4 2 2 0 3.5-1 4.5-3-1.5 3-3.5 3.5-6 1.5-1.5-1.2-2.5-2-4-2-2 0-3.5 1-4.5 3z"/><path d="M2 16c1.5-3 3.5-3.5 6-1.5 1.5 1.2 2.5 2 4 2 2 0 3.5-1 4.5-3-1.5 3-3.5 3.5-6 1.5-1.5-1.2-2.5-2-4-2-2 0-3.5 1-4.5 3z"/></svg>` },
+      { name: "HTML5 / Semantic SEO / WCAG", level: 99, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E34F26" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>` },
+      { name: "Framer Motion & GSAP Animations", level: 90, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2"><path d="M4 4h16v8h-8z"/><path d="M4 12h8l-8 8z"/><path d="M12 12h8l-8 8z"/></svg>` },
+      { name: "State Management (Redux, Zustand)", level: 94, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#764ABC" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="4" r="2"/><circle cx="12" cy="20" r="2"/><circle cx="5" cy="8" r="2"/><circle cx="19" cy="8" r="2"/><circle cx="5" cy="16" r="2"/><circle cx="19" cy="16" r="2"/><path d="M12 6v3M12 15v3M6.5 9.5l2.5 1.5M15 13l2.5 1.5M17.5 9.5 15 11M9 13l-2.5 1.5"/></svg>` }
     ],
     backend: [
-      { name: "Node.js & Express", level: 94, icon: "🟢" },
-      { name: "Python / FastAPI / Flask", level: 90, icon: "🐍" },
-      { name: "RESTful & GraphQL APIs", level: 96, icon: "🔌" },
-      { name: "PostgreSQL, MySQL & MongoDB", level: 92, icon: "🗄️" },
-      { name: "Redis Caching & Pub/Sub", level: 88, icon: "⚡" },
-      { name: "Auth (JWT, OAuth2, NextAuth, Clerk)", level: 95, icon: "🔐" }
+      { name: "Node.js & Express", level: 94, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2"/><line x1="12" y1="2" x2="12" y2="22"/></svg>` },
+      { name: "Python / FastAPI / Flask", level: 90, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v2h8V6a4 4 0 0 0-4-4z"/><path d="M12 22a4 4 0 0 0 4-4v-2H8v2a4 4 0 0 0 4 4z"/><rect width="8" height="8" x="8" y="8" rx="2"/></svg>` },
+      { name: "RESTful & GraphQL APIs", level: 96, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E10098" stroke-width="2"><circle cx="12" cy="4" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><line x1="12" y1="6" x2="4" y2="18"/><line x1="12" y1="6" x2="20" y2="18"/><line x1="4" y1="18" x2="20" y2="18"/></svg>` },
+      { name: "PostgreSQL, MySQL & MongoDB", level: 92, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#336791" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>` },
+      { name: "Redis Caching & Pub/Sub", level: 88, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><polygon points="12 2 22 8.5 12 15 2 8.5 12 2"/><polygon points="12 9 22 15.5 12 22 2 15.5 12 9"/></svg>` },
+      { name: "Auth (JWT, OAuth2, NextAuth, Clerk)", level: 95, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5"/></svg>` }
     ],
     aiAndDevops: [
-      { name: "AI/LLM Integration (Gemini, OpenAI)", level: 92, icon: "🤖" },
-      { name: "LangChain & Vector Databases", level: 88, icon: "🧠" },
-      { name: "Docker & Containerization", level: 86, icon: "🐳" },
-      { name: "Cloud (AWS, Vercel, Supabase, GCP)", level: 90, icon: "☁️" },
-      { name: "Git / GitHub Actions CI/CD", level: 94, icon: "🔄" },
-      { name: "Performance & Lighthouse Optimization", level: 98, icon: "🚀" }
+      { name: "AI/LLM Integration (Gemini, OpenAI)", level: 92, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg>` },
+      { name: "LangChain & Vector Databases", level: 88, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><line x1="9" y1="6" x2="15" y2="6"/><line x1="6" y1="9" x2="6" y2="15"/><line x1="18" y1="9" x2="18" y2="15"/><line x1="9" y1="18" x2="15" y2="18"/></svg>` },
+      { name: "Docker & Containerization", level: 86, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2"><rect width="3" height="3" x="4" y="11"/><rect width="3" height="3" x="8" y="11"/><rect width="3" height="3" x="12" y="11"/><rect width="3" height="3" x="8" y="7"/><rect width="3" height="3" x="12" y="7"/><path d="M2 15c2 2 6 2 8 0 2-2 6-2 8 0 2 2 4 1 4 0v-2H2v2z"/></svg>` },
+      { name: "Cloud (AWS, Vercel, Supabase, GCP)", level: 90, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>` },
+      { name: "Git / GitHub Actions CI/CD", level: 94, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F05032" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="6" cy="18" r="3"/><line x1="6" y1="9" x2="6" y2="15"/><path d="M9 6h4a5 5 0 0 1 5 5v4"/></svg>` },
+      { name: "Performance & Lighthouse Optimization", level: 98, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 10"/></svg>` }
     ]
   },
 

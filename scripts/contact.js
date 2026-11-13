@@ -67,7 +67,7 @@
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-        showToast('🎉 Thank you! Your message has been sent. QUBITHRS will respond within 4-6 hours.', 'success');
+        showToast('Thank you. Your inquiry has been received. Our solutions team will respond within 4-6 hours.', 'success');
         form.reset();
       }, 1500);
     });
@@ -105,7 +105,7 @@
     `;
 
     toast.innerHTML = `
-      <span>${isSuccess ? '✅' : '⚠️'}</span>
+      <span>${isSuccess ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>' : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'}</span>
       <span>${message}</span>
     `;
 
