@@ -367,9 +367,9 @@ img, svg, video, canvas {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    background: #FFFFFF !important;
-    border: 1px solid var(--border-medium) !important;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+    background: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
     min-height: 380px !important;
   }
 
@@ -1186,4 +1186,20 @@ img, svg, video, canvas {
   .footer-connect-pills {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* ==========================================================================
+   DARK SUBPAGES MOBILE OVERRIDES (PREVENTS ACCIDENTAL WHITE REVERSION)
+   ========================================================================== */
+body.qh-dark-page .mission-card,
+body.qh-dark-page .vision-card,
+body.qh-dark-page .about-simple-card,
+body.qh-dark-page .glass-card,
+body.qh-dark-page .project-card,
+body.qh-dark-page .industry-card {
+  background: #0A0A0C !important;
+  background-color: #0A0A0C !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #FFFFFF !important;
 }

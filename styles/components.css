@@ -5392,3 +5392,110 @@ body.qh-dark-page .footer .footer-bottom {
 body.qh-dark-page .footer .footer-back-to-top {
   color: #0A0A0C !important;
 }
+
+
+/* ==========================================================================
+   ABOUT PAGE: MINIMAL, CLEAN & SIMPLE ARCHITECTURE
+   ========================================================================== */
+.about-simple-card {
+  background: #0A0A0C;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 44px 40px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.75);
+  margin-bottom: 48px;
+  transition: all var(--transition-smooth);
+}
+
+body.qh-dark-page .about-simple-card {
+  background: #0A0A0C !important;
+  background-color: #0A0A0C !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.75) !important;
+}
+
+.about-simple-card:hover {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 255, 255, 0.05) !important;
+  transform: translateY(-3px);
+}
+
+.about-simple-p {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #E2E8F0;
+  margin-bottom: 20px;
+}
+
+body.qh-dark-page .about-simple-p {
+  color: #FFFFFF !important;
+}
+
+.about-simple-p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-capability-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.about-cap-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all var(--transition-fast);
+}
+
+body.qh-dark-page .about-cap-pill {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+}
+
+.about-cap-pill:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.40) !important;
+}
+
+/* Mission & Vision Simple Grid */
+.mission-vision-simple-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+body.qh-dark-page .mission-vision-simple-grid .mv-statement {
+  font-size: 1.05rem !important;
+  line-height: 1.85 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 0 !important;
+  min-height: auto !important;
+}
+
+@media (max-width: 868px) {
+  .mission-vision-simple-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .about-simple-card {
+    padding: 30px 22px !important;
+  }
+  .about-simple-p {
+    font-size: 1rem !important;
+  }
+}
