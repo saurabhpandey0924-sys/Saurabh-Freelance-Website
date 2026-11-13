@@ -15,10 +15,35 @@
     const messageInput = document.getElementById('contact-message');
     const submitBtn = document.getElementById('contact-submit-btn');
 
-    // Check URL parameters for industry prefill on page load
+    // Check URL parameters for service or industry prefill on page load
     const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get('service');
     const industryParam = urlParams.get('industry');
-    if (industryParam && messageInput) {
+
+    if (serviceParam) {
+      const serviceMap = {
+        'software-web': 'Web & Custom Software',
+        'saas-cloud': 'Custom SaaS & Cloud Architecture',
+        'ai-automation': 'AI Agents & Workflow Automation',
+        'cybersecurity-defense': 'Cybersecurity & Cloud Defense',
+        'mobile-apps': 'Mobile & Cross-Platform Apps',
+        'api-integration': 'API & Enterprise Integration'
+      };
+      const mappedService = serviceMap[serviceParam] || serviceParam;
+      if (serviceSelect) {
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].value === mappedService || serviceSelect.options[i].text.toLowerCase().includes(serviceParam.toLowerCase())) {
+            serviceSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      if (messageInput && !messageInput.value) {
+        messageInput.value = `Hi QUBITHRS, we are inquiring about your ${mappedService} engineering services and sprint deliverables.`;
+      }
+    }
+
+    if (industryParam && messageInput && !serviceParam) {
       const industryNames = {
         fintech: 'FinTech & Banking',
         healthcare: 'Healthcare & MedTech',
@@ -32,7 +57,7 @@
         messageInput.value = `Hi QUBITHRS, our team is interested in exploring a custom technology solution and architecture for the ${indName} vertical.`;
       }
       if (serviceSelect) {
-        serviceSelect.value = 'saas';
+        serviceSelect.value = 'Custom SaaS & Cloud Architecture';
       }
     }
 

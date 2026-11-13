@@ -978,6 +978,7 @@ const PORTFOLIO_DATA = {
       "OWASP Top 10 remediation patches and code hardening",
       "Encrypted database configurations & automated KMS key management",
       "Cloudflare WAF rules, DDoS defenses, and sliding-window rate limiters",
+      "Role-Based Access Control (RBAC) & least-privilege permission matrix",
       "Executive Security Clearance Certificate & compliance readiness report"
     ],
     "timeline": "1 - 2 Weeks",

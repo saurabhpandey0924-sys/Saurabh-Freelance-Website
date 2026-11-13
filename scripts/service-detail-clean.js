@@ -1,11 +1,20 @@
 /**
  * QUBITHRS CLEAN SERVICE SPECIFICATION ENGINE
  * Simple, Clean, Effective Specification Architecture
- * 100% Faithful to User Reference Screenshots
+ * 100% Faithful to User Reference Screenshots & Brand Integration
  */
 
 (function () {
   'use strict';
+
+  const DIVISION_SHORT_NAMES = {
+    'software-web': 'Web & Software',
+    'saas-cloud': 'SaaS & Cloud',
+    'ai-automation': 'AI & Automation',
+    'mobile-apps': 'Mobile Apps',
+    'api-integration': 'API Integration',
+    'cybersecurity-defense': 'Cybersecurity'
+  };
 
   const WHATS_INCLUDED = {
     'software-web': [
@@ -33,7 +42,7 @@
       'Hallucination Guardrails & Evaluation'
     ],
     'mobile-apps': [
-      'Cross-Platform iOS & Android Development',
+      'Cross-Platform iOS & Android Apps',
       'Offline-First Data Sync (SQLite)',
       'Push Notifications (APNs & FCM)',
       'Biometric Security (FaceID & Fingerprint)',
@@ -120,6 +129,7 @@
     const nextIdx = (currIdx + 1) % services.length;
     const prevService = services[prevIdx];
     const nextService = services[nextIdx];
+    const divNum = (currIdx + 1).toString().padStart(2, '0');
 
     if (pushState && window.location.search !== `?id=${serviceId}`) {
       window.history.pushState({ id: serviceId }, '', `service-detail.html?id=${serviceId}`);
@@ -143,7 +153,7 @@
       <div class="clean-spec-wrapper">
         <!-- Top Back Nav & Quick Division Switcher -->
         <div class="clean-top-nav">
-          <a href="index.html" class="btn-back-services" aria-label="Back to services showcase">
+          <a href="index.html#division-${divNum}" class="btn-back-services" aria-label="Back to services showcase">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
             <span>BACK TO SERVICES</span>
           </a>
@@ -151,7 +161,7 @@
           <div class="clean-division-pills" role="tablist" aria-label="Division Switcher">
             ${services.map((srv, idx) => {
               const numStr = (idx + 1).toString().padStart(2, '0');
-              const shortName = srv.title.split('&')[0].trim().split(' ')[0];
+              const shortName = DIVISION_SHORT_NAMES[srv.id] || srv.title.split('&')[0].trim();
               const isActive = srv.id === serviceId;
               return `
                 <button type="button" class="clean-div-btn ${isActive ? 'active' : ''}" data-service-id="${srv.id}" role="tab" aria-selected="${isActive}">
@@ -161,21 +171,31 @@
               `;
             }).join('')}
           </div>
+
+          <div class="clean-pager-controls">
+            <span class="clean-pager-indicator">${currIdx + 1} of ${services.length}</span>
+            <button type="button" class="clean-pager-btn" data-service-id="${prevService.id}" title="Previous: ${prevService.title}" aria-label="Previous service">
+              &larr; Prev
+            </button>
+            <button type="button" class="clean-pager-btn" data-service-id="${nextService.id}" title="Next: ${nextService.title}" aria-label="Next service">
+              Next &rarr;
+            </button>
+          </div>
         </div>
 
-        <!-- Dark Hero Banner Card (Exact match to screenshot) -->
+        <!-- Dark Hero Banner Card (Exact match to user reference screenshot) -->
         <div class="clean-hero-card">
           <h1 class="clean-hero-title">${displayTitle}</h1>
           <p class="clean-hero-subtitle">${displaySubtitle}</p>
         </div>
 
-        <!-- Overview Section (Exact match to screenshot) -->
+        <!-- Overview Section (Exact match to user reference screenshot) -->
         <div class="clean-overview-section">
           <h2 class="clean-sec-title">Overview</h2>
           <p class="clean-overview-text">${displayOverview}</p>
         </div>
 
-        <!-- "What's Included" Container (Exact match to screenshot) -->
+        <!-- "What's Included" Container (Exact match to user reference screenshot) -->
         <div class="clean-included-box">
           <h3 class="clean-included-title">What's Included</h3>
           <div class="clean-included-grid">
@@ -262,8 +282,8 @@
       </div>
     `;
 
-    // Division pill click handler
-    const buttons = container.querySelectorAll('.clean-div-btn');
+    // Division pill & pager click handler
+    const buttons = container.querySelectorAll('.clean-div-btn, .clean-pager-btn');
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const targetId = btn.getAttribute('data-service-id');

@@ -113,6 +113,44 @@ body.qh-clean-detail-page .hamburger-line {
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
 }
 
+.clean-pager-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clean-pager-indicator {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #64748B;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.clean-pager-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0F172A;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  border-radius: 9999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.clean-pager-btn:hover {
+  background: #E2E8F0;
+  border-color: #94A3B8;
+  color: #0284C7;
+  transform: translateY(-1px);
+}
+
 /* Dark Hero Banner Card */
 .clean-hero-card {
   background: #0B1120;
@@ -397,3 +435,4 @@ body.qh-clean-detail-page .hamburger-line {
   transform: translateY(-2px);
   color: #0F172A;
 }
+
