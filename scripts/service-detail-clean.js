@@ -1,7 +1,7 @@
 /**
  * QUBITHRS CLEAN SERVICE SPECIFICATION ENGINE
  * Simple, Clean, Effective Specification Architecture
- * 100% Faithful to User Reference Screenshots & Brand Integration
+ * 100% Faithful to User Reference Screenshots & Simple Content Requirements
  */
 
 (function () {
@@ -16,6 +16,7 @@
     'cybersecurity-defense': 'Cybersecurity'
   };
 
+  // Simple, direct, business-friendly "What's Included" for all 6 divisions
   const WHATS_INCLUDED = {
     'software-web': [
       'Business Websites & Web Applications',
@@ -26,72 +27,75 @@
       'Website Maintenance & Support'
     ],
     'saas-cloud': [
-      'Multi-Tenant SaaS Architecture',
+      'Multi-Tenant SaaS Web Applications',
       'Automated Subscription Billing (Stripe)',
-      'User Access & Role Management (RBAC)',
-      'High-Concurrency Microservices & APIs',
-      'Docker Containerization & CI/CD Pipelines',
-      'Real-Time Analytics & Usage Dashboards'
+      'User Accounts & Role Permissions',
+      'Secure Cloud Database & Storage',
+      'Real-Time Analytics & Admin Dashboards',
+      'Cloud Hosting & 99.9% Uptime Setup'
     ],
     'ai-automation': [
-      'Autonomous AI Agents & Copilots',
-      'Enterprise Hybrid RAG & Vector Search',
-      'Automated CRM & Webhook Pipelines',
-      'Real-Time Token Streaming Engines',
-      'Intelligent Document Extraction & OCR',
-      'Hallucination Guardrails & Evaluation'
+      'Custom AI Chatbots & Support Assistants',
+      'Automated Lead Capture & CRM Workflows',
+      'Smart PDF & Invoice Document Extraction',
+      'WhatsApp & Email AI Auto-Responders',
+      'Internal Knowledge Search & FAQ Bots',
+      'Custom Webhook & Third-Party Automations'
     ],
     'mobile-apps': [
-      'Cross-Platform iOS & Android Apps',
-      'Offline-First Data Sync (SQLite)',
-      'Push Notifications (APNs & FCM)',
-      'Biometric Security (FaceID & Fingerprint)',
-      '60/120 FPS Fluid Gestures & Physics',
-      'App Store & Play Store Submissions'
+      'iOS & Android Apps (React Native & Flutter)',
+      'Offline Data Storage & Sync',
+      'Push Notifications & In-App Alerts',
+      'Biometric Login (FaceID & Fingerprint)',
+      'In-App Purchases & Subscriptions',
+      'App Store & Google Play Store Publishing'
     ],
     'api-integration': [
-      'Custom RESTful & GraphQL API Architecture',
-      'Payment Gateway Integration (Stripe & Razorpay)',
-      'Enterprise ERP & CRM Connectors',
-      'High-Throughput Message Queues (BullMQ)',
-      'Contract-First OpenAPI 3.1 & Typed SDKs',
-      'Circuit Breakers & Rate Limiting'
+      'Custom REST & GraphQL API Backends',
+      'Payment Gateway Integrations (Stripe, Razorpay)',
+      'CRM & ERP System Connectors',
+      'Automated Webhook Processing & Sync',
+      'Third-Party Software & Service Integrations',
+      'Secure Data Export & Reporting APIs'
     ],
     'cybersecurity-defense': [
-      'Penetration Testing & Security Audits',
-      'OWASP Top 10 Application Hardening',
-      'End-to-End Cryptography & Key Management',
-      'Cloudflare Enterprise WAF & DDoS Shields',
-      'Zero-Trust Architecture & Identity RBAC',
-      'SOC2 & GDPR Compliance Preparation'
+      'Web Application & Server Security Audits',
+      'Vulnerability Scanning & Bug Patching',
+      'SSL Certificates & End-to-End Encryption',
+      'Firewall Setup (WAF) & DDoS Protection',
+      'User Access Control & Password Security',
+      '24/7 Security Monitoring & Regular Backups'
     ]
   };
 
+  // Simple, clean, plain English overviews (2 short sentences each)
   const CUSTOM_OVERVIEWS = {
     'software-web': 'Our software development services encompass everything from business websites to complex ERP systems. We build reliable, secure, and scalable solutions.',
-    'saas-cloud': 'We engineer complete SaaS platforms with multi-tenancy, automated subscription billing, resilient cloud microservices, and customer management portals ready for scale.',
-    'ai-automation': 'Harness modern Large Language Models and intelligent agent frameworks to automate complex workflows, extract unstructured documents, and stream low-latency AI responses.',
-    'mobile-apps': 'Deliver fast, intuitive, and responsive mobile experiences across iOS and Android from a single codebase, equipped with offline-first synchronization and biometric security.',
-    'api-integration': 'Connect your disparate tools and power your applications with robust, secure, and lightning-fast RESTful and GraphQL APIs built for high concurrency.',
-    'cybersecurity-defense': 'We architect resilient digital fortifications for web applications, APIs, and cloud infrastructure, eliminating OWASP vulnerabilities and enforcing zero-trust access.'
+    'saas-cloud': 'Our SaaS solutions help you launch and scale subscription software. We handle multi-tenant architecture, automated payments, and reliable cloud infrastructure.',
+    'ai-automation': 'Our AI automation services help you save time and cut operational costs. We build custom AI assistants, automate lead capture, and connect your business tools seamlessly.',
+    'mobile-apps': 'Our mobile engineering services deliver high-quality apps for iPhone and Android. We build responsive interfaces, integrate push notifications, and handle complete store publishing.',
+    'api-integration': 'Our API integration services connect your disparate systems so data flows automatically. We eliminate manual data entry, reduce errors, and ensure reliable real-time sync.',
+    'cybersecurity-defense': 'Our security services protect your company against data breaches, hacking attempts, and malware. We test your systems, fix vulnerabilities, and ensure your customer data is safe.'
   };
 
+  // Simple, direct titles matching the screenshot
   const CUSTOM_TITLES = {
     'software-web': 'Software & Website Development',
     'saas-cloud': 'Custom SaaS & Cloud Architecture',
     'ai-automation': 'AI Agents & Workflow Automation',
-    'mobile-apps': 'Mobile & Cross-Platform Development',
-    'api-integration': 'API Engineering & Enterprise Integration',
+    'mobile-apps': 'Mobile App Development (iOS & Android)',
+    'api-integration': 'API Engineering & System Integration',
     'cybersecurity-defense': 'Cybersecurity & Cloud Defense'
   };
 
+  // Simple, clear subtitles
   const CUSTOM_SUBTITLES = {
     'software-web': 'We develop scalable websites, business applications, ERP systems, CRM solutions, mobile apps, and custom software tailored to your business needs.',
-    'saas-cloud': 'Transform your software vision into an investor-ready SaaS product powered by resilient cloud microservices, multi-tenancy, and subscription billing.',
-    'ai-automation': 'Embed autonomous LLM agents, intelligent RAG vector search, dynamic document analysis, and token-streaming copilots directly into your business workflows.',
-    'mobile-apps': 'High-performance iOS and Android applications built with React Native and Flutter, unified backends, and offline-first Progressive Web Apps (PWA).',
-    'api-integration': 'High-concurrency RESTful and GraphQL APIs, seamless third-party ERP/CRM integrations, payment gateway webhooks, and secure event-driven architectures.',
-    'cybersecurity-defense': 'Defense-grade web application firewalls, penetration testing, zero-trust architectures, and automated vulnerability audits to protect enterprise data.'
+    'saas-cloud': 'We build complete SaaS platforms with recurring subscription billing, user management, and scalable cloud hosting.',
+    'ai-automation': 'We build smart AI chatbots, automated business workflows, and document processing tools tailored to your daily operations.',
+    'mobile-apps': 'We develop fast, user-friendly mobile applications for iOS and Android with modern design, offline support, and smooth performance.',
+    'api-integration': 'We develop secure APIs and connect your software with payment gateways, CRMs, ERPs, and external web services.',
+    'cybersecurity-defense': 'We protect your web applications, servers, and business data with security audits, firewall configuration, and vulnerability patches.'
   };
 
   function initCleanSpecification() {

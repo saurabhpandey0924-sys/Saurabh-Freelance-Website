@@ -730,6 +730,10 @@ function initServiceDetailPage() {
     window.initCleanSpecification();
     return;
   }
+  if (typeof window.initServiceDetailMotion === 'function') {
+    window.initServiceDetailMotion();
+    return;
+  }
 
   const detailContainer = document.getElementById('service-detail-container');
   if (!detailContainer) return;
