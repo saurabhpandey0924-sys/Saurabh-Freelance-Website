@@ -1305,26 +1305,72 @@ function initScrollAnimations() {
   // Also observe skill columns directly
   document.querySelectorAll('.skills-column').forEach(el => observer.observe(el));
 
-  // Defensively ensure background slide videos play smoothly & efficiently
+  // Defensively ensure background slide videos play smoothly & efficiently on desktop & mobile
   const slideVideos = document.querySelectorAll('video.qh-slide-bg');
-  if (slideVideos.length > 0 && 'IntersectionObserver' in window) {
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const vid = entry.target;
-        if (entry.isIntersecting) {
-          vid.play().catch(() => {});
-        } else {
-          vid.pause();
-        }
-      });
-    }, { threshold: 0.15 });
-
+  if (slideVideos.length > 0) {
+    // 1. Force audio muted state on JavaScript property level for iOS Safari & Android WebKit
     slideVideos.forEach(vid => {
-      videoObserver.observe(vid);
-      vid.play().catch(() => {});
+      vid.muted = true;
+      vid.defaultMuted = true;
+      vid.setAttribute('playsinline', 'true');
+      vid.setAttribute('webkit-playsinline', 'true');
     });
+
+    // 2. IntersectionObserver for active viewport slide video management
+    if ('IntersectionObserver' in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const vid = entry.target;
+          if (entry.isIntersecting) {
+            vid.muted = true;
+            vid.defaultMuted = true;
+            const playPromise = vid.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
+          } else {
+            vid.pause();
+          }
+        });
+      }, { threshold: 0.1 });
+
+      slideVideos.forEach(vid => {
+        videoObserver.observe(vid);
+      });
+    }
+
+    // 3. Immediate eager start for hero video
+    const heroVid = document.getElementById('hero-bg-video');
+    if (heroVid) {
+      heroVid.muted = true;
+      heroVid.defaultMuted = true;
+      const initialPlay = heroVid.play();
+      if (initialPlay !== undefined) {
+        initialPlay.catch(() => {});
+      }
+    }
+
+    // 4. Mobile User-Interaction Unlock: if low-power mode or background data saver blocked initial autoplay,
+    // the first user touch or scroll immediately unlocks and starts the active video
+    const unlockMobileVideos = () => {
+      slideVideos.forEach(v => {
+        v.muted = true;
+        v.defaultMuted = true;
+      });
+      // Start hero or visible video
+      const firstVid = document.querySelector('.qh-slide video');
+      if (firstVid && firstVid.paused) {
+        firstVid.play().catch(() => {});
+      }
+      window.removeEventListener('touchstart', unlockMobileVideos);
+      window.removeEventListener('scroll', unlockMobileVideos);
+      window.removeEventListener('click', unlockMobileVideos);
+    };
+
+    window.addEventListener('touchstart', unlockMobileVideos, { passive: true, once: true });
+    window.addEventListener('scroll', unlockMobileVideos, { passive: true, once: true });
+    window.addEventListener('click', unlockMobileVideos, { passive: true, once: true });
   }
-}
 
 /* --------------------------------------------------------------------------
    13. WELCOME POPUP

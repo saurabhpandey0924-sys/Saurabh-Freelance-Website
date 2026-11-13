@@ -5499,3 +5499,155 @@ body.qh-dark-page .mission-vision-simple-grid .mv-statement {
     font-size: 1rem !important;
   }
 }
+
+
+/* ==========================================================================
+   MOBILE VIDEO FRAMING & RESPONSIVE CINEMATIC ARRANGE (MOBILE RESOLUTIONS)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Lift and frame video action into the visible upper 60% viewport */
+  .qh-slide-bg {
+    object-fit: cover !important;
+    object-position: center 28% !important;
+    transform: none !important;
+    transition: none !important;
+    filter: brightness(0.76) contrast(1.10) !important;
+  }
+
+  /* Clear luminous gradient: top 50% lets video shine bright, bottom 50% guarantees text contrast */
+  .qh-slide-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 12, 0.35) 0%,
+      rgba(10, 10, 12, 0.06) 25%,
+      rgba(10, 10, 12, 0.28) 52%,
+      rgba(10, 10, 12, 0.78) 78%,
+      rgba(10, 10, 12, 0.98) 100%
+    ) !important;
+  }
+
+  /* Slide vertical layout & safe area padding */
+  .qh-slide {
+    padding: 0 0 calc(36px + env(safe-area-inset-bottom, 0px)) 0 !important;
+    justify-content: flex-end !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+  }
+
+  .qh-slide-content {
+    padding: 0 20px !important;
+    max-width: 100% !important;
+  }
+
+  /* Responsive fluid typography so text never crowds or hides the video */
+  h1.qh-slide-title,
+  .hero-title,
+  .qh-closing-title {
+    font-size: clamp(1.75rem, 6.8vw, 2.25rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 12px !important;
+  }
+
+  .qh-slide-title {
+    font-size: clamp(1.55rem, 6vw, 1.95rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 12px !important;
+  }
+
+  .qh-slide-subtitle {
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 20px !important;
+    max-width: 100% !important;
+  }
+
+  .qh-slide-kicker {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Sleek, non-intrusive mobile button group */
+  .qh-btn-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .qh-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 24px !important;
+    font-size: 0.84rem !important;
+    letter-spacing: 0.06em !important;
+    min-height: 46px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .qh-slide-bg {
+    object-position: center 26% !important;
+  }
+
+  h1.qh-slide-title,
+  .hero-title,
+  .qh-closing-title {
+    font-size: clamp(1.55rem, 7vw, 1.85rem) !important;
+    line-height: 1.16 !important;
+  }
+
+  .qh-slide-title {
+    font-size: clamp(1.4rem, 6.5vw, 1.7rem) !important;
+    line-height: 1.18 !important;
+  }
+
+  .qh-slide-content {
+    padding: 0 16px !important;
+  }
+
+  .qh-slide {
+    padding: 0 0 calc(28px + env(safe-area-inset-bottom, 0px)) 0 !important;
+  }
+}
+
+/* Landscape mobile optimization (when device is rotated horizontally) */
+@media (max-height: 520px) and (orientation: landscape) {
+  .qh-slide {
+    padding: 0 0 16px 0 !important;
+  }
+
+  .qh-slide-content {
+    padding: 0 24px !important;
+  }
+
+  .qh-slide-title {
+    font-size: 1.35rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .qh-slide-subtitle {
+    display: none !important;
+  }
+
+  .qh-slide-kicker {
+    font-size: 0.68rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .qh-btn-group {
+    flex-direction: row !important;
+    gap: 10px !important;
+  }
+
+  .qh-btn {
+    width: auto !important;
+    padding: 8px 18px !important;
+    font-size: 0.78rem !important;
+    min-height: 38px !important;
+  }
+}
