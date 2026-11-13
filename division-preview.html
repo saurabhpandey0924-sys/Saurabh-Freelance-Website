@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divisions UI Showroom | 10 Master Architectures | QUBITHRS</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles/main.css?v=22">
+  <link rel="stylesheet" href="styles/components.css?v=22">
+  <link rel="stylesheet" href="styles/responsive.css?v=22">
+  <style>
+    /* Showroom Navigation & Shell */
+    body.showroom-body {
+      background: #000000 !important;
+      color: #FFFFFF !important;
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .showroom-header-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(8, 9, 13, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      z-index: 9999;
+      padding: 12px 24px;
+    }
+
+    .showroom-header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .showroom-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .showroom-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .showroom-brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .showroom-tag {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #00F0FF;
+      font-family: var(--font-heading);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .showroom-home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: #14161F;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.25s ease;
+    }
+
+    .showroom-home-link:hover {
+      color: #FFFFFF;
+      border-color: #FFFFFF;
+      background: #1C1F2B;
+    }
+
+    /* 10-Design Switcher Pills */
+    .showroom-nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .showroom-nav-pills::-webkit-scrollbar { display: none; }
+
+    .showroom-pill-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      background: #101218;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: var(--font-heading);
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .showroom-pill-btn .pill-num {
+      color: rgba(255, 255, 255, 0.4);
+      font-family: monospace;
+    }
+
+    .showroom-pill-btn:hover {
+      background: #181A24;
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .showroom-pill-btn.active {
+      background: #FFFFFF !important;
+      color: #000000 !important;
+      border-color: #FFFFFF !important;
+      box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2);
+    }
+    .showroom-pill-btn.active .pill-num {
+      color: #000000;
+      font-weight: 700;
+    }
+
+    /* Current Active Meta Banner */
+    .showroom-meta-banner {
+      background: #090A0E;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 24px;
+    }
+    .showroom-meta-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .showroom-meta-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .showroom-meta-desc {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 680px;
+      line-height: 1.5;
+    }
+
+    /* Main Showcase Stage Container */
+    .showroom-stage-container {
+      position: relative;
+      min-height: calc(100vh - 180px);
+      width: 100%;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    .showroom-view {
+      display: none;
+      width: 100%;
+      min-height: 85vh;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .showroom-view.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       DESIGN 1: KEYNOTE SPLIT-STAGE
+       ========================================================================== */
+    .d1-stage {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 50px;
+      align-items: center;
+      min-height: 80vh;
+    }
+    .d1-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      color: #00F0FF;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .d1-title {
+      font-size: clamp(2rem, 3.4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      font-family: var(--font-heading);
+      letter-spacing: -0.02em;
+    }
+    .d1-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 30px;
+      max-width: 520px;
+    }
+    .d1-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .d1-spec-val {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+    }
+    .d1-spec-lbl {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+    .d1-nav-chips {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .d1-chip {
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: #12141C;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .d1-chip.active {
+      background: #FFFFFF;
+      color: #000000;
+      font-weight: 700;
+      border-color: #FFFFFF;
+    }
+    .d1-video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+      background: #090A0F;
+    }
+    .d1-video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .d1-frame-glass-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
+      pointer-events: none;
+    }
+    .d1-frame-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(15, 17, 24, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.75rem;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       DESIGN 2: OBSIDIAN BENTO MATRIX
+       ========================================================================== */
+    .d2-stage {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 50px 30px 80px;
+    }
+    .d2-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .d2-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .d2-card {
+      background: #0C0E14;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .d2-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .d2-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.3);
+      background: #11141D;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    .d2-card:hover::before { opacity: 1; }
+    .d2-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .d2-card-num {
+      font-size: 0.85rem;
+      font-family: monospace;
+      color: #00F0FF;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+    }
+    .d2-card-badge {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .d2-card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .d2-card-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 24px;
+    }
+    .d2-tech-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .d2-tech-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .d2-card-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    .d2-card-cta span { transition: transform 0.2s ease; }
+    .d2-card:hover .d2-card-cta span:last-child { transform: translateX(4px); }
+
+    /* ==========================================================================
+       DESIGN 3: INTERACTIVE ACCORDION STAGE
+       ========================================================================== */
+    .d3-stage {
+      width: 100%;
+      height: 78vh;
+      min-height: 580px;
+      display: flex;
+      background: #000000;
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .d3-col {
+      position: relative;
+      flex: 1;
+      height: 100%;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+      cursor: pointer;
+      transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
+      background: #090A0E;
+    }
+    .d3-col.active {
+      flex: 5.2;
+      background: #000000;
+    }
+    .d3-col video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+      transition: opacity 0.5s ease;
+    }
+    .d3-col.active video { opacity: 0.65; }
+    .d3-col-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
+    }
+    .d3-collapsed-label {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      transform-origin: center center;
+      white-space: nowrap;
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      letter-spacing: 0.14em;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .d3-col.active .d3-collapsed-label { opacity: 0; pointer-events: none; }
+    .d3-active-content {
+      position: absolute;
+      inset: 0;
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s 0.2s ease;
+      z-index: 2;
+    }
+    .d3-col.active .d3-active-content {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ==========================================================================
+       DESIGN 4: COMMAND HUB & LIVE STAGE
+       ========================================================================== */
+    .d4-stage {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 50px 30px;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 40px;
+      min-height: 75vh;
+    }
+    .d4-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .d4-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      border-radius: 12px;
+      background: #0B0D13;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .d4-item:hover {
+      background: #121520;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .d4-item.active {
+      background: #171A26;
+      border-color: #00F0FF;
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+    }
+    .d4-item-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+    }
+    .d4-item-sub {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 3px;
+    }
+    .d4-key {
+      font-family: monospace;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .d4-preview-pane {
+      background: #090B10;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ==========================================================================
+       DESIGN 5: SWISS MONOSPACE BLUEPRINT
+       ========================================================================== */
+    .d5-stage {
+      max-width: 1360px;
+      margin: 40px auto;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #060709;
+    }
+    .d5-topbar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      background: #0B0D12;
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .d5-topbar-cell {
+      padding: 12px 20px;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .d5-topbar-cell:last-child { border-right: none; }
+    .d5-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      overflow-x: auto;
+    }
+    .d5-tab-btn {
+      flex: 1;
+      padding: 14px 20px;
+      background: transparent;
+      border: none;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.6);
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+    .d5-tab-btn.active {
+      background: #141722;
+      color: #FFFFFF;
+      border-bottom: 2px solid #00F0FF;
+    }
+    .d5-content {
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    /* Common Button & Utility */
+    .sh-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      color: #000000;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .sh-btn:hover {
+      background: #E2E8F0;
+      transform: translateY(-2px);
+    }
+    .sh-btn-dark {
+      background: #14161F;
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .sh-btn-dark:hover {
+      background: #1F2230;
+      border-color: #FFFFFF;
+    }
+
+    @media (max-width: 992px) {
+      .d1-stage { grid-template-columns: 1fr; }
+      .d2-grid { grid-template-columns: 1fr; }
+      .d3-stage { flex-direction: column; height: auto; }
+      .d3-col.active { flex: auto; min-height: 400px; }
+      .d4-stage { grid-template-columns: 1fr; }
+      .d5-content { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="showroom-body">
+
+  <!-- SHOWROOM STICKY CONTROLLER -->
+  <header class="showroom-header-bar">
+    <div class="showroom-header-inner">
+      <div class="showroom-top-row">
+        <div class="showroom-brand">
+          <img src="assets/images/qh-logo-transparent.png" alt="QUBITHRS Logo" style="height: 28px; width: auto;">
+          <span class="showroom-brand-title">Divisions UI Showroom</span>
+          <span class="showroom-tag">Live Preview Studio</span>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <a href="index.html" class="showroom-home-link">
+            <span>&larr;</span>
+            <span>Return to Live Website</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 10 Design Switcher Buttons -->
+      <nav class="showroom-nav-pills" id="showroom-nav" aria-label="Sample UI Designs">
+        <button class="showroom-pill-btn active" data-view="1">
+          <span class="pill-num">01</span>
+          <span>Apple Keynote Split</span>
+        </button>
+        <button class="showroom-pill-btn" data-view="2">
+          <span class="pill-num">02</span>
+          <span>Obsidian Bento Matrix</span>
+        </button>
+        <button class="showroom-pill-btn" data-view="3">
+          <span class="pill-num">03</span>
+          <span>Interactive Accordion</span>
+        </button>
+        <button class="showroom-pill-btn" data-view="4">
+          <span class="pill-num">04</span>
+          <span>Command Hub Stage</span>
+        </button>
+        <button class="showroom-pill-btn" data-view="5">
+          <span class="pill-num">05</span>
+          <span>Swiss Monospace Blueprint</span>
+        </button>
+        <button class="showroom-pill-btn" data-view="6">
+          <span class="pill-num">06</span>
+          <span>Spatial Depth 3D Carousel</span>
+        </button>
+        <button class="showroom-pill-btn" data-view="7">
+          <span class="pill-num">07</span>
+          <span>Editorial Monolith Split</span>
+        </button>
+        <button class="showroom-pill-btn" data-view="8">
+          <span class="pill-num">08</span>
+          <span>Systems Telemetry & Flow</span>
+        </button>
+        <button class="showroom-pill-btn" data-view="9">
+          <span class="pill-num">09</span>
+          <span>Tactical Industrial Specs</span>
+        </button>
+        <button class="showroom-pill-btn" data-view="10">
+          <span class="pill-num">10</span>
+          <span>Kinetic Filmstrip Ribbon</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CURRENT DESIGN META INFO BANNER -->
+  <div class="showroom-meta-banner">
+    <div class="showroom-meta-inner">
+      <div>
+        <div class="showroom-meta-title" id="meta-title">
+          <span>Design 01: The Apple Keynote Split-Stage</span>
+        </div>
+        <p class="showroom-meta-desc" id="meta-desc">
+          Preserves immersive full-screen video in an executive floating obsidian glass viewport while displaying crisp typography, live verified metrics, and specifications on the left.
+        </p>
+      </div>
+      <div>
+        <span style="font-size: 0.78rem; color: #00F0FF; font-family: monospace; letter-spacing: 0.08em;">STATUS: READY FOR PRODUCTION</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOWROOM STAGE VIEWPORTS -->
+  <main class="showroom-stage-container">
+
+    <!-- ======================================================================
+         VIEW 1: APPLE KEYNOTE SPLIT-STAGE
+         ====================================================================== -->
+    <section class="showroom-view active" id="view-1">
+      <div class="d1-stage">
+        <div>
+          <div class="d1-kicker" id="d1-kicker">CORE DIVISION • 01 / 06</div>
+          <h2 class="d1-title" id="d1-title">SOFTWARE &amp; CUSTOM WEB DEVELOPMENT</h2>
+          <p class="d1-desc" id="d1-desc">
+            High-performance Next.js architectures, fluid micro-interactions, responsive cross-device engineering, and sub-second load times engineered for enterprise scale.
+          </p>
+          <div class="d1-specs-grid">
+            <div>
+              <div class="d1-spec-val" id="d1-m1">95+</div>
+              <div class="d1-spec-lbl">Core Web Vitals</div>
+            </div>
+            <div>
+              <div class="d1-spec-val" id="d1-m2">&lt;500ms</div>
+              <div class="d1-spec-lbl">Edge Latency</div>
+            </div>
+            <div>
+              <div class="d1-spec-val" id="d1-m3">100%</div>
+              <div class="d1-spec-lbl">Full IP Transfer</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+            <a href="service-detail.html?id=software-web" class="sh-btn" id="d1-cta">
+              <span>EXPLORE SPECIFICATIONS</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="contact.html" class="sh-btn sh-btn-dark">
+              <span>INITIATE SPRINT</span>
+            </a>
+          </div>
+
+          <!-- Division Navigator Chips -->
+          <div class="d1-nav-chips">
+            <button class="d1-chip active" onclick="switchD1(0)">01 Web &amp; Apps</button>
+            <button class="d1-chip" onclick="switchD1(1)">02 SaaS &amp; Cloud</button>
+            <button class="d1-chip" onclick="switchD1(2)">03 AI Automation</button>
+            <button class="d1-chip" onclick="switchD1(3)">04 Mobile Apps</button>
+            <button class="d1-chip" onclick="switchD1(4)">05 API Engineering</button>
+            <button class="d1-chip" onclick="switchD1(5)">06 Cybersecurity</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="d1-video-frame">
+            <video id="d1-video" autoplay muted loop playsinline poster="assets/images/project-ecommerce.jpg">
+              <source id="d1-video-src" src="assets/videos/division-01-web-dev.mp4" type="video/mp4">
+            </video>
+            <div class="d1-frame-glass-overlay"></div>
+            <div class="d1-frame-badge">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #00F0FF;"></span>
+              <span id="d1-badge-txt">Next.js 15 · TypeScript · Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 2: OBSIDIAN BENTO MATRIX (6-CELL PANORAMIC GRID)
+         ====================================================================== -->
+    <section class="showroom-view" id="view-2">
+      <div class="d2-stage">
+        <div class="d2-header">
+          <span style="font-size: 0.8rem; color: #00F0FF; font-family: var(--font-heading); letter-spacing: 0.12em; text-transform: uppercase;">ENGINEERING VERTICALS</span>
+          <h2 style="font-size: 2.4rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin-top: 8px;">Core Engineering Divisions</h2>
+          <p style="font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 620px; margin: 10px auto 0;">
+            Immediate enterprise scannability. Click any division to inspect full technical architecture and delivery scopes.
+          </p>
+        </div>
+
+        <div class="d2-grid">
+          <!-- Card 1 -->
+          <div class="d2-card">
+            <div>
+              <div class="d2-card-top">
+                <span class="d2-card-num">01</span>
+                <span class="d2-card-badge">Web Architecture</span>
+              </div>
+              <h3 class="d2-card-title">Software &amp; Web Development</h3>
+              <p class="d2-card-desc">Production-grade web apps, custom headless portals, and sub-second eCommerce stores.</p>
+              <div class="d2-tech-pills">
+                <span class="d2-tech-pill">Next.js 15</span>
+                <span class="d2-tech-pill">TypeScript</span>
+                <span class="d2-tech-pill">Tailwind</span>
+              </div>
+            </div>
+            <a href="service-detail.html?id=software-web" class="d2-card-cta">
+              <span>Explore Specifications</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="d2-card">
+            <div>
+              <div class="d2-card-top">
+                <span class="d2-card-num">02</span>
+                <span class="d2-card-badge">Cloud Systems</span>
+              </div>
+              <h3 class="d2-card-title">Custom SaaS &amp; Cloud</h3>
+              <p class="d2-card-desc">Multi-tenant B2B architectures, automated billing cycles, and zero-downtime microservices.</p>
+              <div class="d2-tech-pills">
+                <span class="d2-tech-pill">AWS ECS</span>
+                <span class="d2-tech-pill">Docker</span>
+                <span class="d2-tech-pill">PostgreSQL</span>
+              </div>
+            </div>
+            <a href="service-detail.html?id=saas-cloud" class="d2-card-cta">
+              <span>Explore Specifications</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="d2-card">
+            <div>
+              <div class="d2-card-top">
+                <span class="d2-card-num">03</span>
+                <span class="d2-card-badge">AI Intelligence</span>
+              </div>
+              <h3 class="d2-card-title">AI Agents &amp; Automation</h3>
+              <p class="d2-card-desc">Autonomous multi-agent execution, tool-calling LLMs, and high-throughput vector RAG.</p>
+              <div class="d2-tech-pills">
+                <span class="d2-tech-pill">Gemini 1.5</span>
+                <span class="d2-tech-pill">LangChain</span>
+                <span class="d2-tech-pill">Pinecone</span>
+              </div>
+            </div>
+            <a href="service-detail.html?id=ai-automation" class="d2-card-cta">
+              <span>Explore Specifications</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="d2-card">
+            <div>
+              <div class="d2-card-top">
+                <span class="d2-card-num">04</span>
+                <span class="d2-card-badge">Mobile Engineering</span>
+              </div>
+              <h3 class="d2-card-title">Mobile App Development</h3>
+              <p class="d2-card-desc">Native 60/120 FPS iOS &amp; Android platforms engineered from a single performant codebase.</p>
+              <div class="d2-tech-pills">
+                <span class="d2-tech-pill">Flutter</span>
+                <span class="d2-tech-pill">React Native</span>
+                <span class="d2-tech-pill">Swift/Kotlin</span>
+              </div>
+            </div>
+            <a href="service-detail.html?id=mobile-apps" class="d2-card-cta">
+              <span>Explore Specifications</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="d2-card">
+            <div>
+              <div class="d2-card-top">
+                <span class="d2-card-num">05</span>
+                <span class="d2-card-badge">Enterprise Integration</span>
+              </div>
+              <h3 class="d2-card-title">API &amp; Systems Integration</h3>
+              <p class="d2-card-desc">High-throughput REST/GraphQL gateways, CRM/ERP synchronization, and webhook queues.</p>
+              <div class="d2-tech-pills">
+                <span class="d2-tech-pill">FastAPI</span>
+                <span class="d2-tech-pill">GraphQL</span>
+                <span class="d2-tech-pill">Redis Pub/Sub</span>
+              </div>
+            </div>
+            <a href="service-detail.html?id=api-integration" class="d2-card-cta">
+              <span>Explore Specifications</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="d2-card">
+            <div>
+              <div class="d2-card-top">
+                <span class="d2-card-num">06</span>
+                <span class="d2-card-badge">Security Infrastructure</span>
+              </div>
+              <h3 class="d2-card-title">Cybersecurity &amp; Cloud Defense</h3>
+              <p class="d2-card-desc">Zero-trust authorization, penetration testing, automated vulnerability audits, and WAF setup.</p>
+              <div class="d2-tech-pills">
+                <span class="d2-tech-pill">Zero-Trust</span>
+                <span class="d2-tech-pill">OWASP Top 10</span>
+                <span class="d2-tech-pill">Cloudflare WAF</span>
+              </div>
+            </div>
+            <a href="service-detail.html?id=cybersecurity-defense" class="d2-card-cta">
+              <span>Explore Specifications</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 3: INTERACTIVE ACCORDION STAGE
+         ====================================================================== -->
+    <section class="showroom-view" id="view-3">
+      <div class="d3-stage" id="d3-accordion">
+        <!-- Col 1 -->
+        <div class="d3-col active" onclick="activateD3(this)">
+          <video autoplay muted loop playsinline poster="assets/images/project-ecommerce.jpg">
+            <source src="assets/videos/division-01-web-dev.mp4" type="video/mp4">
+          </video>
+          <div class="d3-col-overlay"></div>
+          <div class="d3-collapsed-label">
+            <span style="color: #00F0FF; font-weight: 800;">01</span>
+            <span>Web Development</span>
+          </div>
+          <div class="d3-active-content">
+            <span style="font-size: 0.8rem; color: #00F0FF; font-family: monospace;">CORE DIVISION • 01</span>
+            <h3 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin: 8px 0 14px;">Software &amp; Web Development</h3>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 500px; line-height: 1.6; margin-bottom: 24px;">High-performance Next.js architectures, fluid micro-interactions, and sub-second load times.</p>
+            <a href="service-detail.html?id=software-web" class="sh-btn" style="width: fit-content;">Explore Specifications &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="d3-col" onclick="activateD3(this)">
+          <video autoplay muted loop playsinline poster="assets/images/project-saas.jpg">
+            <source src="assets/videos/division-02-saas-cloud.mp4" type="video/mp4">
+          </video>
+          <div class="d3-col-overlay"></div>
+          <div class="d3-collapsed-label">
+            <span style="color: #00F0FF; font-weight: 800;">02</span>
+            <span>SaaS &amp; Cloud</span>
+          </div>
+          <div class="d3-active-content">
+            <span style="font-size: 0.8rem; color: #00F0FF; font-family: monospace;">CORE DIVISION • 02</span>
+            <h3 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin: 8px 0 14px;">Custom SaaS &amp; Cloud</h3>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 500px; line-height: 1.6; margin-bottom: 24px;">Multi-tenant cloud architectures with zero-downtime CI/CD deployment pipelines.</p>
+            <a href="service-detail.html?id=saas-cloud" class="sh-btn" style="width: fit-content;">Explore Specifications &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="d3-col" onclick="activateD3(this)">
+          <video autoplay muted loop playsinline poster="assets/images/project-ai.jpg">
+            <source src="assets/videos/division-03-ai-automation.mp4" type="video/mp4">
+          </video>
+          <div class="d3-col-overlay"></div>
+          <div class="d3-collapsed-label">
+            <span style="color: #00F0FF; font-weight: 800;">03</span>
+            <span>AI Automation</span>
+          </div>
+          <div class="d3-active-content">
+            <span style="font-size: 0.8rem; color: #00F0FF; font-family: monospace;">CORE DIVISION • 03</span>
+            <h3 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin: 8px 0 14px;">AI Agents &amp; Automation</h3>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 500px; line-height: 1.6; margin-bottom: 24px;">Autonomous multi-agent execution, tool-calling LLMs, and high-throughput vector RAG.</p>
+            <a href="service-detail.html?id=ai-automation" class="sh-btn" style="width: fit-content;">Explore Specifications &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="d3-col" onclick="activateD3(this)">
+          <video autoplay muted loop playsinline poster="assets/images/project-fintech.jpg">
+            <source src="assets/videos/division-04-mobile-apps.mp4" type="video/mp4">
+          </video>
+          <div class="d3-col-overlay"></div>
+          <div class="d3-collapsed-label">
+            <span style="color: #00F0FF; font-weight: 800;">04</span>
+            <span>Mobile Engineering</span>
+          </div>
+          <div class="d3-active-content">
+            <span style="font-size: 0.8rem; color: #00F0FF; font-family: monospace;">CORE DIVISION • 04</span>
+            <h3 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin: 8px 0 14px;">Mobile App Development</h3>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 500px; line-height: 1.6; margin-bottom: 24px;">60/120 FPS iOS and Android mobile applications with offline-first synchronization.</p>
+            <a href="service-detail.html?id=mobile-apps" class="sh-btn" style="width: fit-content;">Explore Specifications &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Col 5 -->
+        <div class="d3-col" onclick="activateD3(this)">
+          <video autoplay muted loop playsinline poster="assets/images/project-api.jpg">
+            <source src="assets/videos/division-05-api-integration.mp4" type="video/mp4">
+          </video>
+          <div class="d3-col-overlay"></div>
+          <div class="d3-collapsed-label">
+            <span style="color: #00F0FF; font-weight: 800;">05</span>
+            <span>API &amp; Systems</span>
+          </div>
+          <div class="d3-active-content">
+            <span style="font-size: 0.8rem; color: #00F0FF; font-family: monospace;">CORE DIVISION • 05</span>
+            <h3 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin: 8px 0 14px;">API &amp; Systems Integration</h3>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 500px; line-height: 1.6; margin-bottom: 24px;">High-throughput microservices, distributed webhook queues, and legacy modernization.</p>
+            <a href="service-detail.html?id=api-integration" class="sh-btn" style="width: fit-content;">Explore Specifications &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Col 6 -->
+        <div class="d3-col" onclick="activateD3(this)">
+          <video autoplay muted loop playsinline poster="assets/images/project-cybersecurity.jpg">
+            <source src="assets/videos/division-06-cybersecurity.mp4" type="video/mp4">
+          </video>
+          <div class="d3-col-overlay"></div>
+          <div class="d3-collapsed-label">
+            <span style="color: #00F0FF; font-weight: 800;">06</span>
+            <span>Cybersecurity</span>
+          </div>
+          <div class="d3-active-content">
+            <span style="font-size: 0.8rem; color: #00F0FF; font-family: monospace;">CORE DIVISION • 06</span>
+            <h3 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin: 8px 0 14px;">Cybersecurity &amp; Cloud Defense</h3>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 500px; line-height: 1.6; margin-bottom: 24px;">Zero-trust security architecture, automated vulnerability scanning, and edge defense.</p>
+            <a href="service-detail.html?id=cybersecurity-defense" class="sh-btn" style="width: fit-content;">Explore Specifications &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 4: COMMAND HUB & LIVE STAGE (RAYCAST / SUPERHUMAN)
+         ====================================================================== -->
+    <section class="showroom-view" id="view-4">
+      <div class="d4-stage">
+        <div>
+          <div style="font-size: 0.75rem; color: #00F0FF; font-family: monospace; letter-spacing: 0.1em; margin-bottom: 14px;">SELECT DIVISION [1..6]</div>
+          <div class="d4-list">
+            <div class="d4-item active" onclick="switchD4(0, this)">
+              <div>
+                <div class="d4-item-name">01 Web &amp; Software Development</div>
+                <div class="d4-item-sub">Next.js · Headless Portals · High-FPS UI</div>
+              </div>
+              <span class="d4-key">1</span>
+            </div>
+            <div class="d4-item" onclick="switchD4(1, this)">
+              <div>
+                <div class="d4-item-name">02 Custom SaaS &amp; Cloud Architecture</div>
+                <div class="d4-item-sub">Multi-Tenant RBAC · AWS · Microservices</div>
+              </div>
+              <span class="d4-key">2</span>
+            </div>
+            <div class="d4-item" onclick="switchD4(2, this)">
+              <div>
+                <div class="d4-item-name">03 AI Agents &amp; Workflow Automation</div>
+                <div class="d4-item-sub">LLM Tool Calling · LangChain · Vector RAG</div>
+              </div>
+              <span class="d4-key">3</span>
+            </div>
+            <div class="d4-item" onclick="switchD4(3, this)">
+              <div>
+                <div class="d4-item-name">04 Mobile App Development</div>
+                <div class="d4-item-sub">Flutter · React Native · Native 120 FPS</div>
+              </div>
+              <span class="d4-key">4</span>
+            </div>
+            <div class="d4-item" onclick="switchD4(4, this)">
+              <div>
+                <div class="d4-item-name">05 API Engineering &amp; Integration</div>
+                <div class="d4-item-sub">REST / GraphQL · Stripe · Webhooks</div>
+              </div>
+              <span class="d4-key">5</span>
+            </div>
+            <div class="d4-item" onclick="switchD4(5, this)">
+              <div>
+                <div class="d4-item-name">06 Cybersecurity &amp; Cloud Defense</div>
+                <div class="d4-item-sub">Zero-Trust · WAF · Vulnerability Audits</div>
+              </div>
+              <span class="d4-key">6</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d4-preview-pane">
+          <div>
+            <div style="font-size: 0.8rem; color: #00F0FF; font-family: monospace;" id="d4-kicker">DIVISION ACTIVE • 01</div>
+            <h3 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin: 8px 0 16px;" id="d4-title">Software &amp; Custom Web Development</h3>
+            <p style="font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.72); max-width: 650px;" id="d4-desc">
+              Custom web engineering combining strict TypeScript code standards, atomic design systems, headless content APIs, and sub-second load times.
+            </p>
+          </div>
+          
+          <div style="margin: 30px 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15); height: 260px;">
+            <video id="d4-video" autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+              <source id="d4-video-src" src="assets/videos/division-01-web-dev.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="font-size: 0.82rem; color: rgba(255,255,255,0.5);" id="d4-meta">Core Stack: React 19 · Next.js 15 · TypeScript · Tailwind</div>
+            <a href="service-detail.html?id=software-web" class="sh-btn" id="d4-cta">Explore Specifications &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 5: SWISS MONOSPACE BLUEPRINT (STRIPE PRESS / TERMINAL)
+         ====================================================================== -->
+    <section class="showroom-view" id="view-5">
+      <div class="d5-stage">
+        <div class="d5-topbar">
+          <div class="d5-topbar-cell">ORG: QUBITHRS ENGINEERING</div>
+          <div class="d5-topbar-cell" id="d5-spec-id">DIV_ID: QH-CORE-01</div>
+          <div class="d5-topbar-cell">SLA: 99.99% GUARANTEE</div>
+          <div class="d5-topbar-cell">LATENCY: &lt;50MS EDGE</div>
+        </div>
+        <div class="d5-tabs">
+          <button class="d5-tab-btn active" onclick="switchD5(0, this)">[01] WEB &amp; SOFTWARE</button>
+          <button class="d5-tab-btn" onclick="switchD5(1, this)">[02] SAAS PLATFORMS</button>
+          <button class="d5-tab-btn" onclick="switchD5(2, this)">[03] AI AUTOMATION</button>
+          <button class="d5-tab-btn" onclick="switchD5(3, this)">[04] MOBILE APPS</button>
+          <button class="d5-tab-btn" onclick="switchD5(4, this)">[05] API SYSTEMS</button>
+          <button class="d5-tab-btn" onclick="switchD5(5, this)">[06] CYBERSECURITY</button>
+        </div>
+        <div class="d5-content">
+          <div>
+            <div style="font-size: 0.75rem; color: #00F0FF; font-family: monospace; letter-spacing: 0.1em; margin-bottom: 12px;">// ARCHITECTURAL DOSSIER</div>
+            <h2 style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-heading); color: #FFFFFF; margin-bottom: 18px;" id="d5-title">Software &amp; Web Development</h2>
+            <p style="font-size: 0.98rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin-bottom: 24px;" id="d5-desc">
+              Full-lifecycle web engineering architected with strict TypeScript typing, modular atomic components, and headless decoupled APIs.
+            </p>
+            <div style="font-family: monospace; font-size: 0.85rem; line-height: 2; color: rgba(255,255,255,0.85); background: #0E1017; padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 28px;" id="d5-matrix">
+              [+] Core Engine: Next.js 15 / React 19<br>
+              [+] Type Safety: TypeScript Strict Mode (Zero Any)<br>
+              [+] State Layer: TanStack Query + Zustand<br>
+              [+] Vitals SLA: 95+ Core Web Vitals Guaranteed
+            </div>
+            <a href="service-detail.html?id=software-web" class="sh-btn" id="d5-cta">VIEW COMPLETE SPECIFICATIONS</a>
+          </div>
+
+          <div>
+            <div style="border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; overflow: hidden; background: #08090D;">
+              <video id="d5-video" autoplay muted loop playsinline style="width: 100%; height: 280px; object-fit: cover;">
+                <source id="d5-video-src" src="assets/videos/division-01-web-dev.mp4" type="video/mp4">
+              </video>
+              <div style="padding: 16px 20px; font-family: monospace; font-size: 0.78rem; color: rgba(255,255,255,0.6); border-top: 1px solid rgba(255,255,255,0.1);">
+                VERIFIED PIPELINE: ZERO VENDOR LOCK-IN · FULL REPO HANDOVER
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEWS 6 TO 10: CONCISE HIGH-CONCEPT DEMONSTRATIONS
+         ====================================================================== -->
+    <!-- View 6: 3D Spatial Carousel Concept -->
+    <section class="showroom-view" id="view-6">
+      <div style="max-width: 1200px; margin: 80px auto; text-align: center; padding: 0 30px;">
+        <span style="font-size: 0.8rem; color: #00F0FF; font-family: monospace; letter-spacing: 0.12em;">DESIGN 06 ARCHITECTURE</span>
+        <h2 style="font-size: 2.5rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-heading); margin-top: 8px;">Spatial Depth 3D Carousel</h2>
+        <p style="font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 12px auto 50px;">
+          Divisions float along the z-axis with calibrated perspective angles (`perspective: 1200px`) and dark ambient floor reflections.
+        </p>
+
+        <div style="display: flex; justify-content: center; align-items: center; gap: 20px; perspective: 1000px; padding-bottom: 40px;">
+          <!-- Card Left -->
+          <div style="width: 280px; height: 380px; border-radius: 18px; background: #0A0C12; border: 1px solid rgba(255,255,255,0.12); transform: rotateY(25deg) scale(0.85); opacity: 0.6; padding: 24px; text-align: left;">
+            <span style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">DIV • 01</span>
+            <h4 style="font-size: 1.2rem; color: #FFF; font-family: var(--font-heading); margin-top: 10px;">Web Development</h4>
+          </div>
+          <!-- Card Center (Hero) -->
+          <div style="width: 440px; height: 440px; border-radius: 20px; background: #12141F; border: 2px solid #00F0FF; box-shadow: 0 20px 60px rgba(0, 240, 255, 0.2); padding: 32px; text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span style="font-size: 0.8rem; color: #00F0FF; font-family: monospace; font-weight: 700;">DIV • 02 (IN FOCUS)</span>
+              <h3 style="font-size: 1.8rem; font-weight: 800; color: #FFF; font-family: var(--font-heading); margin: 8px 0 14px;">Custom SaaS &amp; Cloud</h3>
+              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.6;">Multi-tenant B2B architectures, automated billing cycles, and zero-downtime microservices.</p>
+            </div>
+            <a href="service-detail.html?id=saas-cloud" class="sh-btn" style="width: fit-content;">Inspect Specification &rarr;</a>
+          </div>
+          <!-- Card Right -->
+          <div style="width: 280px; height: 380px; border-radius: 18px; background: #0A0C12; border: 1px solid rgba(255,255,255,0.12); transform: rotateY(-25deg) scale(0.85); opacity: 0.6; padding: 24px; text-align: left;">
+            <span style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">DIV • 03</span>
+            <h4 style="font-size: 1.2rem; color: #FFF; font-family: var(--font-heading); margin-top: 10px;">AI Agents</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 7: Editorial Monolith -->
+    <section class="showroom-view" id="view-7">
+      <div style="max-width: 1400px; margin: 60px auto; padding: 0 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+        <div>
+          <div style="font-size: 4.5rem; font-weight: 900; font-family: var(--font-heading); color: rgba(255,255,255,0.15); line-height: 1;">03</div>
+          <h2 style="font-size: 2.8rem; font-weight: 800; font-family: var(--font-heading); color: #FFF; margin: 10px 0 20px;">AI Agents &amp; Workflow Automation</h2>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 30px;">
+            We architect self-healing multi-agent swarms, LLM function calling engines, and hybrid vector RAG pipelines that automate complex enterprise operations.
+          </p>
+          <a href="service-detail.html?id=ai-automation" class="sh-btn">Read Executive Dossier &rarr;</a>
+        </div>
+        <div style="border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15); height: 420px;">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="assets/videos/division-03-ai-automation.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 8: Systems Telemetry & Flow -->
+    <section class="showroom-view" id="view-8">
+      <div style="max-width: 1300px; margin: 60px auto; padding: 0 30px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <span style="font-size: 0.8rem; color: #00F0FF; font-family: monospace; letter-spacing: 0.1em;">TELEMETRY BLUEPRINT</span>
+          <h2 style="font-size: 2.4rem; font-weight: 800; font-family: var(--font-heading); color: #FFF; margin-top: 8px;">Division 05: API Systems &amp; Integration</h2>
+        </div>
+        <div style="background: #0B0D14; border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 40px;">
+          <div style="font-family: monospace; font-size: 0.85rem; color: #00F0FF; margin-bottom: 20px;">// REAL-TIME DATAFLOW PIPELINE</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+            <div style="padding: 16px 24px; border-radius: 10px; background: #141722; border: 1px solid rgba(255,255,255,0.15); text-align: center;">
+              <div style="font-weight: 700; color: #FFF;">Client Request</div>
+              <div style="font-size: 0.75rem; color: rgba(255,255,255,0.5);">HTTPS / WebSocket</div>
+            </div>
+            <div style="color: #00F0FF; font-weight: 700;">&xrarr;</div>
+            <div style="padding: 16px 24px; border-radius: 10px; background: #141722; border: 1px solid rgba(255,255,255,0.15); text-align: center;">
+              <div style="font-weight: 700; color: #FFF;">Edge WAF Gateway</div>
+              <div style="font-size: 0.75rem; color: rgba(255,255,255,0.5);">DDoS &amp; Rate Limiter</div>
+            </div>
+            <div style="color: #00F0FF; font-weight: 700;">&xrarr;</div>
+            <div style="padding: 16px 24px; border-radius: 10px; background: #141722; border: 1px solid rgba(255,255,255,0.15); text-align: center;">
+              <div style="font-weight: 700; color: #FFF;">FastAPI / GraphQL</div>
+              <div style="font-size: 0.75rem; color: rgba(255,255,255,0.5);">Sub-15ms Processing</div>
+            </div>
+            <div style="color: #00F0FF; font-weight: 700;">&xrarr;</div>
+            <div style="padding: 16px 24px; border-radius: 10px; background: #141722; border: 1px solid rgba(255,255,255,0.15); text-align: center;">
+              <div style="font-weight: 700; color: #FFF;">PostgreSQL Cluster</div>
+              <div style="font-size: 0.75rem; color: rgba(255,255,255,0.5);">ACID Compliant</div>
+            </div>
+          </div>
+          <a href="service-detail.html?id=api-integration" class="sh-btn">Inspect API Specifications &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 9: Tactical Spec Sheet -->
+    <section class="showroom-view" id="view-9">
+      <div style="max-width: 1200px; margin: 60px auto; padding: 0 30px;">
+        <div style="background: #0D0F14; border: 1px solid #232733; border-radius: 14px; padding: 36px; font-family: monospace;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #232733; padding-bottom: 20px; margin-bottom: 24px;">
+            <span style="color: #00F0FF; font-weight: 700;">[TACTICAL CONTROL UNIT: QH-2026]</span>
+            <span style="color: rgba(255,255,255,0.5);">SPECIFICATION PROTOCOL: ISO-9001</span>
+          </div>
+          <h2 style="font-size: 1.8rem; color: #FFF; font-family: var(--font-heading); margin-bottom: 24px;">06 // CYBERSECURITY &amp; CLOUD DEFENSE</h2>
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+            <tr style="border-bottom: 1px solid #1D212B;">
+              <th style="padding: 12px 0; color: rgba(255,255,255,0.5);">PARAMETER</th>
+              <th style="padding: 12px 0; color: rgba(255,255,255,0.5);">SPECIFICATION</th>
+              <th style="padding: 12px 0; color: rgba(255,255,255,0.5);">STANDARD</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #1D212B;">
+              <td style="padding: 14px 0; color: #FFF;">Authorization</td>
+              <td style="padding: 14px 0; color: #00F0FF;">Zero-Trust Multi-Tenant RBAC</td>
+              <td style="padding: 14px 0; color: rgba(255,255,255,0.7);">OWASP ASVS L3</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1D212B;">
+              <td style="padding: 14px 0; color: #FFF;">WAF Protection</td>
+              <td style="padding: 14px 0; color: #00F0FF;">Managed Cloudflare Enterprise Shield</td>
+              <td style="padding: 14px 0; color: rgba(255,255,255,0.7);">L3/L4/L7 DDoS Proof</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1D212B;">
+              <td style="padding: 14px 0; color: #FFF;">Data Encryption</td>
+              <td style="padding: 14px 0; color: #00F0FF;">TLS 1.3 Strict + AES-256-GCM At Rest</td>
+              <td style="padding: 14px 0; color: rgba(255,255,255,0.7);">FIPS 140-3 Validated</td>
+            </tr>
+          </table>
+          <div style="margin-top: 30px;">
+            <a href="service-detail.html?id=cybersecurity-defense" class="sh-btn">Engage Security Dossier &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 10: Kinetic Filmstrip Ribbon -->
+    <section class="showroom-view" id="view-10">
+      <div style="padding: 60px 40px; overflow-x: auto; scrollbar-width: none;">
+        <div style="display: flex; gap: 30px; width: max-content;">
+          <!-- Slide 1 -->
+          <div style="width: 580px; border-radius: 20px; overflow: hidden; background: #0B0D13; border: 1px solid rgba(255,255,255,0.15);">
+            <video autoplay muted loop playsinline style="width: 100%; height: 260px; object-fit: cover;">
+              <source src="assets/videos/division-01-web-dev.mp4" type="video/mp4">
+            </video>
+            <div style="padding: 28px;">
+              <span style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">DIV • 01</span>
+              <h3 style="font-size: 1.6rem; color: #FFF; font-family: var(--font-heading); margin: 6px 0 12px;">Software &amp; Web Development</h3>
+              <p style="font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 20px;">High-performance Next.js architectures, fluid micro-interactions, and sub-second load times.</p>
+              <a href="service-detail.html?id=software-web" class="sh-btn">Explore Specifications &rarr;</a>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div style="width: 580px; border-radius: 20px; overflow: hidden; background: #0B0D13; border: 1px solid rgba(255,255,255,0.15);">
+            <video autoplay muted loop playsinline style="width: 100%; height: 260px; object-fit: cover;">
+              <source src="assets/videos/division-02-saas-cloud.mp4" type="video/mp4">
+            </video>
+            <div style="padding: 28px;">
+              <span style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">DIV • 02</span>
+              <h3 style="font-size: 1.6rem; color: #FFF; font-family: var(--font-heading); margin: 6px 0 12px;">Custom SaaS &amp; Cloud</h3>
+              <p style="font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 20px;">Multi-tenant cloud architectures with zero-downtime CI/CD deployment pipelines.</p>
+              <a href="service-detail.html?id=saas-cloud" class="sh-btn">Explore Specifications &rarr;</a>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div style="width: 580px; border-radius: 20px; overflow: hidden; background: #0B0D13; border: 1px solid rgba(255,255,255,0.15);">
+            <video autoplay muted loop playsinline style="width: 100%; height: 260px; object-fit: cover;">
+              <source src="assets/videos/division-03-ai-automation.mp4" type="video/mp4">
+            </video>
+            <div style="padding: 28px;">
+              <span style="font-size: 0.75rem; color: #00F0FF; font-family: monospace;">DIV • 03</span>
+              <h3 style="font-size: 1.6rem; color: #FFF; font-family: var(--font-heading); margin: 6px 0 12px;">AI Agents &amp; Automation</h3>
+              <p style="font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 20px;">Autonomous multi-agent execution, tool-calling LLMs, and high-throughput vector RAG.</p>
+              <a href="service-detail.html?id=ai-automation" class="sh-btn">Explore Specifications &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Data definition for division samples
+    const divisionsData = [
+      {
+        num: "01",
+        title: "SOFTWARE & CUSTOM WEB DEVELOPMENT",
+        desc: "High-performance Next.js architectures, fluid micro-interactions, responsive cross-device engineering, and sub-second load times engineered for enterprise scale.",
+        video: "assets/videos/division-01-web-dev.mp4",
+        poster: "assets/images/project-ecommerce.jpg",
+        badge: "Next.js 15 · TypeScript · Tailwind CSS",
+        id: "software-web",
+        m1: "95+", m2: "<500ms", m3: "100%"
+      },
+      {
+        num: "02",
+        title: "CUSTOM SAAS & CLOUD ARCHITECTURE",
+        desc: "End-to-end multi-tenant SaaS platforms, cloud infrastructure automation, high-availability microservices, and automated subscription monetization engines.",
+        video: "assets/videos/division-02-saas-cloud.mp4",
+        poster: "assets/images/project-saas.jpg",
+        badge: "AWS ECS · Docker · PostgreSQL · Redis",
+        id: "saas-cloud",
+        m1: "99.99%", m2: "<50ms", m3: "100%"
+      },
+      {
+        num: "03",
+        title: "AI AGENTS & WORKFLOW AUTOMATION",
+        desc: "Autonomous multi-agent execution swarms, self-healing function calling, LLM fine-tuning, and high-throughput hybrid vector RAG retrieval pipelines.",
+        video: "assets/videos/division-03-ai-automation.mp4",
+        poster: "assets/images/project-ai.jpg",
+        badge: "Gemini 1.5 · LangChain · Pinecone",
+        id: "ai-automation",
+        m1: "<180ms", m2: "Zero Leak", m3: "100%"
+      },
+      {
+        num: "04",
+        title: "MOBILE APP DEVELOPMENT (iOS & ANDROID)",
+        desc: "High-performance cross-platform mobile engineering engineered with React Native and Flutter, native device sensors, biometrics, and offline-first data sync.",
+        video: "assets/videos/division-04-mobile-apps.mp4",
+        poster: "assets/images/project-fintech.jpg",
+        badge: "Flutter · React Native · Swift · Kotlin",
+        id: "mobile-apps",
+        m1: "120 FPS", m2: "<1s Launch", m3: "100%"
+      },
+      {
+        num: "05",
+        title: "API ENGINEERING & INTEGRATION",
+        desc: "High-throughput RESTful and GraphQL API backends, distributed microservices, webhook orchestration, and robust ERP/CRM enterprise synchronization.",
+        video: "assets/videos/division-05-api-integration.mp4",
+        poster: "assets/images/project-api.jpg",
+        badge: "FastAPI · GraphQL · Kafka · Redis",
+        id: "api-integration",
+        m1: "100K+ RPS", m2: "<12ms", m3: "100%"
+      },
+      {
+        num: "06",
+        title: "CYBERSECURITY & CLOUD DEFENSE",
+        desc: "Defense-grade web application firewalls, penetration testing, zero-trust architectures, and automated vulnerability audits to protect enterprise data.",
+        video: "assets/videos/division-06-cybersecurity.mp4",
+        poster: "assets/images/project-cybersecurity.jpg",
+        badge: "Zero-Trust · OWASP ASVS · Cloudflare WAF",
+        id: "cybersecurity-defense",
+        m1: "SOC2 Ready", m2: "Zero Trust", m3: "100%"
+      }
+    ];
+
+    const metaDescriptions = {
+      1: {
+        title: "Design 01: The Apple Keynote Split-Stage",
+        desc: "Preserves immersive full-screen video in an executive floating obsidian glass viewport while displaying crisp typography, live verified metrics, and specifications on the left."
+      },
+      2: {
+        title: "Design 02: The Obsidian Bento Matrix",
+        desc: "Silicon Valley Tier-0 standard. Displays all 6 divisions simultaneously in high-density titanium cards with subtle cursor radial glow and zero scroll fatigue."
+      },
+      3: {
+        title: "Design 03: The Interactive Accordion Stage",
+        desc: "Awwwards Site of the Year signature. 6 edge-to-edge luxury vertical columns stretching 100vw; active division expands to 55% width on hover with playing video."
+      },
+      4: {
+        title: "Design 04: The Command Hub & Live Stage",
+        desc: "Raycast/Superhuman developer aesthetic. Left side keyboard-friendly division directory; right side instant glass architecture preview."
+      },
+      5: {
+        title: "Design 05: The Swiss Monospace Blueprint",
+        desc: "Classical Swiss typography meets institutional defense tech. Hairline 1px graphite grid lines, monospace metadata coordinates, and zero clutter."
+      },
+      6: {
+        title: "Design 06: Spatial Depth 3D Carousel",
+        desc: "Vision Pro spatial depth planes. Cards rotate along the z-axis with perspective angles and dark ambient floor reflections."
+      },
+      7: {
+        title: "Design 07: Editorial Monolith Split",
+        desc: "High-end design studio editorial. Pinned typography on the left with frameless edge-to-edge cinematic video window on the right."
+      },
+      8: {
+        title: "Design 08: Systems Telemetry & Flow",
+        desc: "Palantir enterprise software architecture. Live interactive pipeline schematic diagrams and verified throughput metrics."
+      },
+      9: {
+        title: "Design 09: Tactical Industrial Spec Sheet",
+        desc: "Teenage Engineering / Leica hardware aesthetic. Anodized dark metal finish, stepped channel selector buttons, and dense parameter tables."
+      },
+      10: {
+        title: "Design 10: Kinetic Filmstrip Ribbon",
+        desc: "Continuous horizontal filmstrip track. Users glide through panoramic division cards with floating glass meta-badges."
+      }
+    };
+
+    // Navigation Switcher
+    const navButtons = document.querySelectorAll('.showroom-pill-btn');
+    const views = document.querySelectorAll('.showroom-view');
+    const metaTitle = document.getElementById('meta-title');
+    const metaDesc = document.getElementById('meta-desc');
+
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const viewId = btn.getAttribute('data-view');
+        
+        navButtons.forEach(b => b.classList.remove('active'));
+        views.forEach(v => v.classList.remove('active'));
+
+        btn.classList.add('active');
+        const targetView = document.getElementById('view-' + viewId);
+        if (targetView) targetView.classList.add('active');
+
+        if (metaDescriptions[viewId]) {
+          metaTitle.textContent = metaDescriptions[viewId].title;
+          metaDesc.textContent = metaDescriptions[viewId].desc;
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Design 1 Switcher
+    function switchD1(idx) {
+      const d = divisionsData[idx];
+      document.getElementById('d1-kicker').textContent = `CORE DIVISION • ${d.num} / 06`;
+      document.getElementById('d1-title').textContent = d.title;
+      document.getElementById('d1-desc').textContent = d.desc;
+      document.getElementById('d1-m1').textContent = d.m1;
+      document.getElementById('d1-m2').textContent = d.m2;
+      document.getElementById('d1-m3').textContent = d.m3;
+      document.getElementById('d1-cta').href = `service-detail.html?id=${d.id}`;
+      document.getElementById('d1-badge-txt').textContent = d.badge;
+
+      const video = document.getElementById('d1-video');
+      const src = document.getElementById('d1-video-src');
+      src.src = d.video;
+      video.poster = d.poster;
+      video.load();
+      video.play().catch(() => {});
+
+      document.querySelectorAll('.d1-chip').forEach((c, i) => {
+        c.classList.toggle('active', i === idx);
+      });
+    }
+
+    // Design 3 Accordion Activation
+    function activateD3(colEl) {
+      document.querySelectorAll('.d3-col').forEach(c => c.classList.remove('active'));
+      colEl.classList.add('active');
+    }
+
+    // Design 4 Switcher
+    function switchD4(idx, itemEl) {
+      const d = divisionsData[idx];
+      document.getElementById('d4-kicker').textContent = `DIVISION ACTIVE • ${d.num}`;
+      document.getElementById('d4-title').textContent = d.title;
+      document.getElementById('d4-desc').textContent = d.desc;
+      document.getElementById('d4-meta').textContent = `Core Stack: ${d.badge}`;
+      document.getElementById('d4-cta').href = `service-detail.html?id=${d.id}`;
+
+      const video = document.getElementById('d4-video');
+      const src = document.getElementById('d4-video-src');
+      src.src = d.video;
+      video.load();
+      video.play().catch(() => {});
+
+      document.querySelectorAll('.d4-item').forEach(it => it.classList.remove('active'));
+      itemEl.classList.add('active');
+    }
+
+    // Design 5 Switcher
+    function switchD5(idx, tabEl) {
+      const d = divisionsData[idx];
+      document.getElementById('d5-spec-id').textContent = `DIV_ID: QH-CORE-${d.num}`;
+      document.getElementById('d5-title').textContent = d.title;
+      document.getElementById('d5-desc').textContent = d.desc;
+      document.getElementById('d5-cta').href = `service-detail.html?id=${d.id}`;
+
+      const video = document.getElementById('d5-video');
+      const src = document.getElementById('d5-video-src');
+      src.src = d.video;
+      video.load();
+      video.play().catch(() => {});
+
+      document.querySelectorAll('.d5-tab-btn').forEach(t => t.classList.remove('active'));
+      tabEl.classList.add('active');
+    }
+  </script>
+</body>
+</html>
