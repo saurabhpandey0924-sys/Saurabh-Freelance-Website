@@ -13,7 +13,6 @@ const PORTFOLIO_DATA = {
     location: "Global / Remote (IST / UTC+5:30)",
     email: "qubithrs@gmail.com",
     supportEmail: "supportqubithrs@gmail.com",
-    calendly: "https://calendly.com",
     linkedin: "https://linkedin.com",
     twitter: "https://x.com",
     instagram: "https://instagram.com"

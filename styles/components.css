@@ -2138,43 +2138,11 @@
   max-width: 380px;
 }
 
-.footer-status-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 16px;
-  border-radius: 9999px;
-  background: #FFFFFF;
-  border: 1px solid var(--border-medium);
-  color: var(--text-primary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  margin: 4px 0 16px 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  transition: all var(--transition-smooth);
-}
-
-.footer-status-pill svg {
-  color: var(--accent-primary);
-  flex-shrink: 0;
-}
-
-.footer-status-pill:hover {
-  border-color: var(--accent-secondary);
-  color: var(--accent-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-  background: rgba(15, 23, 42, 0.04);
-}
-
 .footer-emails-wrap {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: flex-start;
-  margin: 0 0 12px;
+  margin-top: 14px;
 }
 
 .footer-email-pill {
@@ -5340,17 +5308,6 @@ body.qh-dark-page .footer .footer-links a {
 
 body.qh-dark-page .footer .footer-link:hover,
 body.qh-dark-page .footer .footer-links a:hover {
-  color: #0A0A0C !important;
-}
-
-body.qh-dark-page .footer .footer-status-pill {
-  background: #FFFFFF !important;
-  border: 1px solid #CBD5E1 !important;
-  color: #0A0A0C !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
-}
-
-body.qh-dark-page .footer .footer-status-pill svg {
   color: #0A0A0C !important;
 }
 
