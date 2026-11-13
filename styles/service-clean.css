@@ -1,51 +1,24 @@
 /* ==========================================================================
-   QUBITHRS CLEAN SPECIFICATION PAGE
-   Matches User Reference Architecture: Simple, Clean, Effective
+   QUBITHRS SPECIFICATION ARCHITECTURE
+   Pattern: Simple, Clean, Minimalist (from User Reference)
+   Theme: QUBITHRS Obsidian Dark Luxury (#000000, #FFFFFF, Electric Cyan #00F0FF)
    ========================================================================== */
 
-/* Page Background */
-body.qh-clean-detail-page {
-  background-color: #FFFFFF !important;
-  color: #0F172A !important;
+/* Page Background & Base Tokens */
+body.qh-dark-page {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
   font-family: var(--font-body);
   margin: 0;
   padding: 0;
-}
-
-/* Navbar Adaptations for Clean Light Page */
-body.qh-clean-detail-page .navbar {
-  background: rgba(255, 255, 255, 0.94) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
-}
-
-body.qh-clean-detail-page .qh-brand-title {
-  color: #0F172A !important;
-}
-
-body.qh-clean-detail-page .nav-crumb-separator {
-  color: #94A3B8 !important;
-}
-
-body.qh-clean-detail-page .active-page-name {
-  color: #0284C7 !important;
-}
-
-body.qh-clean-detail-page .nav-active-page-pill {
-  background: rgba(2, 132, 199, 0.08) !important;
-  border-color: rgba(2, 132, 199, 0.25) !important;
-}
-
-body.qh-clean-detail-page .hamburger-line {
-  background-color: #0F172A !important;
+  overflow-x: hidden;
 }
 
 /* Main Container */
 .clean-spec-wrapper {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 100px 24px 80px 24px;
+  padding: 110px 24px 80px 24px;
 }
 
 /* Top Back Navigation Bar */
@@ -53,7 +26,7 @@ body.qh-clean-detail-page .hamburger-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -62,19 +35,20 @@ body.qh-clean-detail-page .hamburger-line {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #0284C7;
+  color: #00F0FF;
   font-family: var(--font-heading);
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-back-services:hover {
-  color: #0369A1;
-  transform: translateX(-3px);
+  color: #FFFFFF;
+  transform: translateX(-4px);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
 .clean-division-pills {
@@ -92,9 +66,9 @@ body.qh-clean-detail-page .hamburger-line {
   font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 600;
-  color: #64748B;
-  background: #F1F5F9;
-  border: 1px solid #E2E8F0;
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 9999px;
   cursor: pointer;
   text-decoration: none;
@@ -102,15 +76,17 @@ body.qh-clean-detail-page .hamburger-line {
 }
 
 .clean-div-btn:hover {
-  color: #0F172A;
-  background: #E2E8F0;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .clean-div-btn.active {
-  color: #FFFFFF;
-  background: #0F172A;
-  border-color: #0F172A;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+  color: #000000;
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.35);
 }
 
 .clean-pager-controls {
@@ -122,7 +98,7 @@ body.qh-clean-detail-page .hamburger-line {
 .clean-pager-indicator {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: #64748B;
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 600;
   margin-right: 4px;
 }
@@ -135,9 +111,9 @@ body.qh-clean-detail-page .hamburger-line {
   font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 600;
-  color: #0F172A;
-  background: #F1F5F9;
-  border: 1px solid #CBD5E1;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 9999px;
   cursor: pointer;
   text-decoration: none;
@@ -145,40 +121,59 @@ body.qh-clean-detail-page .hamburger-line {
 }
 
 .clean-pager-btn:hover {
-  background: #E2E8F0;
-  border-color: #94A3B8;
-  color: #0284C7;
+  background: rgba(0, 240, 255, 0.15);
+  border-color: rgba(0, 240, 255, 0.4);
+  color: #00F0FF;
   transform: translateY(-1px);
 }
 
-/* Dark Hero Banner Card */
+/* Dark Hero Banner Card (Obsidian Glass) */
 .clean-hero-card {
-  background: #0B1120;
-  border-radius: 20px;
+  background: linear-gradient(145deg, #0C101C 0%, #060810 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
   padding: clamp(40px, 6vw, 56px) clamp(24px, 5vw, 48px);
   text-align: center;
   color: #FFFFFF;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.clean-hero-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(ellipse at top, rgba(0, 240, 255, 0.06) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .clean-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(2.1rem, 4vw, 2.85rem);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: #FFFFFF;
   margin: 0 0 16px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .clean-hero-subtitle {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: clamp(1.02rem, 1.8vw, 1.18rem);
   line-height: 1.65;
   color: #94A3B8;
   max-width: 820px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* Overview Section */
@@ -190,7 +185,7 @@ body.qh-clean-detail-page .hamburger-line {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 800;
-  color: #0F172A;
+  color: #FFFFFF;
   margin: 0 0 12px 0;
   letter-spacing: -0.01em;
 }
@@ -198,27 +193,29 @@ body.qh-clean-detail-page .hamburger-line {
 .clean-overview-text {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  line-height: 1.7;
-  color: #334155;
+  line-height: 1.75;
+  color: #CBD5E1;
   margin: 0;
   max-width: 960px;
 }
 
-/* "What's Included" Container */
+/* "What's Included" Container (Obsidian Frame with Cyan Accents) */
 .clean-included-box {
-  background: #F0F7FF;
-  border: 1px solid #E0F2FE;
-  border-radius: 20px;
+  background: rgba(12, 16, 26, 0.75);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 22px;
   padding: clamp(28px, 4vw, 36px);
   margin-bottom: 48px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.02);
 }
 
 .clean-included-title {
   font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 800;
-  color: #0F172A;
+  color: #FFFFFF;
   margin: 0 0 24px 0;
+  letter-spacing: -0.01em;
 }
 
 .clean-included-grid {
@@ -234,29 +231,30 @@ body.qh-clean-detail-page .hamburger-line {
 }
 
 .clean-included-item {
-  background: #FFFFFF;
+  background: #101422;
   border-radius: 14px;
   padding: 16px 20px;
   display: flex;
   align-items: center;
   gap: 14px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
-  border: 1px solid rgba(226, 232, 240, 0.7);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .clean-included-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
-  border-color: #38BDF8;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.4);
 }
 
 .clean-check-badge {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: #E0F2FE;
-  color: #0284C7;
+  background: rgba(0, 240, 255, 0.12);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: #00F0FF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,9 +263,9 @@ body.qh-clean-detail-page .hamburger-line {
 
 .clean-item-text {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   font-weight: 600;
-  color: #1E293B;
+  color: #FFFFFF;
   line-height: 1.4;
 }
 
@@ -278,7 +276,7 @@ body.qh-clean-detail-page .hamburger-line {
   gap: 32px;
   margin-bottom: 48px;
   padding-top: 32px;
-  border-top: 1px solid #E2E8F0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 900px) {
@@ -288,10 +286,11 @@ body.qh-clean-detail-page .hamburger-line {
 }
 
 .clean-spec-card {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: #0B0F1A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px;
   padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .clean-spec-heading {
@@ -301,7 +300,7 @@ body.qh-clean-detail-page .hamburger-line {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 700;
-  color: #0F172A;
+  color: #FFFFFF;
   margin: 0 0 20px 0;
 }
 
@@ -320,11 +319,11 @@ body.qh-clean-detail-page .hamburger-line {
   gap: 10px;
   font-size: 0.92rem;
   line-height: 1.5;
-  color: #334155;
+  color: #E2E8F0;
 }
 
 .clean-deliv-bullet {
-  color: #0284C7;
+  color: #00F0FF;
   font-weight: 700;
   line-height: 1;
   margin-top: 4px;
@@ -335,22 +334,22 @@ body.qh-clean-detail-page .hamburger-line {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.9rem;
 }
 
 .clean-param-key {
-  color: #64748B;
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
 }
 
 .clean-param-val {
-  color: #0F172A;
+  color: #FFFFFF;
   font-weight: 700;
 }
 
 .clean-param-val.highlight {
-  color: #0284C7;
+  color: #00F0FF;
   font-family: var(--font-mono);
 }
 
@@ -363,12 +362,12 @@ body.qh-clean-detail-page .hamburger-line {
 
 .clean-tag-pill {
   padding: 4px 10px;
-  background: #FFFFFF;
-  border: 1px solid #CBD5E1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: #1E293B;
+  color: #FFFFFF;
   font-weight: 500;
 }
 
@@ -377,8 +376,8 @@ body.qh-clean-detail-page .hamburger-line {
   align-items: center;
   gap: 8px;
   font-size: 0.85rem;
-  color: #166534;
-  margin-top: 6px;
+  color: #86EFAC;
+  margin-top: 8px;
 }
 
 /* Action Buttons Footer */
@@ -396,22 +395,23 @@ body.qh-clean-detail-page .hamburger-line {
   align-items: center;
   gap: 10px;
   padding: 14px 28px;
-  background: #0284C7;
-  color: #FFFFFF;
+  background: #00F0FF;
+  color: #000000;
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 700;
   border-radius: 9999px;
   text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
+  border: none;
 }
 
 .btn-clean-primary:hover {
-  background: #0369A1;
+  background: #FFFFFF;
+  color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
-  color: #FFFFFF;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
 
 .btn-clean-secondary {
@@ -419,20 +419,20 @@ body.qh-clean-detail-page .hamburger-line {
   align-items: center;
   gap: 8px;
   padding: 14px 26px;
-  background: #F1F5F9;
-  color: #0F172A;
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 600;
   border-radius: 9999px;
   text-decoration: none;
-  border: 1px solid #CBD5E1;
+  border: 1px solid rgba(255, 255, 255, 0.16);
   transition: all 0.2s ease;
 }
 
 .btn-clean-secondary:hover {
-  background: #E2E8F0;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
-  color: #0F172A;
+  color: #FFFFFF;
 }
-
