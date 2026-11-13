@@ -5668,8 +5668,9 @@ body.qh-dark-page .cta-banner-card .badge-live::before {
 }
 
 
+
 /* ==========================================================================
-   THE COMPETITIVE ADVANTAGE: CLEAN, MINIMALIST & PROFESSIONAL ARCHITECTURE
+   THE COMPETITIVE ADVANTAGE: EXECUTIVE, CLEAN & HIGH-STATUS ARCHITECTURE
    ========================================================================== */
 .advantage-grid {
   display: grid;
@@ -5682,7 +5683,7 @@ body.qh-dark-page .cta-banner-card .badge-live::before {
   background: #0A0A0C;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-lg);
-  padding: 36px 32px;
+  padding: 38px 34px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -5707,7 +5708,7 @@ body.qh-dark-page .advantage-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .advantage-kicker {
@@ -5743,9 +5744,9 @@ body.qh-dark-page .advantage-card {
 
 .advantage-desc {
   font-size: 0.98rem;
-  line-height: 1.75;
+  line-height: 1.8;
   color: #CBD5E1;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   flex-grow: 1;
 }
 
@@ -5753,55 +5754,43 @@ body.qh-dark-page .advantage-desc {
   color: #CBD5E1 !important;
 }
 
-/* Compare Rows inside card */
-.advantage-compare-box {
+/* Executive Standard Pill inside Card */
+.advantage-standard-pill {
+  margin-top: auto;
+  padding: 12px 18px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-md);
-  padding: 16px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.advantage-compare-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.88rem;
   gap: 12px;
 }
 
-.advantage-compare-label {
-  color: #94A3B8;
-  font-weight: 500;
-  font-size: 0.82rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.advantage-compare-val-qh {
-  color: #FFFFFF;
+.advantage-standard-label {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
   font-weight: 700;
-  text-align: right;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.advantage-standard-val {
   font-family: var(--font-heading);
-}
-
-.advantage-compare-val-alt {
-  color: #64748B;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
   text-align: right;
-  font-size: 0.82rem;
-  text-decoration: line-through;
 }
 
-/* 3-Way Summary Banner below cards */
+/* Executive 3-Way Standards Banner */
 .advantage-summary-banner {
   margin-top: 40px;
   background: #0A0A0C;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-lg);
-  padding: 32px 36px;
+  padding: 34px 38px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.75);
 }
 
@@ -5813,17 +5802,17 @@ body.qh-dark-page .advantage-summary-banner {
 .advantage-summary-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 32px;
 }
 
 .advantage-summary-col {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .advantage-summary-col.highlight-col {
-  padding-left: 20px;
+  padding-left: 24px;
   border-left: 1px solid rgba(56, 189, 248, 0.35);
 }
 
@@ -5831,12 +5820,8 @@ body.qh-dark-page .advantage-summary-banner {
   font-family: var(--font-mono);
   font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #94A3B8;
-}
-
-.advantage-summary-col.highlight-col .advantage-summary-tag {
   color: var(--accent-primary);
 }
 
@@ -5848,14 +5833,10 @@ body.qh-dark-page .advantage-summary-banner {
 }
 
 .advantage-summary-desc {
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: #94A3B8;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #CBD5E1;
   margin: 0;
-}
-
-.advantage-summary-col.highlight-col .advantage-summary-desc {
-  color: #E2E8F0;
 }
 
 @media (max-width: 900px) {
@@ -5869,7 +5850,7 @@ body.qh-dark-page .advantage-summary-banner {
   }
   .advantage-summary-col.highlight-col {
     padding-left: 0;
-    padding-top: 16px;
+    padding-top: 20px;
     border-left: none;
     border-top: 1px solid rgba(56, 189, 248, 0.35);
   }
@@ -5877,6 +5858,14 @@ body.qh-dark-page .advantage-summary-banner {
     padding: 28px 22px;
   }
   .advantage-summary-banner {
-    padding: 24px 20px;
+    padding: 26px 20px;
+  }
+  .advantage-standard-pill {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .advantage-standard-val {
+    text-align: left;
   }
 }
