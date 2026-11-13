@@ -501,511 +501,513 @@ const PORTFOLIO_DATA = {
   ],
 
   services: [
-    {
-      id: "software-web",
-      division: "Division 01",
-      icon: `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/><polyline points="7 8 10 10 7 12"/><line x1="13" x2="17" y1="12" x2="17" y2="12"/></svg>`,
-      title: "Software & Custom Web Development",
-      subtitle: "We develop scalable web applications, business portals, ERP systems, CRM solutions, and high-converting modern websites tailored to your exact business needs.",
-      description: "We develop scalable web applications, business portals, ERP systems, CRM solutions, and high-converting modern websites tailored to your exact business needs.",
-      tags: ["React 19 / Next.js", "Node.js", "Enterprise Portals", "Custom ERP / CRM", "TypeScript", "Tailwind CSS"],
-      badge: "Popular",
-      timeline: "2 - 4 Weeks",
-      bestFor: "Businesses, Startups & Enterprises needing reliable, secure, and scalable custom web applications.",
-      overview: "Our software development services encompass everything from corporate web portals to complex institutional ERP systems. We build reliable, secure, and horizontally scalable solutions with zero technical debt.",
-      detailedOverview: "Our software development services encompass everything from corporate web portals to complex institutional ERP systems. We build reliable, secure, and horizontally scalable solutions with zero technical debt.",
-      capabilities: [
-        {
-          title: "Custom Web Applications & Portals",
-          desc: "Modern, responsive, blazing-fast web apps built with Next.js 15, React 19, and Node.js with zero technical debt.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`
-        },
-        {
-          title: "Enterprise ERP & CRM Systems",
-          desc: "Centralized institutional software with role-based access control, attendance tracking, automated workflows, and billing.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`
-        },
-        {
-          title: "Headless E-Commerce Storefronts",
-          desc: "Ultra-fast headless commerce with instant product browsing, 1-click checkouts, and inventory synchronization across warehouses.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`
-        }
-      ],
-      deliverables: [
-        "Modern responsive UI/UX built with Next.js 15 / React & TypeScript",
-        "Enterprise ERP/CRM business logic or Headless E-Commerce storefront",
-        "High-performance RESTful or GraphQL API backend with secure authentication",
-        "Relational database modeling with PostgreSQL, Prisma ORM & Redis caching",
-        "Automated CI/CD pipeline & zero-downtime deployment (Vercel, AWS, or Docker)",
-        "Comprehensive cross-device testing & 95+ Google Lighthouse speed optimization"
-      ],
-      milestones: [
-        { phase: "Week 1", title: "Discovery, Wireframes & System Architecture", desc: "User flows, database schemas, and approved component wireframes." },
-        { phase: "Week 2-3", title: "Full-Stack Sprint & Workflow Integration", desc: "Core feature engineering, business logic, payment gateway & API integrations." },
-        { phase: "Week 4", title: "Security QA, Lighthouse 95+ & Live Launch", desc: "Rigorous testing, performance tuning, and zero-downtime production launch." }
-      ],
-      includedGuarantees: [
-        "100% Intellectual Property & Code Ownership",
-        "30-Day Post-Launch Bugfix Warranty",
-        "95+ Google Lighthouse Performance Score",
-        "Daily Async Loom / Sprint Progress Updates"
-      ]
-    },
-    {
-      id: "saas-cloud",
-      division: "Division 02",
-      icon: `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><polyline points="12 12 12 16 14 14"/></svg>`,
-      title: "Custom SaaS & Cloud Architecture",
-      subtitle: "Transform your software vision into an investor-ready SaaS product powered by resilient cloud microservices, multi-tenancy, and subscription billing.",
-      description: "Turn your software concept into a fully operational, subscription-billing SaaS business powered by resilient cloud microservices and scalable APIs.",
-      tags: ["SaaS & MVP", "Stripe / Razorpay", "Multi-Tenancy", "GraphQL / REST", "Docker & AWS", "Microservices"],
-      badge: "High ROI",
-      timeline: "3 - 5 Weeks",
-      bestFor: "Founders, Bootstrappers & Enterprises launching a software-as-a-service venture or scaling backend infrastructure.",
-      overview: "We engineer complete SaaS platforms with multi-tenancy, subscription billing, resilient microservices, and secure cloud infrastructure designed to scale reliably.",
-      detailedOverview: "We engineer complete SaaS platforms with multi-tenancy, subscription billing, resilient microservices, and secure cloud infrastructure designed to scale reliably.",
-      capabilities: [
-        {
-          title: "Multi-Tenant SaaS & MVP Engineering",
-          desc: "Complete SaaS engine with strict tenant isolation, self-serve onboarding, and investor-ready architecture.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>`
-        },
-        {
-          title: "Automated Subscription Billing",
-          desc: "Stripe & Razorpay recurring billing, customer billing portals, coupon management, and webhook event handling.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/><path d="M7 15h.01"/><path d="M11 15h2"/></svg>`
-        },
-        {
-          title: "API Architecture & Microservices",
-          desc: "High-concurrency REST & GraphQL APIs, Redis caching, Docker containerization, and AWS/Vercel CI/CD.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>`
-        }
-      ],
-      deliverables: [
-        "Multi-tenant database architecture with strict tenant data isolation",
-        "Secure User Auth, OAuth, Session Management & Role-Based Access Control (RBAC)",
-        "Automated recurring subscription billing via Stripe or Razorpay with customer portal",
-        "Containerized microservices with Docker & automated cloud deployment pipelines",
-        "High-concurrency RESTful or GraphQL APIs with Swagger / OpenAPI documentation",
-        "Interactive analytics dashboards with charts, usage tracking, and data export"
-      ],
-      milestones: [
-        { phase: "Week 1-2", title: "MVP Scope & Cloud Infrastructure", desc: "Auth architecture, multi-tenant database schemas, and API contracts." },
-        { phase: "Week 3-4", title: "Core SaaS Engine & Subscription Workflows", desc: "Feature development, subscription webhooks, and self-serve onboarding." },
-        { phase: "Week 5", title: "Load Testing, Beta Launch & Handover", desc: "Stress testing, Sentry error monitoring, and production deployment." }
-      ],
-      includedGuarantees: [
-        "Stripe-verified subscription billing integration",
-        "100% clean GitHub repository with documentation",
-        "Zero-lockin infrastructure on standard cloud stacks",
-        "45-Day post-launch stability warranty"
-      ]
-    },
-    {
-      id: "ai-automation",
-      division: "Division 03",
-      icon: `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/><circle cx="12" cy="12" r="3"/></svg>`,
-      title: "AI Agents & Workflow Automation",
-      subtitle: "Embed autonomous LLM agents, intelligent RAG vector search, dynamic document analysis, and token-streaming copilots directly into your business workflows.",
-      description: "Embed autonomous LLM agents, intelligent RAG vector search, dynamic document analysis, and token-streaming copilots directly into your business workflows.",
-      tags: ["Gemini / OpenAI", "LangChain / LlamaIndex", "Vector DBs (Pinecone)", "RAG Pipelines", "Automated Agents", "Python / FastAPI"],
-      badge: "Trending",
-      timeline: "2 - 4 Weeks",
-      bestFor: "Companies looking to automate repetitive operations with AI, add conversational copilots, or leverage custom knowledge bases.",
-      overview: "Harness modern Large Language Models and intelligent agent frameworks to automate operations, synthesize documents, and deliver ChatGPT-grade conversational experiences with zero hallucination.",
-      detailedOverview: "Harness modern Large Language Models and intelligent agent frameworks to automate operations, synthesize documents, and deliver ChatGPT-grade conversational experiences with zero hallucination.",
-      capabilities: [
-        {
-          title: "Autonomous AI Agents & Copilots",
-          desc: "Production AI features using Gemini API, OpenAI, and LangChain with token streaming, memory, and tool invocation.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>`
-        },
-        {
-          title: "Enterprise RAG & Hybrid Vector Search",
-          desc: "Intelligent document retrieval pipelines combining BM25 lexical search with dense vector embeddings (Pinecone / pgvector / Qdrant).",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/><circle cx="16" cy="16" r="3"/><path d="m19 19 2 2"/></svg>`
-        },
-        {
-          title: "Automated Data & Webhook Pipelines",
-          desc: "Connect AI agents with external databases, CRM feeds, and webhooks to trigger automated actions without human intervention.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`
-        }
-      ],
-      deliverables: [
-        "Production AI integrations using Gemini, OpenAI, or Anthropic with fallback routing",
-        "RAG document search with Vector Embeddings & custom knowledge indexing",
-        "Token-streaming Server-Sent Events (SSE) or WebSocket UI integration",
-        "Strict prompt guardrails, PII sanitization, and JSON-schema validation",
-        "Automated workflow nodes, scraping pipelines, and structured data extraction",
-        "Token cost monitoring and caching layers to minimize operational expenses"
-      ],
-      milestones: [
-        { phase: "Week 1", title: "AI Prompt Engineering & Architecture", desc: "Model benchmarking, context window design, and vector store schema definition." },
-        { phase: "Week 2-3", title: "Agent Integration & Pipeline Testing", desc: "Token streaming, tool integration, RAG reranking, and fallback mechanisms." },
-        { phase: "Week 4", title: "Guardrails, Verification & Live Launch", desc: "Hallucination testing, stress testing, and production deployment." }
-      ],
-      includedGuarantees: [
-        "Zero data leakage / strict client privacy compliance",
-        "Cost-controlled prompt architecture to minimize API token costs",
-        "Hallucination mitigation and schema-validated JSON outputs",
-        "30-Day post-launch AI agent warranty"
-      ]
-    },
-    {
-      id: "mobile-apps",
-      division: "Division 04",
-      icon: `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>`,
-      title: "Mobile & Cross-Platform Development",
-      subtitle: "High-performance iOS and Android applications built with React Native and Flutter, unified backends, and offline-first Progressive Web Apps (PWA).",
-      description: "High-performance iOS and Android applications built with React Native and Flutter, unified backends, and offline-first Progressive Web Apps (PWA).",
-      tags: ["React Native", "Flutter", "iOS & Android", "PWA", "Push Notifications", "Biometric Auth"],
-      badge: "Cross-Platform",
-      timeline: "3 - 6 Weeks",
-      bestFor: "Startups and brands needing native-feel mobile applications on both App Store and Google Play with a single codebase.",
-      overview: "Deliver fast, intuitive, and responsive mobile experiences across iOS and Android without the cost of maintaining two separate native codebases.",
-      detailedOverview: "Deliver fast, intuitive, and responsive mobile experiences across iOS and Android without the cost of maintaining two separate native codebases.",
-      capabilities: [
-        {
-          title: "Cross-Platform React Native & Flutter",
-          desc: "Single codebase delivering 60 FPS native performance, smooth gestures, and native platform widgets for iOS and Android.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`
-        },
-        {
-          title: "Offline-First Sync & SQLite / WatermelonDB",
-          desc: "Enable users to work without active internet connection with optimistic local updates and automated background conflict resolution.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>`
-        },
-        {
-          title: "Push Notifications & Device Hardware APIs",
-          desc: "Full integration with Apple APNs, Firebase Cloud Messaging (FCM), camera, GPS geolocation, and biometrics (FaceID/TouchID).",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>`
-        }
-      ],
-      deliverables: [
-        "Production iOS and Android app builds ready for App Store and Google Play review",
-        "React Native / Flutter unified codebase with complete TypeScript typing",
-        "Firebase Cloud Messaging (FCM) & Apple Push Notifications integration",
-        "Secure biometric authentication (FaceID, Fingerprint) and encrypted local storage",
-        "Offline-first caching and background data sync pipelines",
-        "Full assistance with App Store & Google Play Store publishing and review compliance"
-      ],
-      milestones: [
-        { phase: "Week 1-2", title: "Mobile UI/UX & Native Navigation", desc: "Screen layouts, navigation stacks, and mock data prototypes." },
-        { phase: "Week 3-4", title: "API Integration & Hardware Features", desc: "Push notifications, camera/location APIs, and state persistence." },
-        { phase: "Week 5-6", title: "TestFlight / Internal Testing & Store Submission", desc: "Beta tester distribution, bug squashing, and store publishing." }
-      ],
-      includedGuarantees: [
-        "100% App Store & Google Play Store Approval Assistance",
-        "Consistent 60 FPS interface performance across devices",
-        "Zero vendor lock-in with clean source code handover",
-        "30-Day post-launch mobile stability warranty"
-      ]
-    },
-    {
-      id: "api-integration",
-      division: "Division 05",
-      icon: `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
-      title: "API Engineering & Enterprise Integration",
-      subtitle: "High-concurrency RESTful and GraphQL APIs, seamless third-party ERP/CRM integrations, payment gateway webhooks, and secure event-driven architectures.",
-      description: "High-concurrency RESTful and GraphQL APIs, seamless third-party ERP/CRM integrations, payment gateway webhooks, and secure event-driven architectures.",
-      tags: ["RESTful & GraphQL", "Payment Gateways", "Zapier & Webhooks", "Salesforce / SAP", "OAuth2 / RBAC", "Swagger / OpenAPI"],
-      badge: "Enterprise",
-      timeline: "1 - 3 Weeks",
-      bestFor: "Organizations needing custom API backends, unified data pipelines, or connections to external tools like Salesforce, SAP, and payment gateways.",
-      overview: "Connect your disparate tools and power your web/mobile applications with robust, authenticated, and rate-limited APIs designed for enterprise reliability.",
-      detailedOverview: "Connect your disparate tools and power your web/mobile applications with robust, authenticated, and rate-limited APIs designed for enterprise reliability.",
-      capabilities: [
-        {
-          title: "Custom RESTful & GraphQL API Backends",
-          desc: "Clean, documented, versioned APIs built with Node.js/Express, Python/FastAPI, or Go with sub-50ms latency.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`
-        },
-        {
-          title: "Payment Gateway & Webhook Pipelines",
-          desc: "Idempotent payment integrations with Stripe, Razorpay, and PayPal with automated signature verification and reconciliation.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`
-        },
-        {
-          title: "Enterprise ERP & CRM Connectors",
-          desc: "Bi-directional real-time data sync with HubSpot, Salesforce, SAP, Zoho, and custom relational data warehouses.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>`
-        }
-      ],
-      deliverables: [
-        "Secure API gateway with OAuth2, JWT session tokens, and role-based permissions",
-        "Complete interactive Swagger / OpenAPI 3.0 documentation",
-        "Idempotent webhook consumers with automatic retry backoff",
-        "Third-party system connectors (Stripe, HubSpot, Salesforce, Cloud APIs)",
-        "Rate limiting, request validation (Zod/Pydantic), and DDoS protection",
-        "Automated unit & integration test suite verifying 100% of endpoints"
-      ],
-      milestones: [
-        { phase: "Week 1", title: "API Contract Design & Auth Layer", desc: "Data models, OpenAPI schemas, and authentication handshake." },
-        { phase: "Week 2", title: "Endpoint Implementation & Third-Party Sync", desc: "Business logic, database queries, and webhook handlers." },
-        { phase: "Week 3", title: "Stress Testing, Documentation & Deploy", desc: "Load testing, latency optimization, and production deployment." }
-      ],
-      includedGuarantees: [
-        "Sub-50ms average query latency on indexed endpoints",
-        "Zero-data-loss idempotent webhook architecture",
-        "Comprehensive API documentation with Postman/Swagger collections",
-        "30-Day post-launch integration warranty"
-      ]
-    },
-    {
-      id: "cybersecurity-defense",
-      title: "Cybersecurity & Cloud Defense",
-      badge: "Security",
-      description: "Defense-grade web application firewalls, penetration testing, zero-trust architectures, and automated vulnerability audits to protect enterprise data.",
-      tags: ["Zero-Trust", "Penetration Testing", "OWASP Hardening", "Data Encryption", "Vulnerability Scans", "Cloud Defense"],
-      icon: `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
-      overview: "We architect resilient digital fortifications for web applications, APIs, and cloud infrastructure. Our cybersecurity engineers conduct deep penetration testing, eliminate OWASP Top 10 vulnerabilities, enforce end-to-end cryptographic encryption, and establish zero-trust security postures that protect your customer data and ensure regulatory compliance.",
-      capabilities: [
-        {
-          title: "Penetration Testing & Audits",
-          desc: "Rigorous ethical hacking simulations to discover and patch critical infrastructure vulnerabilities before adversaries find them.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8"/><circle cx="10" cy="10" r="7"/></svg>`
-        },
-        {
-          title: "OWASP Top 10 Hardening",
-          desc: "Complete immunization against SQL injections, XSS, CSRF, broken access controls, and SSRF attacks with runtime validators.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
-        },
-        {
-          title: "End-to-End Cryptography",
-          desc: "Defense-grade data-at-rest and data-in-transit encryption utilizing AWS KMS, modern hashing algorithms, and automated key rotation.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`
-        },
-        {
-          title: "API Gateway & DDoS Protection",
-          desc: "Cloudflare enterprise shields, token-bucket sliding rate limiters, and perimeter firewalls neutralizing distributed flood traffic.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m8 11 4 4 4-4"/></svg>`
-        },
-        {
-          title: "Zero-Trust Architecture",
-          desc: "Strict principle of least privilege, role-based access control (RBAC), multi-factor authentication (MFA), and granular identity isolation.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>`
-        },
-        {
-          title: "SOC2 & GDPR Compliance Prep",
-          desc: "Audit-ready logs, tamper-proof system telemetry, data retention policies, and architectural evidence packages for international certifications.",
-          icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>`
-        }
-      ],
-      deliverables: [
-        "Comprehensive Vulnerability Audit Report with CVSS severity scoring",
-        "OWASP Top 10 remediation patches and code hardening",
-        "Encrypted database configurations & automated KMS key management",
-        "Cloudflare WAF rules, DDoS defenses, and sliding-window rate limiters",
-        "Executive Security Clearance Certificate & compliance readiness report"
-      ],
-      timeline: "1 - 2 Weeks",
-      includedGuarantees: [
-        "Zero Critical Vulnerability Guarantee upon sign-off",
-        "NDA & strict confidentiality protection on all code & infrastructure",
-        "30-day post-audit security monitoring & breach prevention support"
-      ]
-    }
-  ],
-
-  projects: [
-    {
-      id: "campussphere-erp",
-      title: "CampusSphere — Enterprise College & School ERP",
-      category: "fullstack",
-      categoryLabel: "Enterprise ERP & Portal",
-      thumbnail: "assets/images/project-saas.jpg",
-      featured: true,
-      summary: "Comprehensive multi-tenant institutional ERP featuring student/faculty portals, online fee collection, automated attendance, and examination management.",
-      metrics: [
-        { label: "Admin Time Saved", value: "85%" },
-        { label: "Fee Collection", value: "100% Digital" },
-        { label: "Active Records", value: "12,000+" }
-      ],
-      techStack: ["React 19", "Node.js / Express", "PostgreSQL", "Tailwind CSS", "Docker", "Razorpay / Stripe"],
-      caseStudy: {
-        client: "Higher Education Institute & Campus Network",
-        challenge: "The institution relied on fragmented legacy software and paper forms for student records, manual fee collection receipts, and offline exam grading, causing administrative backlogs.",
-        solution: "Engineered an integrated cloud-based ERP with role-based dashboards (Admin, Faculty, Student, Parent), automated fee payment gateways with instant PDF receipts, and real-time attendance tracking.",
-        keyFeatures: [
-          "Role-Based Access Control (RBAC) for Admins, Teachers, Students, and Accounts.",
-          "Automated online fee collection with UPI, NetBanking, and automated receipts.",
-          "Digital attendance tracker with SMS/Email notification triggers for parents.",
-          "Examination schedule builder, hall ticket generator, and GPA report cards."
-        ],
-        results: "Eliminated 85% of manual administrative paperwork and collected 100% of semester fees digitally within the first 48 hours of each academic term."
-      },
-      liveUrl: "https://demo-campussphere-erp.example.com",
-      githubUrl: "https://github.com/qubithrs/campussphere-erp"
-    },
-    {
-      id: "saas-analytics",
-      title: "PulseMetrics — Cloud SaaS Analytics",
-      category: "fullstack",
-      categoryLabel: "Full-Stack SaaS",
-      thumbnail: "assets/images/project-saas.jpg",
-      featured: true,
-      summary: "High-throughput cloud performance & revenue tracking dashboard handling 5M+ daily event metrics.",
-      metrics: [
-        { label: "Uptime", value: "99.98%" },
-        { label: "Query Latency", value: "<45ms" },
-        { label: "MRR Growth", value: "+340%" }
-      ],
-      techStack: ["React 19", "Node.js", "PostgreSQL", "Redis", "Tailwind CSS", "Recharts"],
-      caseStudy: {
-        client: "Venture-backed FinTech Startup (San Francisco, CA)",
-        challenge: "The client needed a real-time observability and financial analytics platform capable of streaming hundreds of events per second with sub-50ms query response times and zero UI stuttering.",
-        solution: "Engineered a reactive dashboard with WebSockets, optimized TimescaleDB time-series queries, and implemented dynamic client-side caching with virtualized list rendering.",
-        keyFeatures: [
-          "Real-time revenue & server health charting with smooth cubic-spline animations.",
-          "Multi-tenant organization management with fine-grained RBAC permissions.",
-          "Integrated Stripe Billing portal with automated tier upgrade webhooks.",
-          "Automated PDF export and incident anomaly alert triggers."
-        ],
-        results: "Delivered the MVP 2 weeks ahead of schedule. Helped the startup secure their $1.8M Seed round while supporting 2,500+ active business customers."
-      },
-      liveUrl: "https://demo-saas-pulsemetrics.example.com",
-      githubUrl: "https://github.com/qubithrs/pulsemetrics-saas"
-    },
-    {
-      id: "ecommerce-luxury",
-      title: "Aurum — Luxury Audio & Gear Store",
-      category: "ecommerce",
-      categoryLabel: "Headless E-Commerce",
-      thumbnail: "assets/images/project-ecommerce.jpg",
-      featured: true,
-      summary: "Ultra-premium headless e-commerce storefront with instantaneous page loads, rich micro-interactions, and 3D product previews.",
-      metrics: [
-        { label: "Conversion Rate", value: "4.8%" },
-        { label: "Lighthouse Speed", value: "99/100" },
-        { label: "Cart Abandonment", value: "-28%" }
-      ],
-      techStack: ["Next.js 14", "Shopify Storefront API", "TypeScript", "Framer Motion", "Stripe Elements"],
-      caseStudy: {
-        client: "Aurum Sound Labs (London, UK)",
-        challenge: "Previous WordPress/WooCommerce site had a 4.5s load time, clunky mobile checkout, and high bounce rates among luxury buyers.",
-        solution: "Rebuilt the entire front-end as a headless Next.js application with edge caching, optimistic cart updates, and sleek dark-mode glassmorphic aesthetics.",
-        keyFeatures: [
-          "Instantaneous search and multi-attribute filtering (Brand, Price, Material, Frequency).",
-          "One-click slide-out cart drawer with real-time tax & shipping estimator.",
-          "Custom audio preview player with waveform visualizer.",
-          "Fully responsive design optimized for mobile checkout."
-        ],
-        results: "Boosted monthly revenue by 62% in the first quarter post-launch and reduced page load times to 0.7s."
-      },
-      liveUrl: "https://demo-aurum-luxury.example.com",
-      githubUrl: "https://github.com/qubithrs/aurum-luxury-commerce"
-    },
-    {
-      id: "ai-agent-workflow",
-      title: "Synapse AI — Visual Agent Builder",
-      category: "ai",
-      categoryLabel: "AI & Automation",
-      thumbnail: "assets/images/project-ai.jpg",
-      featured: true,
-      summary: "Node-based visual workflow automation canvas allowing companies to chain LLMs, API connectors, and databases with drag-and-drop ease.",
-      metrics: [
-        { label: "Workflows Executed", value: "1.2M+" },
-        { label: "Time Saved", value: "85%" },
-        { label: "User Rating", value: "4.9/5" }
-      ],
-      techStack: ["React Flow", "Python / FastAPI", "LangChain", "Gemini 1.5 Pro", "Vector ChromaDB", "Docker"],
-      caseStudy: {
-        client: "AutomateHQ (Austin, TX)",
-        challenge: "Non-technical teams struggled to integrate LLMs with internal databases, needing a visual drag-and-drop tool that doesn't require writing code.",
-        solution: "Architected a high-performance React Flow canvas connected to a Python FastAPI asynchronous worker pool that compiles visual node graphs into executable pipelines.",
-        keyFeatures: [
-          "Interactive drag-and-drop node graph with live data wire connections and bezier routing.",
-          "Embedded code sandbox for custom Python/JavaScript transforms.",
-          "Multi-model support: Gemini, OpenAI, Claude, and local Ollama instances.",
-          "One-click webhook deployment with custom API authentication keys."
-        ],
-        results: "Acquired 15,000+ developer users within 90 days of launch; featured on Product Hunt #2 Product of the Day."
-      },
-      liveUrl: "https://demo-synapse-ai.example.com",
-      githubUrl: "https://github.com/qubithrs/synapse-ai-builder"
-    },
-    {
-      id: "fintech-crypto",
-      title: "Quantum — Real-Time Trading Terminal",
-      category: "fullstack",
-      categoryLabel: "Fintech & Web3",
-      thumbnail: "assets/images/project-fintech.jpg",
-      featured: true,
-      summary: "Ultra-responsive financial trading portal featuring sub-millisecond WebSocket feeds, candlestick charting, and portfolio analytics.",
-      metrics: [
-        { label: "Live Tick Rate", value: "60 FPS" },
-        { label: "WebSocket Latency", value: "<15ms" },
-        { label: "Active Traders", value: "40K+" }
-      ],
-      techStack: ["TypeScript", "Lightweight Charts", "WebSockets", "Go / Golang", "Redis PubSub", "Tailwind CSS"],
-      caseStudy: {
-        client: "Quantum Capital Group (Singapore)",
-        challenge: "Traders experienced visual lag and price slippage on their previous interface when analyzing rapid price fluctuations.",
-        solution: "Built a hardware-accelerated Canvas/WebGL charting interface driven by binary WebSocket feeds, ensuring consistent 60 FPS renders under heavy market volume.",
-        keyFeatures: [
-          "Interactive Candlestick, Depth Chart, and Order Book heatmaps.",
-          "Live Asset Allocation donut chart with instant profit/loss calculations.",
-          "One-click quick trade drawer with stop-loss and take-profit presets.",
-          "Keyboard shortcuts and modular multi-monitor layout customizer."
-        ],
-        results: "Handled over $45M in simulated and live trading volume without a single frontend crash."
-      },
-      liveUrl: "https://demo-quantum-crypto.example.com",
-      githubUrl: "https://github.com/qubithrs/quantum-trading-terminal"
-    }
-  ],
-
-    skills: {
-    frontend: [
-      { name: "React / Next.js", level: 96, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#61DAFB" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1.5" fill="#61DAFB"/></svg>` },
-      { name: "TypeScript / JavaScript ES6+", level: 95, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3178C6" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="3"/><path d="M9 10v7M6 10h6M15 17c1.5 0 2.5-.8 2.5-2s-1.2-1.5-2.5-1.8c-1.2-.3-2.5-.8-2.5-2s1-2 2.5-2c1 0 2 .5 2.5 1"/></svg>` },
-      { name: "Tailwind CSS / Vanilla CSS", level: 98, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M6 9c1.5-3 3.5-3.5 6-1.5 1.5 1.2 2.5 2 4 2 2 0 3.5-1 4.5-3-1.5 3-3.5 3.5-6 1.5-1.5-1.2-2.5-2-4-2-2 0-3.5 1-4.5 3z"/><path d="M2 16c1.5-3 3.5-3.5 6-1.5 1.5 1.2 2.5 2 4 2 2 0 3.5-1 4.5-3-1.5 3-3.5 3.5-6 1.5-1.5-1.2-2.5-2-4-2-2 0-3.5 1-4.5 3z"/></svg>` },
-      { name: "HTML5 / Semantic SEO / WCAG", level: 99, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E34F26" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>` },
-      { name: "Framer Motion & GSAP Animations", level: 90, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2"><path d="M4 4h16v8h-8z"/><path d="M4 12h8l-8 8z"/><path d="M12 12h8l-8 8z"/></svg>` },
-      { name: "State Management (Redux, Zustand)", level: 94, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#764ABC" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="4" r="2"/><circle cx="12" cy="20" r="2"/><circle cx="5" cy="8" r="2"/><circle cx="19" cy="8" r="2"/><circle cx="5" cy="16" r="2"/><circle cx="19" cy="16" r="2"/><path d="M12 6v3M12 15v3M6.5 9.5l2.5 1.5M15 13l2.5 1.5M17.5 9.5 15 11M9 13l-2.5 1.5"/></svg>` }
+  {
+    "id": "software-web",
+    "division": "Division 01",
+    "icon": "<svg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"14\" x=\"2\" y=\"3\" rx=\"2\"/><line x1=\"8\" x2=\"16\" y1=\"21\" y2=\"21\"/><line x1=\"12\" x2=\"12\" y1=\"17\" y2=\"21\"/><polyline points=\"7 8 10 10 7 12\"/><line x1=\"13\" x2=\"17\" y1=\"12\" x2=\"17\" y2=\"12\"/></svg>",
+    "title": "Software & Custom Web Development",
+    "subtitle": "We develop scalable web applications, business portals, ERP systems, CRM solutions, and high-converting modern websites tailored to your exact business needs.",
+    "description": "We develop scalable web applications, business portals, ERP systems, CRM solutions, and high-converting modern websites tailored to your exact business needs.",
+    "tags": [
+      "React 19 / Next.js",
+      "Node.js",
+      "Enterprise Portals",
+      "Custom ERP / CRM",
+      "TypeScript",
+      "Tailwind CSS"
     ],
-    backend: [
-      { name: "Node.js & Express", level: 94, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2"/><line x1="12" y1="2" x2="12" y2="22"/></svg>` },
-      { name: "Python / FastAPI / Flask", level: 90, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v2h8V6a4 4 0 0 0-4-4z"/><path d="M12 22a4 4 0 0 0 4-4v-2H8v2a4 4 0 0 0 4 4z"/><rect width="8" height="8" x="8" y="8" rx="2"/></svg>` },
-      { name: "RESTful & GraphQL APIs", level: 96, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E10098" stroke-width="2"><circle cx="12" cy="4" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><line x1="12" y1="6" x2="4" y2="18"/><line x1="12" y1="6" x2="20" y2="18"/><line x1="4" y1="18" x2="20" y2="18"/></svg>` },
-      { name: "PostgreSQL, MySQL & MongoDB", level: 92, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#336791" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>` },
-      { name: "Redis Caching & Pub/Sub", level: 88, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><polygon points="12 2 22 8.5 12 15 2 8.5 12 2"/><polygon points="12 9 22 15.5 12 22 2 15.5 12 9"/></svg>` },
-      { name: "Auth (JWT, OAuth2, NextAuth, Clerk)", level: 95, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5"/></svg>` }
+    "badge": "Popular",
+    "timeline": "2 - 4 Weeks",
+    "bestFor": "Businesses, Startups & Enterprises needing reliable, secure, and scalable custom web applications.",
+    "overview": "Our software development services encompass everything from corporate web portals to complex institutional ERP systems. We build reliable, secure, and horizontally scalable solutions with zero technical debt.",
+    "detailedOverview": "Our software development services encompass everything from corporate web portals to complex institutional ERP systems. We build reliable, secure, and horizontally scalable solutions with zero technical debt.",
+    "capabilities": [
+      {
+        "title": "Custom Web Applications & Portals",
+        "desc": "Modern, responsive, blazing-fast web apps built with Next.js 15, React 19, and Node.js with zero technical debt.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M3 9h18\"/><path d=\"M9 21V9\"/></svg>"
+      },
+      {
+        "title": "Enterprise ERP & CRM Systems",
+        "desc": "Centralized institutional software with role-based access control, attendance tracking, automated workflows, and billing.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/></svg>"
+      },
+      {
+        "title": "Headless E-Commerce Storefronts",
+        "desc": "Ultra-fast headless commerce with instant product browsing, 1-click checkouts, and inventory synchronization across warehouses.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z\"/><path d=\"M3 6h18\"/><path d=\"M16 10a4 4 0 0 1-8 0\"/></svg>"
+      },
+      {
+        "title": "Progressive Web Apps (PWA) & Offline Shell",
+        "desc": "Offline-capable web applications with service workers, instant load caching, and app-like installation across desktop and mobile.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M12 18h.01\"/></svg>"
+      },
+      {
+        "title": "Sub-Second Edge Performance & 95+ Core Web Vitals",
+        "desc": "Hyper-optimized DOM rendering, bundle tree-shaking, and global CDN edge distribution guaranteeing 95+ Google Lighthouse scores.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M13 2 3 14h9l-1 8 10-12h-9l1-8z\"/></svg>"
+      },
+      {
+        "title": "Interactive 3D Web & Fluid Motion Interfaces",
+        "desc": "Next-generation WebGL and Three.js 3D experiences, smooth scroll choreography, and tactile micro-interactions that elevate brand perception.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polygon points=\"12 2 2 7 12 12 22 7 12 2\"/><polyline points=\"2 17 12 22 22 17\"/><polyline points=\"2 12 12 17 22 12\"/></svg>"
+      }
     ],
-    aiAndDevops: [
-      { name: "AI/LLM Integration (Gemini, OpenAI)", level: 92, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg>` },
-      { name: "LangChain & Vector Databases", level: 88, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><line x1="9" y1="6" x2="15" y2="6"/><line x1="6" y1="9" x2="6" y2="15"/><line x1="18" y1="9" x2="18" y2="15"/><line x1="9" y1="18" x2="15" y2="18"/></svg>` },
-      { name: "Docker & Containerization", level: 86, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2"><rect width="3" height="3" x="4" y="11"/><rect width="3" height="3" x="8" y="11"/><rect width="3" height="3" x="12" y="11"/><rect width="3" height="3" x="8" y="7"/><rect width="3" height="3" x="12" y="7"/><path d="M2 15c2 2 6 2 8 0 2-2 6-2 8 0 2 2 4 1 4 0v-2H2v2z"/></svg>` },
-      { name: "Cloud (AWS, Vercel, Supabase, GCP)", level: 90, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>` },
-      { name: "Git / GitHub Actions CI/CD", level: 94, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F05032" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="6" cy="18" r="3"/><line x1="6" y1="9" x2="6" y2="15"/><path d="M9 6h4a5 5 0 0 1 5 5v4"/></svg>` },
-      { name: "Performance & Lighthouse Optimization", level: 98, icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 10"/></svg>` }
-    ]
+    "deliverables": [
+      "Modern responsive UI/UX built with Next.js 15 / React & TypeScript",
+      "Enterprise ERP/CRM business logic or Headless E-Commerce storefront",
+      "High-performance RESTful or GraphQL API backend with secure authentication",
+      "Relational database modeling with PostgreSQL, Prisma ORM & Redis caching",
+      "Automated CI/CD pipeline & zero-downtime deployment (Vercel, AWS, or Docker)",
+      "Comprehensive cross-device testing & 95+ Google Lighthouse speed optimization"
+    ],
+    "milestones": [
+      {
+        "phase": "Week 1",
+        "title": "Discovery, Wireframes & System Architecture",
+        "desc": "User flows, database schemas, and approved component wireframes."
+      },
+      {
+        "phase": "Week 2-3",
+        "title": "Full-Stack Sprint & Workflow Integration",
+        "desc": "Core feature engineering, business logic, payment gateway & API integrations."
+      },
+      {
+        "phase": "Week 4",
+        "title": "Security QA, Lighthouse 95+ & Live Launch",
+        "desc": "Rigorous testing, performance tuning, and zero-downtime production launch."
+      }
+    ],
+    "includedGuarantees": [
+      "100% Intellectual Property & Code Ownership",
+      "30-Day Post-Launch Bugfix Warranty",
+      "95+ Google Lighthouse Performance Score",
+      "Daily Async Loom / Sprint Progress Updates"
+    ],
+    "video": "assets/videos/division-01-web-dev.mp4"
   },
-
-  process: [
-    {
-      step: "01",
-      title: "Strategic Discovery & Scope",
-      desc: "We dive deep into your target audience, core business objectives, feature roadmap, and tech stack requirements to create an airtight execution blueprint."
-    },
-    {
-      step: "02",
-      title: "UI/UX & Interactive Prototype",
-      desc: "Creating high-fidelity wireframes, responsive design systems, and animated interactive previews so you see and feel the product before code is written."
-    },
-    {
-      step: "03",
-      title: "High-Velocity Clean Development",
-      desc: "Writing modular, type-safe, documented code with weekly demo builds, milestone check-ins, and automated testing to ensure 100% bug-free execution."
-    },
-    {
-      step: "04",
-      title: "QA, Launch & Growth Support",
-      desc: "Rigorous performance audits (95+ Lighthouse), cross-browser testing, SEO optimization, deployment to production CDN, and 30 days post-launch warranty."
-    }
-  ],
-
-
+  {
+    "id": "saas-cloud",
+    "division": "Division 02",
+    "icon": "<svg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"/><polyline points=\"12 12 12 16 14 14\"/></svg>",
+    "title": "Custom SaaS & Cloud Architecture",
+    "subtitle": "Transform your software vision into an investor-ready SaaS product powered by resilient cloud microservices, multi-tenancy, and subscription billing.",
+    "description": "Turn your software concept into a fully operational, subscription-billing SaaS business powered by resilient cloud microservices and scalable APIs.",
+    "tags": [
+      "SaaS & MVP",
+      "Stripe / Razorpay",
+      "Multi-Tenancy",
+      "GraphQL / REST",
+      "Docker & AWS",
+      "Microservices"
+    ],
+    "badge": "High ROI",
+    "timeline": "3 - 5 Weeks",
+    "bestFor": "Founders, Bootstrappers & Enterprises launching a software-as-a-service venture or scaling backend infrastructure.",
+    "overview": "We engineer complete SaaS platforms with multi-tenancy, subscription billing, resilient microservices, and secure cloud infrastructure designed to scale reliably.",
+    "detailedOverview": "We engineer complete SaaS platforms with multi-tenancy, subscription billing, resilient microservices, and secure cloud infrastructure designed to scale reliably.",
+    "capabilities": [
+      {
+        "title": "Multi-Tenant SaaS & MVP Engineering",
+        "desc": "Complete SaaS engine with strict tenant isolation, self-serve onboarding, and investor-ready architecture.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z\"/><path d=\"m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z\"/><path d=\"M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0\"/><path d=\"M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5\"/></svg>"
+      },
+      {
+        "title": "Automated Subscription Billing",
+        "desc": "Stripe & Razorpay recurring billing, customer billing portals, coupon management, and webhook event handling.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"14\" x=\"2\" y=\"5\" rx=\"2\"/><line x1=\"2\" x2=\"22\" y1=\"10\" y2=\"10\"/><path d=\"M7 15h.01\"/><path d=\"M11 15h2\"/></svg>"
+      },
+      {
+        "title": "API Architecture & Microservices",
+        "desc": "High-concurrency REST & GraphQL APIs, Redis caching, Docker containerization, and AWS/Vercel CI/CD.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"8\" x=\"2\" y=\"2\" rx=\"2\" ry=\"2\"/><rect width=\"20\" height=\"8\" x=\"2\" y=\"14\" rx=\"2\" ry=\"2\"/><line x1=\"6\" x2=\"6.01\" y1=\"6\" y2=\"6\"/><line x1=\"6\" x2=\"6.01\" y1=\"18\" y2=\"18\"/></svg>"
+      },
+      {
+        "title": "Cloud Infrastructure & Autoscaling Clusters",
+        "desc": "Resilient AWS and Google Cloud serverless clusters, automated Docker orchestration, and dynamic load balancing for high-traffic spikes.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"/></svg>"
+      },
+      {
+        "title": "Role-Based Access Control (RBAC) & Team Workspaces",
+        "desc": "Granular multi-tenant authorization schemes, organization tenant partitioning, audit logs, and single sign-on (SSO) integrations.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/></svg>"
+      },
+      {
+        "title": "Real-Time Telemetry & Usage Analytics",
+        "desc": "Live event streaming, customer product analytics, usage-based metering pipelines, and executive revenue dashboards.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 3v18h18\"/><path d=\"m19 9-5 5-4-4-3 3\"/></svg>"
+      }
+    ],
+    "deliverables": [
+      "Multi-tenant database architecture with strict tenant data isolation",
+      "Secure User Auth, OAuth, Session Management & Role-Based Access Control (RBAC)",
+      "Automated recurring subscription billing via Stripe or Razorpay with customer portal",
+      "Containerized microservices with Docker & automated cloud deployment pipelines",
+      "High-concurrency RESTful or GraphQL APIs with Swagger / OpenAPI documentation",
+      "Interactive analytics dashboards with charts, usage tracking, and data export"
+    ],
+    "milestones": [
+      {
+        "phase": "Week 1-2",
+        "title": "MVP Scope & Cloud Infrastructure",
+        "desc": "Auth architecture, multi-tenant database schemas, and API contracts."
+      },
+      {
+        "phase": "Week 3-4",
+        "title": "Core SaaS Engine & Subscription Workflows",
+        "desc": "Feature development, subscription webhooks, and self-serve onboarding."
+      },
+      {
+        "phase": "Week 5",
+        "title": "Load Testing, Beta Launch & Handover",
+        "desc": "Stress testing, Sentry error monitoring, and production deployment."
+      }
+    ],
+    "includedGuarantees": [
+      "Stripe-verified subscription billing integration",
+      "100% clean GitHub repository with documentation",
+      "Zero-lockin infrastructure on standard cloud stacks",
+      "45-Day post-launch stability warranty"
+    ],
+    "video": "assets/videos/division-02-saas-cloud.mp4"
+  },
+  {
+    "id": "ai-automation",
+    "division": "Division 03",
+    "icon": "<svg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>",
+    "title": "AI Agents & Workflow Automation",
+    "subtitle": "Embed autonomous LLM agents, intelligent RAG vector search, dynamic document analysis, and token-streaming copilots directly into your business workflows.",
+    "description": "Embed autonomous LLM agents, intelligent RAG vector search, dynamic document analysis, and token-streaming copilots directly into your business workflows.",
+    "tags": [
+      "Gemini / OpenAI",
+      "LangChain / LlamaIndex",
+      "Vector DBs (Pinecone)",
+      "RAG Pipelines",
+      "Automated Agents",
+      "Python / FastAPI"
+    ],
+    "badge": "Trending",
+    "timeline": "2 - 4 Weeks",
+    "bestFor": "Companies looking to automate repetitive operations with AI, add conversational copilots, or leverage custom knowledge bases.",
+    "overview": "Harness modern Large Language Models and intelligent agent frameworks to automate operations, synthesize documents, and deliver ChatGPT-grade conversational experiences with zero hallucination.",
+    "detailedOverview": "Harness modern Large Language Models and intelligent agent frameworks to automate operations, synthesize documents, and deliver ChatGPT-grade conversational experiences with zero hallucination.",
+    "capabilities": [
+      {
+        "title": "Autonomous AI Agents & Copilots",
+        "desc": "Production AI features using Gemini API, OpenAI, and LangChain with token streaming, memory, and tool invocation.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z\"/></svg>"
+      },
+      {
+        "title": "Enterprise RAG & Hybrid Vector Search",
+        "desc": "Intelligent document retrieval pipelines combining BM25 lexical search with dense vector embeddings (Pinecone / pgvector / Qdrant).",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M3 5v14a9 3 0 0 0 18 0V5\"/><path d=\"M3 12a9 3 0 0 0 18 0\"/><circle cx=\"16\" cy=\"16\" r=\"3\"/><path d=\"m19 19 2 2\"/></svg>"
+      },
+      {
+        "title": "Automated Data & Webhook Pipelines",
+        "desc": "Connect AI agents with external databases, CRM feeds, and webhooks to trigger automated actions without human intervention.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 18 22 12 16 6\"/><polyline points=\"8 6 2 12 8 18\"/></svg>"
+      },
+      {
+        "title": "Real-Time Token Streaming Engines",
+        "desc": "Ultra-low latency Server-Sent Events (SSE) and WebSocket architectures delivering ChatGPT-speed token streaming and backpressure handling.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"/></svg>"
+      },
+      {
+        "title": "Intelligent Document Extraction & OCR",
+        "desc": "High-accuracy automated document processing, multi-page PDF ingestion, dynamic invoice extraction, and structured JSON normalization.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"/><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"/></svg>"
+      },
+      {
+        "title": "Model Evaluation & Hallucination Guardrails",
+        "desc": "Rigorous synthetic evaluation benchmarks, prompt defense filters, and automated validation rules ensuring trustworthy, repeatable AI outputs.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/><path d=\"m9 12 2 2 4-4\"/></svg>"
+      }
+    ],
+    "deliverables": [
+      "Production AI integrations using Gemini, OpenAI, or Anthropic with fallback routing",
+      "RAG document search with Vector Embeddings & custom knowledge indexing",
+      "Token-streaming Server-Sent Events (SSE) or WebSocket UI integration",
+      "Strict prompt guardrails, PII sanitization, and JSON-schema validation",
+      "Automated workflow nodes, scraping pipelines, and structured data extraction",
+      "Token cost monitoring and caching layers to minimize operational expenses"
+    ],
+    "milestones": [
+      {
+        "phase": "Week 1",
+        "title": "AI Prompt Engineering & Architecture",
+        "desc": "Model benchmarking, context window design, and vector store schema definition."
+      },
+      {
+        "phase": "Week 2-3",
+        "title": "Agent Integration & Pipeline Testing",
+        "desc": "Token streaming, tool integration, RAG reranking, and fallback mechanisms."
+      },
+      {
+        "phase": "Week 4",
+        "title": "Guardrails, Verification & Live Launch",
+        "desc": "Hallucination testing, stress testing, and production deployment."
+      }
+    ],
+    "includedGuarantees": [
+      "Zero data leakage / strict client privacy compliance",
+      "Cost-controlled prompt architecture to minimize API token costs",
+      "Hallucination mitigation and schema-validated JSON outputs",
+      "30-Day post-launch AI agent warranty"
+    ],
+    "video": "assets/videos/division-03-ai-automation.mp4"
+  },
+  {
+    "id": "mobile-apps",
+    "division": "Division 04",
+    "icon": "<svg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"/><line x1=\"12\" x2=\"12.01\" y1=\"18\" y2=\"18\"/></svg>",
+    "title": "Mobile & Cross-Platform Development",
+    "subtitle": "High-performance iOS and Android applications built with React Native and Flutter, unified backends, and offline-first Progressive Web Apps (PWA).",
+    "description": "High-performance iOS and Android applications built with React Native and Flutter, unified backends, and offline-first Progressive Web Apps (PWA).",
+    "tags": [
+      "React Native",
+      "Flutter",
+      "iOS & Android",
+      "PWA",
+      "Push Notifications",
+      "Biometric Auth"
+    ],
+    "badge": "Cross-Platform",
+    "timeline": "3 - 6 Weeks",
+    "bestFor": "Startups and brands needing native-feel mobile applications on both App Store and Google Play with a single codebase.",
+    "overview": "Deliver fast, intuitive, and responsive mobile experiences across iOS and Android without the cost of maintaining two separate native codebases.",
+    "detailedOverview": "Deliver fast, intuitive, and responsive mobile experiences across iOS and Android without the cost of maintaining two separate native codebases.",
+    "capabilities": [
+      {
+        "title": "Cross-Platform React Native & Flutter",
+        "desc": "Single codebase delivering 60 FPS native performance, smooth gestures, and native platform widgets for iOS and Android.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M12 18h.01\"/></svg>"
+      },
+      {
+        "title": "Offline-First Sync & SQLite / WatermelonDB",
+        "desc": "Enable users to work without active internet connection with optimistic local updates and automated background conflict resolution.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" x2=\"12\" y1=\"15\" y2=\"3\"/></svg>"
+      },
+      {
+        "title": "Push Notifications & Device Hardware APIs",
+        "desc": "Full integration with Apple APNs, Firebase Cloud Messaging (FCM), camera, GPS geolocation, and biometrics (FaceID/TouchID).",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9\"/><path d=\"M10.3 21a1.94 1.94 0 0 0 3.4 0\"/></svg>"
+      },
+      {
+        "title": "Biometric Security & Keychain Encryption",
+        "desc": "Seamless FaceID and Fingerprint biometric authentication with cryptographic tokens isolated in Apple Keychain and Android Keystore.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2a10 10 0 0 0-10 10c0 3.12 1.44 5.91 3.7 7.74\"/><path d=\"M12 6a6 6 0 0 0-6 6c0 1.95.93 3.69 2.38 4.8\"/></svg>"
+      },
+      {
+        "title": "60/120 FPS Fluid Animations & Gesture Physics",
+        "desc": "Reanimated 3 worklets running directly on the UI thread for buttery-smooth 120 FPS micro-interactions and tactile drag gestures.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m10 15 5-3-5-3v6Z\"/></svg>"
+      },
+      {
+        "title": "App Store & Play Store Automated CI/CD",
+        "desc": "Automated Fastlane build and deployment pipelines, TestFlight distribution, and complete compliance review handling for store approval.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z\"/></svg>"
+      }
+    ],
+    "deliverables": [
+      "Production iOS and Android app builds ready for App Store and Google Play review",
+      "React Native / Flutter unified codebase with complete TypeScript typing",
+      "Firebase Cloud Messaging (FCM) & Apple Push Notifications integration",
+      "Secure biometric authentication (FaceID, Fingerprint) and encrypted local storage",
+      "Offline-first caching and background data sync pipelines",
+      "Full assistance with App Store & Google Play Store publishing and review compliance"
+    ],
+    "milestones": [
+      {
+        "phase": "Week 1-2",
+        "title": "Mobile UI/UX & Native Navigation",
+        "desc": "Screen layouts, navigation stacks, and mock data prototypes."
+      },
+      {
+        "phase": "Week 3-4",
+        "title": "API Integration & Hardware Features",
+        "desc": "Push notifications, camera/location APIs, and state persistence."
+      },
+      {
+        "phase": "Week 5-6",
+        "title": "TestFlight / Internal Testing & Store Submission",
+        "desc": "Beta tester distribution, bug squashing, and store publishing."
+      }
+    ],
+    "includedGuarantees": [
+      "100% App Store & Google Play Store Approval Assistance",
+      "Consistent 60 FPS interface performance across devices",
+      "Zero vendor lock-in with clean source code handover",
+      "30-Day post-launch mobile stability warranty"
+    ],
+    "video": "assets/videos/division-04-mobile-apps.mp4"
+  },
+  {
+    "id": "api-integration",
+    "division": "Division 05",
+    "icon": "<svg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/></svg>",
+    "title": "API Engineering & Enterprise Integration",
+    "subtitle": "High-concurrency RESTful and GraphQL APIs, seamless third-party ERP/CRM integrations, payment gateway webhooks, and secure event-driven architectures.",
+    "description": "High-concurrency RESTful and GraphQL APIs, seamless third-party ERP/CRM integrations, payment gateway webhooks, and secure event-driven architectures.",
+    "tags": [
+      "RESTful & GraphQL",
+      "Payment Gateways",
+      "Zapier & Webhooks",
+      "Salesforce / SAP",
+      "OAuth2 / RBAC",
+      "Swagger / OpenAPI"
+    ],
+    "badge": "Enterprise",
+    "timeline": "1 - 3 Weeks",
+    "bestFor": "Organizations needing custom API backends, unified data pipelines, or connections to external tools like Salesforce, SAP, and payment gateways.",
+    "overview": "Connect your disparate tools and power your web/mobile applications with robust, authenticated, and rate-limited APIs designed for enterprise reliability.",
+    "detailedOverview": "Connect your disparate tools and power your web/mobile applications with robust, authenticated, and rate-limited APIs designed for enterprise reliability.",
+    "capabilities": [
+      {
+        "title": "Custom RESTful & GraphQL API Backends",
+        "desc": "Clean, documented, versioned APIs built with Node.js/Express, Python/FastAPI, or Go with sub-50ms latency.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 18 22 12 16 6\"/><polyline points=\"8 6 2 12 8 18\"/></svg>"
+      },
+      {
+        "title": "Payment Gateway & Webhook Pipelines",
+        "desc": "Idempotent payment integrations with Stripe, Razorpay, and PayPal with automated signature verification and reconciliation.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"14\" x=\"2\" y=\"5\" rx=\"2\"/><line x1=\"2\" x2=\"22\" y1=\"10\" y2=\"10\"/></svg>"
+      },
+      {
+        "title": "Enterprise ERP & CRM Connectors",
+        "desc": "Bi-directional real-time data sync with HubSpot, Salesforce, SAP, Zoho, and custom relational data warehouses.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z\"/></svg>"
+      },
+      {
+        "title": "High-Throughput Message Queues & Event Streaming",
+        "desc": "Asynchronous background task processing using Redis, BullMQ, and RabbitMQ to process millions of webhook events without server degradation.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"6\" y1=\"3\" x2=\"6\" y2=\"15\"/><circle cx=\"18\" cy=\"6\" r=\"3\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><path d=\"M18 9a9 9 0 0 1-9 9\"/></svg>"
+      },
+      {
+        "title": "Contract-First OpenAPI 3.1 & SDK Generation",
+        "desc": "Standardized API schemas, interactive Swagger documentation, and automated TypeScript SDK generation for internal and external teams.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polyline points=\"16 18 22 12 16 6\"/><polyline points=\"8 6 2 12 8 18\"/></svg>"
+      },
+      {
+        "title": "Resilient Circuit Breakers & Sliding Rate Limiters",
+        "desc": "Distributed rate-limiting, exponential backoff retries with full jitter, and circuit breaker patterns preventing cascading third-party failures.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg>"
+      }
+    ],
+    "deliverables": [
+      "Secure API gateway with OAuth2, JWT session tokens, and role-based permissions",
+      "Complete interactive Swagger / OpenAPI 3.0 documentation",
+      "Idempotent webhook consumers with automatic retry backoff",
+      "Third-party system connectors (Stripe, HubSpot, Salesforce, Cloud APIs)",
+      "Rate limiting, request validation (Zod/Pydantic), and DDoS protection",
+      "Automated unit & integration test suite verifying 100% of endpoints"
+    ],
+    "milestones": [
+      {
+        "phase": "Week 1",
+        "title": "API Contract Design & Auth Layer",
+        "desc": "Data models, OpenAPI schemas, and authentication handshake."
+      },
+      {
+        "phase": "Week 2",
+        "title": "Endpoint Implementation & Third-Party Sync",
+        "desc": "Business logic, database queries, and webhook handlers."
+      },
+      {
+        "phase": "Week 3",
+        "title": "Stress Testing, Documentation & Deploy",
+        "desc": "Load testing, latency optimization, and production deployment."
+      }
+    ],
+    "includedGuarantees": [
+      "Sub-50ms average query latency on indexed endpoints",
+      "Zero-data-loss idempotent webhook architecture",
+      "Comprehensive API documentation with Postman/Swagger collections",
+      "30-Day post-launch integration warranty"
+    ],
+    "video": "assets/videos/division-05-api-integration.mp4"
+  },
+  {
+    "id": "cybersecurity-defense",
+    "title": "Cybersecurity & Cloud Defense",
+    "badge": "Security",
+    "description": "Defense-grade web application firewalls, penetration testing, zero-trust architectures, and automated vulnerability audits to protect enterprise data.",
+    "tags": [
+      "Zero-Trust",
+      "Penetration Testing",
+      "OWASP Hardening",
+      "Data Encryption",
+      "Vulnerability Scans",
+      "Cloud Defense"
+    ],
+    "icon": "<svg viewBox=\"0 0 24 24\" width=\"28\" height=\"28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/><path d=\"m9 12 2 2 4-4\"/></svg>",
+    "overview": "We architect resilient digital fortifications for web applications, APIs, and cloud infrastructure. Our cybersecurity engineers conduct deep penetration testing, eliminate OWASP Top 10 vulnerabilities, enforce end-to-end cryptographic encryption, and establish zero-trust security postures that protect your customer data and ensure regulatory compliance.",
+    "capabilities": [
+      {
+        "title": "Penetration Testing & Audits",
+        "desc": "Rigorous ethical hacking simulations to discover and patch critical infrastructure vulnerabilities before adversaries find them.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m21 21-6-6m6 6v-4.8m0 4.8h-4.8\"/><circle cx=\"10\" cy=\"10\" r=\"7\"/></svg>"
+      },
+      {
+        "title": "OWASP Top 10 Hardening",
+        "desc": "Complete immunization against SQL injections, XSS, CSRF, broken access controls, and SSRF attacks with runtime validators.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>"
+      },
+      {
+        "title": "End-to-End Cryptography",
+        "desc": "Defense-grade data-at-rest and data-in-transit encryption utilizing AWS KMS, modern hashing algorithms, and automated key rotation.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>"
+      },
+      {
+        "title": "API Gateway & DDoS Protection",
+        "desc": "Cloudflare enterprise shields, token-bucket sliding rate limiters, and perimeter firewalls neutralizing distributed flood traffic.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242\"/><path d=\"m8 11 4 4 4-4\"/></svg>"
+      },
+      {
+        "title": "Zero-Trust Architecture",
+        "desc": "Strict principle of least privilege, role-based access control (RBAC), multi-factor authentication (MFA), and granular identity isolation.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"4.93\" y1=\"4.93\" x2=\"19.07\" y2=\"19.07\"/></svg>"
+      },
+      {
+        "title": "SOC2 & GDPR Compliance Prep",
+        "desc": "Audit-ready logs, tamper-proof system telemetry, data retention policies, and architectural evidence packages for international certifications.",
+        "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><path d=\"m9 15 2 2 4-4\"/></svg>"
+      }
+    ],
+    "deliverables": [
+      "Comprehensive Vulnerability Audit Report with CVSS severity scoring",
+      "OWASP Top 10 remediation patches and code hardening",
+      "Encrypted database configurations & automated KMS key management",
+      "Cloudflare WAF rules, DDoS defenses, and sliding-window rate limiters",
+      "Executive Security Clearance Certificate & compliance readiness report"
+    ],
+    "timeline": "1 - 2 Weeks",
+    "includedGuarantees": [
+      "Zero Critical Vulnerability Guarantee upon sign-off",
+      "NDA & strict confidentiality protection on all code & infrastructure",
+      "30-day post-audit security monitoring & breach prevention support",
+      "100% Intellectual Property & Security Artifact Transfer"
+    ],
+    "video": "assets/videos/division-06-cybersecurity.mp4",
+    "subtitle": "Defense-grade web application firewalls, penetration testing, zero-trust architectures, and automated vulnerability audits to protect enterprise data.",
+    "milestones": [
+      {
+        "phase": "Week 1",
+        "title": "Security Reconnaissance & Penetration Testing",
+        "desc": "Full attack surface mapping, automated and manual ethical hacking simulations, and CVSS severity scoring."
+      },
+      {
+        "phase": "Week 2",
+        "title": "OWASP Hardening & Cryptographic Defenses",
+        "desc": "Elimination of SQLi/XSS/CSRF vectors, KMS automated key rotation, and Cloudflare WAF deployment."
+      },
+      {
+        "phase": "Week 3",
+        "title": "Zero-Trust Verification & Compliance Audit",
+        "desc": "RBAC permission lock-in, regression re-testing, executive clearance certificate, and SOC2/GDPR readiness report."
+      }
+    ]
+  }
+],
   testimonials: [
     {
       id: 1,

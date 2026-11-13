@@ -28,6 +28,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/main.css?v=12">
   <link rel="stylesheet" href="styles/components.css?v=22">
+  <link rel="stylesheet" href="styles/service-motion.css?v=1">
   <link rel="stylesheet" href="styles/responsive.css?v=15">
 </head>
 <body class="qh-dark-page">
@@ -152,35 +153,11 @@
   </a>
 
 
-  <!-- MAIN DEDICATED SERVICE CONTENT -->
-  <main class="section" style="padding-top: 130px; padding-bottom: 60px;">
-    <div class="container">
-      <!-- Container populated dynamically by scripts/main.js?v=22 -->
-      <div id="service-detail-container" class="service-slide-wrapper">
-        <!-- Rendered dynamically -->
-      </div>
-    </div>
+  <!-- MAIN DEDICATED SERVICE CONTENT (5-ACT MOTION SCROLLYTELLING ARCHITECTURE) -->
+  <main class="service-motion-main" id="service-motion-main">
+    <!-- Container dynamically populated by scripts/service-detail-motion.js -->
+    <div id="service-detail-container"></div>
   </main>
-
-  <!-- READY TO LAUNCH BANNER -->
-  <section class="section cta-banner-section" style="padding-top: 0;">
-    <div class="container">
-      <div class="cta-banner-card reveal">
-        <div class="cta-banner-content">
-          <span class="badge badge-live" style="margin-bottom: 14px;">Instant 24h Response</span>
-          <h2 class="cta-banner-title">Ready to Kick Off Your Project Sprint?</h2>
-          <p class="cta-banner-subtitle">
-            Book a complimentary 20-minute architecture discovery call. We'll evaluate your requirements, review technical feasibility, and prepare an actionable sprint roadmap.
-          </p>
-          <div class="cta-banner-actions">
-            <a href="contact.html" class="btn btn-primary btn-lg btn-glow">
-              <span>Start Project Inquiry &rarr;</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -279,11 +256,17 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="scripts/data.js?v=22"></script>
+  <!-- External Motion Physics & GSAP Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Project Scripts -->
+  <script src="scripts/data.js?v=23"></script>
+  <script src="scripts/service-detail-motion.js?v=1"></script>
   <script src="scripts/tilt.js"></script>
   <script src="scripts/modal.js"></script>
   <script src="scripts/contact.js?v=22"></script>
-  <script src="scripts/main.js?v=22"></script>
+  <script src="scripts/main.js?v=23"></script>
 </body>
 </html>
